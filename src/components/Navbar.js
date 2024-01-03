@@ -30,22 +30,27 @@ export default function Navbar() {
       </div>
       <nav className={`bg-green-600 text-white p-4 sticky top-0 z-50 ${isScrolled ? 'shadow-md' : ''}`}>
         <div className="container mx-auto flex justify-between items-center">
-          <div className="flex space-x-4">
-            <Link href="/"><a className="hover:bg-green-700 p-2 rounded">Home</a></Link>
+          <div className="flex items-center space-x-15">
+            <Link href="/" className="hover:bg-green-700 p-2 rounded">Home</Link>
 
             {/* Dropdown Menu */}
-            <div className="relative inline-block">
-               <div className="relative inline-block text-center">
-                  <button onClick={() => setIsDropdownOpen(!isDropdownOpen)} className="inline-flex items-center hover:bg-green-700 p-2 rounded">
-                     Services <span className="caret">&#9660;</span>
-                  </button>
-	        </div>
+            <div className="relative inline-flex items-center">
+              <button onClick={() => setIsDropdownOpen(!isDropdownOpen)} className="hover:bg-green-700 p-2 rounded space-x-15">
+                Services <span className="caret">&#9660;</span>
+              </button>
               {isDropdownOpen && (
-                <ul className="absolute left-0 w-56 mt-2 bg-green-700 border border-green-800 shadow-md">
-                  <li><Link href="/wood-fences"><a className="block px-4 py-2 hover:bg-green-800">Wood Fences</a></Link></li>
-                  <li><Link href="/chain-link-fences"><a className="block px-4 py-2 hover:bg-green-800">Chain Link Fences</a></Link></li>
-                  <li><Link href="/wrought-iron-fences"><a className="block px-4 py-2 hover:bg-green-800">Wrought Iron Fences</a></Link></li>
-                  {/* ... More items */}
+                <ul className="absolute left-0 top-full mt-1 bg-green-700 border border-green-800 shadow-md space-x-15">
+                  <li><Link href="/vinyl-fences"><a className="block px-4 py-2 hover:bg-green-800 space-x-15">Vinyl Fence</a></Link></li>
+                  <li><Link href="/wood-fences"><a className="block px-4 py-2 hover:bg-green-800 space-x-15">Wood Fence</a></Link></li>
+                  <li><Link href="/chain-link-fences"><a className="block px-4 py-2 hover:bg-green-800 space-x-15">Chain Link Fence</a></Link></li>
+                  <li><Link href="/cedar-fences"><a className="block px-4 py-2 hover:bg-green-s800 space-x-15">Cedar Fence</a></Link></li>
+                  <li><Link href="/steel-fences"><a className="block px-4 py-2 hover:bg-green-800 space-x-15">Steel Fence</a></Link></li>
+                  <li><Link href="/aluminium-fences"><a className="block px-4 py-2 hover:bg-green-800 space-x-15">Aluminium Fence</a></Link></li>
+                  <li><Link href="/railing"><a className="block px-4 py-2 hover:bg-green-800 space-x-15">Railing</a></Link></li>
+                  <li><Link href="/gates-entry"><a className="block px-4 py-2 hover:bg-green-800 space-x-15">Gates and Entry</a></Link></li>
+                  <li><Link href="/pool-fences"><a className="block px-4 py-2 hover:bg-green-800">Pool Fence</a></Link></li>
+                  <li><Link href="/dog-fences"><a className="block px-4 py-2 hover:bg-green-800">Dog Fence</a></Link></li>
+                  <li><Link href="/trex-fences"><a className="block px-4 py-2 hover:bg-green-800">Trex Fence</a></Link></li>
                 </ul>
               )}
             </div>
