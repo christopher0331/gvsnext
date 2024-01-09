@@ -45,56 +45,52 @@ export default function Navbar() {
 
   return (
     <header className="navbar">
-      <div className={`bg-green-800 text-white text-sm p-2 flex justify-end items-center ${isScrolled ? 'hidden' : ''}`}>
-        <a href="tel:303-358-8168" style={{ marginRight: '15px', textDecoration: 'none', color: 'white' }} className="hover:contact-link">Phone: 303-358-8168</a>
-        <a href="mailto:admin@gvsco.net" style={{ textDecoration: 'none', color: 'white' }} className="hover:contact-link">Email: admin@gvsco.net</a>
-      </div>
+   
+        {/* Existing Nav Content */}
+        <nav className={`main-nav ${isScrolled ? 'scrolled' : ''}`}>
+          <div className="nav-content" style={{
+            display: 'flex',
+            alignItems: 'flex-end', // Align items to the bottom
+            justifyContent: 'space-between',
+            width: '100%'
+          }}>
 
-      <nav className={`main-nav ${isScrolled ? 'scrolled' : ''}`}>
-        <div className="nav-content" style={{
-          display: 'flex',
-          alignItems: 'flex-end', // Align items to the bottom
-          justifyContent: 'space-between',
-          width: '100%'
-        }}>
+            <div className="logo-container" style={{ flexShrink: 0, zIndex: '154' }}>
+              <Image
+                src="https://greenviewsolutionsimages.s3.us-west-1.amazonaws.com/HomePage/FullSizedWebp/clearGVSLogo_300.webp"
+                alt="GVS Logo"
+                width={250}
+                height={250}
+                layout="intrinsic"
+              />
+            </div>
+            {windowWidth > 868 && (
+              <DesktopMenu
+                isFencingDropdownOpen={isFencingDropdownOpen}
+                toggleFencingDropdown={toggleFencingDropdown}
+              />
+            )}
 
-          <div className="logo-container" style={{ flexShrink: 0 }}>
-            <Image
-              src="https://greenviewsolutionsimages.s3.us-west-1.amazonaws.com/HomePage/FullSizedWebp/GVS-LOGO-GREEN.png"
-              alt="GVS Logo"
-              width={250} // Adjust width as needed
-              height={250} // Adjust height as needed
-              layout="intrinsic"
-            />
+            {/* Hamburger Menu Button */}
+            {windowWidth <= 868 && (
+              <div className={`hamburger ${isHamburgerOpen ? 'open' : ''} ${isSidebarOpen ? 'sidebar-open' : ''}`} onClick={toggleHamburger}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            )}
           </div>
 
-          {windowWidth > 868 && (
-            <DesktopMenu
+          {windowWidth <= 868 && (
+            <SidebarMenu
+              isSidebarOpen={isSidebarOpen}
+              setIsSidebarOpen={setIsSidebarOpen}
               isFencingDropdownOpen={isFencingDropdownOpen}
               toggleFencingDropdown={toggleFencingDropdown}
             />
           )}
-
-          {/* Hamburger Menu Button */}
-          {windowWidth <= 868 && (
-            <div className={`hamburger ${isHamburgerOpen ? 'open' : ''} ${isSidebarOpen ? 'sidebar-open' : ''}`} onClick={toggleHamburger}>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          )}
-        </div>
-
-        {windowWidth <= 868 && (
-          <SidebarMenu
-            isSidebarOpen={isSidebarOpen}
-            setIsSidebarOpen={setIsSidebarOpen}
-            isFencingDropdownOpen={isFencingDropdownOpen}
-            toggleFencingDropdown={toggleFencingDropdown}
-          />
-        )}
-      </nav>
+        </nav>
     </header>
   );
 }

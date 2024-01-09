@@ -38,6 +38,7 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
                 >
                     X
                 </button>
+
                 {/* Logo */}
                 <div className="flex justify-center items-center mb-4">
                     <Image
