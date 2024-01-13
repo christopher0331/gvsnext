@@ -78,7 +78,7 @@ body {
   /* Increased width */
   height: 45px;
   /* Increased height */
-  z-index: 100;
+  z-index: 200;
   /* Ensure it's above other elements */
 }
 
@@ -96,34 +96,34 @@ body {
   left: 0;
   transform: rotate(0deg);
   transition: .25s ease-in-out;
-  z-index: 100;
+  z-index: 200;
 
 }
 
 .hamburger.open {
   right: 60%;
   transition: .25s ease-in-out;
-  z-index: 100;
+  z-index: 200;
 
 }
 
 /* The rest of the hamburger spans transformations */
 .hamburger span:nth-child(1) {
   top: 0px;
-  z-index: 100;
+  z-index: 200;
 
 }
 
 .hamburger span:nth-child(2),
 .hamburger span:nth-child(3) {
   top: 18px;
-  z-index: 100;
+  z-index: 200;
 
 }
 
 .hamburger span:nth-child(4) {
   top: 36px;
-  z-index: 100;
+  z-index: 200;
 
 }
 
@@ -131,19 +131,19 @@ body {
   top: 12px;
   width: 0%;
   left: 50%;
-  z-index: 100;
+  z-index: 200;
 
 }
 
 .hamburger.open span:nth-child(2) {
   transform: rotate(45deg);
-  z-index: 100;
+  z-index: 200;
 
 }
 
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg);
-  z-index: 100;
+  z-index: 200;
 
 }
 
@@ -151,7 +151,7 @@ body {
   top: 12px;
   width: 0%;
   left: 50%;
-  z-index: 100;
+  z-index: 200;
 
 }
 

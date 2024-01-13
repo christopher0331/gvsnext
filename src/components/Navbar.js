@@ -58,7 +58,7 @@ export default function Navbar({ data }) {
           width: '100%'
         }}>
 
-          <div className="logo-container" style={{ flexShrink: 0, zIndex: '154' }}>
+          <div className="logo-container" style={{ flexShrink: 0, zIndex: '154', zIndex: "50" }}>
             <Image
               src={logo}
               alt="GVS Logo"
