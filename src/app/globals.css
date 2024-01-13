@@ -313,6 +313,7 @@ body {
   display: flex;
   flex-direction: row;
   background-color: white;
+  flex-wrap: wrap;
   font-family: sans-serif;
   font-size: large;
   justify-content: center;
@@ -372,7 +373,9 @@ body {
 }
 
 
-
+.option span {
+  font-size: 1.2rem;
+}
 .button-class {
   background-color: #134e2e; /* blue-600 */
   color: white;
@@ -395,19 +398,18 @@ body {
 .fencing-options {
   display: flex;
   font-family: 'Courier New', Courier, monospace;
-
   flex-direction: row;
 }
 
 .section-title {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 3vw;
+  font-size: 3rem;
   font-weight: 500;
 }
 
 .section-subtitle {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 2vw;
+  font-size: 2rem;
   font-weight: 200;
   font-stretch:expanded;
 }
