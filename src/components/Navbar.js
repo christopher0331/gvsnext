@@ -1,9 +1,12 @@
+import { getStaticProps } from 'next';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import DesktopMenu from './DesktopMenu';
 import SidebarMenu from './SidebarMenu';
+import logo from '../../public/clearGVSLogo.webp';
 
-export default function Navbar() {
+export default function Navbar({ data }) {
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isFencingDropdownOpen, setIsFencingDropdownOpen] = useState(false);
@@ -45,52 +48,55 @@ export default function Navbar() {
 
   return (
     <header className="navbar">
-   
-        {/* Existing Nav Content */}
-        <nav className={`main-nav ${isScrolled ? 'scrolled' : ''}`}>
-          <div className="nav-content" style={{
-            display: 'flex',
-            alignItems: 'flex-end', // Align items to the bottom
-            justifyContent: 'space-between',
-            width: '100%'
-          }}>
 
-            <div className="logo-container" style={{ flexShrink: 0, zIndex: '154' }}>
-              <Image
-                src="https://greenviewsolutionsimages.s3.us-west-1.amazonaws.com/HomePage/FullSizedWebp/clearGVSLogo_300.webp"
-                alt="GVS Logo"
-                width={250}
-                height={250}
-                layout="intrinsic"
-              />
-            </div>
-            {windowWidth > 868 && (
-              <DesktopMenu
-                isFencingDropdownOpen={isFencingDropdownOpen}
-                toggleFencingDropdown={toggleFencingDropdown}
-              />
-            )}
+      {/* Existing Nav Content */}
+      <nav className={`main-nav ${isScrolled ? 'scrolled' : ''}`}>
+        <div className="nav-content" style={{
+          display: 'flex',
+          alignItems: 'flex-end',
+          justifyContent: 'space-between',
+          width: '100%'
+        }}>
 
-            {/* Hamburger Menu Button */}
-            {windowWidth <= 868 && (
-              <div className={`hamburger ${isHamburgerOpen ? 'open' : ''} ${isSidebarOpen ? 'sidebar-open' : ''}`} onClick={toggleHamburger}>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            )}
+          <div className="logo-container" style={{ flexShrink: 0, zIndex: '154' }}>
+            <Image
+              src={logo}
+              alt="GVS Logo"
+              width={250}
+              height={250}
+              style="intrinsic"
+              priority // This prop indicates the image is to be preloade
+            />
+
           </div>
 
-          {windowWidth <= 868 && (
-            <SidebarMenu
-              isSidebarOpen={isSidebarOpen}
-              setIsSidebarOpen={setIsSidebarOpen}
+          {windowWidth > 868 && (
+            <DesktopMenu
               isFencingDropdownOpen={isFencingDropdownOpen}
               toggleFencingDropdown={toggleFencingDropdown}
             />
           )}
-        </nav>
+
+          {/* Hamburger Menu Button */}
+          {windowWidth <= 868 && (
+            <div className={`hamburger ${isHamburgerOpen ? 'open' : ''} ${isSidebarOpen ? 'sidebar-open' : ''}`} onClick={toggleHamburger}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          )}
+        </div>
+
+        {windowWidth <= 868 && (
+          <SidebarMenu
+            isSidebarOpen={isSidebarOpen}
+            setIsSidebarOpen={setIsSidebarOpen}
+            isFencingDropdownOpen={isFencingDropdownOpen}
+            toggleFencingDropdown={toggleFencingDropdown}
+          />
+        )}
+      </nav>
     </header>
   );
 }

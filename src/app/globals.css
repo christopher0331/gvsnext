@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* ============================== Global ============================ */
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -29,7 +31,8 @@ body {
 
 .header-container {
   position: relative;
-  height: 100vh; /* Adjust the height as needed */
+  height: 100vh;
+  /* Adjust the height as needed */
 }
 
 .logo-container {
@@ -44,7 +47,23 @@ body {
 }
 
 
-                                              /* Menu */
+
+/*  ============================== Menu ============================== */
+
+
+/* Media break points */
+
+@media screen and (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+}
+
+
 /* Hamburger for Menu */
 .hamburger {
   cursor: pointer;
@@ -119,16 +138,6 @@ body {
 }
 
 
-@media screen and (max-width: 768px) {
-  .desktop-menu {
-    display: none;
-  }
-
-  .mobile-menu-icon {
-    display: block;
-  }
-}
-
 /* Style for menu-link-upper items */
 .menu-link-upper {
   position: relative;
@@ -148,8 +157,10 @@ body {
   bottom: 0;
   left: 50%;
   right: 50%;
-  height: 2px; /* Thickness of the bar */
-  background-color: green; /* Adjust color as needed */
+  height: 2px;
+  /* Thickness of the bar */
+  background-color: green;
+  /* Adjust color as needed */
   transition: left 0.3s ease, right 0.3s ease;
 }
 
@@ -160,8 +171,11 @@ body {
 }
 
 .menu-link-upper:hover {
-  color: green; /* Adjust hover color as needed */
+  color: green;
+  /* Adjust hover color as needed */
 }
+
+
 /*  */
 
 /* Style for your list items */
@@ -183,8 +197,10 @@ body {
   top: 50%;
   bottom: 50%;
   left: 0;
-  width: 2px; /* Thickness of the bar */
-  background-color: green; /* Adjust color as needed */
+  width: 2px;
+  /* Thickness of the bar */
+  background-color: green;
+  /* Adjust color as needed */
   transition: top 0.3s ease, bottom 0.3s ease;
 }
 
@@ -195,7 +211,8 @@ body {
 }
 
 .menu-link:hover {
-  color: green; /* Adjust hover color as needed */
+  color: green;
+  /* Adjust hover color as needed */
 }
 
 
@@ -221,9 +238,11 @@ body {
 
 .menu-divider {
   height: 2px;
-  background-color: #ccc; /* Adjust the color as needed */
+  background-color: #ccc;
+  /* Adjust the color as needed */
   width: 80%;
-  margin: 0 auto; /* Center the divider */
+  margin: 0 auto;
+  /* Center the divider */
 }
 
 
@@ -251,7 +270,8 @@ body {
   z-index: 155;
 }
 
-.contact-info span, .social-icons a {
+.contact-info span,
+.social-icons a {
   padding-right: 2vw;
   margin-left: 10px;
   z-index: 155;
@@ -264,7 +284,8 @@ body {
 }
 
 .icon-hover:hover {
-  color: #009688; /* Or any other color you prefer */
+  color: #009688;
+  /* Or any other color you prefer */
   cursor: pointer;
   z-index: 155;
 }
@@ -273,8 +294,171 @@ body {
   display: flex;
   flex-direction: row;
 }
+
 .email-phone-hover:hover {
-  color: #009688; /* Or any other color you prefer */
+  color: #009688;
+  /* Or any other color you prefer */
   cursor: pointer;
   z-index: 155;
+}
+
+
+
+
+
+/* ========================= Info Section ================================ */
+
+/* styles/InfoSection.module.css */
+.info-section {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  font-family: sans-serif;
+  font-size: large;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 5rem;
+}
+
+.info-section-container {
+  display: flex;
+  color: black;
+  width: 45%;
+  padding-top: 3%;
+  padding-left: 3%;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.info-section-collage {
+  position: relative;
+  height: 300px;
+  width: 450px;
+}
+
+.container {
+  color: black;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+.fencing-options {
+  color: black;
+  display: flex;
+  justify-content: left;
+  margin-top: 2rem;
+  margin: 5% 10%;
+}
+
+.option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: black;
+  width: 48%;
+  border: 1px solid green;
+  padding: 10px 10px;
+  border-radius: 5%;
+  margin-left: 4%;
+  font-size: 20px;
+  font-weight: 900;
+  /* Assuming there are two options, they each take up roughly half the container width */
+}
+
+
+
+.button-class {
+  background-color: #134e2e; /* blue-600 */
+  color: white;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+}
+.button-class:hover {
+  background-color: #38d87d; /* blue-700 */
+}
+
+.info-p-section {
+  font-family: 'Courier New', Courier, monospace;
+  width: 75%;
+}
+
+.fencing-options {
+  display: flex;
+  font-family: 'Courier New', Courier, monospace;
+
+  flex-direction: row;
+}
+
+.section-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3vw;
+  font-weight: 500;
+}
+
+.section-subtitle {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2vw;
+  font-weight: 200;
+  font-stretch:expanded;
+}
+
+
+/* ============================ Fence Cards ========================= */
+.fenceCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* create three columns */
+  gap: 20px; /* space between the cards */
+  padding: 20px; /* padding around the grid */
+}
+
+.card {
+  border: 1px solid #ddd; /* border around the card */
+  border-radius: 10px; /* rounded corners */
+  overflow: hidden; /* ensures nothing spills outside the border-radius */
+  text-decoration: none; /* removes underline from links */
+  color: black; /* text color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth transition for hover effect */
+  display: flex; /* to align image and text nicely */
+  flex-direction: column; /* stack image and text vertically */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* slight raise effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* shadow effect on hover */
+}
+
+.card h3 {
+  text-align: center; /* center the title text */
+  padding: 10px; /* padding inside the title area */
+  background-color: #f7f7f7; /* background color for the title area */
+  margin: 0; /* remove default margin */
+}
+
+.card p {
+  padding: 10px; /* padding inside the description area */
+  margin: 0; /* remove default margin */
+  text-align: center; /* center the description text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .fenceCardsContainer {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .fenceCardsContainer {
+    grid-template-columns: 1fr; /* 1 column on very small screens */
+  }
 }

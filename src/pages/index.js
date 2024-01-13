@@ -1,15 +1,16 @@
-import Image from 'next/image';
-import Header from '../components/Header.js';
-import Homepage from '../components/Homepage.js';
-import { useState } from 'react';
+// pages/index.js
+import Header from '../components/Header';
+import Homepage from '../components/Homepage';
+import { getStaticProps as getHeaderStaticProps } from '../components/Header';
+import Footer from '../components/Footer.js';
 
-export default function Home() {
-
+export default function Home({ headerData }) {
   return (
-    <div>
-      <Header />
+    <>
+      <Header data={headerData} />
       <Homepage />
-    </div>
+      <Footer />
+    </>
   );
 }
 

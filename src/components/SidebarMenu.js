@@ -7,6 +7,7 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
     const [isOutdoorLivingDropdownOpen, setIsOutdoorLivingDropdownOpen] = useState(false)
     const [isRollOffDumpstersDropdownOpen, setIsRollOffDumpstersDropdownOpen] = useState(false)
 
+    
     // Dropdown initial state (hidden)
     const dropdownHiddenStyle = {
         maxHeight: 0,
@@ -15,7 +16,6 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
         visibility: 'hidden',
         opacity: 0
     };
-
 
     const dropdownVisibleStyle = {
         maxHeight: '500px', // Adjust as needed
@@ -32,21 +32,25 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
             <div className={`fixed top-0 right-0 h-full bg-white text-black p-4 transform ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-500 ease-in-out z-[60] w-3/5 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl transition duration-700`}>
 
                 {/* Close Button */}
-                <button
-                    onClick={() => setIsSidebarOpen(false)}
-                    className="absolute top-0 right-0 m-4 text-lg"
-                >
-                    X
-                </button>
+                <div style={{ zIndex: '155' }}>
+                    <button
+                        onClick={() => setIsSidebarOpen(false)}
+                        className="absolute top-0 right-0 m-4 text-lg"
+                    >
+                        X
+                    </button>
+                </div>
 
                 {/* Logo */}
                 <div className="flex justify-center items-center mb-4">
                     <Image
-                        src="https://greenviewsolutionsimages.s3.us-west-1.amazonaws.com/HomePage/FullSizedWebp/GVS-LOGO-GREEN.png"
+                        src="/clearGVSLogo.png"
                         alt="GVS Logo"
                         width={300}
                         height={300}
                         layout="intrinsic"
+                        priority // This prop indicates the image is to be preloaded
+
                     />
                 </div>
 
@@ -96,8 +100,8 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
                             GVS RollOff Dumpster <span className="caret">&#9660;</span>
                         </button>
                         <ul style={isRollOffDumpstersDropdownOpen ? dropdownVisibleStyle : dropdownHiddenStyle}>
-                            <li><Link href="/vinyl-fences" className="block px-4 py-2 hover:bg-green-800">Vinyl Fence</Link></li>
-                            <li><Link href="/wood-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Wood Fence</Link></li>
+                            <li><Link href="/vinyl-fences" className="block px-4 py-2 hover:bg-green-800">17 ft Bin </Link></li>
+                            <li><Link href="/wood-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Junk Removal</Link></li>
                             <li><Link href="/chain-link-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Chain Link Fence</Link></li>
                             <li><Link href="/cedar-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Cedar Fence</Link></li>
                         </ul>

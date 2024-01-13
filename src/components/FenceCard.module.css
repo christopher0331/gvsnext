@@ -1,0 +1,99 @@
+.fenceCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: white;
+  color: black;
+  gap: 20px;
+  /* You can increase this value if you want more space between the cards */
+  padding: 20px;
+  justify-items: center;
+  /* This will center the cards in the grid columns */
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  max-width: 85%;
+  /* Set a max-width for the cards */
+  /* If you want the cards to be even less wide, reduce this value */
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  /* Set a width or max-width as per your design */
+  height: 150px;
+  /* Set a height for the image */
+  overflow: hidden;
+  /* This will ensure the image does not bleed outside the container */
+}
+
+
+
+.card:hover {
+  transform: translateY(-5px);
+  /* slight raise effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* shadow effect on hover */
+}
+
+.card h3 {
+  text-align: center;
+  /* center the title text */
+  padding: 10px;
+  /* padding inside the title area */
+  background-color: #f7f7f7;
+  /* background color for the title area */
+  margin: 0;
+  /* remove default margin */
+}
+
+.card p {
+  padding: 10px;
+  /* padding inside the description area */
+  margin: 0;
+  /* remove default margin */
+  text-align: center;
+  /* center the description text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .fenceCardsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .fenceCardsContainer {
+    grid-template-columns: 1fr;
+    /* 1 column on very small screens */
+  }
+}
+
+.buttonContainer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #176119;
+  color: white;
+  border: none;
+  margin-bottom: 3em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #37ae0b;
+}

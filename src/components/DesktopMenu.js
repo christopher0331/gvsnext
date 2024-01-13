@@ -5,10 +5,7 @@ import { IoIosMail } from 'react-icons/io';
 import { MdPhoneForwarded } from "react-icons/md";
 import { FaSquareFacebook } from "react-icons/fa6";
 import { FaGoogle } from "react-icons/fa";
-
 import { FiInstagram } from "react-icons/fi";
-
-
 import '../app/globals.css'
 
 export default function DesktopMenu() {
@@ -164,16 +161,16 @@ export default function DesktopMenu() {
                     </button>
                     {isOutdoorLivingDropdownOpen && (
                         <ul className="absolute left-0 top-full mt-1 bg-white border shadow-md" style={{ width: '100%' }}>
-                            <li><Link href="/vinyl-fences" className="menu-link">Vinyl Fence</Link></li>
+                            <li><Link href="/vinyl-fences" className="menu-link">Deck and Patio</Link></li>
                             <div className="menu-divider"></div>
 
-                            <li><Link href="/wood-fences" className="menu-link">Wood Fence</Link></li>
+                            <li><Link href="/wood-fences" className="menu-link">Pergolas</Link></li>
                             <div className="menu-divider"></div>
 
-                            <li><Link href="/chain-link-fences" className="menu-link">Chain Link Fence</Link></li>
+                            <li><Link href="/chain-link-fences" className="menu-link">Fire Features</Link></li>
                             <div className="menu-divider"></div>
 
-                            <li><Link href="/cedar-fences" className="menu-link">Cedar Fence</Link></li>
+                            <li><Link href="/cedar-fences" className="menu-link">Pool Enclosures</Link></li>
                         </ul>
                     )}
                 </div>
@@ -185,10 +182,10 @@ export default function DesktopMenu() {
                     </button>
                     {isRollOffDumpstersDropdownOpen && (
                         <ul className="absolute left-0 top-full mt-1 bg-white border shadow-md" style={{ width: '100%' }}>
-                            <li><Link href="/vinyl-fences" className="menu-link">Vinyl Fence</Link></li>
+                            <li><Link href="/vinyl-fences" className="menu-link">17ft Bin</Link></li>
                             <div className="menu-divider"></div>
 
-                            <li><Link href="/wood-fences" className="menu-link">Wood Fence</Link></li>
+                            <li><Link href="/wood-fences" className="menu-link">Junk Removal</Link></li>
                         </ul>
                     )}
                 </div>
