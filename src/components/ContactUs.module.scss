@@ -1,0 +1,138 @@
+.formBackground {
+    background-color: #f5f5f5; /* Example background color */
+    padding: 20px;
+    width: 40%;
+    margin: 0 auto; /* Center the form */
+}
+
+.contactForm {
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+.contactDetails {
+    padding-top: 20px;
+}
+
+.contactDetails .row, .serviceDetails .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.inputBox {
+    flex: 1;
+    margin: 5px;
+}
+
+.inputField {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.serviceDetails {
+    margin-top: 20px;
+}
+
+.submitButtonBox {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.submitButton {
+    background-color: #4CAF50; /* Example button color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background-color: #45a049;
+}
+
+
+.contactUsTitle {
+    font-size: 2.5vw;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+.contactUsParagraph {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+    margin: 20px auto;
+    width: 65%;
+    text-align: center;
+}
+.formParagraph {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+} 
+
+.contactFormAndInfo {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.contactForm {
+    width: 100%; /* Adjust as needed */
+    padding: 20px;
+}
+
+.footerLogo{
+    /* width: 90%; */
+}
+
+/* Mobile Friendly Version */
+@media (max-width: 768px) {
+    .contactUsTitle {
+        font-size: 1.5rem;
+        margin-top: 15px;
+    }
+
+    .contactUsParagraph {
+        font-size: 0.9rem;
+        padding: 0 10px;
+        width: 90%; /* Adjust for mobile */
+    }
+
+    .contactFormAndInfo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contactForm {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+
+/* Add this at the bottom of your existing CSS */
+
+@media (max-width: 768px) {
+    .formBackground {
+        width: 90%; /* Increase width for mobile */
+        padding: 10px;
+    }
+
+    .contactDetails .row, .serviceDetails .row {
+        flex-direction: column; /* Stack inputs vertically on small screens */
+    }
+
+    .inputBox {
+        width: 100%; /* Full width for each input box */
+    }
+}

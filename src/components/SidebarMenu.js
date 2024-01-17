@@ -44,7 +44,7 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
                 {/* Logo */}
                 <div className="flex justify-center items-center mb-4">
                     <Image
-                        src="/clearGVSLogo.png"
+                        src="/clearGVSLogo.webp"
                         alt="GVS Logo"
                         width={300}
                         height={300}

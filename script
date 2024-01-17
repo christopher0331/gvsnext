@@ -1,8 +1,0 @@
-const fs = require('fs');
-const path = require('path');
-
-const imagePath = path.resolve(__dirname, 'public/clearLogoBlurred.png'); // Adjust the path to your image
-const imageAsBase64 = fs.readFileSync(imagePath, 'base64');
-
-console.log(`data:image/webp;base64,${imageAsBase64}`);
-

@@ -1,11 +1,6 @@
 import Image from 'next/image';
 import styles from './FenceCard.module.css'; // Import the CSS module
 import Link from 'next/link';
-import woodFence from '../../public/wood-fence.jpeg';
-import vinylFence from '../../public/vinyl-fence.jpeg';
-import aluminumFence from '../../public/aluminum-fence.jpeg';
-import metalFence from '../../public/metal-fence.jpeg';
-import steelFence from '../../public/steel-fence.jpeg';
 
 const FenceCard = ({ title, imageSrc, description, link }) => {
     return (
@@ -23,37 +18,37 @@ const FenceCards = () => {
     const fences = [
         {
             title: 'Wood Fences',
-            imageSrc: woodFence, // Replace with your image path
+            imageSrc: '/wood-fence.jpeg', // Replace with your image path
             description: 'Wood fences are a timeless choice, offering a natural and traditional aesthetic. They are highly customizable in terms of size, shape, and color.',
             link: '#',
         },
         {
             title: 'Vinyl Fences',
-            imageSrc: vinylFence, // Replace with your image path
+            imageSrc: '/vinyl-fence.jpeg', // Replace with your image path
             description: 'Vinyl fencing is a low-maintenance and durable option. It comes in various styles and does not fade or rot like wood.',
             link: '#',
         },
         {
             title: 'Aluminum Fences',
-            imageSrc: aluminumFence, // Replace with your image path
+            imageSrc: '/aluminum-fence.jpeg', // Replace with your image path
             description: 'Aluminum fencing provides a durable and elegant solution, often used for decorative purposes or around pools.',
             link: '#',
         },
         {
             title: 'Steel Fences',
-            imageSrc: steelFence, // Replace with your image path
+            imageSrc: '/steel-fence.jpeg', // Replace with your image path
             description: 'Steel fences are known for their strength and durability, offering high security with a sophisticated look.',
             link: '#',
         },
         {
             title: "Metal Fences",
-            imageSrc: metalFence, // Replace with your image path
+            imageSrc: '/steel-fence.jpeg', // Replace with your image path
             description: 'Composite fencing is made from a blend of wood fibers and plastic polymers, offering the look of wood with enhanced durability.',
             link: '#',
         },
         {
             title: 'Chain Link Fences',
-            imageSrc: metalFence, // Replace with your image path
+            imageSrc: '/steel-fence.jpeg', // Replace with your image path
             description: 'Chain link fences are a cost-effective and practical choice for securing a property without obstructing views.',
             link: '#',
         },

@@ -7,6 +7,34 @@ import { FaSquareFacebook } from "react-icons/fa6";
 import { FaGoogle } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
 import '../app/globals.css'
+import React from 'react';
+
+class ErrorBoundary extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = { hasError: false };
+    }
+  
+    static getDerivedStateFromError(error) {
+      // Update state so the next render will show the fallback UI.
+      return { hasError: true };
+    }
+  
+    componentDidCatch(error, errorInfo) {
+      // You can log the error to an error reporting service here
+      console.error('Error caught by ErrorBoundary:', error, errorInfo);
+    }
+  
+    render() {
+      if (this.state.hasError) {
+        // You can render any custom fallback UI
+        return <h1>Something went wrong.</h1>;
+      }
+  
+      return this.props.children;
+    }
+  }
+  
 
 export default function DesktopMenu() {
 
@@ -76,6 +104,7 @@ export default function DesktopMenu() {
 
 
     return (
+        <ErrorBoundary>
         <div>
             <div className="contact-social-container">
                 {/* Email and Phone */}
@@ -119,9 +148,10 @@ export default function DesktopMenu() {
                     </button>
                     {isFencingDropdownOpen && (
                         <ul className="absolute left-0 top-full mt-1 border shadow-md bg-white" style={{ width: '120%' }}>
-                            <li><Link href="/vinyl-fences" className="menu-link">Vinyl Fence</Link></li>
-                            <div className="menu-divider"></div>
                             <li><Link href="/wood-fences" className="menu-link">Wood Fence</Link></li>
+                            <div className="menu-divider"></div>
+                            
+                            <li><Link href="/vinyl-fences" className="menu-link">Vinyl Fence</Link></li>
                             <div className="menu-divider"></div>
 
                             <li><Link href="/chain-link-fences" className="menu-link">Chain Link Fence</Link></li>
@@ -190,9 +220,10 @@ export default function DesktopMenu() {
                     )}
                 </div>
 
-                <Link href="/" className="menu-link-upper" style={menuItemStyle}>About Us</Link>
-                <Link href="/" className="menu-link-upper" style={menuItemStyle}>Contact Us</Link>
+                <Link href="/about" className="menu-link-upper" style={menuItemStyle}>About Us</Link>
+                <Link href="/contact" className="menu-link-upper" style={menuItemStyle}>Contact Us</Link>
             </div>
         </div>
+        </ErrorBoundary>
     );
 }

@@ -1,0 +1,116 @@
+
+
+.picketTypeCardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: white;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.picketTypeCard {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  height: auto;
+  text-align: center;
+  flex-basis: calc(30% - 20px);
+  margin: 10px;
+
+  @media (max-width: 600px) {
+    flex-basis: 100%;
+  }
+}
+
+.picketTypeCard img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.picketTypeCard h3 {
+  margin: 0;
+  padding: 5px;
+  color: #333;
+  font-size: 1.5rem;
+
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+  }
+}
+
+.picketTypeCard p {
+  color: #666;
+  font-size: 1rem;
+
+  @media (max-width: 600px) {
+    font-size: 0.9rem;
+  }
+}
+
+.picketInfoSection {
+  width: 50vw;
+  max-width: 250px;
+  display: block; /* changed from flex to block for image */
+  position: relative;
+  margin: auto; /* center the image */
+}
+
+.picketInfoSectionContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+}
+
+.picketInfoSectionTitleAndP {
+  text-align: center;
+  width: 100%;
+}
+
+.picketInfoSectionTitleAndP h2 {
+  color: black;
+  font-size: 4vw;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+  margin: 1rem 0;
+
+  @media (max-width: 600px) {
+    font-size: 5.5vw; /* Slightly larger to maintain readability on small screens */
+  }
+}
+
+.picketInfoSectionTitleAndP h3 {
+  color: black;
+  font-size: 4vw;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+  margin: 1rem 0;
+
+  @media (max-width: 600px) {
+    font-size: 5.5vw; /* Slightly larger to maintain readability on small screens */
+  }
+}
+.picketInfoSectionTitleAndP p {
+  color: black;
+  font-size: 2.5vw;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  margin: 0.5rem 0;
+
+  @media (max-width: 600px) {
+    font-size: 3.5vw; /* Adjust font size for small screens */
+  }
+}
+
+/* Add any additional styles for other elements as needed */

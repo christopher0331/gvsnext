@@ -1,5 +1,4 @@
 // components/Financing.js
-
 import React from 'react';
 import styles from './FinancingSection.module.scss';
 import Image from 'next/image';
@@ -20,7 +19,7 @@ const Financing = () => {
                     <button className={styles.ctaButton}>Apply for Financing</button>
                 </div>
                 <div className={styles.imageWrapper}>
-                    <Image src="/financing-image.jpg" alt="Financing Options" width={500} height={300} />
+                    <Image src="/picket.png" alt="Financing Options" width={500} height={300} />
                 </div>
             </div>
         </div>

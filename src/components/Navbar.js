@@ -3,7 +3,33 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import DesktopMenu from './DesktopMenu';
 import SidebarMenu from './SidebarMenu';
-import logo from '../../public/clearGVSLogo.webp';
+import React from 'react';
+
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    // Update state so the next render will show the fallback UI.
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // You can log the error to an error reporting service here
+    console.error('Error caught by ErrorBoundary:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // You can render any custom fallback UI
+      return <h1>Something went wrong.</h1>;
+    }
+
+    return this.props.children;
+  }
+}
 
 export default function Navbar({ data }) {
 
@@ -47,56 +73,57 @@ export default function Navbar({ data }) {
   }, []);
 
   return (
-    <header className="navbar">
+    <ErrorBoundary>
+      <header className="navbar">
 
-      {/* Existing Nav Content */}
-      <nav className={`main-nav ${isScrolled ? 'scrolled' : ''}`}>
-        <div className="nav-content" style={{
-          display: 'flex',
-          alignItems: 'flex-end',
-          justifyContent: 'space-between',
-          width: '100%'
-        }}>
+        {/* Existing Nav Content */}
+        <nav className={`main-nav ${isScrolled ? 'scrolled' : ''}`}>
+          <div className="nav-content" style={{
+            display: 'flex',
+            alignItems: 'flex-end',
+            justifyContent: 'space-between',
+            width: '100%'
+          }}>
 
-          <div className="logo-container" style={{ flexShrink: 0, zIndex: '154', zIndex: "50" }}>
-            <Image
-              src={logo}
-              alt="GVS Logo"
-              width={250}
-              height={250}
-              style="intrinsic"
-              priority // This prop indicates the image is to be preloade
-            />
+            <div className="logo-container" style={{ flexShrink: 0, zIndex: '154', zIndex: "50" }}>
+              <Image
+                src='/clearGVSLogo.webp'
+                alt="GVS Logo"
+                height={250}
+                width={250}
+                priority 
+              />
 
+            </div>
+
+            {windowWidth > 868 && (
+              <DesktopMenu
+                isFencingDropdownOpen={isFencingDropdownOpen}
+                toggleFencingDropdown={toggleFencingDropdown}
+              />
+            )}
+
+            {/* Hamburger Menu Button */}
+            {windowWidth <= 868 && (
+              <div className={`hamburger ${isHamburgerOpen ? 'open' : ''} ${isSidebarOpen ? 'sidebar-open' : ''}`} onClick={toggleHamburger}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            )}
           </div>
 
-          {windowWidth > 868 && (
-            <DesktopMenu
+          {windowWidth <= 868 && (
+            <SidebarMenu
+              isSidebarOpen={isSidebarOpen}
+              setIsSidebarOpen={setIsSidebarOpen}
               isFencingDropdownOpen={isFencingDropdownOpen}
               toggleFencingDropdown={toggleFencingDropdown}
             />
           )}
-
-          {/* Hamburger Menu Button */}
-          {windowWidth <= 868 && (
-            <div className={`hamburger ${isHamburgerOpen ? 'open' : ''} ${isSidebarOpen ? 'sidebar-open' : ''}`} onClick={toggleHamburger}>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          )}
-        </div>
-
-        {windowWidth <= 868 && (
-          <SidebarMenu
-            isSidebarOpen={isSidebarOpen}
-            setIsSidebarOpen={setIsSidebarOpen}
-            isFencingDropdownOpen={isFencingDropdownOpen}
-            toggleFencingDropdown={toggleFencingDropdown}
-          />
-        )}
-      </nav>
-    </header>
+        </nav>
+      </header>
+    </ErrorBoundary>
   );
 }

@@ -1,7 +1,11 @@
 // components/Footer.js
-
 import React from 'react';
 import styles from './Footer.module.scss';
+import Image from 'next/image';
+import { FaSquareFacebook } from "react-icons/fa6";
+import { FaGoogle } from "react-icons/fa";
+import { FiInstagram } from "react-icons/fi";
+
 
 const Footer = () => {
     return (
@@ -29,9 +33,15 @@ const Footer = () => {
                 <div className={styles.socialMedia}>
                     <h3>Follow Us</h3>
                     {/* Icons or images for social media links */}
-                    <a href="#"><img src="/path-to-facebook-icon" alt="Facebook"/></a>
-                    <a href="#"><img src="/path-to-instagram-icon" alt="Instagram"/></a>
-                    <a href="#"><img src="/path-to-twitter-icon" alt="Twitter"/></a>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                        <FaSquareFacebook size={50} />
+                    </a>
+                    <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+                        <FaGoogle size={50} />
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                        <FiInstagram size={50} />
+                    </a>
                 </div>
             </div>
             <div className={styles.footerBottom}>
