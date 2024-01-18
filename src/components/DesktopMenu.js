@@ -137,9 +137,7 @@ export default function DesktopMenu() {
             {/* Desktop Menu */}
             <div className="hidden" style={menuContainerStyle}>
 
-
                 <Link href="/" className="menu-link-upper" style={menuItemStyle}>Home</Link>
-
 
                 {/* GVS Fencing */}
                 <div className="relative inline-flex items-center" style={menuItemStyle}>
@@ -157,28 +155,11 @@ export default function DesktopMenu() {
                             <li><Link href="/chain-link-fences" className="menu-link">Chain Link Fence</Link></li>
                             <div className="menu-divider"></div>
 
-                            <li><Link href="/cedar-fences" className="menu-link">Cedar Fence</Link></li>
-                            <div className="menu-divider"></div>
-
                             <li><Link href="/steel-fences" className="menu-link">Steel Fence</Link></li>
                             <div className="menu-divider"></div>
 
                             <li><Link href="/aluminium-fences" className="menu-link">Aluminium Fence</Link></li>
                             <div className="menu-divider"></div>
-
-                            <li><Link href="/railing" className="menu-link">Railing</Link></li>
-                            <div className="menu-divider"></div>
-
-                            <li><Link href="/gates-entry" className="menu-link">Gates and Entry</Link></li>
-                            <div className="menu-divider"></div>
-
-                            <li><Link href="/pool-fences" className="menu-link">Pool Fence</Link></li>
-                            <div className="menu-divider"></div>
-
-                            <li><Link href="/dog-fences" className="menu-link">Dog Fence</Link></li>
-                            <div className="menu-divider"></div>
-
-                            <li><Link href="/trex-fences" className="menu-link">Trex Fence</Link></li>
                         </ul>
                     )}
                 </div>
@@ -191,16 +172,11 @@ export default function DesktopMenu() {
                     </button>
                     {isOutdoorLivingDropdownOpen && (
                         <ul className="absolute left-0 top-full mt-1 bg-white border shadow-md" style={{ width: '100%' }}>
-                            <li><Link href="/vinyl-fences" className="menu-link">Deck and Patio</Link></li>
+                            <li><Link href="/deck-and-patio" className="menu-link">Deck and Patio</Link></li>
                             <div className="menu-divider"></div>
 
-                            <li><Link href="/wood-fences" className="menu-link">Pergolas</Link></li>
+                            <li><Link href="/pergolas" className="menu-link">Pergolas</Link></li>
                             <div className="menu-divider"></div>
-
-                            <li><Link href="/chain-link-fences" className="menu-link">Fire Features</Link></li>
-                            <div className="menu-divider"></div>
-
-                            <li><Link href="/cedar-fences" className="menu-link">Pool Enclosures</Link></li>
                         </ul>
                     )}
                 </div>

@@ -44,13 +44,11 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
                 {/* Logo */}
                 <div className="flex justify-center items-center mb-4">
                     <Image
-                        src="/clearGVSLogo.webp"
+                        src="/gvsLogoGreen.png"
                         alt="GVS Logo"
                         width={300}
                         height={300}
-                        layout="intrinsic"
                         priority // This prop indicates the image is to be preloaded
-
                     />
                 </div>
 
@@ -69,14 +67,8 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
                             <li><Link href="/vinyl-fences" className="block px-4 py-2 hover:bg-green-800">Vinyl Fence</Link></li>
                             <li><Link href="/wood-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Wood Fence</Link></li>
                             <li><Link href="/chain-link-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Chain Link Fence</Link></li>
-                            <li><Link href="/cedar-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Cedar Fence</Link></li>
                             <li><Link href="/steel-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Steel Fence</Link></li>
-                            <li><Link href="/aluminium-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Aluminium Fence</Link></li>
                             <li><Link href="/railing" className="block px-4 py-2 hover:bg-green-800 w-200">Railing</Link></li>
-                            <li><Link href="/gates-entry" className="block px-4 py-2 hover:bg-green-800 w-200">Gates and Entry</Link></li>
-                            <li><Link href="/pool-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Pool Fence</Link></li>
-                            <li><Link href="/dog-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Dog Fence</Link></li>
-                            <li><Link href="/trex-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Trex Fence</Link></li>
                         </ul>
 
                     </li>
