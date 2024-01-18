@@ -50,7 +50,7 @@ export default function Fencing() {
             </section>
 
             <div className={styles.picketInfoSectionTitleAndP}>
-                <h2 className={styles.picketInfoSectionTitleAndP}>Wood Fencing</h2>
+                <h2 className={styles.picketInfoSectionTitleAndP}>W</h2>
                 <h3 className={styles.picketInfoSectionTitleAndP}>Customer Top Finishes</h3>
                 <Image
                     src="/wood-top-finishes.png"

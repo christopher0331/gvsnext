@@ -29,7 +29,6 @@ export default function Header({ data }) {
                 <Navbar />
             </Suspense>
 
-            {/* Rest of the content */}
             <Image
                 src='/homepage-hero-image.webp'
                 alt="Hero Image"

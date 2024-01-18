@@ -152,7 +152,7 @@ export default function DesktopMenu() {
                             <li><Link href="/vinyl-fences" className="menu-link">Vinyl Fence</Link></li>
                             <div className="menu-divider"></div>
 
-                            <li><Link href="/chain-link-fences" className="menu-link">Chain Link Fence</Link></li>
+                            <li><Link href="/chainlink-fence" className="menu-link">Chain Link Fence</Link></li>
                             <div className="menu-divider"></div>
 
                             <li><Link href="/steel-fences" className="menu-link">Steel Fence</Link></li>
