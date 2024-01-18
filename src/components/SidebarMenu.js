@@ -7,7 +7,7 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
     const [isOutdoorLivingDropdownOpen, setIsOutdoorLivingDropdownOpen] = useState(false)
     const [isRollOffDumpstersDropdownOpen, setIsRollOffDumpstersDropdownOpen] = useState(false)
 
-    
+
     // Dropdown initial state (hidden)
     const dropdownHiddenStyle = {
         maxHeight: 0,
@@ -66,7 +66,7 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
                         <ul style={isFencingDropdownOpen ? dropdownVisibleStyle : dropdownHiddenStyle}>
                             <li><Link href="/vinyl-fences" className="block px-4 py-2 hover:bg-green-800">Vinyl Fence</Link></li>
                             <li><Link href="/wood-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Wood Fence</Link></li>
-                            <li><Link href="/chain-link-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Chain Link Fence</Link></li>
+                            <li><Link href="/chainlink-fence" className="block px-4 py-2 hover:bg-green-800 w-200">Chain Link Fence</Link></li>
                             <li><Link href="/steel-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Steel Fence</Link></li>
                             <li><Link href="/railing" className="block px-4 py-2 hover:bg-green-800 w-200">Railing</Link></li>
                         </ul>
