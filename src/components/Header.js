@@ -1,7 +1,6 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import Image from 'next/image';
-
-const Navbar = React.lazy(() => import('./Navbar'));
+import Navbar from './Navbar.js';
 
 export default function Header({ data }) {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -25,9 +24,7 @@ export default function Header({ data }) {
         <div className="relative header-container" style={{ height: '100vh' }}>
 
             {/* Move the Navbar and its Suspense above other content */}
-            <Suspense fallback={<div>Loading...</div>}>
-                <Navbar />
-            </Suspense>
+            <Navbar />
 
             <Image
                 src='/homepage-hero-image.webp'
