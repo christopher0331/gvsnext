@@ -133,3 +133,13 @@
         margin-bottom: 50px;
     }
 }
+
+
+.readMore {
+    color: red;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
