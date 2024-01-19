@@ -37,8 +37,9 @@ export const steps = {
         "description": "We clean the site and conduct a final walkthrough with the client to ensure their complete satisfaction with the work."
     },
     "step10": {
-        "title": "10. Aftercare Services",
-        "description": "We offer guidance on fence maintenance and provide aftercare services to ensure the longevity and appearance of the fence."
+        "title": "10. Clear Coat Application",
+        "description": "A protective clear coat is applied 2-4 weeks post-installation to preserve the fence's integrity and enhance its aesthetic appeal."
     }
+    
 
 }
