@@ -40,6 +40,4 @@ export const steps = {
         "title": "10. Clear Coat Application",
         "description": "A protective clear coat is applied 2-4 weeks post-installation to preserve the fence's integrity and enhance its aesthetic appeal."
     }
-    
-
 }
