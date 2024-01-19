@@ -28,6 +28,8 @@ const SvgComponent = () => {
         setActiveSection(sectionNumber); // Restart from the clicked section
         const stepKey = `step${sectionNumber}`;
         const stepDetails = steps[stepKey];
+        setActiveSection(sectionNumber); // Set the active section to the clicked one
+
         setClickedSection(stepDetails); // Update the clicked section details
         restartInterval(sectionNumber);
     };
@@ -57,29 +59,35 @@ const SvgComponent = () => {
           }
         };
       }, []);
-    
       useEffect(() => {
-        let interval = null;
-    
         if (isComponentVisible) {
-          interval = setInterval(() => {
-            setActiveSection(current => {
-              const nextSection = current < totalSections ? current + 1 : 1;
-              return nextSection;
-            });
-          }, 3000); // Change section every 3 seconds
+            if (!intervalRef.current) {
+                intervalRef.current = setInterval(() => {
+                    setActiveSection(current => {
+                        const nextSection = current < totalSections ? current + 1 : 1;
+                        return nextSection;
+                    });
+                }, 3000); // Change section every 3 seconds
+            }
         } else {
-          clearInterval(interval);
+            clearInterval(intervalRef.current);
+            intervalRef.current = null;
         }
-    
-        return () => clearInterval(interval);
-      }, [isComponentVisible]);
 
-      useEffect(() => {
+        return () => {
+            if (intervalRef.current) {
+                clearInterval(intervalRef.current);
+                intervalRef.current = null;
+            }
+        };
+    }, [isComponentVisible]);
+
+    // Update clicked section details whenever the active section changes
+    useEffect(() => {
         const stepKey = `step${activeSection}`;
         const stepDetails = steps[stepKey];
         setClickedSection(stepDetails);
-      }, [activeSection]);
+    }, [activeSection]);
 
 
     return (

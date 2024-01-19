@@ -1,9 +1,9 @@
 .process-mod-svg {
-    width: 600px;
-    height: 600px;
+    width: 45rem;
+    height: 45rem;
     display: block;
     margin: auto;
-
+    margin-bottom:5 rem; 
     .process-mod-svg-section {
         cursor: pointer;
 
@@ -66,54 +66,77 @@
     color: white;
 }
 
-
+// Base styles
 .outterProcesSection {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 5rem;
 }
 
 .innerProcessSection {
-    display: block;
     margin: auto;
-    width: 35rem;
-    height: 35rem;
+    width: 100%; // Full width on mobile devices
+    max-width: 35rem; // Max out at the specified width on larger screens
+    height: auto; // Adjust height automatically based on content
 }
 
 .clickedSection {
     display: flex;
-    justify-content: left;
-    align-items: left;
+    flex-direction: column; // Stack content vertically on mobile
+    justify-content: center;
+    align-items: center; // Center-align items for a better mobile view
+    width: 90%; // Take up most of the screen width
+    max-width: 35rem; // Max out at the specified width on larger screens
+    height: auto; // Let the height grow with content
+    margin: 1rem auto;
     color: black;
-    width: 35rem;
-    height: 15rem;
-    border-radius: 10px;
-    margin: 20px auto;
-    padding: 20px;
+    padding: 1rem;
     background-color: #ffffff;
     text-align: center;
     border: 1px solid #ccc;
+    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .contentSection {
+    color: black;
     display: flex;
     flex-direction: column;
+    padding: 1rem;
 }
 
-
 .contentSection h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem; // Slightly smaller font size for mobile
     font-weight: 800;
-    font-family: 'Courier New', Courier, monospace;
-
+    margin-bottom: 0.5rem; // Add some spacing below the header
 }
 
 .contentSection p {
-    font-size: 1.2rem;
+    font-size: 1rem; // Smaller font size for mobile
     font-weight: 500;
-    font-family: 'Courier New', Courier, monospace;
-    padding-bottom: 2rem;
+    line-height: 1.4; // Increase line-height for readability
+}
+
+// Media queries for larger screens
+@media (min-width: 768px) {
+    .innerProcessSection {
+        height: 35rem; // Fixed height on larger screens
+    }
+
+    .clickedSection {
+        flex-direction: row; // Horizontal layout on larger screens
+        width: 35rem; // Fixed width on larger screens
+        height: 15rem; // Fixed height on larger screens
+    }
+
+    .contentSection h3 {
+        font-size: 1.8rem; // Larger font size for larger screens
+    }
+
+    .contentSection p {
+        font-size: 1.2rem; // Larger font size for larger screens
+    }
 }
