@@ -5,7 +5,6 @@
 
     @media screen and (max-width: 800px) {
         color: black;
-
         align-items: center;
         padding: 50px 200px;
     }
@@ -28,7 +27,6 @@
     font-size: 4.2vw;
     padding-left: 15px;
     color: black;
-
 }
 
 .aboutUs {
@@ -37,13 +35,15 @@
     justify-content: center;
     margin-bottom: 15px;
     width: 100%;
-    height: 100px;
+    height: 100%;
     align-items: center;
     padding-left: 20px;
     font-size: 4.2vw;
 
     @media screen and (max-width: 800px) {
         flex-direction: row;
+        font-size: 1.2rem;
+
     }
 }
 
@@ -51,12 +51,23 @@
     color: black;
     font-size: 2.3rem;
     margin: 40px 90px;
+
+    @media screen and (max-width: 800px) {
+        flex-direction: row;
+        font-size: 1.2rem;
+
+    }
 }
 
 .AboutUsInfo {
     color: black;
     font-size: 1.2rem;
     margin: 40px 90px;
+    @media screen and (max-width: 800px) {
+        flex-direction: row;
+        font-size: 1.2rem;
+
+    }
 }
 
 .description {
@@ -95,7 +106,6 @@
 
 .imageAndDescription {
     color: black;
-
     display: flex;
     justify-content: center;
     flex-direction: row;

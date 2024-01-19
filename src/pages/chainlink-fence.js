@@ -7,17 +7,10 @@ import Image from 'next/image';
 
 export default function ChainLinkFence() {
 
-    // Array of fence types, images and descriptions can be added here
-
-    // Array of picket types
-
     return (
         <div>
-            {/* Header */}
             <Header />
 
-            {/* Opening Paragraph */}
-            {/* Pic */} {/* Paragraph about GrrerenView Solutions and wood fence*/}
             <section className={styles.fenceInfoSectionContainer}>
                 <Image
                     src="/chainLinkFence.png"
@@ -34,7 +27,6 @@ export default function ChainLinkFence() {
                 </div>
             </section>
 
-            {/* Wood Fence Types  - Make 9 fence types all equal size, need pic on tope and text below about that style*/}
             <section className={styles.fenceTypeCardsContainer}>
                 {ChainLinkFenceTypes.map(fenceType => (
                     <FencingTypeCards
@@ -47,21 +39,17 @@ export default function ChainLinkFence() {
             </section>
 
             <div className={styles.picketInfoSectionTitleAndP}>
-            <h2 className={styles.picketInfoSectionTitleAndP}>Chain Link Fence Benefits</h2>
+                <h2 className={styles.picketInfoSectionTitleAndP}>Chain Link Fence Benefits</h2>
                 <Image
                     src="/wood-top-finishes.png"
                     alt="GreenView Solutions"
                     className={styles.fenceInfoSectionImage}
                     layout="responsive"
-                    width={150} 
+                    width={150}
                     height={150}
                 />
             </div>
-
-
             {/* Text - call to action with button to get free estimate */}
-            {/* Call to Action */}
-
             <Footer />
         </div>
     )

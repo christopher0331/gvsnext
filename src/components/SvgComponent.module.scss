@@ -1,0 +1,119 @@
+.process-mod-svg {
+    width: 600px;
+    height: 600px;
+    display: block;
+    margin: auto;
+
+    .process-mod-svg-section {
+        cursor: pointer;
+
+        .process-mod-svg-section-bg {
+            fill: green; // Sets the color of the sections to green
+        }
+
+        &:hover {
+            .process-mod-svg-section-bg {
+                fill: darkgreen; // Changes color on hover for visual feedback
+            }
+        }
+    }
+}
+
+
+.chudcon .darkShade {
+    fill: #002953;
+}
+
+.chudcon .shade {
+    fill: #dfe1e3
+}
+
+.chudcon .clear {
+    fill: #fff;
+}
+
+/* Define a class for an active section */
+.processModSvgSection {
+    cursor: pointer;
+    fill: green !important;
+}
+
+/* When a section is active, change the background to green */
+.processModSvgSection.active .processModSvgSectionBg {
+    fill: green !important;
+    /* Sets the color of the sections to green */
+}
+
+/* When a section is active, change the number path to white */
+.processModSvgSection.active .processModSvgSectionNumber {
+    fill: white;
+    /* Sets the color of the number to white */
+}
+
+#processModSvgSection1.active {
+    fill: green !important;
+}
+
+.clicked .processModSvgSectionNumber {
+    fill: rgb(255, 255, 255);
+    /* This will turn the clicked section's background to green */
+    color: white;
+}
+
+.clicked .processModSvgSectionBg {
+    fill: green;
+    /* This will turn the clicked section's background to green */
+    color: white;
+}
+
+
+.outterProcesSection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.innerProcessSection {
+    display: block;
+    margin: auto;
+    width: 35rem;
+    height: 35rem;
+}
+
+.clickedSection {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    color: black;
+    width: 35rem;
+    height: 15rem;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    text-align: center;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contentSection {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.contentSection h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.contentSection p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+    padding-bottom: 2rem;
+}

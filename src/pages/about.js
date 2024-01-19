@@ -3,6 +3,8 @@ import styles from '../components/AboutUs.module.scss';
 import Modal from '../components/Modal';
 import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
+import DonutChart from '../components/DonutChart.js';
+import SvgComponent from '@/components/SvgComponent';
 
 const CrewWithTruck = "https://greenviewsolutionsimages.s3.us-west-1.amazonaws.com/AboutUs/AboutUsImage.jpg";
 
@@ -114,46 +116,11 @@ const AboutUs = (props) => {
           </div>
         </div>
       </div>
-      <div className={styles.outterBoxProcess}>
-        <div className={styles.processTitle}>Fencing Process</div>
-        <div id={styles.row1}>
-          <div id={styles.column}>
-            <div id={styles.row}>
-              <div className={styles.steps} onClick={() => this.showModal('Visit')}>
-                1. Visit
-              </div>
-              <div className={styles.steps} onClick={() => this.showModal('Estimate')}>
-                2. Estimate
-              </div>
-              <div className={styles.steps} onClick={() => this.showModal('Permits')}>
-                3. Permits
-              </div>
-              <div className={styles.steps} onClick={() => this.showModal('Removal')}>
-                4. Remove Old Fence
-              </div>
-            </div>
-            <div id={styles.row}>
-              <div className={styles.steps} onClick={() => this.showModal('PostHoles')}>
-                5. Post Holes
-              </div>
-              <div className={styles.steps} onClick={() => this.showModal('Construct')}>
-                6. Construct Fence
-              </div>
-              <div className={styles.steps} onClick={() => this.showModal('CleanUp')}>
-                7. Clean Up
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.ourProcess}>
-            <div className={styles.theModal}>
-            <Modal modal={modal} />
-            </div>
-          </div>
-        </div>
-      </div>
+      
+      <SvgComponent />
       <Footer />
-    </div>
+
+    </div >
 
   )
 }
