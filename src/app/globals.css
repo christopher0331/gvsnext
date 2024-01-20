@@ -333,7 +333,6 @@ body {
   background-color: white;
   flex-wrap: wrap;
   font-family: sans-serif;
-  font-size: large;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -344,12 +343,17 @@ body {
 
 .info-section-container {
   display: flex;
+  flex-wrap: wrap;
   color: black;
   width: 45%;
+  font-size: 1.2rem;
+  margin-top: 15%;
   padding-top: 3%;
   padding-left: 3%;
+  width: 100%;
   flex-direction: column;
   justify-content: flex-end;
+
 }
 
 .info-section-collage {
@@ -394,8 +398,10 @@ body {
 .option span {
   font-size: 1.2rem;
 }
+
 .button-class {
-  background-color: #134e2e; /* blue-600 */
+  background-color: #134e2e;
+  /* blue-600 */
   color: white;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -404,8 +410,10 @@ body {
   border-radius: 0.25rem;
   transition: background-color 0.3s;
 }
+
 .button-class:hover {
-  background-color: #38d87d; /* blue-700 */
+  background-color: #38d87d;
+  /* blue-700 */
 }
 
 .info-p-section {
@@ -429,56 +437,117 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-size: 2rem;
   font-weight: 200;
-  font-stretch:expanded;
+  font-stretch: expanded;
 }
 
 
 /* ============================ Fence Cards ========================= */
 .fenceCardsContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* create three columns */
-  gap: 20px; /* space between the cards */
-  padding: 20px; /* padding around the grid */
+  grid-template-columns: repeat(3, 1fr);
+  /* create three columns */
+  gap: 20px;
+  /* space between the cards */
+  padding: 20px;
+  /* padding around the grid */
 }
 
 .card {
-  border: 1px solid #ddd; /* border around the card */
-  border-radius: 10px; /* rounded corners */
-  overflow: hidden; /* ensures nothing spills outside the border-radius */
-  text-decoration: none; /* removes underline from links */
-  color: black; /* text color */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth transition for hover effect */
-  display: flex; /* to align image and text nicely */
-  flex-direction: column; /* stack image and text vertically */
+  border: 1px solid #ddd;
+  /* border around the card */
+  border-radius: 10px;
+  /* rounded corners */
+  overflow: hidden;
+  /* ensures nothing spills outside the border-radius */
+  text-decoration: none;
+  /* removes underline from links */
+  color: black;
+  /* text color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* smooth transition for hover effect */
+  display: flex;
+  /* to align image and text nicely */
+  flex-direction: column;
+  /* stack image and text vertically */
 }
 
 .card:hover {
-  transform: translateY(-5px); /* slight raise effect on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* shadow effect on hover */
+  transform: translateY(-5px);
+  /* slight raise effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* shadow effect on hover */
 }
 
 .card h3 {
-  text-align: center; /* center the title text */
-  padding: 10px; /* padding inside the title area */
-  background-color: #f7f7f7; /* background color for the title area */
-  margin: 0; /* remove default margin */
+  text-align: center;
+  /* center the title text */
+  padding: 10px;
+  /* padding inside the title area */
+  background-color: #f7f7f7;
+  /* background color for the title area */
+  margin: 0;
+  /* remove default margin */
 }
 
 .card p {
-  padding: 10px; /* padding inside the description area */
-  margin: 0; /* remove default margin */
-  text-align: center; /* center the description text */
+  padding: 10px;
+  /* padding inside the description area */
+  margin: 0;
+  /* remove default margin */
+  text-align: center;
+  /* center the description text */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .fenceCardsContainer {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns on smaller screens */
+  }
+
+  .info-section-container {
+    display: flex;
+    justify-content: center;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    text-align: center;
+    margin-top: 15%;
+  }
+
+  .info-section-container h2{
+    display: flex;
+    justify-content: center;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    margin-top: 15%;
+    font-size: 2.3rem;
+    text-align: center;
+
+  }
+
+  .info-section-container p {
+    display: flex;
+    justify-content: center;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    font-size: 1.2rem;
+    text-align: center;
+
+  }
+  .info-section-container p:nth-of-type(2) {
+    display: flex;
+    justify-content: center;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    font-size: 1.2rem;
+    text-align: center;
+
   }
 }
 
 @media (max-width: 480px) {
   .fenceCardsContainer {
-    grid-template-columns: 1fr; /* 1 column on very small screens */
+    grid-template-columns: 1fr;
+    /* 1 column on very small screens */
   }
 }

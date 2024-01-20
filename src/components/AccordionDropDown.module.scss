@@ -1,0 +1,144 @@
+.accordion {
+
+    display: flex;
+    flex-direction: column;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    color: black;
+    width: 33%;
+
+    .title {
+        background-color: #f7f7f7;
+        font-family: 'Courier New', Courier, monospace;
+        color: #333;
+        cursor: pointer;
+        padding: 1rem;
+        font-size: 1.25rem;
+        border-bottom: 1px solid #ddd;
+
+        &:hover {
+            background-color: #ececec;
+        }
+    }
+
+    .content {
+        padding: 0 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        background-color: white;
+        font-size: 1rem;
+        line-height: 1.5;
+    
+        &.active {
+          max-height: 1000px; // Adjust as needed
+        }
+    
+        p {
+          margin-bottom: 1rem;
+        }
+      }
+
+      @media (max-width: 800px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 85%;
+    
+    }
+    
+
+    // Mobile optimization
+  @media (max-width: 768px) {
+    .title {
+      padding: 0.75rem;
+      font-size: 1rem;
+    }
+
+    .content {
+      padding: 0 0.75rem;
+    }
+  }
+}
+
+.accordionDiv {
+    display: flex;
+    justify-content: center; 
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    @media (max-width: 800px) {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 85%;
+    
+    }
+}
+
+
+.infoBox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: black;
+    border-radius: 8px;
+    padding: 2rem;
+    height: 50%;
+    width: 33%;
+    align-items: center;
+    margin: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+    .infoTitle {
+      color: #333;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.6rem;
+
+      margin-bottom: 1rem;
+    }
+  
+    .infoDescription {
+      font-size: 1.2rem;
+      font-family: 'Courier New', Courier, monospace;
+
+      margin-bottom: 2rem;
+    }
+  
+    .ctaButton {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+  
+  // Mobile responsiveness
+  @media (max-width: 768px) {
+    .infoBox {
+    //   margin: 1rem auto;
+      padding: 1rem;
+      width: 100%;
+    }
+  
+    .ctaButton {
+      width: 100%;
+    }
+  }
+  

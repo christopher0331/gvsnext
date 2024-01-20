@@ -10,6 +10,16 @@
   }
 }
 
+.content {
+  display: flex;
+  justify-items: center;
+}
+
+.ctaButton {
+  display: flex;
+  justify-content: center;
+}
+
 .fenceTypeCard {
   display: flex;
   justify-content: center;
