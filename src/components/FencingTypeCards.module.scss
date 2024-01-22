@@ -10,6 +10,7 @@
   }
 }
 
+
 .content {
   display: flex;
   justify-items: center;
@@ -235,6 +236,10 @@
   @media (max-width: 600px) {
     font-size: 3.5vw; /* Adjust font size for small screens */
   }
+}
+
+.readMoreButton {
+  color: red;
 }
 
 

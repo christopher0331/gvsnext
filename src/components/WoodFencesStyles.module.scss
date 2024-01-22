@@ -1,0 +1,103 @@
+.woodFenceContainer {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10%;
+    font-size: 2.5vw;
+    color: #333; // a darker color for better readability
+    font-family: 'Arial', sans-serif;
+    max-width: 1200px; // constrain the width for better text readability
+    margin: 0 auto; // center the container
+    padding: 20px;
+    line-height: 1.3; // more readable line height
+
+    h1,
+    h2 {
+        color: #5b5b5b; // softer color for headings
+        text-align: center; // center align the headings
+        margin-bottom: 0.8em; // consistent margin bottom for headings
+        font-weight: normal; // less bold for a modern look
+        font-size: 2.5vw;
+    }
+
+    h1 {
+        font-size: 2.5rem; // larger size for main heading
+        margin-top: 0.3em; // add some space at the top
+    }
+
+    h2 {
+        font-size: 2rem; // slightly smaller size for subheadings
+        margin-top: 1.1em; // add more space above subheadings to distinguish sections
+    }
+
+    p,
+    ul,
+    li {
+        font-size: 1.14rem; // standard font size for text
+        margin-bottom: 0.5em; // consistent space below paragraphs and list items
+    }
+
+    ul {
+        list-style-position: inside; // positions bullet points inside the list item area
+        padding-left: 0; // remove default padding
+    }
+
+    li {
+        margin-left: 1.2em; // indent list items for clarity
+    }
+
+    @media screen and (max-width: 800px) {
+        display: flex;
+        justify-content: center;
+        width: 85vw;
+        h1 {
+            font-size: 2rem; // smaller font size for mobile
+        }
+
+        h2 {
+            font-size: 1.5rem; // smaller font size for mobile
+        }
+
+        p,
+        ul,
+        li {
+            font-size: 0.9rem; // slightly smaller text on mobile for better readability
+        }
+
+        .woodFenceContainer {
+            padding: 10px; // less padding on mobile to use the screen space efficiently
+        }
+    }
+
+
+    @media screen and (max-width: 735px) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        h1 {
+            font-size: 2rem; // smaller font size for mobile
+        }
+
+        h2 {
+            font-size: 1.5rem; // smaller font size for mobile
+        }
+
+        p,
+        ul,
+        li {
+            font-size: 0.9rem; // slightly smaller text on mobile for better readability
+        }
+
+        .woodFenceContainer {
+            padding: 10px; // less padding on mobile to use the screen space efficiently
+        }
+    }
+}
+
+
+.woodFenceContent {
+    font-size: 12.4rem;
+}
+.woodFenceInnerContainer {
+    margin-left: 10%;
+}
