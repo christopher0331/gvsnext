@@ -64,40 +64,21 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
                             GVS Fencing <span className="caret">&#9660;</span>
                         </button>
                         <ul style={isFencingDropdownOpen ? dropdownVisibleStyle : dropdownHiddenStyle}>
-                            <li><Link href="/vinyl-fences" className="block px-4 py-2 hover:bg-green-800">Vinyl Fence</Link></li>
                             <li><Link href="/wood-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Wood Fence</Link></li>
+                            <li><Link href="/vinyl-fences" className="block px-4 py-2 hover:bg-green-800">Vinyl Fence</Link></li>
                             <li><Link href="/chainlink-fence" className="block px-4 py-2 hover:bg-green-800 w-200">Chain Link Fence</Link></li>
-                            <li><Link href="/steel-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Steel Fence</Link></li>
-                            <li><Link href="/railing" className="block px-4 py-2 hover:bg-green-800 w-200">Railing</Link></li>
                         </ul>
 
                     </li>
+
+                    <li><Link href="/portfolio" className="block px-4 py-2 hover:bg-green-800">Portfolio</Link></li>
+
 
                     {/* Outdoor Living Dropdown */}
-                    <li className="relative">
-                        <button onClick={() => setIsOutdoorLivingDropdownOpen(!isOutdoorLivingDropdownOpen)} className="hover:bg-green-700 p-2 rounded w-full text-left text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl transition-transform duration-700 ease-in-out">
-                            GVS Outdoor Living <span className="caret">&#9660;</span>
-                        </button>
-                        <ul style={isOutdoorLivingDropdownOpen ? dropdownVisibleStyle : dropdownHiddenStyle}>
-                            <li><Link href="/vinyl-fences" className="block px-4 py-2 hover:bg-green-800">Vinyl Fence</Link></li>
-                            <li><Link href="/wood-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Wood Fence</Link></li>
-                            <li><Link href="/chain-link-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Chain Link Fence</Link></li>
-                            <li><Link href="/cedar-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Cedar Fence</Link></li>
-                        </ul>
-                    </li>
+                    <li><Link href="/outdoor-living" className="block px-4 py-2 hover:bg-green-800">Outdoor Living</Link></li>
 
                     {/* RollOff Dumpster Living Dropdown */}
-                    <li className="relative">
-                        <button onClick={() => setIsRollOffDumpstersDropdownOpen(!isRollOffDumpstersDropdownOpen)} className="hover:bg-green-700 p-2 rounded w-full text-left text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl transition-transform duration-700 ease-in-out">
-                            GVS RollOff Dumpster <span className="caret">&#9660;</span>
-                        </button>
-                        <ul style={isRollOffDumpstersDropdownOpen ? dropdownVisibleStyle : dropdownHiddenStyle}>
-                            <li><Link href="/vinyl-fences" className="block px-4 py-2 hover:bg-green-800">17 ft Bin </Link></li>
-                            <li><Link href="/wood-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Junk Removal</Link></li>
-                            <li><Link href="/chain-link-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Chain Link Fence</Link></li>
-                            <li><Link href="/cedar-fences" className="block px-4 py-2 hover:bg-green-800 w-200">Cedar Fence</Link></li>
-                        </ul>
-                    </li>
+                    <li><Link href="/roll-off-bins" className="block px-4 py-2 hover:bg-green-800">RollOff Dumpsters</Link></li>
                 </ul>
             </div>
         </div>

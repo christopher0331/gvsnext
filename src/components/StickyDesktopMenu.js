@@ -1,13 +1,11 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
 import { IoIosMail } from 'react-icons/io';
 import { MdPhoneForwarded } from "react-icons/md";
-import { FaSquareFacebook } from "react-icons/fa6";
-import { FaGoogle } from "react-icons/fa";
+import { FaSquareFacebook, FaGoogle } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
-import '../app/globals.css'
 import React from 'react';
+import { Stick } from 'next/font/google';
 
 class ErrorBoundary extends React.Component {
     constructor(props) {
@@ -35,11 +33,9 @@ class ErrorBoundary extends React.Component {
     }
   }
   
-
-export default function DesktopMenu() {
-
-    const [isFencingDropdownOpen, setIsFencingDropdownOpen] = useState(false); // State for Fencing dropdown
-    const [isOutdoorLivingDropdownOpen, setIsOutdoorLivingDropdownOpen] = useState(false); // State for Outdoor Living dropdown
+export default function StickyDesktopMenu() {
+    const [isFencingDropdownOpen, setIsFencingDropdownOpen] = useState(false);
+    const [isOutdoorLivingDropdownOpen, setIsOutdoorLivingDropdownOpen] = useState(false);
     const [isRollOffDumpstersDropdownOpen, setIsRollOffDumpstersDropdownOpen] = useState(false);
 
     const handleDropdownToggle = (dropdownType) => {
@@ -58,54 +54,39 @@ export default function DesktopMenu() {
         }
     };
 
+
+    // Styles updated for white background and visible text
     const menuItemStyle = {
         padding: '.5em',
         borderRadius: '4px',
         textDecoration: 'none',
-        color: 'white',
+        color: 'black', // Changed for visibility against white
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         height: '100%',
         fontSize: '1.8vw',
-        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)', // Example shadow
         zIndex: '150',
-
     };
 
-    // Styles for dropdown menu items
     const dropdownMenuItemStyle = {
-        padding: '1px',
-        borderRadius: '4px',
-        textDecoration: 'none',
-        color: 'white',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100%',
-        fontSize: '1.8vw',
-        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)', // Example shadow
-        zIndex: '150',
-
-
+        ...menuItemStyle, // Inherits the updated menuItemStyle
+        textShadow: 'none', // Remove shadow for clarity on white
     };
 
-    // Updated styles for the menu container to align items to the bottom
     const menuContainerStyle = {
         display: 'flex',
         justifyContent: 'flex-end',
-        alignItems: 'flex-end', // Align items to the bottom
+        alignItems: 'flex-end',
         flexGrow: 0.5,
         gap: '.3vw',
-        color: 'black',
+        color: 'black', // Ensure text color is visible
         zIndex: '150',
     };
 
-
-
     return (
         <ErrorBoundary>
-        <div>
+           <div style={{backgroundColor: 'white'}}>
             <div className="contact-social-container">
                 {/* Email and Phone */}
                 <div className="contact-info">
@@ -174,3 +155,4 @@ export default function DesktopMenu() {
         </ErrorBoundary>
     );
 }
+

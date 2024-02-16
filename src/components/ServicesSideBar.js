@@ -4,11 +4,9 @@ import styles from './ServiceSidebar.module.scss';
 const services = [
   'Wood Fences',
   'Vinyl Fences',
-  'Aluminum Fences',
   'Chain Link Fences',
   'Automatic Gates',
-  'Deck and Patio',
-  'Pergolas',
+  'Outdoor Living',
   'Roll Off Dumpsters'
 ];
 
