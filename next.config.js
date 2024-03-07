@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['greenviewsolutionsimages.s3.us-west-1.amazonaws.com', 'unsplash.com'],
+        domains: ['greenviewsolutionsimages.s3.us-west-1.amazonaws.com', 'unsplash.com', 'ik.imagekit.io'],
       },
 }
 

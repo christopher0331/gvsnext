@@ -24,31 +24,31 @@ const FenceCards = () => {
         },
         {
             title: 'Vinyl Fences',
-            imageSrc: '/vinyl-fence.jpeg', // Replace with your image path
+            imageSrc: 'https://ik.imagekit.io/greenviewsolutions/Portfolio/Project3/FullSize/IMG_1572.JPG?tr=w-700,h-700', // Replace with your image path
             description: 'Vinyl fencing is a low-maintenance and durable option. It comes in various styles and does not fade or rot like wood.',
             link: '#',
         },
         {
-            title: 'Aluminum Fences',
-            imageSrc: '/aluminum-fence.jpeg', // Replace with your image path
+            title: 'Composite Fences',
+            imageSrc: 'https://ik.imagekit.io/greenviewsolutions/Portfolio/Project11/FullSize/project11Picture4.webp?tr=w-700,h-700', // Replace with your image path
             description: 'Aluminum fencing provides a durable and elegant solution, often used for decorative purposes or around pools.',
             link: '#',
         },
         {
-            title: 'Steel Fences',
-            imageSrc: '/steel-fence.jpeg', // Replace with your image path
+            title: 'Custom Fences',
+            imageSrc: 'https://ik.imagekit.io/greenviewsolutions/Portfolio/Project14/FullSize/project1Picture1.webp?tr=w-700,h-700', // Replace with your image path
             description: 'Steel fences are known for their strength and durability, offering high security with a sophisticated look.',
             link: '#',
         },
         {
-            title: "Metal Fences",
-            imageSrc: '/steel-fence.jpeg', // Replace with your image path
+            title: "Corrugated Metal Fences",
+            imageSrc: '/metal-fence.jpeg', // Replace with your image path
             description: 'Composite fencing is made from a blend of wood fibers and plastic polymers, offering the look of wood with enhanced durability.',
             link: '#',
         },
         {
             title: 'Chain Link Fences',
-            imageSrc: '/steel-fence.jpeg', // Replace with your image path
+            imageSrc: 'https://ik.imagekit.io/greenviewsolutions/Portfolio/Project4/FullSize/IMG_1877.JPG?tr=w-700,h-700', // Replace with your image path
             description: 'Chain link fences are a cost-effective and practical choice for securing a property without obstructing views.',
             link: '#',
         },
@@ -63,8 +63,14 @@ const FenceCards = () => {
                 ))}
             </div>
             <div className={styles.buttonContainer}>
-                <Link href="/fence-types" passHref>
-                    <button className={styles.button}>View All Fence Types</button>
+                <Link href="/wood-fences" passHref>
+                    <button className={styles.button}>View Wood Types</button>
+                </Link>
+                <Link href="/vinyl-fences" passHref>
+                    <button className={styles.button}>View Vinyl Types</button>
+                </Link>
+                <Link href="/chainlink-fences" passHref>
+                    <button className={styles.button}>View Metal Types</button>
                 </Link>
             </div>
         </div>

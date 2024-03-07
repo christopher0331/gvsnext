@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import styles from './ServiceSidebar.module.scss';
 
 const services = [
-  'Wood Fences',
-  'Vinyl Fences',
-  'Chain Link Fences',
-  'Automatic Gates',
-  'Outdoor Living',
-  'Roll Off Dumpsters'
+  { name: 'Wood Fences', path: '/wood-fences', portfolioPath: '/portfolio' },
+  { name: 'Vinyl Fences', path: '/vinyl-fences', portfolioPath: '/portfolio' },
+  { name: 'Chain Link Fences', path: '/chainlink-fences', portfolioPath: '/portfolio' },
+  { name: 'Outdoor Living', path: '/outdoor-living', portfolioPath: '/portfolio' },
 ];
 
 const ServicesSidebar = () => {
@@ -21,17 +19,19 @@ const ServicesSidebar = () => {
     <div className={styles.servicesAccordion}>
       <h1 className={styles.header}>Services</h1>
       {services.map((service, index) => (
-        <div key={service} className={styles.serviceItem}>
+        <div key={service.name} className={styles.serviceItem}>
           <button
             className={styles.serviceButton}
             onClick={() => handleClick(index)}
+            aria-expanded={activeIndex === index ? 'true' : 'false'}
           >
-            {service} <span className={activeIndex === index ? styles.plusActive : styles.plus}>+</span>
+            {service.name}
+            <span className={activeIndex === index ? styles.plusActive : styles.plus}>+</span>
           </button>
           {activeIndex === index && (
             <div className={styles.serviceContent}>
-              <p>{service}</p>
-              <p>{service} Gallery</p>
+              <a href={service.path} className={styles.dropdownLink}>{service.name}</a>
+              <a href={service.portfolioPath} className={styles.dropdownLink}>View {service.name}</a>
             </div>
           )}
         </div>

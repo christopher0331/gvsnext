@@ -6,6 +6,9 @@ import styles from '../components/FencingTypeCards.module.scss';
 import stylesWood from '../components/WoodFencesStyles.module.scss';
 import Image from 'next/image';
 import ServicesSidebar from '@/components/ServicesSideBar';
+import CallToActionSection from '@/components/CallToActionSection';
+
+
 export default function ChainLinkFence() {
 
     return (
@@ -34,6 +37,8 @@ export default function ChainLinkFence() {
                 </div>
             </div>
 
+            <CallToActionSection />
+
             <section className={styles.fenceInfoSectionContainer}>
 
                 <div className={styles.fenceInfoSectionTitleAndP} >
@@ -41,6 +46,7 @@ export default function ChainLinkFence() {
                     <p className={styles.fenceInfoSectionTitleAndP}>Your paragraph about GreenView Solutions and chain link fence goes here.</p>
                 </div>
             </section>
+
 
             <section className={styles.fenceTypeCardsContainer}>
                 {ChainLinkFenceTypes.map(fenceType => (
@@ -53,7 +59,7 @@ export default function ChainLinkFence() {
                 ))}
             </section>
 
-            <div className={styles.picketInfoSectionTitleAndP}>
+            {/* <div className={styles.picketInfoSectionTitleAndP}>
                 <h2 className={styles.picketInfoSectionTitleAndP}>Chain Link Fence Benefits</h2>
                 <Image
                     src="/wood-top-finishes.png"
@@ -63,7 +69,7 @@ export default function ChainLinkFence() {
                     width={150}
                     height={150}
                 />
-            </div>
+            </div> */}
             {/* Text - call to action with button to get free estimate */}
             <Footer />
         </div>

@@ -78,7 +78,7 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
                     <li><Link href="/outdoor-living" className="block px-4 py-2 hover:bg-green-800">Outdoor Living</Link></li>
 
                     {/* RollOff Dumpster Living Dropdown */}
-                    <li><Link href="/roll-off-bins" className="block px-4 py-2 hover:bg-green-800">RollOff Dumpsters</Link></li>
+                    {/* <li><Link href="/roll-off-bins" className="block px-4 py-2 hover:bg-green-800">RollOff Dumpsters</Link></li> */}
                 </ul>
             </div>
         </div>

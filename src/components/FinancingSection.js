@@ -16,7 +16,8 @@ const Financing = () => {
                         <li>Customizable payment plans</li>
                         <li>No hidden fees</li>
                     </ul>
-                    <button className={styles.ctaButton}>Apply for Financing</button>
+                    <a href="https://www.ffcapplication.com/?i=XY5sWUYH644gfJ4gujgeBam42nEvNGIYEC5wDNmMe9o=" target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>Apply for Financing</a>
+
                 </div>
                 <div className={styles.imageWrapper}>
                     <Image src="/picket.png" alt="Financing Options" width={500} height={300} />

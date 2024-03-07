@@ -49,9 +49,10 @@ export default function Header({ data }) {
             <div className="header-content" style={{ zIndex: 30, position: 'relative', top: '25%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', color: 'white', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}>
                 <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem' }}>Quality Fencing Solutions for Your Home</h1>
                 <p style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>Expert Craftsmanship, Durable Materials, and Unmatched Service</p>
-                <button style={{ padding: '10px 20px', fontSize: '1.2rem', backgroundColor: 'green', color: 'white', borderRadius: '5px', border: 'none', cursor: 'pointer' }}>
+                <a href="/contact" style={{ padding: '10px 20px', fontSize: '1.2rem', backgroundColor: 'green', color: 'white', borderRadius: '5px', border: 'none', cursor: 'pointer', textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}>
                     Get a Free Quote
-                </button>
+                </a>
+
             </div>
 
         </div>

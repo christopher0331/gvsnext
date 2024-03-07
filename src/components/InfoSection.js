@@ -6,6 +6,7 @@ const InfoSection = () => {
         <div className="info-section-container">
 
             <div className="container">
+                
                 <div className="image-and-text">
 
                     <div className="info-section-collage">
@@ -18,6 +19,7 @@ const InfoSection = () => {
                             style={{ zIndex: 1550 }}
                         />
                     </div>
+
                     <div className="title-and-text">
                         <h2 className="section-title">About Us</h2>
                         <p className="section-subtitle">Colorados Most Trusted Outdoor Living Contractor</p>
@@ -29,7 +31,7 @@ const InfoSection = () => {
 
                 <div className="fencing-options">
 
-                    <button className="option">
+                    {/* <button className="option">
                         <div className="icon-container">
                             <Image
                                 alt="residential fencing icon"
@@ -51,7 +53,7 @@ const InfoSection = () => {
                             />
                         </div>
                         <span>Residential Fencing</span>
-                    </button>
+                    </button> */}
 
 
                 </div>
@@ -59,7 +61,7 @@ const InfoSection = () => {
                 <p className="info-p-section">Take a look at our beautiful vinyl fence options, durable aluminum fencing, quality wood fence projects, and our variety of custom fence options. Youre sure to find the perfect fence!</p>
 
                 <button className="button-class">
-                    <a href="#learn-more" className="learn-more-button">Learn About GreenView Solutions</a>
+                    <a href="/contact" className="learn-more-button">Learn About GreenView Solutions</a>
                 </button>
 
             </div>

@@ -67,7 +67,7 @@ export default function DesktopMenu() {
         alignItems: 'center',
         justifyContent: 'center',
         height: '100%',
-        fontSize: '1.8vw',
+        fontSize: '2.1vw',
         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)', // Example shadow
         zIndex: '150',
 
@@ -83,7 +83,7 @@ export default function DesktopMenu() {
         alignItems: 'center',
         justifyContent: 'center',
         height: '100%',
-        fontSize: '1.8vw',
+        fontSize: '2.1vw',
         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)', // Example shadow
         zIndex: '150',
 
@@ -163,7 +163,7 @@ export default function DesktopMenu() {
                 <Link href="/outdoor-living" className="menu-link-upper" style={menuItemStyle}>Outdoor Living</Link>
 
                 {/* GVS RollOff Dumpsters */}
-                <Link href="/rolloff-dumpsters" className="menu-link-upper" style={menuItemStyle}>RollOff Dumpsters</Link>
+                {/* <Link href="/rolloff-dumpsters" className="menu-link-upper" style={menuItemStyle}>RollOff Dumpsters</Link> */}
 
                 <Link href="/portfolio" className="menu-link-upper" style={menuItemStyle}>Portfolio</Link>
 

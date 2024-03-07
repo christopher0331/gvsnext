@@ -13,7 +13,7 @@ const FencingTypeCards = ({ name, image, description }) => {
 
   return (
     <div className={styles.fenceTypeCard}>
-      <Image src={image} alt={name} height={151} width={150} />
+      <Image src={image} alt={name} height={1000} width={1000} />
       <h3>{name}</h3>
       <p>
         {displayDescription}

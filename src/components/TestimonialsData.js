@@ -1,79 +1,92 @@
 export const testimonialsData = [
     
-      {
-      review: "The service was exceptional! Our new fence looks amazing and has completely transformed our backyard.",
-      author: "Alex Johnson",
-      location: "Austin, TX"
-    },
-    {
-      review: "Absolutely thrilled with the results. The team worked efficiently and with great attention to detail.",
-      author: "Mia Wallace",
-      location: "San Francisco, CA"
-    },
-    {
-      review: "Professional, punctual, and polite. The fencing project was completed on time and budget.",
-      author: "Raj Patel",
-      location: "Chicago, IL"
-    },
-    {
-      review: "Our new vinyl fence is gorgeous and gives us all the privacy we needed. Highly recommend their services!",
-      author: "Sarah Lee",
-      location: "New York, NY"
-    },
-    {
-      review: "Incredible workmanship! The fence installation was smooth and the team left no mess behind.",
-      author: "James Dean",
-      location: "Miami, FL"
-    },
-    {
-      review: "They provided excellent advice on the type of fence to go for, and we couldn't be happier with the choice.",
-      author: "Emily Clark",
-      location: "Seattle, WA"
-    },
-    {
-      review: "I'm impressed by the durability of the materials used. The fence withstands harsh weather with no issues.",
-      author: "John Carter",
-      location: "Denver, CO"
-    },
-    {
-      review: "The team went above and beyond to ensure our custom fence design was brought to life perfectly.",
-      author: "Grace Hooper",
-      location: "Portland, OR"
-    },
-    {
-      review: "Their commitment to customer satisfaction is clear. They made sure we were happy every step of the way.",
-      author: "Omar Asif",
-      location: "Dallas, TX"
-    },
-    {
-      review: "Great value for money. We got a high-quality fence that didn't break the bank.",
-      author: "Sophie Turner",
-      location: "Nashville, TN"
-    },
-    {
-      review: "The installation team was respectful of our property and worked with incredible speed and precision.",
-      author: "Liam Smith",
-      location: "Philadelphia, PA"
-    },
-    {
-      review: "I had a custom request for a fence design and they nailed it! The craftsmanship is top-notch.",
-      author: "Isabella Brown",
-      location: "Phoenix, AZ"
-    },
-    {
-      review: "From the initial consultation to the final installation, the process was seamless and stress-free.",
-      author: "William Taylor",
-      location: "Los Angeles, CA"
-    },
-    {
-      review: "They fixed our old fence and it looks brand new! They saved us a ton of money.",
-      author: "Ava Lee",
-      location: "San Diego, CA"
-    },
-    {
-      review: "The team showed up on time, got the job done quickly, and the quality of work was exceptional.",
-      author: "Noah Wilson",
-      location: "Las Vegas, NV"
-    }
+  {
+    author: 'Kevin Purdy (Trailsnet)',
+    date: '2022-04-21',
+    rating: 5,
+    review:
+      'Greenview Solutions built a sturdy fence for me. Rolando, Jose and Alberto were hard workers and kept me informed each step of the way. They deserve a bonus for their knowledge and professionalism.',
+  },
+  {
+    author: 'Dave Sluiter',
+    date: '2021-12-16',
+    rating: 5,
+    review:
+      'A+ business. They showed up on time, completed the project within the estimated time frame they provided, and delivered a high level of quality with attention to detail. They cleaned up the job site nicely at completion time. Additionally, their bid came in approximately 30% lower than competing bids.',
+  },
+  {
+    author: 'Dalton Morrison',
+    date: '2021-12-09',
+    rating: 5,
+    review:
+      "Couldn’t speak more highly of this company! They truly are the definition of Excellence from top to bottom. If you need a fence these are your guys!",
+  },
+  {
+    author: 'Rudy N.',
+    date: '2021-06-30',
+    rating: 5,
+    review:
+      "Brandon helped us out with a sprinkler problem. It was an extra valve that I was unaware of. It took all of thirty seconds to fix and he charged me ZERO. I Really appreciate his effort and also that he did me a favor when he clearly had a lot of work on his plate elsewhere. Thank you Brandon.",
+  },
+  {
+    author: 'Megan Peterson',
+    date: '2020-12-10',
+    rating: 5,
+    review: 'Their work is exceptional and communication is great would highly recommend them.',
+  },
+  {
+    author: 'Lee Stroud',
+    date: '2020-12-09',
+    rating: 5,
+    review:
+      "They go by the book, which is great because you don't want someone reporting your fence to the local municipality and have to pay a fine. They give excellent customer service, great cleaning up, on top of doing an excellent job. I highly recommend them. I don't know their travelling limit but if you're in the metro area, these are your landscaping people. Others wanted to skimp by, not show up for an estimate, not give an estimate, and some wanted to charge too much. I would hire them back, no hesitation.",
+  },
   ];
   
+
+
+const testimonials = [
+    
+  {
+    name: 'Kevin Purdy (Trailsnet)',
+    date: '2022-04-21',
+    rating: 5,
+    message:
+      'Greenview Solutions built a sturdy fence for me. Rolando, Jose and Alberto were hard workers and kept me informed each step of the way. They deserve a bonus for their knowledge and professionalism.',
+  },
+  {
+    name: 'Dave Sluiter',
+    date: '2021-12-16',
+    rating: 5,
+    message:
+      'A+ business. They showed up on time, completed the project within the estimated time frame they provided, and delivered a high level of quality with attention to detail. They cleaned up the job site nicely at completion time. Additionally, their bid came in approximately 30% lower than competing bids.',
+  },
+  {
+    name: 'Dalton Morrison',
+    date: '2021-12-09',
+    rating: 5,
+    message:
+      "Couldn’t speak more highly of this company! They truly are the definition of Excellence from top to bottom. If you need a fence these are your guys!",
+  },
+  {
+    name: 'Rudy N.',
+    date: '2021-06-30',
+    rating: 5,
+    message:
+      "Brandon helped us out with a sprinkler problem. It was an extra valve that I was unaware of. It took all of thirty seconds to fix and he charged me ZERO. I Really appreciate his effort and also that he did me a favor when he clearly had a lot of work on his plate elsewhere. Thank you Brandon.",
+  },
+  {
+    name: 'Megan Peterson',
+    date: '2020-12-10',
+    rating: 5,
+    message: 'Their work is exceptional and communication is great would highly recommend them.',
+  },
+  {
+    name: 'Lee Stroud',
+    date: '2020-12-09',
+    rating: 5,
+    message:
+      "They go by the book, which is great because you don't want someone reporting your fence to the local municipality and have to pay a fine. They give excellent customer service, great cleaning up, on top of doing an excellent job. I highly recommend them. I don't know their travelling limit but if you're in the metro area, these are your landscaping people. Others wanted to skimp by, not show up for an estimate, not give an estimate, and some wanted to charge too much. I would hire them back, no hesitation.",
+  },
+  // Add more testimonials here if needed
+];

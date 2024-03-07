@@ -340,17 +340,6 @@ body {
   padding-bottom: 2rem;
   margin-bottom: 5rem;
 }
-.image-and-text{
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 5%;
-}
-
-.title-and-text{
-  display: flex;
-  flex-direction: column;
-  width:75%;
-}
 
 .info-section-container {
   display: flex;
@@ -358,7 +347,7 @@ body {
   color: black;
   width: 45%;
   font-size: 1.2rem;
-  margin-top: 15%;
+  margin-top: 5%;
   padding-top: 3%;
   padding-left: 3%;
   width: 100%;
@@ -367,10 +356,27 @@ body {
 
 }
 
+.image-and-text{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  /* padding-bottom: 5%; */
+}
+
+.title-and-text{
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1em;
+  width:75%;
+}
+
+
+
 .info-section-collage {
   position: relative;
-  height: 300px;
-  width: 450px;
+  height: 25rem;
+  width: 25rem;
   padding-right: 3%;
 }
 
@@ -387,8 +393,6 @@ body {
   color: black;
   display: flex;
   justify-content: left;
-  margin-top: 2rem;
-  margin: 5% 10%;
 }
 
 .option {
@@ -566,3 +570,100 @@ body {
 
 
 
+
+/* Base styles */
+
+/* Hero Section */
+.hero-section {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 2em;
+}
+
+.hero-image-placeholder {
+  background-color: #ddd;
+  height: 200px;
+  margin-bottom: 1em;
+}
+
+/* Introduction Section */
+.introduction-section {
+  padding: 2em;
+}
+
+/* Advantages Section */
+.advantages-section {
+  background-color: #e9ecef;
+  padding: 2em;
+}
+
+.advantages-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.advantages-section li {
+  margin-bottom: 1em;
+  background: #f8f9fa;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+/* Services Section */
+.services-section {
+  padding: 2em;
+}
+
+.service {
+  margin-bottom: 2em;
+}
+
+.image-placeholder {
+  background-color: #ddd;
+  height: 150px;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background-color: #f8f9fa;
+  padding: 2em;
+  text-align: center;
+}
+
+/* Call to Action Section */
+.cta-section {
+  padding: 2em;
+  text-align: center;
+}
+
+.cta-section button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75em 1.5em;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero-image-placeholder, .image-placeholder {
+    height: 150px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.25em;
+  }
+
+  .service, .advantages-section li, .cta-section button {
+    margin: 0.5em;
+    padding: 0.5em;
+  }
+}

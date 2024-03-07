@@ -18,17 +18,18 @@ const Footer = () => {
                 <div className={styles.links}>
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Wood Fences</a></li>
-                        <li><a href="#">Outdoor Living</a></li>
-                        <li><a href="#">Rolloff Dumpsters</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/wood-fences">Wood Fences</a></li>
+                        <li><a href="/vinyl-fences">Vinyl Fences</a></li>
+                        <li><a href="/chainlink-fences">Vinyl Fences</a></li>
+                        <li><a href="/outdoor-living">Outdoor Living</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/portfolio">Portfolio</a></li>
                     </ul>
                 </div>
                 <div className={styles.contact}>
                     <h3>Contact Us</h3>
-                    <p>Email: contact@fencingpros.com</p>
+                    <p>Email: admin@gvsco.net</p>
                     <p>Phone: (303)358-8168</p>
                     <p>Address: 12650 W 64th Ave Unit E-149, Arvada, CO 80004</p>
                     <p>Address: 6525 Gunpark Dr Ste 370-110, Boulder, CO 80301</p>

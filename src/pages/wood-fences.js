@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FencingTypeCards from '@/components/FencingTypeCards';
@@ -8,7 +9,7 @@ import styles from '../components/FencingTypeCards.module.scss';
 import stylesWood from '../components/WoodFencesStyles.module.scss';
 import ServiceSidebar from '../components/ServicesSideBar.js';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import CallToActionSection from '@/components/CallToActionSection';
 
 export default function Fencing() {
     const [isReadMore, setIsReadMore] = useState(true);
@@ -64,6 +65,7 @@ export default function Fencing() {
 
 
             </div>
+                <CallToActionSection />
             {/* Opening Paragraph */}
             {/* Pic */} {/* Paragraph about GrrerenView Solutions and wood fence*/}
             <section className={styles.fenceInfoSectionContainer}>
@@ -84,6 +86,7 @@ export default function Fencing() {
                     />
                 ))}
             </section>
+{/*             
 
             <div className={styles.picketInfoSectionTitleAndP}>
                 <h2 className={styles.picketInfoSectionTitleAndP}>W</h2>
@@ -97,7 +100,9 @@ export default function Fencing() {
                     height={250} // Set
                 />
             </div>
+            
 
+            
             <section className={styles.picketTypeCardsContainer}>
                 {PicketStyles.map(picketStyle => (
                     <PicketTypeCard
@@ -107,11 +112,8 @@ export default function Fencing() {
                         description={picketStyle.description}
                     />
                 ))}
-            </section>
+            </section> */}
 
-
-            {/* Text - call to action with button to get free estimate */}
-            {/* Call to Action */}
 
             {/* Picket Types and Design Types  -  3 card with three pickets type - and then below that 3 top types (Concave, convex, lattice tops)*/}
             <section>
