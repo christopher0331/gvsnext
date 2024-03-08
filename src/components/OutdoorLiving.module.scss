@@ -1,0 +1,90 @@
+// OutdoorLiving.module.scss
+
+.outdoorLivingContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  color: darkGreen;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2em;
+  font-size: 3em; // Smaller size for better mobile visibility
+  font-family: fantasy;
+}
+
+.content {
+  display: flex;
+  flex-direction: column; // Stack vertically on small screens
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.imageContainer {
+  width: 44rem; // Full width on small screens
+  margin: 0; // Remove margin
+
+  img {
+    width: 55em; // Make image responsive
+    height: auto; // Maintain aspect ratio
+    border: 3px solid darkgreen; // Slightly thinner border
+    border-radius: 10px; // Adjusted border-radius
+  }
+}
+
+.textSection {
+  align-items: center;
+  margin: 1em; // Reduced margin
+  padding: 0 1em; // Padding for text content
+
+  h2 {
+    font-size: 1.5em; // Adjusted heading size
+    margin-bottom: 0.5em; // Reduced bottom margin
+  }
+
+  p {
+    width: 100%; // Full width text
+    font-size: 0.9em; // Smaller font size
+  }
+}
+
+// Media queries for larger screens
+@media (min-width: 768px) {
+  .title {
+    font-size: 5em; // Larger size for bigger screens
+  }
+
+  .content {
+    flex-direction: row; // Row direction for larger screens
+    justify-content: space-around;
+  }
+
+  .imageContainer {
+    margin-left: 4em;
+    width: 210%;
+
+    img {
+      border: 4px solid darkgreen;
+      border-radius: 14px;
+    }
+  }
+
+  .textSection {
+    align-items: center;
+    justify-content: center;
+    margin: 2em 4em;
+
+    h2 {
+      font-size: 25px;
+    }
+
+    p {
+      width: 75%;
+    }
+  }
+}

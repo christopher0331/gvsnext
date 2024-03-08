@@ -9,6 +9,8 @@ import stylesWood from '../components/WoodFencesStyles.module.scss';
 import Image from 'next/image';
 import ServicesSidebar from '@/components/ServicesSideBar';
 import CallToActionSection from '@/components/CallToActionSection.js';
+import SvgComponent from '@/components/SvgComponent';
+
 export default function VinylFencing() {
 
     // Array of fence types, images and descriptions can be added here
@@ -64,6 +66,9 @@ export default function VinylFencing() {
                 ))}
             </section>
             <CallToActionSection />
+            
+            <SvgComponent />
+
             <Footer />
         </div>
     )

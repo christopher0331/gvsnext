@@ -7,7 +7,7 @@ import stylesWood from '../components/WoodFencesStyles.module.scss';
 import Image from 'next/image';
 import ServicesSidebar from '@/components/ServicesSideBar';
 import CallToActionSection from '@/components/CallToActionSection';
-
+import SvgComponent from '@/components/SvgComponent';
 
 export default function ChainLinkFence() {
 
@@ -71,6 +71,10 @@ export default function ChainLinkFence() {
                 />
             </div> */}
             {/* Text - call to action with button to get free estimate */}
+            <CallToActionSection />
+
+            <SvgComponent />
+
             <Footer />
         </div>
     )

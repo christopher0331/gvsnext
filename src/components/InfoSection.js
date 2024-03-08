@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import '../app/globals.css'; // Assuming this is where you have your global styles
+import Link from 'next/link';
 
 const InfoSection = () => {
     return (
@@ -61,7 +62,7 @@ const InfoSection = () => {
                 <p className="info-p-section">Take a look at our beautiful vinyl fence options, durable aluminum fencing, quality wood fence projects, and our variety of custom fence options. Youre sure to find the perfect fence!</p>
 
                 <button className="button-class">
-                    <a href="/contact" className="learn-more-button">Learn About GreenView Solutions</a>
+                    <Link href="/contact" className="learn-more-button">Learn About GreenView Solutions </Link>
                 </button>
 
             </div>

@@ -54,10 +54,7 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
 
                 <ul className="space-y-2">
                     <li><Link href="/" className="block px-4 py-2 hover:bg-green-800">Home</Link></li>
-                    <li><Link href="/about" className="block px-4 py-2 hover:bg-green-800">About Us</Link></li>
-                    <li><Link href="/contact" className="block px-4 py-2 hover:bg-green-800">Contact Us</Link></li>
-
-
+                  
                     {/* Fencing Dropdown */}
                     <li className="relative">
                         <button onClick={() => setIsFencingDropdownOpen(!isFencingDropdownOpen)} className="hover:bg-green-700 p-2 rounded w-full text-left text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
@@ -76,6 +73,9 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
 
                     {/* Outdoor Living Dropdown */}
                     <li><Link href="/outdoor-living" className="block px-4 py-2 hover:bg-green-800">Outdoor Living</Link></li>
+                    <li><Link href="/about" className="block px-4 py-2 hover:bg-green-800">About Us</Link></li>
+                    <li><Link href="/contact" className="block px-4 py-2 hover:bg-green-800">Contact Us</Link></li>
+
 
                     {/* RollOff Dumpster Living Dropdown */}
                     {/* <li><Link href="/roll-off-bins" className="block px-4 py-2 hover:bg-green-800">RollOff Dumpsters</Link></li> */}
