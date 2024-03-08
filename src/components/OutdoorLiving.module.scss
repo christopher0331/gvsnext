@@ -26,7 +26,6 @@
 }
 
 .imageContainer {
-  width: 44rem; // Full width on small screens
   margin: 0; // Remove margin
 
   img {
@@ -43,15 +42,18 @@
   padding: 0 1em; // Padding for text content
 
   h2 {
-    font-size: 1.5em; // Adjusted heading size
+    font-size: 2.5em; // Adjusted heading size
     margin-bottom: 0.5em; // Reduced bottom margin
   }
-
+  h3 {
+    font-size: 4em;
+  }
   p {
     width: 100%; // Full width text
     font-size: 0.9em; // Smaller font size
   }
 }
+
 
 // Media queries for larger screens
 @media (min-width: 768px) {
@@ -66,7 +68,7 @@
 
   .imageContainer {
     margin-left: 4em;
-    width: 210%;
+    // width: 210%;
 
     img {
       border: 4px solid darkgreen;
@@ -80,10 +82,11 @@
     margin: 2em 4em;
 
     h2 {
-      font-size: 25px;
+      font-size: 1.5rem;
     }
 
     p {
+      
       width: 75%;
     }
   }

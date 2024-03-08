@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import styles from '../components/OutdoorLiving.module.scss';
 import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
 import CallToActionSection from '@/components/CallToActionSection';
 import SvgComponent from '@/components/SvgComponent';
+import styles from '../components/OutdoorLiving.module.scss';
 
 export default function OutdoorLiving() {
   // State to manage the expansion of text sections
