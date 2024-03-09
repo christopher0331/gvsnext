@@ -33,7 +33,7 @@ const InfoSection = () => {
                     {/* Buttons and other content can be added here, with className applied similarly */}
                 </div>
 
-                <p className={styles['info-p-section']}>&quot;Take a look at our beautiful vinyl fence options, durable aluminum fencing, quality wood fence projects, and our variety of custom fence options. You are sure to find the perfect fence!</p>
+                <p className={styles['info-p-section']}>Take a look at our beautiful vinyl fence options, durable aluminum fencing, quality wood fence projects, and our variety of custom fence options. You are sure to find the perfect fence!</p>
 
                 <button className={styles['button-class']}>
                     <Link href="/contact" className={styles['learn-more-button']}>Learn About GreenView Solutions </Link>
