@@ -1,16 +1,17 @@
+// Import your SCSS module at the top of your file
+import styles from './InfoSection.module.scss';
 import Image from 'next/image';
-import '../app/globals.css'; // Assuming this is where you have your global styles
 import Link from 'next/link';
 
 const InfoSection = () => {
     return (
-        <div className="info-section-container">
+        <div className={styles['info-section-container']}>
 
-            <div className="container">
+            <div className={styles.container}>
                 
-                <div className="image-and-text">
+                <div className={styles['image-and-text']}>
 
-                    <div className="info-section-collage">
+                    <div className={styles['info-section-collage']}>
                         <Image
                             src="https://greenviewsolutionsimages.s3.us-west-1.amazonaws.com/gvsnextimages/globalimages/Untitled+design+(5).png"
                             alt="info-section-truck-image"
@@ -21,48 +22,21 @@ const InfoSection = () => {
                         />
                     </div>
 
-                    <div className="title-and-text">
-                        <h2 className="section-title">About Us</h2>
-                        <p className="section-subtitle">Colorados Most Trusted Outdoor Living Contractor</p>
-                        <p className="info-p-section">GreenView Solutions elevates your home with luxurious outdoor living experiences. Immerse yourself in elegance and comfort in your own backyard, where every moment becomes a special memory.</p>
+                    <div className={styles['title-and-text']}>
+                        <h2 className={styles['section-title']}>About Us</h2>
+                        <p className={styles['section-subtitle']}>Colorado's Most Trusted Outdoor Living Contractor</p>
+                        <p className={styles['info-p-section']}>GreenView Solutions elevates your home with luxurious outdoor living experiences. Immerse yourself in elegance and comfort in your own backyard, where every moment becomes a special memory.</p>
                     </div>
                 </div>
 
-
-
-                <div className="fencing-options">
-
-                    {/* <button className="option">
-                        <div className="icon-container">
-                            <Image
-                                alt="residential fencing icon"
-                                src="https://greenviewsolutionsimages.s3.us-west-1.amazonaws.com/gvsnextimages/globalimages/CommercialFenceLogo+(1).png"
-                                width={240}
-                                height={240}
-                            />
-                        </div>
-                        <span>Commercial Fencing</span>
-                    </button>
-
-                    <button className="option">
-                        <div className="icon-container">
-                            <Image
-                                alt="commercial fencing icons"
-                                src="https://greenviewsolutionsimages.s3.us-west-1.amazonaws.com/gvsnextimages/globalimages/ResidentialFenceIcon.png"
-                                width={240}
-                                height={240}
-                            />
-                        </div>
-                        <span>Residential Fencing</span>
-                    </button> */}
-
-
+                <div className={styles['fencing-options']}>
+                    {/* Buttons and other content can be added here, with className applied similarly */}
                 </div>
 
-                <p className="info-p-section">&quot;Take a look at our beautiful vinyl fence options, durable aluminum fencing, quality wood fence projects, and our variety of custom fence options. You&apos;re sure to find the perfect fence!&quot;</p>
+                <p className={styles['info-p-section']}>&quot;Take a look at our beautiful vinyl fence options, durable aluminum fencing, quality wood fence projects, and our variety of custom fence options. You&apos;re sure to find the perfect fence!&quot;</p>
 
-                <button className="button-class">
-                    <Link href="/contact" className="learn-more-button">Learn About GreenView Solutions </Link>
+                <button className={styles['button-class']}>
+                    <Link href="/contact" className={styles['learn-more-button']}>Learn About GreenView Solutions </Link>
                 </button>
 
             </div>
