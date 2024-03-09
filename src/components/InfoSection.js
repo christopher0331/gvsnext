@@ -59,7 +59,7 @@ const InfoSection = () => {
 
                 </div>
 
-                <p className="info-p-section">Take a look at our beautiful vinyl fence options, durable aluminum fencing, quality wood fence projects, and our variety of custom fence options. You're sure to find the perfect fence!</p>
+                <p className="info-p-section">Take a look at our beautiful vinyl fence options, durable aluminum fencing, quality wood fence projects, and our variety of custom fence options. "You're" sure to find the perfect fence!</p>
 
                 <button className="button-class">
                     <Link href="/contact" className="learn-more-button">Learn About GreenView Solutions </Link>

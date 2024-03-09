@@ -1,11 +1,12 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Navbar from './Navbar.js';
+import { useRouter } from 'next/router'; // Import useRouter from next/router
 
-export default function Header({ data }) {
+export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
+    const router = useRouter(); // Use the useRouter hook to access route information
 
-    // Handle scroll event
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 50) {
@@ -20,10 +21,12 @@ export default function Header({ data }) {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Extract the pathname from the router object
+    const pageName = router.pathname.split('/').pop();
+
     return (
         <div className="relative header-container" style={{ height: '100vh' }}>
 
-            {/* Move the Navbar and its Suspense above other content */}
             <Navbar />
 
             <Image
@@ -46,8 +49,11 @@ export default function Header({ data }) {
                 zIndex: 15
             }}></div>
 
+            {/* Display the current page name dynamically */}
             <div className="header-content" style={{ zIndex: 30, position: 'relative', top: '25%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', color: 'white', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}>
-                <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem' }}>Quality Fencing Solutions for Your Home</h1>
+                <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem' }}>
+                    {pageName ? pageName.replace(/-/g, ' ').toUpperCase() : 'WELCOME'} {/* Replace hyphens with spaces and capitalize */}
+                </h1>
                 <p style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>Expert Craftsmanship, Durable Materials, and Unmatched Service</p>
                 <button style={{ padding: '10px 20px', fontSize: '1.2rem', backgroundColor: 'green', color: 'white', borderRadius: '5px', border: 'none', cursor: 'pointer' }}>
                     Get a Free Quote
