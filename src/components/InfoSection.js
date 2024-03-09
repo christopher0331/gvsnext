@@ -24,7 +24,7 @@ const InfoSection = () => {
 
                     <div className={styles['title-and-text']}>
                         <h2 className={styles['section-title']}>About Us</h2>
-                        <p className={styles['section-subtitle']}>Colorado's Most Trusted Outdoor Living Contractor</p>
+                        <p className={styles['section-subtitle']}>&quot;Colorado&apos;s Most Trusted Outdoor Living Contractor&quot;</p>
                         <p className={styles['info-p-section']}>GreenView Solutions elevates your home with luxurious outdoor living experiences. Immerse yourself in elegance and comfort in your own backyard, where every moment becomes a special memory.</p>
                     </div>
                 </div>
@@ -33,7 +33,7 @@ const InfoSection = () => {
                     {/* Buttons and other content can be added here, with className applied similarly */}
                 </div>
 
-                <p className={styles['info-p-section']}>Take a look at our beautiful vinyl fence options, durable aluminum fencing, quality wood fence projects, and our variety of custom fence options. You are sure to find the perfect fence!</p>
+                <p className={styles['info-p-section']}>&quot;Take a look at our beautiful vinyl fence options, durable aluminum fencing, quality wood fence projects, and our variety of custom fence options. You&apos;re sure to find the perfect fence!&quot;</p>
 
                 <button className={styles['button-class']}>
                     <Link href="/contact" className={styles['learn-more-button']}>Learn About GreenView Solutions </Link>
