@@ -8,10 +8,13 @@
     margin-top: 5em;
 
     .footerContent {
-        // display: flex;
-        // justify-content: space-between;
-        // flex-wrap: wrap;
-
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .links{
+            display: flex;
+            flex-direction: column;
+        }
         div {
             margin: 10px;
             flex: 1;

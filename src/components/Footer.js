@@ -18,13 +18,13 @@ export default function Footer() {
                 <div className={styles.links}>
                     <h3>Quick Links</h3>
                     <ul>
-                        <Link href="/">Home</Link>
-                        <Link href="/wood-fences">Wood Fences</Link>
-                        <Link href="/vinyl-fences">Vinyl Fences</Link>
-                        <Link href="/chainlink-fences">Chain Link Fences</Link>
-                        <Link href="/outdoor-living">Outdoor Living</Link>
-                        <Link href="/contact">Contact Us</Link>
-                        <Link href="/portfolio">Portfolio</Link>
+                        <li><Link href="/">Home</Link></li>
+                        <li><Link href="/wood-fences">Wood Fences</Link></li>
+                        <li><Link href="/vinyl-fences">Vinyl Fences</Link></li>
+                        <li><Link href="/chainlink-fences">Chain Link Fences</Link></li>
+                        <li><Link href="/outdoor-living">Outdoor Living</Link></li>
+                        <li><Link href="/contact">Contact Us</Link></li>
+                        <li><Link href="/portfolio">Portfolio</Link></li>
                     </ul>
                 </div>
 
