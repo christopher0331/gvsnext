@@ -5,12 +5,14 @@ import '../app/portfolio.css'
 import axios from 'axios';
 import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
+import CoolLoader from '../components/CoolLoader.js';
 
 AWS.config.credentials = new AWS.Credentials();
 const S3Bucket = () => {
   const [projectImages, setProjectImages] = useState([]);
   const [show, setShow] = useState(false);
   const [currentProjectId, setCurrentProjectId] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const handleShow = (id) => {
     setCurrentProjectId(id);
@@ -26,7 +28,6 @@ const S3Bucket = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get("https://379pj43m47.execute-api.us-west-2.amazonaws.com/default/gvsGetCreds")
-        console.log('============> ', response);
         AWS.config.update({
           region: 'us-west-2',
           accessKeyId: response.data.accessKeyId,
@@ -62,7 +63,7 @@ const S3Bucket = () => {
       }
     }
 
-    fetchData();
+    fetchData().then(() => setLoading(false));
   }, []);
 
 
@@ -70,37 +71,41 @@ const S3Bucket = () => {
 
   return (
     <div>
-        <Header />
-      <ul>
-        <div id="primaryBox">
-          <div className="portfolioTitle">
-            <h1 style={{color: 'black'}}>Portfolio</h1>
-          </div>
-          <div className="portfolioBlock">
-            {projectImages.map((project) => (
-              <div key={project[0].id}>
-                <div className="portfolioProjects">
-                  <img src={project[0].url} className="portfolioImage" alt="" />
-                  <div className="portfolioBody">
-                    <div onClick={() => handleShow(project[0].id)}>
-                      <div className="btn2 from-left2">View Project</div>
+      <Header />
+      {loading ? (
+        <CoolLoader />
+      ) : (
+        <ul>
+          <div id="primaryBox">
+            <div className="portfolioTitle">
+              <h1 style={{ color: 'black' }}>Portfolio</h1>
+            </div>
+            <div className="portfolioBlock">
+              {projectImages.map((project) => (
+                <div key={project[0].id}>
+                  <div className="portfolioProjects">
+                    <img src={project[0].url} className="portfolioImage" alt="" />
+                    <div className="portfolioBody">
+                      <div onClick={() => handleShow(project[0].id)}>
+                        <div className="btn2 from-left2">View Project</div>
+                      </div>
+                      {project.length > 0 && (
+                        <CustomModal
+                          show={show}
+                          handleClose={handleClose}
+                          currentProjectId={currentProjectId}
+                          projectNumber={project[0].id}
+                          images={project.map((image) => image.url)}
+                        />
+                      )}
                     </div>
-                    {project.length > 0 && (
-                      <CustomModal
-                        show={show}
-                        handleClose={handleClose}
-                        currentProjectId={currentProjectId}
-                        projectNumber={project[0].id}
-                        images={project.map((image) => image.url)}
-                      />
-                    )}
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </ul>
+        </ul>
+      )}
 
       <Footer />
     </div>

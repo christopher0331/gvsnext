@@ -20,7 +20,7 @@ const Financing = () => {
 
                 </div>
                 <div className={styles.imageWrapper}>
-                    <Image src="/picket.png" alt="Financing Options" width={500} height={300} />
+                    <Image src="/wStandardLarge.png" alt="Financing Options" width={500} height={300} />
                 </div>
             </div>
         </div>
