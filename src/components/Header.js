@@ -56,10 +56,13 @@ export default function Header() {
                     {pageName ? pageName.replace(/-/g, ' ').toUpperCase() : 'WELCOME'}
                 </h1>
                 <p style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>Expert Craftsmanship, Durable Materials, and Unmatched Service</p>
-                <button style={{ padding: '10px 20px', fontSize: '1.2rem', backgroundColor: 'green', color: 'white', borderRadius: '5px', border: 'none', cursor: 'pointer' }}>
-                    Get a Free Quote
-                </button>
+                <a href="/contact" style={{ textDecoration: 'none' }}>
+                    <button style={{ padding: '10px 20px', fontSize: '1.2rem', backgroundColor: 'green', color: 'white', borderRadius: '5px', border: 'none', cursor: 'pointer' }}>
+                        Get a Free Quote
+                    </button>
+                </a>
             </div>
+
 
         </div>
     );
