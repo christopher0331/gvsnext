@@ -4,6 +4,10 @@ import Image from 'next/image';
 import DesktopMenu from './DesktopMenu';
 import SidebarMenu from './SidebarMenu';
 import React from 'react';
+import { IoIosMail } from 'react-icons/io';
+import { MdPhoneForwarded } from "react-icons/md";
+import styles from './Navbar.module.scss';  
+
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -75,9 +79,20 @@ export default function Navbar({ data }) {
   return (
     <ErrorBoundary>
       <header className="navbar">
+        <div className={styles.contactInfo}>
+          <a href="mailto:admin@gvsco.net" className={styles.emailPhoneHover}>
+            <IoIosMail className="icon-hover" />
+            <span>admin@gvsco.net</span>
+          </a>
+          <a href="tel:3033588168" className={styles.emailPhoneHover}>
+            <MdPhoneForwarded className="icon-hover" />
+            <span>(303)358-8168</span>
+          </a>
+        </div>
 
         {/* Existing Nav Content */}
         <nav className={`main-nav ${isScrolled ? 'scrolled' : ''}`}>
+
           <div className="nav-content" style={{
             display: 'flex',
             alignItems: 'flex-end',
@@ -91,7 +106,7 @@ export default function Navbar({ data }) {
                 alt="GVS Logo"
                 height={250}
                 width={250}
-                priority 
+                priority
               />
 
             </div>
@@ -122,6 +137,7 @@ export default function Navbar({ data }) {
               toggleFencingDropdown={toggleFencingDropdown}
             />
           )}
+
         </nav>
       </header>
     </ErrorBoundary>

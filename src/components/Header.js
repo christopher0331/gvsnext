@@ -27,6 +27,7 @@ export default function Header() {
     return (
         <div className="relative header-container" style={{ height: '100vh' }}>
 
+
             <Navbar />
 
             <Image
@@ -52,7 +53,7 @@ export default function Header() {
             {/* Display the current page name dynamically */}
             <div className="header-content" style={{ zIndex: 30, position: 'relative', top: '25%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', color: 'white', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}>
                 <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-                    {pageName ? pageName.replace(/-/g, ' ').toUpperCase() : 'WELCOME'} {/* Replace hyphens with spaces and capitalize */}
+                    {pageName ? pageName.replace(/-/g, ' ').toUpperCase() : 'WELCOME'}
                 </h1>
                 <p style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>Expert Craftsmanship, Durable Materials, and Unmatched Service</p>
                 <button style={{ padding: '10px 20px', fontSize: '1.2rem', backgroundColor: 'green', color: 'white', borderRadius: '5px', border: 'none', cursor: 'pointer' }}>

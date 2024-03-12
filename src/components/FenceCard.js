@@ -20,37 +20,37 @@ const FenceCards = () => {
             title: 'Wood Fences',
             imageSrc: '/wood-fence.jpeg', // Replace with your image path
             description: 'Wood fences are a timeless choice, offering a natural and traditional aesthetic. They are highly customizable in terms of size, shape, and color.',
-            link: '#',
+            link: '/portfolio',
         },
         {
             title: 'Vinyl Fences',
             imageSrc: 'https://ik.imagekit.io/greenviewsolutions/Portfolio/Project3/FullSize/IMG_1572.JPG?tr=w-700,h-700', // Replace with your image path
             description: 'Vinyl fencing is a low-maintenance and durable option. It comes in various styles and does not fade or rot like wood.',
-            link: '#',
+            link: '/portfolio',
         },
         {
             title: 'Composite Fences',
             imageSrc: 'https://ik.imagekit.io/greenviewsolutions/Portfolio/Project11/FullSize/project11Picture4.webp?tr=w-700,h-700', // Replace with your image path
             description: 'Aluminum fencing provides a durable and elegant solution, often used for decorative purposes or around pools.',
-            link: '#',
+            link: '/portfolio',
         },
         {
             title: 'Custom Fences',
             imageSrc: 'https://ik.imagekit.io/greenviewsolutions/Portfolio/Project14/FullSize/project1Picture1.webp?tr=w-700,h-700', // Replace with your image path
             description: 'Steel fences are known for their strength and durability, offering high security with a sophisticated look.',
-            link: '#',
+            link: '/portfolio',
         },
         {
             title: "Corrugated Metal Fences",
             imageSrc: '/metal-fence.jpeg', // Replace with your image path
             description: 'Composite fencing is made from a blend of wood fibers and plastic polymers, offering the look of wood with enhanced durability.',
-            link: '#',
+            link: '/portfolio',
         },
         {
             title: 'Chain Link Fences',
             imageSrc: 'https://ik.imagekit.io/greenviewsolutions/Portfolio/Project4/FullSize/IMG_1877.JPG?tr=w-700,h-700', // Replace with your image path
             description: 'Chain link fences are a cost-effective and practical choice for securing a property without obstructing views.',
-            link: '#',
+            link: '/portfolio',
         },
     ];
 
