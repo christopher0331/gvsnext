@@ -8,6 +8,7 @@ import Accordion from './AccordionDropDown.js';
 import AccordionInformation from './AccordionInformation.js';
 import styles from './AccordionDropDown.module.scss';
 import Head from 'next/head';
+import CallToActionSection from './CallToActionSection.js';
 
 const Homepage = () => {
     return (
@@ -25,7 +26,9 @@ const Homepage = () => {
                 <FenceCards />
                 <Testimonials testimonials={testimonialsData} />
                 <FinancingSection />
-
+                <div style={{marginBottom: '5%'}}>
+                    <CallToActionSection />
+                </div>
                 <div className={styles.accordionDiv}>
                     <AccordionInformation />
                     <Accordion />

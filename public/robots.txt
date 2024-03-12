@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://greenviewsolutions.net
+
+# Sitemaps
+Sitemap: https://greenviewsolutions.net/sitemap.xml
+Sitemap: https://greenviewsolutions.net/my-custom-sitemap-1.xml
+Sitemap: https://greenviewsolutions.net/my-custom-sitemap-2.xml
