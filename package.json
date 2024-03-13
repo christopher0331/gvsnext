@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate-sitemap": "next-sitemap"
+    "generate-sitemap": "next-sitemap",
 
+>>>>>>> 7269011408834311c23a1ce33cce344296345b81
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
@@ -16,7 +17,10 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@iconscout/react-unicons": "^2.0.2",
+    "aws-sdk": "^2.1567.0",
+    "axios": "^1.6.7",
     "chart.js": "^4.4.1",
+    "chartjs": "^0.3.24",
     "chartjs-plugin-datalabels": "^2.2.0",
     "emailjs-com": "^3.2.0",
     "fs": "0.0.1-security",

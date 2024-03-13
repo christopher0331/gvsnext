@@ -21,6 +21,8 @@ module.exports = {
         lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
       };
     },
-    // Additional options...
   };
   
+  };
+  
+>>>>>>> 7269011408834311c23a1ce33cce344296345b81
