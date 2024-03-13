@@ -21,7 +21,7 @@ export default function Footer() {
                         <li><Link href="/">Home</Link></li>
                         <li><Link href="/wood-fences">Wood Fences</Link></li>
                         <li><Link href="/vinyl-fences">Vinyl Fences</Link></li>
-                        <li><Link href="/chainlink-fences">Chain Link Fences</Link></li>
+                        <li><Link href="/chainlink-fence">Chain Link Fences</Link></li>
                         <li><Link href="/outdoor-living">Outdoor Living</Link></li>
                         <li><Link href="/contact">Contact Us</Link></li>
                         <li><Link href="/portfolio">Portfolio</Link></li>
