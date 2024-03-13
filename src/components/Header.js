@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Navbar from './Navbar.js';
 import { useRouter } from 'next/router'; // Import useRouter from next/router
+import Link from 'next/link';
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -26,8 +27,6 @@ export default function Header() {
 
     return (
         <div className="relative header-container" style={{ height: '100vh' }}>
-
-
             <Navbar />
 
             <Image
@@ -56,11 +55,11 @@ export default function Header() {
                     {pageName ? pageName.replace(/-/g, ' ').toUpperCase() : 'WELCOME'}
                 </h1>
                 <p style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>Expert Craftsmanship, Durable Materials, and Unmatched Service</p>
-                <a href="/contact" style={{ textDecoration: 'none' }}>
+                <Link href="/contact" style={{ textDecoration: 'none' }}>
                     <button style={{ padding: '10px 20px', fontSize: '1.2rem', backgroundColor: 'green', color: 'white', borderRadius: '5px', border: 'none', cursor: 'pointer' }}>
                         Get a Free Quote
                     </button>
-                </a>
+                </Link>
             </div>
 
 
