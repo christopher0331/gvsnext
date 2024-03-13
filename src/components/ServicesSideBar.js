@@ -4,7 +4,7 @@ import styles from './ServiceSidebar.module.scss';
 const services = [
   { name: 'Wood Fences', path: '/wood-fences', portfolioPath: '/portfolio' },
   { name: 'Vinyl Fences', path: '/vinyl-fences', portfolioPath: '/portfolio' },
-  { name: 'Chain Link Fences', path: '/chainlink-fences', portfolioPath: '/portfolio' },
+  { name: 'Chain Link Fences', path: '/chainlink-fence', portfolioPath: '/portfolio' },
   { name: 'Outdoor Living', path: '/outdoor-living', portfolioPath: '/portfolio' },
 ];
 
