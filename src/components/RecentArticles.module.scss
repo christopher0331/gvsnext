@@ -4,7 +4,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
-    width: 500px;
+    width:350px;
   
     h3 {
       color: #333;
@@ -29,6 +29,12 @@
           }
         }
       }
+    }
+    @media (max-width: 768px) {
+      width: 100%; // Full width on smaller screens
+      padding: 10px; // Adjust padding for smaller screens
+      margin-top: 10px; // Adjust margin-top for smaller screens
+      box-shadow: none; // Optional: Remove box-shadow on smaller screens for flat design
     }
   }
   
