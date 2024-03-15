@@ -21,7 +21,7 @@
   
         a {
           color: #007bff;
-          font-size: .6em;
+          font-size: .6em; // Adjust font-size as needed for mobile
           cursor: pointer;  
           text-decoration: none;
           transition: color 0.3s ease-in-out;
@@ -31,6 +31,13 @@
           }
         }
       }
+    }
+  
+    @media (max-width: 768px) {
+      width: 100%; // Full width on smaller screens
+      padding: 10px; // Adjust padding for smaller screens
+      margin-top: 10px; // Adjust margin-top for smaller screens
+      box-shadow: none; // Optional: Remove box-shadow on smaller screens for flat design
     }
   }
   
