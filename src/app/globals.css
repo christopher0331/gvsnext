@@ -537,3 +537,12 @@ body {
     padding: 0.5em;
   }
 }
+
+
+
+
+/* To specifically target links within an article or a certain class, use a more specific selector */
+.article-content a {
+  color: blue;
+}
+
