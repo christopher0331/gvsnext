@@ -71,7 +71,6 @@ export default function Fencing() {
             <section className={styles.fenceInfoSectionContainer}>
                 <div className={styles.fenceInfoSectionTitleAndP} >
                     <h2 className={styles.fenceInfoSectionTitleAndP} >Wood Fencing Styles</h2>
-                    <p className={styles.fenceInfoSectionTitleAndP}>Your paragraph about GreenView Solutions and wood fence goes here.</p>
                 </div>
             </section>
 
@@ -116,10 +115,15 @@ export default function Fencing() {
 
 
             {/* Picket Types and Design Types  -  3 card with three pickets type - and then below that 3 top types (Concave, convex, lattice tops)*/}
-            <section>
-                {/* {picketTypes.map(picket => (
+            <section className={styles.fenceInfoSectionContainer}>
+                <div className={styles.fenceInfoSectionTitleAndP} >
+                    <h2 className={styles.fenceInfoSectionTitleAndP} >Custom Top Finishes</h2>
+                </div>
+            </section>
+            <section className={styles.fenceTypeCardsContainer}>
+                {PicketStyles.map(picket => (
                     <PicketTypeCard key={picket.name} name={picket.name} image={picket.image} description={picket.description} />
-                ))} */}
+                ))}
             </section>
 
             <Footer />
