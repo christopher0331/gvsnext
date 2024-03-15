@@ -7,7 +7,10 @@ class MyDocument extends Document {
       <Html>
         <Head>
           {/* Global site tag (gtag.js) - Google Analytics */}
+          <link rel="canonical" href="https://greenviewsolutions.net" />
+
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131443458-1"></script>
+          
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -18,7 +21,9 @@ class MyDocument extends Document {
               `,
             }}
           />
+
           {/* Additional Google tag (gtag.js) */}
+          
           <script async src="https://www.googletagmanager.com/gtag/js?id=AW-699335145"></script>
           <script
             dangerouslySetInnerHTML={{
