@@ -1,0 +1,34 @@
+.recentArticles {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 500px;
+  
+    h3 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  
+      li {
+        margin-bottom: 10px;
+  
+        a {
+          color: #007bff;
+          text-decoration: none;
+          transition: color 0.3s ease-in-out;
+  
+          &:hover {
+            color: #0056b3;
+          }
+        }
+      }
+    }
+  }
+  
