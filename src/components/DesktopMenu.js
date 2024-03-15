@@ -110,12 +110,12 @@ export default function DesktopMenu() {
                     {/* Email and Phone */}
                     <div className="contact-info">
                         <a href="mailto:admin@gvsco.net" className="email-phone-hover">
-                            <IoIosMail className="icon-hover" style={{ fontSize: '2.3vw' }} />
-                            <span>admin@gvsco.net</span>
+                            <IoIosMail className="icon-hover" />
+                            <span className="contactInfoNavbar">admin@gvsco.net</span>
                         </a>
                         <a href="tel:3033588168" className="email-phone-hover">
-                            <MdPhoneForwarded className="icon-hover" style={{ fontSize: '2.3vw' }} />
-                            <span>(303)358-8168</span>
+                            <MdPhoneForwarded className="icon-hover"  />
+                            <span className="contactInfoNavbar">(303)358-8168</span>
                         </a>
                     </div>
 
