@@ -20,8 +20,8 @@ const BlogIndex = ({ allPostsData }) => {
       <div className={styles.blogContainer}>
         <Header />
         <div className={styles.postsList}>
-          {allPostsData.map(({ id, title, date, excerpt }) => (
-            <div key={id} className={styles.blogCard}> {/* Updated this line */}
+          {allPostsData.map(({ id, title, date, excerpt, tags }) => (
+            <div key={id} className={styles.blogCard}> 
               <h3>
                 <Link className={styles.postTitle} href={`/blog/${id}`}>
                   {title}
@@ -29,6 +29,7 @@ const BlogIndex = ({ allPostsData }) => {
               </h3>
               <small className={styles.postDate}>{date}</small>
               <p className={styles.postExcerpt}>{excerpt}</p>
+              <p>{tags}</p>
             </div>
           ))}
         </div>

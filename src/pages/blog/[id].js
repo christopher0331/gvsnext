@@ -7,6 +7,7 @@ import Footer from '../../components/Footer.js';
 import styles from '../../components/MyBlog.module.scss';
 import FencingArticleTemp from '@/components/FencingArticleTemp.js';
 import RecentArticles from '../../components/RecentArticles';
+import ArticlesByAuthor from '@/components/ArticlesByAuthor.js';
 
 // Function to get static paths
 export async function getStaticPaths() {
@@ -28,17 +29,19 @@ export async function getStaticProps({ params }) {
 
   // Optionally, select the last 5 posts for the RecentArticles component
   const recentPosts = allPostsData.slice(0, 5);
+  const postsByAuthor = allPostsData.filter(post => post.author === postData.author && post.id !== postData.id);
 
   return {
     props: {
       postData,
       recentPosts, // Pass recentPosts as a prop
+      postsByAuthor
     },
   };
 }
 
 
-const BlogPost = ({ postData, recentPosts }) => {
+const BlogPost = ({ postData, recentPosts, postsByAuthor }) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -47,15 +50,24 @@ const BlogPost = ({ postData, recentPosts }) => {
 
   return (
     <article>
-      <Header />
+      <Header postTitle={postData.title}/>
 
       <div className={styles.articlePage}>
-        <h1>{postData.title}</h1>
+        
         <div className={styles.contentLayout}>
+
           <FencingArticleTemp article={postData} />
-          <div className={styles.placeHolder}>
-            <RecentArticles posts={recentPosts} />
+          
+          <div className={styles.articleSidebar}>
+            <div>
+              <RecentArticles posts={recentPosts} />
+            </div>
+            <div>
+              <ArticlesByAuthor postsByAuthor={postsByAuthor} />
+            </div>
           </div>
+        
+        
         </div>
       </div>
       <Footer />
