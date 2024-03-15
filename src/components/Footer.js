@@ -35,6 +35,7 @@ export default function Footer() {
                     <p>Address: 12650 W 64th Ave Unit E-149, Arvada, CO 80004</p>
                     <p>Address: 6525 Gunpark Dr Ste 370-110, Boulder, CO 80301</p>
                 </div>
+                
 
             </div>
 

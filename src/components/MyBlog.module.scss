@@ -1,0 +1,257 @@
+// blog.module.scss
+.blogPage {
+  padding: 20px;
+  max-width: 2200px;
+  margin: auto;
+  display: grid;
+  grid-gap: 20px;
+
+  // Start with 1 column on small devices
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+  h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
+.articlePage{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: black;
+}
+
+
+.blogArticle {
+  position: relative;
+  border: 1px solid #ccc;
+  color: black;
+  margin: 20px 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 15px 15px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.articleImageBox {
+  display: flex;
+  flex-direction: row;
+  position: 'absolute';
+  justify-content: space-around;
+}
+
+.placeHolder {
+  color: black;
+}
+
+.blogCard {
+  position: relative;
+  border: 1px solid #ccc;
+  color: black;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 15px 15px;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  h3 {
+    margin-top: 0;
+    padding: 15px;
+  }
+
+  a {
+    display: block;
+    background-color: #007bff;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .blogPage {
+    // 2 columns for tablets and medium screens
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .blogPage {
+    // 4 columns for desktops and larger screens
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+// MyBlog.module.scss
+$primary-color: #4a503d; // Example primary color
+$secondary-color: #a5a58d; // Example secondary color
+$font-stack: 'Arial', sans-serif;
+
+.blog-container {
+  font-family: $font-stack;
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  color: $primary-color;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .pros-cons-section {
+    background: $secondary-color;
+    padding: 1rem;
+    border-radius: 8px;
+
+    h3 {
+      color: #ffffff;
+    }
+
+    p {
+      color: #f8f8f2;
+    }
+  }
+}
+// MyBlog.module.scss
+.articleContent {
+  h1 {
+    font-size: 2em; // Adjust the size as needed
+    margin-bottom: 0.5em;
+    color: #333; // Example color
+  }
+
+  h3 {
+    font-size: 1.5em; // Adjust the size as needed
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    color: #666; // Example color
+  }
+
+  p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 1em;
+    color: #444; // Example color
+  }
+}
+
+// Add more styling as needed
+
+.articlePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    max-width: 60%;
+    text-align: justify;
+  }
+
+  .placeHolder {
+    flex: 1;
+    padding: 20px;
+    margin-left: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    h3 {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 10px;
+
+        a {
+          color: #007bff;
+          text-decoration: none;
+          &:hover {
+            color: darken(#007bff, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.blogContainer {
+  color: black;
+}
+
+.postsList {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr; // Default to one column on small screens
+
+  @media (min-width: 480px) { // Small devices (landscape phones, 480px and up)
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 768px) { // Medium devices (tablets, 768px and up)
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) { // Large devices (desktops, 1024px and up)
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.postItem {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.postTitle {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.postDate {
+  display: block; // or inline-block based on your design
+  margin-top: 5px;
+  color: #666;
+  font-size: 14px;
+}
+
+.postExcerpt {
+  margin-top: 10px;
+}

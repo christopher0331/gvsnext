@@ -11,10 +11,12 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+
         .links{
             display: flex;
             flex-direction: column;
         }
+        
         div {
             margin: 10px;
             flex: 1;
