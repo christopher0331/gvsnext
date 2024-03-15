@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 
 // Function to get static props
 export async function getStaticProps({ params }) {
-  
+
   // Fetch individual post data
   const postData = await getPostData(params.id);
 
@@ -51,19 +51,13 @@ const BlogPost = ({ postData, recentPosts }) => {
 
       <div className={styles.articlePage}>
         <h1>{postData.title}</h1>
-        <div style={{ display: 'flex', flexDirection: 'row', width: '80%' }}>
-
+        <div className={styles.contentLayout}>
           <FencingArticleTemp article={postData} />
-
           <div className={styles.placeHolder}>
-
             <RecentArticles posts={recentPosts} />
           </div>
-
-
         </div>
       </div>
-
       <Footer />
     </article>
   );
