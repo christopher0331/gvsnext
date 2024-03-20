@@ -24,6 +24,7 @@ export default function OutdoorLiving() {
         <title>GreenView Solutions Outdoor Living Page</title>
         <meta name="description" content="This page is the outdoor living page and contains information on all our outdoor living products" />
         <link rel="canonical" href="https://greenviewsolutions.net/outdoor-living" />
+        <link rel="alternate" hreflang="en" href="https://greenviewsolutions.net/en" />
 
       </Head>
 

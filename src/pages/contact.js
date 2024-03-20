@@ -42,6 +42,7 @@ const ContactUs = (props) => {
                 <title>GreenView Solutions Contact Us Page</title>
                 <meta name="description" content="This page is the contact us page and contains all information on how to get into contact with us" />
                 <link rel="canonical" href="https://greenviewsolutions.net/contact" />
+                <link rel="alternate" hreflang="en" href="https://greenviewsolutions.net/en" />
 
             </Head>
             <Header />
