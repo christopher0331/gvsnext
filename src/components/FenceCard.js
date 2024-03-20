@@ -69,7 +69,7 @@ const FenceCards = () => {
                 <Link href="/vinyl-fences" passHref>
                     <button className={styles.button}>View Vinyl Types</button>
                 </Link>
-                <Link href="/chainlink-fences" passHref>
+                <Link href="/chainlink-fence" passHref>
                     <button className={styles.button}>View Metal Types</button>
                 </Link>
             </div>

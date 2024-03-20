@@ -4,9 +4,7 @@ module.exports = {
     sitemapSize: 7000, // for splitting into multiple files
     // Optional:
     robotsTxtOptions: {
-      additionalSitemaps: [
-        'https://greenviewsolutions.net/my-custom-sitemap-1.xml',
-        'https://greenviewsolutions.net/my-custom-sitemap-2.xml',
+      additionalSitemaps: [        
       ],
     },
     // Exclude specific paths:
