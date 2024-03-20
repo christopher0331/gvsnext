@@ -169,6 +169,8 @@ export default function DesktopMenu() {
 
                     <Link href="/about" className="menu-link-upper" style={menuItemStyle}>About Us</Link>
                     <Link href="/contact" className="menu-link-upper" style={menuItemStyle}>Contact Us</Link>
+                    <Link href="/blog" className="menu-link-upper" style={menuItemStyle}>News</Link>
+
                 </div>
             </div>
         </ErrorBoundary>
