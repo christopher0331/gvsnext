@@ -4,6 +4,7 @@ import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
 import SvgComponent from '@/components/SvgComponent';
 import Image from 'next/image';
+import Head from 'next/head';
 
 const CrewWithTruck = "https://greenviewsolutionsimages.s3.us-west-1.amazonaws.com/AboutUs/AboutUsImage.jpg";
 
@@ -47,7 +48,7 @@ const AboutUs = (props) => {
   const paragraph1 = " When you have a fence built and installed by the team at GreenView Solutions, you can rest assured that it is done so with extreme care and superior skill. We are a proud member of the American Fence Association and Master Builders Association, which means our superior skills haven’t gone unnoticed. Additionally, we participate in the Better Business Bureau Reliability Program, guaranteeing our company exhibits a reputation for excellent customer care. We are 100% bonded and insured, ensuring you can trust that our work will meet your standards of excellence and deliver a visually-appealing, purposeful fence for your home or business."
 
   const paragraph2 = "Choosing your style of fencing is not an endeavor that you should take lightly. There is a lot to consider, including style, durability, area, and size. Because Denver and the surrounding communities have a vast assortment of plots and styles for residential neighborhoods and office complexes, GreenView Solutions offers a wide variety of fence styles to suit your needs perfectly. Not only do we utilize the best materials for all our fences, but we also employ a staff that uses proven techniques to ensure durability and elegance regardless of the scope of your project. We design and install wood fences, chain link fences, ornamental iron fences, specialty fences, and commercial fences, all with the grace and precision that can only be cultivated through nearly 50 years of hands-on experience."
-  
+
   // Truncate text function
   const truncateText = (text, length) => {
     if (text.length <= length) return text;
@@ -58,6 +59,12 @@ const AboutUs = (props) => {
 
   return (
     <div>
+      <Head>
+        <title>GreenView Solutions About Us Page</title>
+        <meta name="description" content="This page is the about us page that contains information about greenview solutions"/>
+        <link rel="canonical" href="https://greenviewsolutions.net/about" />
+
+      </Head>
       <Header />
       <div className={styles.aboutUsContainer}>
 

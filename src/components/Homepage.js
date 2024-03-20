@@ -16,7 +16,6 @@ const Homepage = () => {
             <Head>
                 <title>GreenView Solutions Homepage</title>
                 <meta name="description" content="This page is the homepage that displays financing options, different fence types and all are contact info" />
-
             </Head>
             <div style={{ backgroundColor: 'white' }}>
                 <InfoSection />
