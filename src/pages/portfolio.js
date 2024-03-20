@@ -6,6 +6,7 @@ import axios from 'axios';
 import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
 import CoolLoader from '../components/CoolLoader.js';
+import Head from 'next/head';
 
 AWS.config.credentials = new AWS.Credentials();
 const S3Bucket = () => {
@@ -70,45 +71,53 @@ const S3Bucket = () => {
 
 
   return (
-    <div>
-      <Header />
-      {loading ? (
-        <CoolLoader />
-      ) : (
-        <ul>
-          <div id="primaryBox">
-            <div className="portfolioTitle">
-              <h1 style={{ color: 'black' }}>Portfolio</h1>
-            </div>
-            <div className="portfolioBlock">
-              {projectImages.map((project) => (
-                <div key={project[0].id}>
-                  <div className="portfolioProjects">
-                    <img src={project[0].url} className="portfolioImage" alt="" />
-                    <div className="portfolioBody">
-                      <div onClick={() => handleShow(project[0].id)}>
-                        <div className="btn2 from-left2">View Project</div>
+    <>
+      <Head>
+        <title>GreenView Solutions Portfolio Page</title>
+        <meta name="description" content="This page is the portoflio page and contains our portfolio of wood fences, privacy fences, vinyl fences, chainlink fences and other projects" />
+        <link rel="canonical" href="https://greenviewsolutions.net/portfolio" />
+
+      </Head>
+      <div>
+        <Header />
+        {loading ? (
+          <CoolLoader />
+        ) : (
+          <ul>
+            <div id="primaryBox">
+              <div className="portfolioTitle">
+                <h1 style={{ color: 'black' }}>Portfolio</h1>
+              </div>
+              <div className="portfolioBlock">
+                {projectImages.map((project) => (
+                  <div key={project[0].id}>
+                    <div className="portfolioProjects">
+                      <img src={project[0].url} className="portfolioImage" alt="" />
+                      <div className="portfolioBody">
+                        <div onClick={() => handleShow(project[0].id)}>
+                          <div className="btn2 from-left2">View Project</div>
+                        </div>
+                        {project.length > 0 && (
+                          <CustomModal
+                            show={show}
+                            handleClose={handleClose}
+                            currentProjectId={currentProjectId}
+                            projectNumber={project[0].id}
+                            images={project.map((image) => image.url)}
+                          />
+                        )}
                       </div>
-                      {project.length > 0 && (
-                        <CustomModal
-                          show={show}
-                          handleClose={handleClose}
-                          currentProjectId={currentProjectId}
-                          projectNumber={project[0].id}
-                          images={project.map((image) => image.url)}
-                        />
-                      )}
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </ul>
-      )}
+          </ul>
+        )}
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 }
 
