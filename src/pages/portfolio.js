@@ -76,6 +76,7 @@ const S3Bucket = () => {
         <title>GreenView Solutions Portfolio Page</title>
         <meta name="description" content="This page is the portoflio page and contains our portfolio of wood fences, privacy fences, vinyl fences, chainlink fences and other projects" />
         <link rel="canonical" href="https://greenviewsolutions.net/portfolio" />
+        <link rel="alternate" hreflang="en-US" href="https://greenviewsolutions.net/portfolio" />
 
       </Head>
       <div>

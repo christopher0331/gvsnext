@@ -36,6 +36,7 @@ export default function Fencing() {
                 <title>GreenView Solutions Wood Fences</title>
                 <meta name="description" content="This page is the Wood Fences page and contains information about our Wood Fences!" />
                 <link rel="canonical" href="https://greenviewsolutions.net/wood-fences" />
+                <link rel="alternate" hreflang="en-US" href="https://greenviewsolutions.net/wood-fences" />
 
             </Head>
 
