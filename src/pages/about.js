@@ -63,7 +63,7 @@ const AboutUs = (props) => {
         <title>GreenView Solutions About Us Page</title>
         <meta name="description" content="This page is the about us page that contains information about greenview solutions"/>
         <link rel="canonical" href="https://greenviewsolutions.net/about" />
-        <link rel="alternate" hreflang="en" href="https://greenviewsolutions.net/en" />
+        <link rel="alternate" hreflang="en-US" href="https://greenviewsolutions.net/about" />
 
       </Head>
       <Header />
