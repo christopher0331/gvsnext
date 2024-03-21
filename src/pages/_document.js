@@ -9,7 +9,7 @@ class MyDocument extends Document {
           {/* Global site tag (gtag.js) - Google Analytics */}
 
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131443458-1"></script>
-          <link rel="alternate" hreflang="en-US" href="https://greenviewsolutions.net" />
+          <link rel="alternate" hreflang="en" href="https://greenviewsolutions.net" />
 
           <script
             dangerouslySetInnerHTML={{
