@@ -24,7 +24,6 @@ export default function VinylFencing() {
                 <title>GreenView Solutions Vinyl Fences</title>
                 <meta name="description" content="This page is the vinyl fences page and contains information about our vinyl fences" />
                 <link rel="canonical" href="https://greenviewsolutions.net/vinyl-fences" />
-                <link rel="alternate" hreflang="en" href="https://greenviewsolutions.net/vinyl-fences" />
 
             </Head>
 
