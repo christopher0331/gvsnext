@@ -17,8 +17,8 @@ export default function ChainLinkFence() {
             <Head>
                 <title>GreenView Solutions Chainlink Fences</title>
                 <meta name="description" content="This page is the chainlink fences page and contains information about our chainlink fences" />
-                <link rel="canonical" href="https://greenviewsolutions.net/chainlink-fences" />
-
+                <link rel="canonical" href="https://greenviewsolutions.net/chainlink-fence" />
+                <link rel="alternate" hreflang="en" href="https://greenviewsolutions.net/en" />
             </Head>
             <Header />
             <div className={stylesWood.woodFenceContainer}>

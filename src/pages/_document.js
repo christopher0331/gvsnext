@@ -4,12 +4,13 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           {/* Global site tag (gtag.js) - Google Analytics */}
 
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131443458-1"></script>
-          
+          <link rel="alternate" hrefLang="en" href="https://greenviewsolutions.net/en" />
+
           <script
             dangerouslySetInnerHTML={{
               __html: `
