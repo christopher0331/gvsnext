@@ -32,7 +32,6 @@ export function getSortedPostsData() {
 
     // Sort posts by date
     return allPostsData.sort(({ date: a }, { date: b }) => {
-        console.log('all posts data', allPostsData)
         if (a < b) {
             return 1;
         } else if (a > b) {
