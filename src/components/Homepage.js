@@ -23,21 +23,21 @@ const Homepage = () => {
         "telephone": "+303-358-8168",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "12650 W 64th Ave Unit E-149",
-            "addressLocality": "Arvada",
+            "streetAddress": "6525 Gunpark Dr Ste 370-110",
+            "addressLocality": "Boulder",
             "addressRegion": "CO",
-            "postalCode": "80004",
+            "postalCode": "80301",
             "addressCountry": "US"
         },
         "areaServed": [
-            "Arvada, CO",
+            "Boulder, CO",
+            "Niwot, CO",
+            "Louisville, CO",
             "Longmont, CO",
             "Frederick, CO",
             "Erie, CO",
-            "Aurora, CO",
+            "Superior, CO",
             "Denver, CO",
-            "Golden, CO",
-            "Broomfield, CO",
             "Westminster, CO",
             "Fort Collins, CO"
         ],
@@ -51,7 +51,7 @@ const Homepage = () => {
     return (
         <>
             <Head>
-                <title>GreenView Solutions Homepage</title>
+                <title>GVS-Boulder Fencing Company | Fence Installation and Repair in Denver, CO</title>
                 <meta name="description" content="Discover your fencing solutions at GreenView Solutions! Explore various fence types, financing options, and find all the contact information you need on our homepage. Get the perfect fence for your property in Arvada, CO, with options ranging from wood to vinyl, chainlink, and more." />
                 <link rel="canonical" href="https://greenviewsolutions.net" />
                 <script type="application/ld+json">
@@ -73,7 +73,7 @@ const Homepage = () => {
                     <AccordionInformation />
                     <Accordion />
                 </div>
-                <LocationsMap /> {/* Include the map component */}
+                <LocationsMap /> 
 
             </div>
         </>
