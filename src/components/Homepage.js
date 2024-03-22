@@ -9,6 +9,7 @@ import AccordionInformation from './AccordionInformation.js';
 import styles from './AccordionDropDown.module.scss';
 import Head from 'next/head';
 import CallToActionSection from './CallToActionSection.js';
+import LocationsMap from './LocationsMap.js';
 
 const Homepage = () => {
     return (
@@ -34,6 +35,8 @@ const Homepage = () => {
                     <AccordionInformation />
                     <Accordion />
                 </div>
+                <LocationsMap /> {/* Include the map component */}
+
             </div>
         </>
     );
