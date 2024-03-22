@@ -40,7 +40,7 @@ const Homepage = () => {
             "Broomfield, CO",
             "Westminster, CO",
             "Fort Collins, CO"
-        ],        
+        ],
         "sameAs": [
             "https://www.facebook.com/greenviewsolutions",
             "https://www.twitter.com/greenviewsolutions",
@@ -54,6 +54,9 @@ const Homepage = () => {
                 <title>GreenView Solutions Homepage</title>
                 <meta name="description" content="Discover your fencing solutions at GreenView Solutions! Explore various fence types, financing options, and find all the contact information you need on our homepage. Get the perfect fence for your property in Arvada, CO, with options ranging from wood to vinyl, chainlink, and more." />
                 <link rel="canonical" href="https://greenviewsolutions.net" />
+                <script type="application/ld+json">
+                    {JSON.stringify(schema)}
+                </script>
             </Head>
             <div style={{ backgroundColor: 'white' }}>
                 <InfoSection />
