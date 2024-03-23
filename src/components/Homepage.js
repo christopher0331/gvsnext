@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import InfoSection from './InfoSection.js';
-import FenceCards from './FenceCard.js';
 import { testimonialsData } from './TestimonialsData.js';
-import Testimonials from './ReviewsSections.js';
-import FinancingSection from './FinancingSection.js';
-import Accordion from './AccordionDropDown.js';
-import AccordionInformation from './AccordionInformation.js';
 import styles from './AccordionDropDown.module.scss';
 import Head from 'next/head';
 import CallToActionSection from './CallToActionSection.js';
-import LocationsMap from './LocationsMap.js';
+
+const FenceCards = lazy(() => import('./FenceCard.js'));
+const Testimonials = lazy(() => import('./ReviewsSections.js'));
+const FinancingSection = lazy(() => import('./FinancingSection.js'));
+const Accordion = lazy(() => import('./AccordionDropDown.js'));
+const AccordionInformation = lazy(() => import('./AccordionInformation.js'));
+const LocationsMap = lazy(() => import('./LocationsMap.js'));
+
+
+
 
 const Homepage = () => {
 
