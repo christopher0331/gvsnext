@@ -102,7 +102,7 @@ export default function Navbar({ data }) {
 
             <div className="logo-container" style={{ flexShrink: 0, zIndex: '154', zIndex: "50" }}>
               <Image
-                src='/clearGVSLogo250.webp'
+                src='/clearGVSLogo.webp'
                 alt="GVS Logo"
                 height={250}
                 width={250}
