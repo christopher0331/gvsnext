@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Footer.module.scss';
 import Image from 'next/image';
+import HomePageForm from './HomePageForm';
 import Link from 'next/link';
 import { FaSquareFacebook, FaGoogle } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
@@ -35,8 +36,10 @@ export default function Footer() {
                     <p>Address: 12650 W 64th Ave Unit E-149, Arvada, CO 80004</p>
                     <p>Address: 6525 Gunpark Dr Ste 370-110, Boulder, CO 80301</p>
                 </div>
-                
 
+                <div>
+                    <HomePageForm />
+                </div>
             </div>
 
             <div className={styles.footerBottom}>
