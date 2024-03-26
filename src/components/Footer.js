@@ -13,7 +13,7 @@ export default function Footer() {
 
                 <div className={styles.about}>
                     <h3>About Us</h3>
-                    <p>Leading fencing solutions provider with over 20 years of experience in bringing quality and craftsmanship to every project.</p>
+                    <p>Welcome to our fencing company, proudly serving Arvada and Boulder, CO for over 20 years. We specialize in high-quality fencing solutions, offering wood, vinyl, chain-link, and ornamental metal fences. Our expert team ensures superior craftsmanship and customer satisfaction in every project. Contact us today for your fencing needs!</p>
                 </div>
 
                 <div className={styles.links}>

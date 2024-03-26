@@ -143,3 +143,38 @@
     }
   }
   
+
+  // Meet the team
+// MeetTheTeam.module.scss
+
+.teamSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 89%;
+    margin: auto;
+    margin-top: 10%;
+  }
+  
+  .profileCard {
+    flex-basis: calc(31.333% - 1rem); // subtract the gap from the width
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0px 2px;
+    .profileImage {
+      position: relative; // Position relative is necessary for Next.js Image with layout='fill'
+      width: 100%; // Image width should match the card
+      height: 950px; // Define a height for the image
+    }
+  
+    .profileExcerpt {
+      padding: 1rem;
+    }
+  }
+  

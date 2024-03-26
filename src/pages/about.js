@@ -5,6 +5,7 @@ import Footer from '../components/Footer.js';
 import SvgComponent from '@/components/SvgComponent';
 import Image from 'next/image';
 import Head from 'next/head';
+import CallToActionSection from '@/components/CallToActionSection';
 
 const CrewWithTruck = "https://greenviewsolutionsimages.s3.us-west-1.amazonaws.com/AboutUs/AboutUsImage.jpg";
 
@@ -134,6 +135,9 @@ const AboutUs = (props) => {
             </div>
           </div>
         </div>
+      </div>
+      <div style={{margin: "50px 0px"}}>
+        <CallToActionSection />
       </div>
 
       <SvgComponent />
