@@ -41,20 +41,30 @@ export default function DesktopMenu() {
     const [isFencingDropdownOpen, setIsFencingDropdownOpen] = useState(false); // State for Fencing dropdown
     const [isOutdoorLivingDropdownOpen, setIsOutdoorLivingDropdownOpen] = useState(false); // State for Outdoor Living dropdown
     const [isRollOffDumpstersDropdownOpen, setIsRollOffDumpstersDropdownOpen] = useState(false);
+    const [isFormsDropdownOpen, setIsFormsDropdownOpen] = useState(false);
 
     const handleDropdownToggle = (dropdownType) => {
         if (dropdownType === 'fencing') {
             setIsFencingDropdownOpen(!isFencingDropdownOpen);
             setIsOutdoorLivingDropdownOpen(false);
             setIsRollOffDumpstersDropdownOpen(false);
+            setIsFormsDropdownOpen(false);
         } else if (dropdownType === 'outdoorLiving') {
             setIsFencingDropdownOpen(false);
             setIsOutdoorLivingDropdownOpen(!isOutdoorLivingDropdownOpen);
             setIsRollOffDumpstersDropdownOpen(false);
+            setIsFormsDropdownOpen(false);
         } else if (dropdownType === 'rollOffDumpsters') {
             setIsFencingDropdownOpen(false);
             setIsOutdoorLivingDropdownOpen(false);
             setIsRollOffDumpstersDropdownOpen(!isRollOffDumpstersDropdownOpen);
+            setIsFormsDropdownOpen(false);
+        }
+        else if (dropdownType === 'forms') {
+            setIsFencingDropdownOpen(false);
+            setIsOutdoorLivingDropdownOpen(false);
+            setIsRollOffDumpstersDropdownOpen(!false);
+            setIsFormsDropdownOpen(!isFormsDropdownOpen);
         }
     };
 
@@ -167,7 +177,21 @@ export default function DesktopMenu() {
 
                     <Link href="/portfolio" className="menu-link-upper" style={menuItemStyle}>Portfolio</Link>
 
-                    <Link href="/about" className="menu-link-upper" style={menuItemStyle}>About Us</Link>
+                    <div className="relative inline-flex items-center" style={menuItemStyle}>
+                        <button onClick={() => handleDropdownToggle('forms')} className="menu-link-upper" style={dropdownMenuItemStyle}>
+                            Forms <span className="caret">&#9660;</span>
+                        </button>
+                        {isFormsDropdownOpen && (
+                            <ul className="absolute left-0 top-full mt-1 border shadow-md bg-white" style={{ width: '120%' }}>
+                                <li><Link href="/project-overview" className="menu-link">Project Overview</Link></li>
+                                <div className="menu-divider"></div>
+
+                                <li><Link href="/warranty-form" className="menu-link">Warranty Form</Link></li>
+                                <div className="menu-divider"></div>
+
+                            </ul>
+                        )}
+                    </div>
                     <Link href="/contact" className="menu-link-upper" style={menuItemStyle}>Contact Us</Link>
                     <Link href="/blog" className="menu-link-upper" style={menuItemStyle}>News</Link>
 
