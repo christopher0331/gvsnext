@@ -1,0 +1,57 @@
+.projOverviewDiv {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    color: black;
+  }
+  
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formTitle {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .formField {
+    margin-bottom: 15px;
+  }
+  
+  .formLabel {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formInput {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .formParagraph {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .formButton {
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .formButton:hover {
+    background-color: #45a049;
+  }
+  
+  .marketingTypes{
+    width: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
