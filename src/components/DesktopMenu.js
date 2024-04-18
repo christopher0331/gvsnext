@@ -177,21 +177,8 @@ export default function DesktopMenu() {
 
                     <Link href="/portfolio" className="menu-link-upper" style={menuItemStyle}>Portfolio</Link>
 
-                    <div className="relative inline-flex items-center" style={menuItemStyle}>
-                        <button onClick={() => handleDropdownToggle('forms')} className="menu-link-upper" style={dropdownMenuItemStyle}>
-                            Forms <span className="caret">&#9660;</span>
-                        </button>
-                        {isFormsDropdownOpen && (
-                            <ul className="absolute left-0 top-full mt-1 border shadow-md bg-white" style={{ width: '120%' }}>
-                                <li><Link href="/project-overview" className="menu-link">Project Overview</Link></li>
-                                <div className="menu-divider"></div>
+                    <Link href="/forms" className="menu-link-upper" style={menuItemStyle}>Forms</Link>
 
-                                <li><Link href="/warranty-form" className="menu-link">Warranty Form</Link></li>
-                                <div className="menu-divider"></div>
-
-                            </ul>
-                        )}
-                    </div>
                     <Link href="/contact" className="menu-link-upper" style={menuItemStyle}>Contact Us</Link>
                     <Link href="/blog" className="menu-link-upper" style={menuItemStyle}>News</Link>
 
