@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { db } from '/firebaseConfig';
 import { collection, addDoc } from 'firebase/firestore';
-import styles from '../components/WarrantyForm.module.css';
-import Header from '@/components/Header'; 
-import Footer from '@/components/Footer';
+import styles from '../components/WarrantyForm.module.scss';
+
 
 export default function WarrantyForm() {
     const [firstName, setFirstName] = useState('');
@@ -50,11 +49,10 @@ export default function WarrantyForm() {
     };
 
     return (
-        <div>
-            <Header />
+
             <div className={styles.projOverviewDiv}>
                 <form onSubmit={handleSubmit} className={styles.formContainer}>
-                    <h1 className={styles.formTitle}>How can we help?</h1>
+                    <h1 className={styles.formTitle}>Warranty Form</h1>
                     <p className={styles.formParagraph}>Fields marked with an * are required</p>
 
                     <div className={styles.formField}>
@@ -176,8 +174,5 @@ export default function WarrantyForm() {
                     </button>
                 </form>
             </div>
-            <Footer />
-
-        </div>
     );
 }

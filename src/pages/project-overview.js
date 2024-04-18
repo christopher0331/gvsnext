@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import styles from '../components/WarrantyForm.module.css';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import styles from '../components/ProjectOverview.module.scss';
 
 export default function ContactForm() {
     const [postType, setPostType] = useState('');
@@ -58,111 +56,109 @@ export default function ContactForm() {
     };
 
     return (
-        <div>
-            <Header />
-            <div className={styles.projOverviewDiv}>
-                <form onSubmit={handleSubmit}>
-                    <h1>Project Overview Form</h1>
-                    <div>
-                        <p className={styles.pofLabel}>Posts:</p>
-                        <label>
-                            <input
-                                type="radio"
-                                name="postType"
-                                value="Steel PostMaster Post"
-                                checked={postType === 'Steel PostMaster Post'}
-                                onChange={() => setPostType('Steel PostMaster Post')}
-                            />
-                            Steel PostMaster Post
-                        </label>
-                        <label>
-                            <input
-                                type="radio"
-                                name="postType"
-                                value="Cedar 4x4 Posts"
-                                checked={postType === 'Cedar 4x4 Posts'}
-                                onChange={() => setPostType('Cedar 4x4 Posts')}
-                            />
-                            Cedar 4x4 Posts
-                        </label>
-                    </div>
-                    <div>
-                        <p className={styles.pofLabel}>Picket Orientation:</p>
-                        <label>
-                            <input
-                                type="radio"
-                                name="picketOrientation"
-                                value="Facing Client (In)"
-                                checked={picketOrientation === 'Facing Client (In)'}
-                                onChange={() => setPicketOrientation('Facing Client (In)')}
-                            />
-                            Facing Client (In)
-                        </label>
-                        <label>
-                            <input
-                                type="radio"
-                                name="picketOrientation"
-                                value="Facing Out"
-                                checked={picketOrientation === 'Facing Out'}
-                                onChange={() => setPicketOrientation('Facing Out')}
-                            />
-                            Facing Out
-                        </label>
-                    </div>
-                    <div>
-                        <p className={styles.pofLabel}>Temp Fence (Orange Construction Fence):</p>
-                        <label>
-                            <input
-                                type="radio"
-                                name="tempFence"
-                                value="Yes"
-                                checked={tempFence === 'Yes'}
-                                onChange={() => setTempFence('Yes')}
-                            />
-                            Yes
-                        </label>
-                        <label>
-                            <input
-                                type="radio"
-                                name="tempFence"
-                                value="No"
-                                checked={tempFence === 'No'}
-                                onChange={() => setTempFence('No')}
-                            />
-                            No
-                        </label>
-                    </div>
-                    <div>
-                        <p className={styles.pofLabel}>Address:</p>
+
+        <div className={styles.projOverviewDiv}>
+            <form onSubmit={handleSubmit}>
+                <h1>Project Overview Form</h1>
+                <div>
+                    <p className={styles.pofLabel}>Posts:</p>
+                    <label>
                         <input
-                            type="text"
-                            name="address"
-                            value={address}
-                            onChange={(e) => setAddress(e.target.value)}
+                            type="radio"
+                            name="postType"
+                            value="Steel PostMaster Post"
+                            checked={postType === 'Steel PostMaster Post'}
+                            onChange={() => setPostType('Steel PostMaster Post')}
                         />
+                        Steel PostMaster Post
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="postType"
+                            value="Cedar 4x4 Posts"
+                            checked={postType === 'Cedar 4x4 Posts'}
+                            onChange={() => setPostType('Cedar 4x4 Posts')}
+                        />
+                        Cedar 4x4 Posts
+                    </label>
+                </div>
+                <div>
+                    <p className={styles.pofLabel}>Picket Orientation:</p>
+                    <label>
+                        <input
+                            type="radio"
+                            name="picketOrientation"
+                            value="Facing Client (In)"
+                            checked={picketOrientation === 'Facing Client (In)'}
+                            onChange={() => setPicketOrientation('Facing Client (In)')}
+                        />
+                        Facing Client (In)
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="picketOrientation"
+                            value="Facing Out"
+                            checked={picketOrientation === 'Facing Out'}
+                            onChange={() => setPicketOrientation('Facing Out')}
+                        />
+                        Facing Out
+                    </label>
+                </div>
+                <div>
+                    <p className={styles.pofLabel}>Temp Fence (Orange Construction Fence):</p>
+                    <label>
+                        <input
+                            type="radio"
+                            name="tempFence"
+                            value="Yes"
+                            checked={tempFence === 'Yes'}
+                            onChange={() => setTempFence('Yes')}
+                        />
+                        Yes
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="tempFence"
+                            value="No"
+                            checked={tempFence === 'No'}
+                            onChange={() => setTempFence('No')}
+                        />
+                        No
+                    </label>
+                </div>
+                <div>
+                    <p className={styles.pofLabel}>Address:</p>
+                    <input
+                        type="text"
+                        name="address"
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                    />
+                </div>
+                <div>
+                    <p className={styles.pofLabel}>Other Comments:</p>
+                    <textarea
+                        name="comments"
+                        value={comments}
+                        onChange={(e) => setComments(e.target.value)}
+                    ></textarea>
+                </div>
+                <button className={styles.pofButton} type="submit">Submit</button>
+            </form>
+            {showPopup && (
+                <div className={styles.popup}>
+                    <div className={styles.popupContent}>
+                        <p>Thank you for your submission!</p>
+                        <span className={styles.close} onClick={handleClosePopup}>
+                            &times;
+                        </span>
                     </div>
-                    <div>
-                        <p className={styles.pofLabel}>Other Comments:</p>
-                        <textarea
-                            name="comments"
-                            value={comments}
-                            onChange={(e) => setComments(e.target.value)}
-                        ></textarea>
-                    </div>
-                    <button className={styles.pofButton} type="submit">Submit</button>
-                </form>
-                {showPopup && (
-                    <div className={styles.popup}>
-                        <div className={styles.popupContent}>
-                            <p>Thank you for your submission!</p>
-                            <span className={styles.close} onClick={handleClosePopup}>
-                                &times;
-                            </span>
-                        </div>
-                    </div>
-                )}
-            </div>
-            <Footer />
+                </div>
+            )}
         </div>
+
     );
 };
