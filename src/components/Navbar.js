@@ -6,7 +6,7 @@ import SidebarMenu from './SidebarMenu';
 import React from 'react';
 import { IoIosMail } from 'react-icons/io';
 import { MdPhoneForwarded } from "react-icons/md";
-import styles from './Navbar.module.scss';  
+import styles from './Navbar.module.scss';
 
 
 class ErrorBoundary extends React.Component {
@@ -99,16 +99,20 @@ export default function Navbar({ data }) {
             justifyContent: 'space-between',
             width: '100%'
           }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
 
-            <div className="logo-container" style={{ flexShrink: 0, zIndex: '154', zIndex: "50" }}>
-              <Image
-                src='/clearGVSLogo.webp'
-                alt="GVS Logo"
-                height={250}
-                width={250}
-                priority
-              />
-
+              <div className="logo-container" style={{ flexShrink: 0, zIndex: '154', zIndex: "50" }}>
+                <Image
+                  src='/clearGVSLogo.webp'
+                  alt="GVS Logo"
+                  height={250}
+                  width={250}
+                  priority
+                />
+              </div>
+              <div>
+                Veteran Owned
+              </div>
             </div>
 
             {windowWidth > 868 && (
