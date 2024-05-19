@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Navbar from './Navbar.js';
-import { useRouter } from 'next/router'; // Import useRouter from next/router
+import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { useImageIndex } from '../contexts/ImageIndexContext';
 
-export default function Header({postTitle}) {
+export default function Header({ postTitle }) {
     const [isScrolled, setIsScrolled] = useState(false);
-    const router = useRouter(); // Use the useRouter hook to access route information
+    const { imageIndex, images } = useImageIndex();
+    const router = useRouter();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -22,21 +24,27 @@ export default function Header({postTitle}) {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Extract the pathname from the router object
     const pageName = router.pathname.split('/').pop();
+    const heroImage = images[imageIndex];
+
+    console.log('Current page:', router.pathname);
+    console.log('Current image index:', imageIndex);
+    console.log('Hero image:', heroImage);
 
     return (
         <div className="relative header-container" style={{ height: '100vh' }}>
             <Navbar />
 
             <Image
-                src='/homepage-hero-image.webp'
+                src={heroImage}
                 alt="Hero Image"
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: 'cover', zIndex: 10 }}
                 quality={100}
-                style={{ zIndex: 10 }}
-                priority // preload this image
+                priority
+                sizes="(max-width: 768px) 100vw, 
+                       (max-width: 1200px) 50vw, 
+                       33vw"
             />
 
             <div className="overlay" style={{
@@ -49,20 +57,34 @@ export default function Header({postTitle}) {
                 zIndex: 15
             }}></div>
 
-            {/* Display the current page name dynamically */}
-            <div className="header-content" style={{ zIndex: 30, position: 'relative', top: '25%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', color: 'white', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}>
+            <div className="header-content" style={{
+                zIndex: 30,
+                position: 'relative',
+                top: '25%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                textAlign: 'center',
+                color: 'white',
+                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)'
+            }}>
                 <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-                {postTitle ? postTitle : (pageName ? pageName.replace(/-/g, ' ').toUpperCase() : 'WELCOME')}
+                    {postTitle ? postTitle : (pageName ? pageName.replace(/-/g, ' ').toUpperCase() : 'WELCOME')}
                 </h1>
                 <p style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>Expert Craftsmanship, Durable Materials, and Unmatched Service</p>
                 <Link href="/contact" style={{ textDecoration: 'none' }}>
-                    <button style={{ padding: '10px 20px', fontSize: '1.2rem', backgroundColor: 'green', color: 'white', borderRadius: '5px', border: 'none', cursor: 'pointer' }}>
+                    <button style={{
+                        padding: '10px 20px',
+                        fontSize: '1.2rem',
+                        backgroundColor: 'green',
+                        color: 'white',
+                        borderRadius: '5px',
+                        border: 'none',
+                        cursor: 'pointer'
+                    }}>
                         Get a Free Quote
                     </button>
                 </Link>
             </div>
-
-
         </div>
     );
 };
