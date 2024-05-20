@@ -10,7 +10,7 @@ import styles from './AccordionDropDown.module.scss';
 import Head from 'next/head';
 import CallToActionSection from './CallToActionSection.js';
 import LocationsMap from './LocationsMap.js';
-
+ 
 const Homepage = () => {
 
     const schema = {
@@ -60,21 +60,27 @@ const Homepage = () => {
                     {JSON.stringify(schema)}
                 </script>
             </Head>
+
             <div style={{ backgroundColor: 'white' }}>
                 <InfoSection />
                 <div style={{ color: 'black', display: 'flex', justifyContent: 'center', fontSize: '3rem', fontFamily: 'Courier New', textAlign: 'center' }}>
                     Pick Your Fence
                 </div>
                 <FenceCards />
+
                 <Testimonials testimonials={testimonialsData} />
+
                 <FinancingSection />
+
                 <div style={{ marginBottom: '5%' }}>
                     <CallToActionSection />
                 </div>
-                <div className={styles.accordionDiv}>
+
+                <div className={styles.accordionDiv}>                    
                     <AccordionInformation />
                     <Accordion />
                 </div>
+                
                 <LocationsMap /> 
 
             </div>

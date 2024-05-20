@@ -44,7 +44,7 @@ class ContactForm extends React.Component {
         emailjs.sendForm('service_p6clffh', 'template_jidzwzw', event.target, 'user_wPYeoaoebNsoGt3GhzLVu')
             .then((result) => {
                 console.log('Email sent:', result.text);
-                alert('Thank you for your request, we will be in touch soon!');
+                alert('Thank you for your request, we will be in touch soon!!');
 
                 // After successful email, send data to Zapier
                 const formData = {
@@ -81,8 +81,7 @@ class ContactForm extends React.Component {
                         // Optionally, handle any follow-up after sending to Zapier
                     })
                     .catch((error) => {
-                        console.error('Zapier error:', error);
-                        alert('Failed to send data to Zapier, please check the details.');
+                        console.log('Zapier error:', error);
                     });
 
                 // Reset form

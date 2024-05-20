@@ -27,10 +27,6 @@ export default function Header({ postTitle }) {
     const pageName = router.pathname.split('/').pop();
     const heroImage = images[imageIndex];
 
-    console.log('Current page:', router.pathname);
-    console.log('Current image index:', imageIndex);
-    console.log('Hero image:', heroImage);
-
     return (
         <div className="relative header-container" style={{ height: '100vh' }}>
             <Navbar />
