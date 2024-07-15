@@ -18,7 +18,7 @@ const Homepage = () => {
         "@type": "LocalBusiness",
         "name": "GreenView Solutions",
         "url": "https://greenviewsolutions.net",
-        "logo": "/gvsLogoGreen",
+        "logo": "/gvsLogoGreen.png",
         "description": "GreenView Solutions offers a variety of fencing solutions in Arvada, CO, including wood, vinyl, and chainlink fences, along with financing options to meet your needs.",
         "telephone": "+303-358-8168",
         "address": {
