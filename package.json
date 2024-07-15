@@ -23,6 +23,7 @@
     "chartjs-plugin-datalabels": "^2.2.0",
     "emailjs-com": "^3.2.0",
     "firebase": "^10.11.0",
+    "framer-motion": "^11.3.2",
     "fs": "^0.0.1-security",
     "google-auth-library": "^9.9.0",
     "gray-matter": "^4.0.3",
