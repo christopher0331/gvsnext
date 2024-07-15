@@ -10,44 +10,81 @@ import styles from './AccordionDropDown.module.scss';
 import Head from 'next/head';
 import CallToActionSection from './CallToActionSection.js';
 import LocationsMap from './LocationsMap.js';
- 
-const Homepage = () => {
 
+const Homepage = () => {
+    
+    
     const schema = {
         "@context": "http://schema.org",
-        "@type": "LocalBusiness",
-        "name": "GreenView Solutions",
-        "url": "https://greenviewsolutions.net",
-        "logo": "/gvsLogoGreen",
-        "description": "GreenView Solutions offers a variety of fencing solutions in Arvada, CO, including wood, vinyl, and chainlink fences, along with financing options to meet your needs.",
-        "telephone": "+303-358-8168",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "6525 Gunpark Dr Ste 370-110",
-            "addressLocality": "Boulder",
-            "addressRegion": "CO",
-            "postalCode": "80301",
-            "addressCountry": "US"
-        },
-        "areaServed": [
-            "Boulder, CO",
-            "Niwot, CO",
-            "Louisville, CO",
-            "Longmont, CO",
-            "Frederick, CO",
-            "Erie, CO",
-            "Superior, CO",
-            "Denver, CO",
-            "Westminster, CO",
-            "Fort Collins, CO"
-        ],
-        "sameAs": [
-            "https://www.facebook.com/greenviewsolutions",
-            "https://www.twitter.com/greenviewsolutions",
-            "https://www.instagram.com/greenviewsolutions"
-        ],    
-        "hasMap": "https://www.google.com/maps/place/6525+Gunpark+Dr+Ste+370-110,+Boulder,+CO+80301/"
-
+        "@graph": [
+            {
+                "@type": "LocalBusiness",
+                "name": "GreenView Solutions - Boulder",
+                "url": "https://greenviewsolutions.net",
+                "logo": "/gvsLogoGreen.png",
+                "description": "GreenView Solutions offers a variety of fencing solutions in Arvada, CO, including wood, vinyl, and chainlink fences, along with financing options to meet your needs.",
+                "telephone": "+303-358-8168",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "6525 Gunpark Dr Ste 370-110",
+                    "addressLocality": "Boulder",
+                    "addressRegion": "CO",
+                    "postalCode": "80301",
+                    "addressCountry": "US"
+                },
+                "areaServed": [
+                    "Boulder, CO",
+                    "Niwot, CO",
+                    "Louisville, CO",
+                    "Longmont, CO",
+                    "Frederick, CO",
+                    "Erie, CO",
+                    "Superior, CO",
+                    "Denver, CO",
+                    "Westminster, CO",
+                    "Fort Collins, CO"
+                ],
+                "sameAs": [
+                    "https://www.facebook.com/greenviewsolutions",
+                    "https://www.twitter.com/greenviewsolutions",
+                    "https://www.instagram.com/greenviewsolutions"
+                ],
+                "hasMap": "https://www.google.com/maps/place/6525+Gunpark+Dr+Ste+370-110,+Boulder,+CO+80301/"
+            },
+            {
+                "@type": "LocalBusiness",
+                "name": "GreenView Solutions - Arvada",
+                "url": "https://greenviewsolutions.net",
+                "logo": "/gvsLogoGreen.png",
+                "description": "GreenView Solutions offers a variety of fencing solutions in Arvada, CO, including wood, vinyl, and chainlink fences, along with financing options to meet your needs.",
+                "telephone": "+303-358-8168",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "12650 W 64th Ave Unit E-149",
+                    "addressLocality": "Arvada",
+                    "addressRegion": "CO",
+                    "postalCode": "80004",
+                    "addressCountry": "US"
+                },
+                "areaServed": [
+                    "Arvada, CO",
+                    "Denver, CO",
+                    "Westminster, CO",
+                    "Broomfield, CO",
+                    "Wheat Ridge, CO",
+                    "Golden, CO",
+                    "Lakewood, CO",
+                    "Thornton, CO",
+                    "Northglenn, CO"
+                ],
+                "sameAs": [
+                    "https://www.facebook.com/greenviewsolutions",
+                    "https://www.twitter.com/greenviewsolutions",
+                    "https://www.instagram.com/greenviewsolutions"
+                ],
+                "hasMap": "https://www.google.com/maps/place/12650+W+64th+Ave+Unit+E-149,+Arvada,+CO+80004/"
+            }
+        ]
     };
 
     return (
@@ -76,12 +113,12 @@ const Homepage = () => {
                     <CallToActionSection />
                 </div>
 
-                <div className={styles.accordionDiv}>                    
+                <div className={styles.accordionDiv}>
                     <AccordionInformation />
                     <Accordion />
                 </div>
-                
-                <LocationsMap /> 
+
+                <LocationsMap />
 
             </div>
         </>
