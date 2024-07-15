@@ -1,6 +1,6 @@
 // pages/blog/[id].js
 import React from 'react';
-import { getPostData, getAllPostIds, getSortedPostsData } from 'utils/markdownParser.js'; // Assume your markdownParser.js functions are exported here
+import { getPostData, getAllPostIds, getSortedPostsData } from 'utils/markdownParser.js'; // Ensure this file exists and exports the required functions
 import { useRouter } from 'next/router';
 import Header from '../../components/Header.js';
 import Footer from '../../components/Footer.js';
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
   const paths = getAllPostIds();
   return {
     paths,
-    fallback: false, // Can also be true or 'blocking'
+    fallback: false, 
   };
 }
 
@@ -34,12 +34,11 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       postData,
-      recentPosts, // Pass recentPosts as a prop
+      recentPosts, 
       postsByAuthor
     },
   };
 }
-
 
 const BlogPost = ({ postData, recentPosts, postsByAuthor }) => {
   const router = useRouter();
@@ -50,14 +49,12 @@ const BlogPost = ({ postData, recentPosts, postsByAuthor }) => {
 
   return (
     <article>
-      <Header postTitle={postData.title}/>
+      <Header postTitle={postData.title} />
 
       <div className={styles.articlePage}>
-        
         <div className={styles.contentLayout}>
-
           <FencingArticleTemp article={postData} />
-          
+
           <div className={styles.articleSidebar}>
             <div>
               <RecentArticles posts={recentPosts} />
@@ -66,8 +63,6 @@ const BlogPost = ({ postData, recentPosts, postsByAuthor }) => {
               <ArticlesByAuthor postsByAuthor={postsByAuthor} />
             </div>
           </div>
-        
-        
         </div>
       </div>
       <Footer />
@@ -76,4 +71,3 @@ const BlogPost = ({ postData, recentPosts, postsByAuthor }) => {
 };
 
 export default BlogPost;
-
