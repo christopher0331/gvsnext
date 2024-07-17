@@ -3,6 +3,7 @@ import { BlogProvider } from '../contexts/MyBlogContexts.js'; // Import your con
 import { ImageIndexProvider } from '../contexts/ImageIndexContext.js'; // Import your ImageIndex context
 
 function MyApp({ Component, pageProps }) {
+
   return (
     <BlogProvider>
       <ImageIndexProvider>

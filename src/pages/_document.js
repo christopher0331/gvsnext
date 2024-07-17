@@ -12,24 +12,20 @@ class MyDocument extends Document {
           <link rel="preconnect" href="https://www.gstatic.com" />
 
           {/* Google Tag Manager - Global site tag (gtag.js) for Google Analytics and Ads */}
-          <>
-            <Script
-              src="https://www.googletagmanager.com/gtag/js?id=UA-131443458-1"
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+ {/* Google Analytics */}
+ <script async src={`https://www.googletagmanager.com/gtag/js?id=G-3GLE2W6L18`}></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
 
-      gtag('config', 'UA-131443458-1');
-      gtag('config', 'AW-699335145', {
-        'phone_conversion_number': '3033588168'
-      });
-    `}
-            </Script>
-          </>
+                gtag('config', 'G-3GLE2W6L18');
+              `,
+            }}
+          />
+          {/* End Google Analytics */}
 
           {/* Alternate link for language */}
           <link rel="alternate" hrefLang="en" href="https://greenviewsolutions.net" />
