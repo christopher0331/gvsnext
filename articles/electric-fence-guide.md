@@ -1,7 +1,7 @@
 ---
 title: "The Electric Fencing Guide: Benefits, Considerations, and Best Practices"
 author: "Christopher Hancock"
-date: "2024-03-"
+date: "2024-03-29"
 excerpt: "Electric fences offer a modern solution with their security and containment capabilities, but understanding where and how to use them is key. Explore the ins and outs of electric fencing."
 tags: ["fencing", "electric fences", "security", "agriculture"]
 
