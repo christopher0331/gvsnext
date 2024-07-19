@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import emailjs from 'emailjs-com';
 import styles from '../components/ProjectOverview.module.scss';
 
@@ -116,11 +117,11 @@ export default function ContactForm() {
                     </div>
                     <div className={styles.orientationImages}>
                         <div className={styles.imageWrapper}>
-                            <img src="/facing-in-image.png" alt="Facing In" />
+                            <Image src="/facing-in-image.png" alt="Facing In" width={200} height={150} layout="responsive" />
                             <p>Facing In</p>
                         </div>
                         <div className={styles.imageWrapper}>
-                            <img src="/facing-out-image.png" alt="Facing Out" />
+                            <Image src="/facing-out-image.png" alt="Facing Out" width={200} height={150} layout="responsive" />
                             <p>Facing Out</p>
                         </div>
                     </div>
@@ -149,113 +150,111 @@ export default function ContactForm() {
                     </label>
                 </div>
 
+                <div className={styles.installationSection}>
+                    <div className={styles.imageContainer}>
+                        <Image src="/project-overview-image.png" alt="Fence Installation Types" width={400} height={300} layout="responsive" className={styles.fenceImage} />
+                    </div>
+                    <div className={styles.installationOptions}>
+                        <p className={styles.pofLabel}>Installation Type:</p>
+                        <label>
+                            <input
+                                type="radio"
+                                name="installationType"
+                                value="Pleasing to the Eye"
+                                checked={installationType === 'Pleasing to the Eye'}
+                                onChange={() => setInstallationType('Pleasing to the Eye')}
+                            />
+                            Pleasing to the Eye
+                        </label>
+                        <p className={styles.description}>Fence to be level with highest grade (Customer to fill in gaps)</p>
 
+                        <label>
+                            <input
+                                type="radio"
+                                name="installationType"
+                                value="Stepped Installation"
+                                checked={installationType === 'Stepped Installation'}
+                                onChange={() => setInstallationType('Stepped Installation')}
+                            />
+                            Stepped Installation
+                        </label>
+                        <p className={styles.description}>Fence must be stepped resulting in gaps under fence in certain areas (Customer to fill in gaps)</p>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="installationType"
+                                value="Following Flow"
+                                checked={installationType === 'Following Flow'}
+                                onChange={() => setInstallationType('Following Flow')}
+                            />
+                            Following Flow
+                        </label>
+                        <p className={styles.description}>Slightly uneven grade with fence following flow of the ground (Fence will be uneven at top)</p>
+                    </div>
+                </div>
+
+                <div className={styles.addressSection}>
+                    <p className={styles.pofLabel}>Address:</p>
+                    <input
+                        type="text"
+                        name="streetName"
+                        value={streetName}
+                        onChange={(e) => setStreetName(e.target.value)}
+                        placeholder="Street"
+                    />
+                    <div className={styles.cityZipWrapper}>
+                        <input
+                            type="text"
+                            name="city"
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)}
+                            placeholder="City"
+                        />
+                        <input
+                            type="text"
+                            name="zipCode"
+                            value={zipCode}
+                            onChange={(e) => setZipCode(e.target.value)}
+                            placeholder="Zip Code"
+                        />
+                    </div>
+                </div>
+
+                <div className={styles.picketSizeSection}>
+                    <p className={styles.pofLabel}>Picket Size:</p>
+                    <label>
+                        <input
+                            type="radio"
+                            name="picketSize"
+                            value="4 inch"
+                            checked={picketSize === '4 inch'}
+                            onChange={() => setPicketSize('4 inch')}
+                        />
+                        4&quot; Pickets
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="picketSize"
+                            value="6 inch"
+                            checked={picketSize === '6 inch'}
+                            onChange={() => setPicketSize('6 inch')}
+                        />
+                        6&quot; Pickets
+                    </label>
+                </div>
+
+                <div>
+                    <p className={styles.pofLabel}>Other Comments:</p>
+                    <textarea
+                        name="comments"
+                        value={comments}
+                        onChange={(e) => setComments(e.target.value)}
+                    ></textarea>
+                </div>
+                <button className={styles.pofButton} type="submit">Submit</button>
             </form>
-            <div className={styles.installationSection}>
-                <div className={styles.imageContainer}>
-                    <img src="/project-overview-image.png" alt="Fence Installation Types" className={styles.fenceImage} />
-                </div>
-                <div className={styles.installationOptions}>
-                    <p className={styles.pofLabel}>Installation Type:</p>
-                    <label>
-                        <input
-                            type="radio"
-                            name="installationType"
-                            value="Pleasing to the Eye"
-                            checked={installationType === 'Pleasing to the Eye'}
-                            onChange={() => setInstallationType('Pleasing to the Eye')}
-                        />
-                        Pleasing to the Eye
-                    </label>
-                    <p className={styles.description}>Fence to be level with highest grade (Customer to fill in gaps)</p>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="installationType"
-                            value="Stepped Installation"
-                            checked={installationType === 'Stepped Installation'}
-                            onChange={() => setInstallationType('Stepped Installation')}
-                        />
-                        Stepped Installation
-                    </label>
-                    <p className={styles.description}>Fence must be stepped resulting in gaps under fence in certain areas (Customer to fill in gaps)</p>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="installationType"
-                            value="Following Flow"
-                            checked={installationType === 'Following Flow'}
-                            onChange={() => setInstallationType('Following Flow')}
-                        />
-                        Following Flow
-                    </label>
-                    <p className={styles.description}>Slightly uneven grade with fence following flow of the ground (Fence will be uneven at top)</p>
-                </div>
-            </div>
-
-            {/* Address and Comments fields */}
-            <div className={styles.addressSection}>
-                <p className={styles.pofLabel}>Address:</p>
-                <input
-                    type="text"
-                    name="streetName"
-                    value={streetName}
-                    onChange={(e) => setStreetName(e.target.value)}
-                    placeholder="Street"
-                />
-                <div className={styles.cityZipWrapper}>
-                    <input
-                        type="text"
-                        name="city"
-                        value={city}
-                        onChange={(e) => setCity(e.target.value)}
-                        placeholder="City"
-                    />
-                    <input
-                        type="text"
-                        name="zipCode"
-                        value={zipCode}
-                        onChange={(e) => setZipCode(e.target.value)}
-                        placeholder="Zip Code"
-                    />
-                </div>
-            </div>
-
-            <div className={styles.picketSizeSection}>
-                <p className={styles.pofLabel}>Picket Size:</p>
-                <label>
-                    <input
-                        type="radio"
-                        name="picketSize"
-                        value="4 inch"
-                        checked={picketSize === '4 inch'}
-                        onChange={() => setPicketSize('4 inch')}
-                    />
-                    4" Pickets
-                </label>
-                <label>
-                    <input
-                        type="radio"
-                        name="picketSize"
-                        value="6 inch"
-                        checked={picketSize === '6 inch'}
-                        onChange={() => setPicketSize('6 inch')}
-                    />
-                    6" Pickets
-                </label>
-            </div>
-
-            <div>
-                <p className={styles.pofLabel}>Other Comments:</p>
-                <textarea
-                    name="comments"
-                    value={comments}
-                    onChange={(e) => setComments(e.target.value)}
-                ></textarea>
-            </div>
-            <button className={styles.pofButton} type="submit">Submit</button>
             {showPopup && (
                 <div className={styles.popup}>
                     <div className={styles.popupContent}>
@@ -268,4 +267,4 @@ export default function ContactForm() {
             )}
         </div>
     );
-};
+}
