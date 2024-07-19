@@ -6,18 +6,53 @@
   color: black;
   border-radius: 3%;
   border: 2px solid #ccc;
-height: 75%;
+  height: 75%;
+  overflow-y: auto;
+
   .pofLabel {
     font-weight: bold;
     margin-bottom: 15px;
     margin-right: 20px;
-
   }
 
   input[type="radio"] {
-      margin-right: 10px;
+    margin-right: 10px;
   }
 
+  // New styles for address fields
+  .addressSection {
+    margin-bottom: 15px;
+
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .cityZipWrapper {
+      display: flex;
+      justify-content: space-between;
+
+      input[type="text"] {
+        width: 48%; // Adjust as needed
+      }
+    }
+  }
+
+  // New styles for picket size
+  .picketSizeSection {
+    margin-bottom: 15px;
+
+    label {
+      display: inline-block;
+      margin-right: 20px;
+    }
+  }
+
+  // Existing styles (keep these unchanged)
   .pofButton {
     padding: 10px 15px;
     background-color: #4caf50;
@@ -32,37 +67,34 @@ height: 75%;
     }
   }
 
-  .popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 600px;
-    background-color: rgba(25, 75, 30, 0.8);
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    z-index: 1000;
+  // New styles for the installation section
+  .installationSection {
+    margin-bottom: 20px;
+  }
 
-    .popupContent {
-      background-color: #194b1e;
-      color: white;
-      padding: 20px;
-      border-radius: 5px;
+  .imageContainer {
+    margin-bottom: 15px;
+  }
 
-      .close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 1.5em;
-        color: white;
-        cursor: pointer;
+  .fenceImage {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
 
-        &:hover {
-          color: #e9e9e9;
-        }
-      }
+  .installationOptions {
+    label {
+      display: block;
+      margin-bottom: 10px;
     }
   }
+
+  .description {
+    font-size: 0.9em;
+    margin-left: 25px;
+    margin-bottom: 15px;
+    color: #333;
+  }
 }
+
+
