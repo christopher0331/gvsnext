@@ -210,9 +210,11 @@ class ContactForm extends React.Component {
                                     <option value="">How did you hear about GreenView Solutions?</option>
                                     <option value="google">Google</option>
                                     <option value="socialMedia">Social Media</option>
-                                    <option value="magazine">Magazine</option>
                                     <option value="yardSign">Yard Sign</option>
-                                    <option value="vehicles">Vehicles</option>
+                                    <option value="referral">Referral</option>
+                                    <option value="googleMaps">Google Maps</option>
+                                    <option value="magazine">The Home Mag</option>
+                                    <option value="magazine">Quality Connections</option>
                                 </select>
                             </label>
                         </div>
