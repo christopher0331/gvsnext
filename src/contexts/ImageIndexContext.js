@@ -8,9 +8,9 @@ export function ImageIndexProvider({ children }) {
     const router = useRouter();
 
     const images = [
-        '/homepage-hero-image.webp',
-        '/vinyl-fence.jpeg',
-        '/wood-fence.jpeg'
+        'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/564989bf-964c-45c3-2ec6-deeeb9dd2800/public',
+        'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/33fea834-d24d-44f3-72d3-1c46598ed600/public',
+        'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/208d8f03-ee93-4377-7600-08b1183c3d00/public'
     ];
 
 

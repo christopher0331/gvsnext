@@ -12,11 +12,7 @@ export default function Header({ postTitle }) {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
+            setIsScrolled(window.scrollY > 50);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -38,6 +34,7 @@ export default function Header({ postTitle }) {
                 style={{ objectFit: 'cover', zIndex: 10 }}
                 quality={100}
                 priority
+                unoptimized
                 sizes="(max-width: 768px) 100vw, 
                        (max-width: 1200px) 50vw, 
                        33vw"
@@ -61,13 +58,13 @@ export default function Header({ postTitle }) {
                 transform: 'translate(-50%, -50%)',
                 textAlign: 'center',
                 color: 'white',
-                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)'
+                textShadow: '1px 1px 2px rgba(0, 0, 0, 0.4)'  // Simplified shadow
             }}>
-                <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem' }}>
+                <p style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem' }}>
                     {postTitle ? postTitle : (pageName ? pageName.replace(/-/g, ' ').toUpperCase() : 'WELCOME')}
-                </h1>
+                </p>
                 <p style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>Expert Craftsmanship, Durable Materials, and Unmatched Service</p>
-                <Link href="/contact" style={{ textDecoration: 'none' }}>
+                <Link href="/contact" passHref>
                     <button style={{
                         padding: '10px 20px',
                         fontSize: '1.2rem',
@@ -83,4 +80,4 @@ export default function Header({ postTitle }) {
             </div>
         </div>
     );
-};
+}

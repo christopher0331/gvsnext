@@ -45,12 +45,15 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
                 {/* Logo */}
                 <div className="flex justify-center items-center mb-4">
                     <Image
-                        src="/gvsLogoGreen.png"
+                        src="https://imagedelivery.net/OHVtjf602XdHccCnziCADA/02e7e67e-6b3a-4a32-fa09-93175d0e1200/gvsLogoClear"
                         alt="GVS Logo"
                         width={300}
                         height={300}
-                        priority // This prop indicates the image is to be preloaded
-                    />
+                        quality={100}
+                        priority
+                        sizes="(max-width: 768px) 20vw, 
+                               (max-width: 1200px) 10vw, 
+                               5vw"                    />
                 </div>
 
                 <ul className="space-y-2">

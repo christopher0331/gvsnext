@@ -90,7 +90,7 @@ const Homepage = () => {
     return (
         <>
             <Head>
-                <title>GVS-Boulder Fencing Company | Fence Installation and Repair in Denver, CO</title>
+                <title>GVS-Boulder Fencing Company | Fence Installation and Repair in Boulder, CO and in Arvada, CO</title>
                 <meta name="description" content="Discover your fencing solutions at GreenView Solutions! Explore various fence types, financing options, and find all the contact information you need on our homepage. Get the perfect fence for your property in Arvada, CO, with options ranging from wood to vinyl, chainlink, and more." />
                 <link rel="canonical" href="https://greenviewsolutions.net" />
                 <script type="application/ld+json">

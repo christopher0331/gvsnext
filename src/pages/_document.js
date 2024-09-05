@@ -10,10 +10,16 @@ class MyDocument extends Document {
           <link rel="preconnect" href="https://googleads.g.doubleclick.net" />
           <link rel="preconnect" href="https://www.google-analytics.com" />
           <link rel="preconnect" href="https://www.gstatic.com" />
-
+          <link
+            rel="preload"
+            href="https://imagedelivery.net/OHVtjf602XdHccCnziCADA/e17c9569-a336-4893-bf7b-260b2789d400/public"
+            as="image"
+            type="image/webp"
+          // You can also add attributes like crossorigin if needed
+          />
           {/* Google Tag Manager - Global site tag (gtag.js) for Google Analytics and Ads */}
- {/* Google Analytics */}
- <script async src={`https://www.googletagmanager.com/gtag/js?id=G-3GLE2W6L18`}></script>
+          {/* Google Analytics */}
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=G-3GLE2W6L18`}></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `

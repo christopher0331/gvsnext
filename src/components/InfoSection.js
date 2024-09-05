@@ -23,8 +23,8 @@ const InfoSection = () => {
                     </div>
 
                     <div className={styles['title-and-text']}>
-                        <h2 className={styles['section-title']}>About Us</h2>
-                        <p className={styles['section-subtitle']}>&quot;Colorado&apos;s Most Trusted Outdoor Living Contractor&quot;</p>
+                        <p className={styles['section-title']}>About Us</p>
+                        <h1 className={styles['section-subtitle']}>Denver &quot;Colorado&apos;s Most Trusted Outdoor Living Contractor&quot; Serving Arvada, Wheat Ridge, Golden, Denver and Boulder, CO</h1>
                         <p className={styles['info-p-section']}>GreenView Solutions elevates your home with luxurious outdoor living experiences. Immerse yourself in elegance and comfort in your own backyard, where every moment becomes a special memory.</p>
                     </div>
                 </div>
