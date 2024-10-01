@@ -5,7 +5,7 @@ import styles from './AccordionDropDown.module.scss';
 
 const faqs = [
   {
-    question: "What types of fencing do you offer in Downtown Denver@@@@?",
+    question: "What types of fencing do you offer in Downtown Denver?",
     answer: "We offer a wide range of fencing options suitable for Downtown Denver's urban environment, including modern steel fences, classic wrought iron, and low-maintenance vinyl fencing. Our designs can complement both residential and commercial properties in the city center.",
     theme: "Fence Regulations"
   },
