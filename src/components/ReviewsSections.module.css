@@ -203,6 +203,9 @@
   width: 100%;
   backface-visibility: hidden;
   transform-style: preserve-3d;
+  transition: max-height 0.3s ease-in-out;
+  max-height: 300px;
+  overflow: hidden;
 }
 
 .testimonialCard::before {
@@ -231,8 +234,7 @@
   margin-bottom: 2rem;
   line-height: 1.6;
   font-size: 1.1rem;
-  transform: translateZ(20px);
-  position: relative;
+  transition: max-height 0.3s ease-in-out;
 }
 
 .readMoreButton {
@@ -255,6 +257,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: black;
+  flex-direction: column;
   transform: translateZ(40px);
 }
 
@@ -269,8 +273,6 @@
 .authorName {
   font-weight: bold;
   margin-bottom: 0.2em;
-  color: gold;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
 }
 
 .authorDate {
@@ -282,24 +284,20 @@
 .rating {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
-  margin-top: 0.5rem;
 }
 
-.starFilled,
-.starEmpty {
-  margin-right: 2px;
-  font-size: 1rem;
-  color: gold; /* Set the color to gold for both filled and empty stars */
+.star {
+  font-size: 1.2rem;
+  margin-right: 4px;
 }
 
 .starFilled {
-  opacity: 1; /* Full opacity for filled stars */
+  color: gold;
 }
 
 .starEmpty {
-  opacity: 0.5; /* Reduced opacity for empty stars */
+  color: #ccc;
 }
 
 .navButton {
@@ -381,4 +379,8 @@
   padding: 2rem;
   font-size: 1.2rem;
   color: #666;
+}
+
+.expandedCard {
+  max-height: 1000px;
 }
