@@ -203,8 +203,8 @@
   width: 100%;
   backface-visibility: hidden;
   transform-style: preserve-3d;
-  transition: max-height 0.3s ease-in-out;
-  max-height: 300px;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+  max-height: 300px; /* Default height for larger screens */
   overflow: hidden;
 }
 
@@ -367,6 +367,7 @@
 
   .testimonialCard {
     padding: 2rem;
+    max-height: 400px; /* Increased height for mobile */
   }
 
   .testimonialText {
@@ -382,5 +383,18 @@
 }
 
 .expandedCard {
-  max-height: 1000px;
+  max-height: none; /* Remove max-height restriction */
+  height: auto; /* Allow height to adjust to content */
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .testimonialCard {
+    max-height: 400px; /* Increased height for mobile */
+  }
+
+  .expandedCard {
+    max-height: none; /* Remove max-height restriction */
+    height: auto; /* Allow height to adjust to content */
+  }
 }

@@ -1,20 +1,5 @@
 const testimonials = [
-  {
-    id: 1,
-    author: 'Zach Hanlon',
-    date: '2024-01-16',
-    rating: 5,
-    review:
-      'GreenView Solutions recently transformed my backyard with a cedar fence, concrete pad, landscaping, and strategic lighting installations. The quality of their work, especially the elegant cedar fence, is outstanding. But what truly sets them apart is their exceptional customer service and communication. They kept me informed throughout the project, ensuring everything went smoothly. The addition of lighting on the fence, trees, and other areas has revolutionized the look and usability of my backyard at night, creating an enchanting ambiance. Their professionalism and attention to detail are commendable. I highly recommend GreenView Solutions for their top-notch work and the remarkable transformation they offer.',
-  },
-  {
-    id: 2,
-    author: 'Rino Svaldi',
-    date: '2024-01-16',
-    rating: 5,
-    review:
-      'I have used GreenView Solutions not once but twice in the last two years. The first time was to replace my crumbling backyard privacy fence. The second time was to help me dig out and construct a custom backyard bocce court, as well as installing some concrete walkways and a patio. In both cases, the work was completed within the agreed upon time frame and budget, and I was extremely satisfied with the end results. I should point out that in neither case was GreenView the lowest bid I received. Nevertheless, I chose them because after meeting the business owner Brandon, I felt very confident that he (and his team) will do exactly what he says they will do, and if a problem were to arise, he can be trusted to make it right.',
-  },
+
   {
     id: 3,
     author: 'Janice Marie King',
@@ -23,22 +8,7 @@ const testimonials = [
     review:
       'I can\'t recommend Brandon and his entire team. I have a beautiful fence and am very happy. And yes they honor any issues quickly. You will not be sorry. Finally a great contractor that keeps his promises',
   },
-  {
-    id: 4,
-    author: 'Lyn Jenkins',
-    date: '2024-01-16',
-    rating: 5,
-    review:
-      'This fall, I hired GreenView Solutions to replace my very old fence. I got several bids from different companies. GreenView\'s owner, Brandon was very thorough in his site visit and detailed in his written estimate. Due to an 8-foot variance, I pulled a permit that took a long time for the city of Denver to approve. GreenView was patient with the process and rescheduled the build for me a couple of times. Once the build started, his team was very professional, efficient and tidy. The cedar planks and steel posts were high quality and the builders\' workmanship was spot-on. I\'m thrilled with how the new fence looks. Everyone I worked with at GreenView was kind and professional...and I\'m beyond happy with their craftsmanship.',
-  },
-  {
-    id: 5,
-    author: 'Amanda',
-    date: '2023-10-16',
-    rating: 5,
-    review:
-      'Amazing local company to work with! Priced well and great quality and expertise. Nick and his partner put the fence up so well and quickly-they really know what they are doing and work incredibly hard! Brandon is confident and passionate about doing a great job and providing a great service and is very responsive. Reggie did amazing quality control and is passionate about a good and long lasting end result. These guys really know what they are doing and provide excellent customer service and want you to be confident and happy with their work. I highly recommend this company!',
-  },
+
   {
     id: 6,
     author: 'Matt Snyder',
@@ -46,6 +16,15 @@ const testimonials = [
     rating: 5,
     review:
       'My experience with GreenView Solutions was phenomenal. Brandon was extremely responsive with an estimate, questions I had via email, answered my calls personally and quickly, and was able to schedule my project within a week. The crew arrived on time, were very friendly and helpful, and did an amazing job on my fence. I would highly recommend contacting them for any outdoor project.',
+  },
+
+  {
+    id: 2,
+    author: 'Rino Svaldi',
+    date: '2024-01-16',
+    rating: 5,
+    review:
+      'I have used GreenView Solutions not once but twice in the last two years. The first time was to replace my crumbling backyard privacy fence. The second time was to help me dig out and construct a custom backyard bocce court, as well as installing some concrete walkways and a patio. In both cases, the work was completed within the agreed upon time frame and budget, and I was extremely satisfied with the end results. I should point out that in neither case was GreenView the lowest bid I received. Nevertheless, I chose them because after meeting the business owner Brandon, I felt very confident that he (and his team) will do exactly what he says they will do, and if a problem were to arise, he can be trusted to make it right.',
   },
   {
     id: 7,
@@ -168,6 +147,23 @@ const testimonials = [
       'Greenview Solutions built a sturdy fence for me. Rolando, Jose and Alberto were hard workers and kept me informed each step of the way. They deserve a bonus for their knowledge and professionalism.',
   },
   {
+    id: 1,
+    author: 'Zach Hanlon',
+    date: '2024-01-16',
+    rating: 5,
+    review:
+      'GreenView Solutions recently transformed my backyard with a cedar fence, concrete pad, landscaping, and strategic lighting installations. The quality of their work, especially the elegant cedar fence, is outstanding. But what truly sets them apart is their exceptional customer service and communication. They kept me informed throughout the project, ensuring everything went smoothly. The addition of lighting on the fence, trees, and other areas has revolutionized the look and usability of my backyard at night, creating an enchanting ambiance. Their professionalism and attention to detail are commendable. I highly recommend GreenView Solutions for their top-notch work and the remarkable transformation they offer.',
+  },
+
+  {
+    id: 5,
+    author: 'Amanda',
+    date: '2023-10-16',
+    rating: 5,
+    review:
+      'Amazing local company to work with! Priced well and great quality and expertise. Nick and his partner put the fence up so well and quickly-they really know what they are doing and work incredibly hard! Brandon is confident and passionate about doing a great job and providing a great service and is very responsive. Reggie did amazing quality control and is passionate about a good and long lasting end result. These guys really know what they are doing and provide excellent customer service and want you to be confident and happy with their work. I highly recommend this company!',
+  },
+  {
     id: 22,
     author: 'Dave Sluiter',
     date: '2021-12-16',
@@ -190,6 +186,14 @@ const testimonials = [
     rating: 5,
     review:
       "Brandon helped us out with a sprinkler problem. It was an extra valve that I was unaware of. It took all of thirty seconds to fix and he charged me ZERO. I Really appreciate his effort and also that he did me a favor when he clearly had a lot of work on his plate elsewhere. Thank you Brandon.",
+  },
+  {
+    id: 4,
+    author: 'Lyn Jenkins',
+    date: '2024-01-16',
+    rating: 5,
+    review:
+      'This fall, I hired GreenView Solutions to replace my very old fence. I got several bids from different companies. GreenView\'s owner, Brandon was very thorough in his site visit and detailed in his written estimate. Due to an 8-foot variance, I pulled a permit that took a long time for the city of Denver to approve. GreenView was patient with the process and rescheduled the build for me a couple of times. Once the build started, his team was very professional, efficient and tidy. The cedar planks and steel posts were high quality and the builders\' workmanship was spot-on. I\'m thrilled with how the new fence looks. Everyone I worked with at GreenView was kind and professional...and I\'m beyond happy with their craftsmanship.',
   },
   {
     id: 25,

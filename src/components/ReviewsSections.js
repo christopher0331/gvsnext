@@ -8,7 +8,8 @@ export default function ReviewsSections() {
   const [testimonials, setTestimonials] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
-  const [showFullReview, setShowFullReview] = useState(false);
+  const [expandedReviews, setExpandedReviews] = useState({});
+  const timer = React.useRef(null);
 
   const nextTestimonial = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
@@ -18,8 +19,28 @@ export default function ReviewsSections() {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
   }, [testimonials.length]);
 
-  const toggleFullReview = () => {
-    setShowFullReview(!showFullReview);
+  const resetTimer = useCallback(() => {
+    if (isAutoPlay) {
+      clearInterval(timer.current);
+      timer.current = setInterval(nextTestimonial, 5000);
+    }
+  }, [isAutoPlay, nextTestimonial]);
+
+  const handleNextTestimonial = useCallback(() => {
+    nextTestimonial();
+    resetTimer();
+  }, [nextTestimonial, resetTimer]);
+
+  const handlePrevTestimonial = useCallback(() => {
+    prevTestimonial();
+    resetTimer();
+  }, [prevTestimonial, resetTimer]);
+
+  const toggleFullReview = (index) => {
+    setExpandedReviews(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
   };
 
   useEffect(() => {
@@ -32,11 +53,11 @@ export default function ReviewsSections() {
   }, []);
 
   useEffect(() => {
-    let timer;
+    timer.current = null;
     if (isAutoPlay) {
-      timer = setInterval(nextTestimonial, 5000);
+      timer.current = setInterval(nextTestimonial, 5000);
     }
-    return () => clearInterval(timer);
+    return () => clearInterval(timer.current);
   }, [isAutoPlay, nextTestimonial]);
 
   if (testimonials.length === 0) {
@@ -49,7 +70,7 @@ export default function ReviewsSections() {
     <section className={styles.testimonials} style={{ background: `linear-gradient(45deg, #006400, #45b167)` }}>
       <h2>What Our Clients Say</h2>
       <div className={styles.testimonialCarousel}>
-        <button className={styles.navButton} onClick={prevTestimonial}>
+        <button className={styles.navButton} onClick={handlePrevTestimonial}>
           <FaChevronLeft />
         </button>
         <AnimatePresence mode="wait">
@@ -61,13 +82,13 @@ export default function ReviewsSections() {
             exit={{ opacity: 0, rotateY: 90 }}
             transition={{ duration: 0.5 }}
           >
-            <div className={`${styles.testimonialCard} ${showFullReview ? styles.expandedCard : ''}`}>
+            <div className={`${styles.testimonialCard} ${expandedReviews[currentIndex] ? styles.expandedCard : ''}`}>
               <FaQuoteLeft className={styles.quoteIcon} />
               <p className={styles.testimonialText}>
-                {currentTestimonial.review.length > 150 && !showFullReview ? (
+                {currentTestimonial.review.length > 150 && !expandedReviews[currentIndex] ? (
                   <>
                     {currentTestimonial.review.slice(0, 150)}...
-                    <button className={styles.readMoreButton} onClick={toggleFullReview}>
+                    <button className={styles.readMoreButton} onClick={() => toggleFullReview(currentIndex)}>
                       Read More
                     </button>
                   </>
@@ -75,7 +96,7 @@ export default function ReviewsSections() {
                   <>
                     {currentTestimonial.review}
                     {currentTestimonial.review.length > 150 && (
-                      <button className={styles.readMoreButton} onClick={toggleFullReview}>
+                      <button className={styles.readMoreButton} onClick={() => toggleFullReview(currentIndex)}>
                         Read Less
                       </button>
                     )}
@@ -94,7 +115,7 @@ export default function ReviewsSections() {
             </div>
           </motion.div>
         </AnimatePresence>
-        <button className={styles.navButton} onClick={nextTestimonial}>
+        <button className={styles.navButton} onClick={handleNextTestimonial}>
           <FaChevronRight />
         </button>
       </div>
