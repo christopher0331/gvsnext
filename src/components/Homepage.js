@@ -47,7 +47,8 @@ const Homepage = () => {
                 "sameAs": [
                     "https://www.facebook.com/greenviewsolutions",
                     "https://www.twitter.com/greenviewsolutions",
-                    "https://www.instagram.com/greenviewsolutions"
+                    "https://www.instagram.com/greenview_solutions_llc",
+                    "https://www.google.com/maps/place/Greenview+Solutions/@39.9890046,-105.1713587,11z/data=!4m6!3m5!1s0x876bf5d9d671bf3f:0xe263da5d1b64b4a4!8m2!3d40.125623!4d-104.9541494!16s%2Fg%2F11j76mvz9t?coh=164777&entry=tt&shorturl=1"
                 ],
                 "hasMap": "https://www.google.com/maps/place/6525+Gunpark+Dr+Ste+370-110,+Boulder,+CO+80301/"
             },
@@ -80,7 +81,7 @@ const Homepage = () => {
                 "sameAs": [
                     "https://www.facebook.com/greenviewsolutions",
                     "https://www.twitter.com/greenviewsolutions",
-                    "https://www.instagram.com/greenviewsolutions"
+                    "https://www.instagram.com/greenview_solutions_llc"
                 ],
                 "hasMap": "https://www.google.com/maps/place/12650+W+64th+Ave+Unit+E-149,+Arvada,+CO+80004/"
             }

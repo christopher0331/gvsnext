@@ -34,7 +34,7 @@ const LocationsMap = () => {
                 <GoogleMap
                     mapContainerStyle={containerStyle}
                     center={center}
-                    zoom={10}
+                    zoom={15}
                 >
                     {/* Your map markers here */}
                     <Marker position={location1} />
