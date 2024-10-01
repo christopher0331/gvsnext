@@ -5,7 +5,6 @@ import { testimonialsData } from './TestimonialsData.js';
 import Testimonials from './ReviewsSections.js';
 import FinancingSection from './FinancingSection.js';
 import Accordion from './AccordionDropDown.js';
-import AccordionInformation from './AccordionInformation.js';
 import styles from './AccordionDropDown.module.scss';
 import Head from 'next/head';
 import CallToActionSection from './CallToActionSection.js';
@@ -101,24 +100,26 @@ const Homepage = () => {
 
             <div style={{ backgroundColor: 'white' }}>
                 <InfoSection />
-                <div style={{ color: 'black', display: 'flex', justifyContent: 'center', fontSize: '3rem', fontFamily: 'Courier New', textAlign: 'center' }}>
-                    Pick Your Fence
-                </div>
-                <FenceCards />
 
                 <Testimonials testimonials={testimonialsData} />
-
-                <FinancingSection />
+                
+                <div style={{ color: 'black', display: 'flex', justifyContent: 'center', fontSize: '3rem', fontFamily: 'Courier New', textAlign: 'center', marginTop: '5%' }}>
+                    Pick Your Fence
+                </div>
+                
+                <FenceCards />
 
                 <div style={{ marginBottom: '5%' }}>
                     <CallToActionSection />
                 </div>
+                
+                <FinancingSection />
 
-                <div className={styles.accordionDiv}>
-                    <AccordionInformation />
+
+                <div className={styles.accordionDiv} style={{overflow: 'hidden'}}>
                     <Accordion />
                 </div>
-
+ run
                 <LocationsMap />
 
             </div>
