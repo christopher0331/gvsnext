@@ -1,8 +1,0 @@
-.formContainerStyle {
-    display: flex;
-    flex-direction: row;  // Default flex-direction
-
-    @media (max-width: 650px) {
-        flex-direction: column;  // Changes to column when the screen width is 650px or less
-    }
-}
