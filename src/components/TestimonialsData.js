@@ -1,4 +1,4 @@
-export const testimonialsData = [
+const testimonials = [
   {
     author: 'Zach Hanlon',
     date: '2024-01-16', // Assuming today is April 16, 2024, and the review was posted 4 months ago
@@ -223,3 +223,7 @@ export const testimonialsData = [
       'The fence that was built was beyond our expectations. Brandon and his crew were very nice and professional.',
   },
 ];
+
+export function getTestimonials() {
+  return testimonials;
+}
