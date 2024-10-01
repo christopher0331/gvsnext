@@ -1,70 +1,71 @@
-.callToActionSection {
-    display: flex;
-    background-color: black;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 2em 1em; // Reduced side padding for all sizes, can be adjusted further in media queries
-    margin-top: 2em;
-  
-    .textContent {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 100%; // Use full width on mobile by default
-      margin-right: 0; // Remove margin on smaller screens
-  
-      h2 {
-        font-size: 1.5em; // Adjusted for smaller screens
-        font-weight: 900;
-        text-align: center; // Center text for mobile readability
-      }
-  
-      p {
-        font-size: 1em; // Adjusted for smaller screens
-        font-weight: 500;
-        text-align: center; // Center text for mobile readability
-      }
-    }
-  
-    button {
-      background-color: darkgreen;
-      padding: 1em; // Adjusted padding
-      font-size: 1em; // Adjust font size for button
-      border-radius: 5px; // Adjusted border radius
-      border: 2px solid white;
-      width: 100%; // Full width button
-      max-width: 300px; // Maximum width for large screens
-      margin-top: 1em; // Add some space above the button on smaller screens
-    }
-  
-    @media (min-width: 768px) {
-      flex-wrap: nowrap; // Disable wrap for larger screens
-      padding: 2em 5em; // Restore larger padding
-  
-      .textContent {
-        width: 50%; // Half-width for larger screens
-        margin-right: 5.7em; // Add margin back for larger screens
-  
-        h2 {
-          font-size: 1.9em; // Larger font size for h2
-          text-align: left; // Align text to the left
-        }
-  
-        p {
-          font-size: 1.3em; // Larger font size for paragraph
-          text-align: left; // Align text to the left
-        }
-      }
-  
-      button {
-        padding: 1.5em 1.5em; // Restore padding
-        font-size: 1.5em; // Restore font size
-        border-radius: 10px; // Restore border radius
-        width: auto; // Auto width based on content
-        margin-top: 0; // Remove the margin above the button
-      }
-    }
+.ctaSection {
+  background-color: #45b167;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.ctaContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ctaContent h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.ctaContent p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.ctaButton {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #45b167;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ffffff;
+  cursor: pointer; /* Add this line to show it's clickable */
+  outline: none; /* Add this line to remove the focus outline */
+}
+
+.ctaButton:hover {
+  background-color: #45b167;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .ctaSection {
+    padding: 3rem 1rem;
   }
-  
+
+  .ctaContent h2 {
+    font-size: 2rem;
+  }
+
+  .ctaContent p {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
