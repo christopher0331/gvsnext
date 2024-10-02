@@ -1,0 +1,33 @@
+.fenceCardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.card {
+  width: 250px;
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #555;
+}

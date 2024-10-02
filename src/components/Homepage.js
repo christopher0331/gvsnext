@@ -9,9 +9,9 @@ import styles from './AccordionDropDown.module.scss';
 import Head from 'next/head';
 import CallToActionSection from './CallToActionSection.js';
 import LocationsMap from './LocationsMap.js';
+import FeaturedProjects from './FeaturedProjects';
 
 const Homepage = () => {
-    
     
     const schema = {
         "@context": "http://schema.org",
@@ -103,11 +103,7 @@ const Homepage = () => {
 
                 <Testimonials testimonials={testimonialsData} />
                 
-                <div style={{ color: 'black', display: 'flex', justifyContent: 'center', fontSize: '3rem', fontFamily: 'Courier New', textAlign: 'center', marginTop: '5%' }}>
-                    Pick Your Fence
-                </div>
-                
-                <FenceCards />
+                <FeaturedProjects />
 
                 <div style={{ marginBottom: '5%' }}>
                     <CallToActionSection />
