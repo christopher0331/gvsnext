@@ -1,106 +1,62 @@
-import { React, useEffect } from 'react';
-import ContactForm from '../components/ContactForm.js';
-import styles from '../components/ContactUs.module.scss';
-import Header from '../components/Header.js';
-import Footer from '../components/Footer.js';
-import Head from 'next/head';
+import Head from 'next/head'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import ContactForm from '../components/ContactForm'
+import styles from '../components/ContactUs.module.scss'
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 
-
-const ContactUs = (props) => {
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-        // Initialize GTM dataLayer
-        window.dataLayer = window.dataLayer || [];
-
-        // Define gtag function
-        function gtag() {
-            window.dataLayer.push(arguments);
-        }
-
-        // Load GTM script
-        const script = document.createElement('script');
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-11428060127';
-        script.async = true;
-        document.body.appendChild(script);
-
-        // Execute the GTM script
-        script.onload = () => {
-            gtag('js', new Date());
-            gtag('config', 'AW-11428060127');
-        };
-
-        // Clean up
-        return () => {
-            document.body.removeChild(script);
-        };
-    }, [])
-
+const ContactUs = () => {
     return (
-        <div>
+        <div className={styles.pageWrapper}>
             <Head>
-                <title>GreenView Solutions Contact Us Page</title>
-                <meta name="description" content="This page is the contact us page and contains all information on how to get into contact with us" />
-                <link rel="canonical" href="https://greenviewsolutions.net/contact" />
-
+                <title>Contact Us - GreenView Solutions</title>
+                <meta name="description" content="Get in touch with GreenView Solutions for all your fencing needs in Denver, CO." />
             </Head>
             <Header />
-            <div>
-                <div className={styles.contactUsTitle}>
-                    Contact Us
-                </div>
-
-                <div className={styles.contactFormAndInfo}>
-                    <div className={styles.contactForm}>
-                        <ContactForm />
+            <main className={styles.contactUsPage}>
+                <section className={styles.heroSection}>
+                    <div className={styles.heroContent}>
+                        <h1 className={styles.heroTitle}>Contact Us</h1>
+                        <p className={styles.heroSubtitle}>Lets build your dream fence together</p>
                     </div>
-                </div>
-                <div>
-                    <div className={styles.contactUsParagraph}>
-                        When you’re in need of residential or commercial fencing in Denver, CO,
-                        look no further than GreenView Solutions. We’ve been building better
-                        fencing since 2010, and we’d love to add you to our ever-growing list of
-                        extremely satisfied customers. As a residential and commercial fence contractor,
-                        we take great pride in helping homeowners and business owners with all their
-                        fencing needs. We provide the best materials and services, and our quality
-                        craftsmen expertly install all our fences. With over 100 projects completed,
-                        we’ve built quite a reputation as the Denver fencing experts. Find out a bit more
-                        about what we can do for you and contact us today.
-                        <br />
-                        <br />
-                        <ul>
-                            <li>
-                                <strong> Chain Link Fences </strong> –
-                                An economical fencing option, we’re your source for chain link fences in Denver, CO.
-                                Choose from a variety of colors, and we can also provide solutions for gates and
-                                privacy slats.
-                            </li>
-                            <li>
-                                <strong> Wood Fences </strong> –
-                                Choose wood fencing for your home or business when you need privacy and security.
-                                We offer a variety of styles to choose from.
-                            </li>
-                            <li>
-                                <strong> Ornamental Iron Fencing </strong> –
-                                Add security and elegance to your business or home with a decorative fence. We
-                                have multiple styles and colors to select from.
-                            </li>
-                            <li>
-                                <strong> Commercial Fencing </strong> –
-                                Our commercial fence installation services will give you the security you need.
-                                Whether you need a large or small fence or one indoors or outdoors, we’re the
-                                team to call. We use the best industrial materials that will stand the test of
-                                time.
-                            </li>
+                </section>
+                <section className={styles.contactSection}>
+                    <div className={styles.contactContainer}>
+                        <div className={styles.formSection}>
+                            <h2 className={styles.sectionTitle}>Send us a message</h2>
+                            <ContactForm />
+                        </div>
+                        <div className={styles.infoSection}>
+                            <h2 className={styles.sectionTitle}>Get in touch</h2>
+                            <p className={styles.infoText}>
+                                When you need residential or commercial fencing in Denver, CO,
+                                GreenView Solutions is your trusted partner. Since 2010, we have been
+                                building better fencing and creating extremely satisfied customers.
+                                Let us add you to our growing list of success stories.
+                            </p>
+                            <ul className={styles.contactList}>
+                                <li>
+                                    <FaPhone className={styles.icon} />
+                                    <span><strong>Phone:</strong> (303) 358-8168</span>
+                                </li>
+                                <li>
+                                    <FaEnvelope className={styles.icon} />
+                                    <span><strong>Email:</strong> admin@gvsco.net</span>
+                                </li>
+                                <li>
+                                    <FaMapMarkerAlt className={styles.icon} />
+                                    <span><strong>Address:</strong>6525 Gunpark Dr Ste 370-110, Boulder, CO 80301</span>
+                                    <span><strong>Address:</strong>12650 W 64th Ave Unit E-149, Arvada, CO 80004</span>
 
-                        </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </section>
+            </main>
             <Footer />
         </div>
-
     )
 }
 
-export default ContactUs;
+export default ContactUs

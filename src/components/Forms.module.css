@@ -160,12 +160,15 @@
   }
   
   .formField {
+    color: black;
     margin-bottom: 2rem;
   }
   
   .pofLabel {
     font-weight: 600;
     color: #444;
+    color: black;
+
     margin-bottom: 0.75rem;
     font-size: 1.1rem;
     display: block;
@@ -174,6 +177,7 @@
   .radioGroup {
     display: flex;
     flex-wrap: wrap;
+    color: black;
     gap: 1rem;
     margin-top: 0.5rem;
   }
@@ -183,6 +187,7 @@
     align-items: center;
     cursor: pointer;
     background-color: #f0f0f0;
+    color: black !important; /* Added !important to override any conflicting styles */
     padding: 0.5rem 1rem;
     border-radius: 20px;
     transition: all 0.3s ease;
@@ -190,12 +195,14 @@
   
   .radioGroup label:hover {
     background-color: #e0e0e0;
+    color: black;
   }
   
   .radioGroup input[type="radio"] {
     margin-right: 0.5rem;
     appearance: none;
     width: 18px;
+    color: black;
     height: 18px;
     border: 2px solid #45b167;
     border-radius: 50%;
@@ -206,6 +213,7 @@
   .radioGroup input[type="radio"]:checked {
     background-color: #45b167;
     box-shadow: inset 0 0 0 4px #fff;
+    color: black;
   }
   
   /* Apply radioGroup styles to posts and temp fence sections */
@@ -234,6 +242,7 @@
     padding: 0.5rem 1rem;
     border-radius: 20px;
     transition: all 0.3s ease;
+    color: black !important; /* Added !important to override any conflicting styles */
   }
   
   .postsSection .radioGroup label:hover,
