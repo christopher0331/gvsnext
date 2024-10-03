@@ -29,8 +29,8 @@ export default function Forms() {
   return (
     <div>
       <Head>
-        <title>Contact Us - Seattle Outdoor Living</title>
-        <meta name="description" content="Get in touch with Seattle Outdoor and other things Living for your fencing needs." />
+        <title>Contact Us - GreenView Solutions</title>
+        <meta name="description" content="Get in touch with GreenView Solutions for your fencing and outdoor living needs." />
       </Head>
       <Header />
       <div className={styles.pageContainer}>
@@ -45,7 +45,7 @@ export default function Forms() {
           </div>
 
           <div className={styles.sidebarSection}>
-            <h2 className={styles.sidebarTitle}>What to expect from Seattle Outdoor Living</h2>
+            <h2 className={styles.sidebarTitle}>What to expect from GreenView Solutions</h2>
             <ul className={styles.sidebarList}>
               <li>Top Rated Customer Service</li>
               <li>Professional Team</li>
