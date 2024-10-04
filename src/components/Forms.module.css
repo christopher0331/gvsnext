@@ -1,3 +1,8 @@
+/* Add this at the beginning of your CSS file */
+.form, .form * {
+  color: black !important;
+}
+
 .container {
     max-width: 700px; /* Reduced width */
     margin: 2rem auto;
@@ -64,6 +69,7 @@
     margin-bottom: 0.5rem;
     color: #555;
     font-weight: 500;
+    color: black !important; /* Added to ensure black text */
   }
   
   .formGroup input,
@@ -74,6 +80,7 @@
     border-radius: 4px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
+    color: black !important; /* Added to ensure black text */
   }
   
   .formGroup input:focus,
@@ -166,9 +173,7 @@
   
   .pofLabel {
     font-weight: 600;
-    color: #444;
-    color: black;
-
+    color: black !important;
     margin-bottom: 0.75rem;
     font-size: 1.1rem;
     display: block;
@@ -317,6 +322,7 @@
   }
   
   .addressSection {
+    color: black !important; /* Added to ensure black text */
     margin-top: 2rem;
   }
   
@@ -356,6 +362,7 @@
     resize: vertical;
     margin-top: 0.5rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: black !important; /* Added to ensure black text */
   }
   
   .formTextarea:focus {
@@ -573,6 +580,7 @@
     border-radius: 4px;
     font-size: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: black !important; /* Added to ensure black text */
   }
   
   .inputField:focus {
@@ -684,6 +692,7 @@
     border-radius: 4px;
     font-size: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: black !important; /* Added to ensure black text */
   }
   
   .inputField:focus {
