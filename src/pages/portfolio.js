@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import AWS from 'aws-sdk';
-import CustomModal from '../components/CustomModal.js';
+import Modal from '../components/Modal.js';
 import '../app/portfolio.css'
 import axios from 'axios';
 import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
 import CoolLoader from '../components/CoolLoader.js';
 import Head from 'next/head';
+import { motion } from 'framer-motion';
 
 AWS.config.credentials = new AWS.Credentials();
+
 const S3Bucket = () => {
   const [projectImages, setProjectImages] = useState([]);
-  const [show, setShow] = useState(false);
-  const [currentProjectId, setCurrentProjectId] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [currentProjectImages, setCurrentProjectImages] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const handleShow = (id) => {
-    setCurrentProjectId(id);
-    setShow(true);
+  const handleShowModal = (projectId) => {
+    const selectedProject = projectImages.find(project => project[0].id === projectId);
+    setCurrentProjectImages(selectedProject);
+    setShowModal(true);
   };
 
-  const handleClose = (id) => {
-    setCurrentProjectId(id);
-    setShow(false);
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   useEffect(() => {
@@ -67,54 +69,67 @@ const S3Bucket = () => {
     fetchData().then(() => setLoading(false));
   }, []);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
 
-
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
+  };
 
   return (
     <>
       <Head>
-        <title>GreenView Solutions Portfolio Page</title>
-        <meta name="description" content="This page is the portoflio page and contains our portfolio of wood fences, privacy fences, vinyl fences, chainlink fences and other projects" />
+        <title>GreenView Solutions Portfolio - Showcasing Our Finest Work</title>
+        <meta name="description" content="Explore our portfolio of stunning wood fences, privacy fences, vinyl fences, chainlink fences, and other exceptional projects. See the quality and craftsmanship of GreenView Solutions." />
         <link rel="canonical" href="https://greenviewsolutions.net/portfolio" />
-
       </Head>
       <div>
         <Header />
         {loading ? (
           <CoolLoader />
         ) : (
-          <ul>
-            <div id="primaryBox">
-              <div className="portfolioTitle">
-                <h1 style={{ color: 'black' }}>Portfolio</h1>
-              </div>
-              <div className="portfolioBlock">
-                {projectImages.map((project) => (
-                  <div key={project[0].id}>
-                    <div className="portfolioProjects">
-                      <img src={project[0].url} className="portfolioImage" alt="" />
-                      <div className="portfolioBody">
-                        <div onClick={() => handleShow(project[0].id)}>
-                          <div className="btn2 from-left2">View Project</div>
-                        </div>
-                        {project.length > 0 && (
-                          <CustomModal
-                            show={show}
-                            handleClose={handleClose}
-                            currentProjectId={currentProjectId}
-                            projectNumber={project[0].id}
-                            images={project.map((image) => image.url)}
-                          />
-                        )}
-                      </div>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+          >
+            <div className="portfolioTitle">
+              <h1>Our Portfolio</h1>
+            </div>
+            <motion.div className="portfolioBlock" variants={containerVariants}>
+              {projectImages.map((project) => (
+                <motion.div key={project[0].id} variants={itemVariants}>
+                  <div className="portfolioProjects">
+                    <img src={project[0].url} className="portfolioImage" alt={`Project ${project[0].id}`} />
+                    <div className="portfolioBody">
+                      <button className="btn2" onClick={() => handleShowModal(project[0].id)}>
+                        View Project
+                      </button>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-          </ul>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
         )}
-
+        {showModal && (
+          <Modal
+            show={showModal}
+            onClose={handleCloseModal}
+            projectImages={currentProjectImages}
+          />
+        )}
         <Footer />
       </div>
     </>
