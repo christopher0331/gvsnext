@@ -1,8 +1,10 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import Script from 'next/script';
+import { getTestimonials } from '../components/TestimonialsData.js';
 
 class MyDocument extends Document {
   render() {
+  const testimonials = getTestimonials();
     return (
       <Html lang="en">
         <Head>
@@ -247,30 +249,31 @@ class MyDocument extends Document {
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
                 "@context": "https://schema.org",
-                "@type": "Review",
-                "itemReviewed": {
-                  "@type": "LocalBusiness",
-                  "name": "GreenView Solutions",
-                  "image": "https://greenviewsolutions.net/gvsLogoGreen.png",
-                  "url": "https://greenviewsolutions.net"
-                },
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5"
-                },
-                "name": "Excellent service and quality",
-                "author": {
-                  "@type": "Person",
-                  "name": "John Doe"
-                },
-                "reviewBody": "GreenView Solutions provided excellent service. The fence they installed is of high quality and looks great. Highly recommended!",
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "GreenView Solutions"
+                "@type": "LocalBusiness",
+                "name": "GreenView Solutions",
+                "image": "https://greenviewsolutions.net/gvsLogoGreen.png",
+                "url": "https://greenviewsolutions.net",
+                "review": testimonials.map(testimonial => ({
+                  "@type": "Review",
+                  "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": testimonial.rating.toString()
+                  },
+                  "name": testimonial.review.substring(0, 50) + "...",
+                  "author": {
+                    "@type": "Person",
+                    "name": testimonial.author
+                  },
+                  "reviewBody": testimonial.review,
+                  "datePublished": testimonial.date
+                })),
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": (testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length).toFixed(1),
+                  "reviewCount": testimonials.length.toString()
                 }
               })
-            }}
-          />
+            }} />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -392,3 +395,5 @@ class MyDocument extends Document {
 }
 
 export default MyDocument;
+
+
