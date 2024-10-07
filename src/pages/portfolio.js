@@ -93,6 +93,21 @@ const S3Bucket = () => {
         <title>GreenView Solutions Portfolio - Showcasing Our Finest Work</title>
         <meta name="description" content="Explore our portfolio of stunning wood fences, privacy fences, vinyl fences, chainlink fences, and other exceptional projects. See the quality and craftsmanship of GreenView Solutions." />
         <link rel="canonical" href="https://greenviewsolutions.net/portfolio" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://greenviewsolutions.net/portfolio" />
+        <meta property="og:title" content="GreenView Solutions Portfolio" />
+        <meta property="og:description" content="Explore our portfolio of stunning fences and exceptional projects. See the quality and craftsmanship of GreenView Solutions." />
+        <meta property="og:image" content="https://greenviewsolutions.net/images/portfolio-preview.jpg" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://greenviewsolutions.net/portfolio" />
+        <meta property="twitter:title" content="GreenView Solutions Portfolio" />
+        <meta property="twitter:description" content="Explore our portfolio of stunning fences and exceptional projects. See the quality and craftsmanship of GreenView Solutions." />
+        <meta property="twitter:image" content="https://greenviewsolutions.net/images/portfolio-preview.jpg" />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
