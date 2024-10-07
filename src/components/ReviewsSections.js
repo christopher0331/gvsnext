@@ -83,10 +83,17 @@ export default function ReviewsSections() {
       }
     }));
 
+    const averageRating = testimonials.reduce((sum, testimonial) => sum + testimonial.rating, 0) / testimonials.length;
+
     const structuredData = {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "GreenView Solutions", // Replace with your actual business name
+      "@type": "Product",
+      "name": "GreenView Solutions Services", // Replace with your actual product/service name
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": averageRating.toFixed(1),
+        "reviewCount": testimonials.length
+      },
       "review": reviewsData
     };
 
