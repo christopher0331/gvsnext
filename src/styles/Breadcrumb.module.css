@@ -1,0 +1,28 @@
+.breadcrumb {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.breadcrumbItem {
+  margin-right: 0.5rem;
+}
+
+.breadcrumbItem:not(:last-child)::after {
+  content: ">";
+  margin-left: 0.5rem;
+}
+
+.breadcrumbItem a {
+  color: #00c853;
+  text-decoration: none;
+}
+
+.breadcrumbItem a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbItem.active {
+  color: #333;
+}
