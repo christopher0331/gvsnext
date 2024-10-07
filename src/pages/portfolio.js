@@ -93,6 +93,28 @@ const S3Bucket = () => {
         <title>GreenView Solutions Portfolio - Showcasing Our Finest Work</title>
         <meta name="description" content="Explore our portfolio of stunning wood fences, privacy fences, vinyl fences, chainlink fences, and other exceptional projects. See the quality and craftsmanship of GreenView Solutions." />
         <link rel="canonical" href="https://greenviewsolutions.net/portfolio" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ImageGallery",
+              "name": "GreenView Solutions Portfolio",
+              "description": "A collection of our best fencing projects",
+              "image": projectImages.map(project => ({
+                "@type": "ImageObject",
+                "contentUrl": project[0].url,
+                "description": `Fencing project ${project[0].id}`,
+                "name": `GreenView Solutions Fencing Project ${project[0].id}`,
+                "author": {
+                  "@type": "Organization",
+                  "name": "GreenView Solutions"
+                },
+                "datePublished": new Date().toISOString().split('T')[0] // Current date
+              }))
+            })
+          }}
+        />
       </Head>
       <div>
         <Header />
