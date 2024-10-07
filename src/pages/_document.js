@@ -290,8 +290,16 @@ class MyDocument extends Document {
                       "@type": "Offer",
                       "url": "https://greenviewsolutions.net/wood-fences",
                       "priceCurrency": "USD",
+                      "price": "55.00",
                       "priceValidUntil": "2024-12-31",
-                      "availability": "https://schema.org/InStock"
+                      "availability": "https://schema.org/InStock",
+                      "unitCode": "LNF",
+                      "unitText": "per linear foot"
+                    },
+                    "aggregateRating": {
+                      "@type": "AggregateRating",
+                      "ratingValue": "4.8",
+                      "reviewCount": "47"
                     }
                   },
                   {
@@ -307,8 +315,16 @@ class MyDocument extends Document {
                       "@type": "Offer",
                       "url": "https://greenviewsolutions.net/vinyl-fences",
                       "priceCurrency": "USD",
+                      "price": "48.00",
                       "priceValidUntil": "2024-12-31",
-                      "availability": "https://schema.org/InStock"
+                      "availability": "https://schema.org/InStock",
+                      "unitCode": "LNF",
+                      "unitText": "per linear foot"
+                    },
+                    "aggregateRating": {
+                      "@type": "AggregateRating",
+                      "ratingValue": "4.9",
+                      "reviewCount": "38"
                     }
                   },
                   {
@@ -324,8 +340,16 @@ class MyDocument extends Document {
                       "@type": "Offer",
                       "url": "https://greenviewsolutions.net/chain-link-fences",
                       "priceCurrency": "USD",
+                      "price": "48.00",
                       "priceValidUntil": "2024-12-31",
-                      "availability": "https://schema.org/InStock"
+                      "availability": "https://schema.org/InStock",
+                      "unitCode": "LNF",
+                      "unitText": "per linear foot"
+                    },
+                    "aggregateRating": {
+                      "@type": "AggregateRating",
+                      "ratingValue": "4.7",
+                      "reviewCount": "52"
                     }
                   },
                   {
@@ -341,8 +365,16 @@ class MyDocument extends Document {
                       "@type": "Offer",
                       "url": "https://greenviewsolutions.net/ornamental-iron-fences",
                       "priceCurrency": "USD",
+                      "price": "52.00",
                       "priceValidUntil": "2024-12-31",
-                      "availability": "https://schema.org/InStock"
+                      "availability": "https://schema.org/InStock",
+                      "unitCode": "LNF",
+                      "unitText": "per linear foot"
+                    },
+                    "aggregateRating": {
+                      "@type": "AggregateRating",
+                      "ratingValue": "4.9",
+                      "reviewCount": "31"
                     }
                   }
                 ]
