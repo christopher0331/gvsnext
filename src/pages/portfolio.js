@@ -108,28 +108,30 @@ const S3Bucket = () => {
         <meta property="twitter:description" content="Explore our portfolio of stunning fences and exceptional projects. See the quality and craftsmanship of GreenView Solutions." />
         <meta property="twitter:image" content="https://greenviewsolutions.net/images/portfolio-preview.jpg" />
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ImageGallery",
-              "name": "GreenView Solutions Portfolio",
-              "description": "A collection of our best fencing projects",
-              "image": projectImages.map(project => ({
-                "@type": "ImageObject",
-                "contentUrl": project[0].url,
-                "description": `Fencing project ${project[0].id}`,
-                "name": `GreenView Solutions Fencing Project ${project[0].id}`,
-                "author": {
-                  "@type": "Organization",
-                  "name": "GreenView Solutions"
-                },
-                "datePublished": new Date().toISOString().split('T')[0] // Current date
-              }))
-            })
-          }}
-        />
+        {projectImages.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "ImageGallery",
+                "name": "GreenView Solutions Portfolio",
+                "description": "A collection of our best fencing projects",
+                "image": projectImages.map(project => ({
+                  "@type": "ImageObject",
+                  "contentUrl": project[0].url,
+                  "description": `Fencing project ${project[0].id}`,
+                  "name": `GreenView Solutions Fencing Project ${project[0].id}`,
+                  "author": {
+                    "@type": "Organization",
+                    "name": "GreenView Solutions"
+                  },
+                  "datePublished": new Date().toISOString().split('T')[0] // Current date
+                }))
+              })
+            }}
+          />
+        )}
       </Head>
       <div>
         <Header />

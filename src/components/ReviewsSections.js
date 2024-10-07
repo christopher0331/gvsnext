@@ -66,9 +66,38 @@ export default function ReviewsSections() {
 
   const currentTestimonial = testimonials[currentIndex];
 
+  // Updated function to generate structured data
+  const generateStructuredData = () => {
+    const reviewsData = testimonials.map(testimonial => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": testimonial.author
+      },
+      "datePublished": testimonial.date,
+      "reviewBody": testimonial.review,
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": testimonial.rating,
+        "bestRating": 5
+      }
+    }));
+
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "GreenView Solutions", // Replace with your actual business name
+      "review": reviewsData
+    };
+
+    return JSON.stringify(structuredData);
+  };
+
   return (
     <section className={styles.testimonials} style={{ background: `linear-gradient(45deg, #006400, #45b167)` }}>
       <h2>What Our Clients Say</h2>
+      {/* Add this script tag for structured data */}
+      <script type="application/ld+json">{generateStructuredData()}</script>
       <div className={styles.testimonialCarousel}>
         <button className={styles.navButton} onClick={handlePrevTestimonial}>
           <FaChevronLeft />
