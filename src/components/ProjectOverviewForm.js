@@ -134,7 +134,7 @@ const ProjectOverviewForm = ({ onSubmit }) => {
                     <div className={styles.orientationImages}>
                         <div className={styles.imageWrapper}>
                             <Image 
-                                src="https://imagedelivery.net/OHVtjf602XdHccCnziCADA/969a7f2e-8448-4dcb-947b-a38b67db0900/gvsLogoClear" 
+                                src="https://imagedelivery.net/OHVtjf602XdHccCnziCADA/4c07b829-44eb-4e75-cdfd-67770adecc00/gvsLogoClear" 
                                 alt="Facing In" 
                                 width={200}
                                 height={150}
@@ -190,7 +190,7 @@ const ProjectOverviewForm = ({ onSubmit }) => {
                     </div>
                     <div className={styles.installationOptions}>
                         <p className={styles.pofLabel}>Installation Type:</p>
-                        <label>
+                        <label className={styles.intallationLabel}>
                             <input
                                 type="radio"
                                 name="installationType"
@@ -202,7 +202,7 @@ const ProjectOverviewForm = ({ onSubmit }) => {
                         </label>
                         <p className={styles.description}>Fence to be level with highest grade (Customer to fill in gaps)</p>
 
-                        <label>
+                        <label className={styles.intallationLabel}>
                             <input
                                 type="radio"
                                 name="installationType"

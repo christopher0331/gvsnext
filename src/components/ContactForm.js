@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com';
 import styles from './Forms.module.css';
 
-export default function ContactForm() {
+const ContactForm = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -41,7 +41,7 @@ export default function ContactForm() {
     return tempErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length === 0) {
@@ -55,6 +55,8 @@ export default function ContactForm() {
           console.log('Email error:', error.text);
           alert('Failed to send email, please try again.');
         });
+      // Call the onSubmit prop after successful submission
+      onSubmit();
     } else {
       setErrors(validationErrors);
     }
@@ -189,4 +191,6 @@ export default function ContactForm() {
       )}
     </div>
   );
-}
+};
+
+export default ContactForm;
