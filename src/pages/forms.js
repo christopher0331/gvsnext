@@ -10,19 +10,29 @@ import Footer from '../components/Footer';
 
 export default function Forms() {
   const [activeForm, setActiveForm] = useState('general');
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleSubmit = () => {
+    setShowPopup(true);
+    setTimeout(() => setShowPopup(false), 3000); // Hide popup after 3 seconds
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
 
   const renderForm = () => {
     switch(activeForm) {
       case 'contact':
-        return <ContactForm />;
+        return <ContactForm onSubmit={handleSubmit} />;
       case 'warranty':
-        return <WarrantyForm />;
+        return <WarrantyForm onSubmit={handleSubmit} />;
       case 'projectOverview':
-        return <ProjectOverviewForm />;
+        return <ProjectOverviewForm onSubmit={handleSubmit} />;
       case 'feedback':
-        return <FeedbackForm />;
+        return <FeedbackForm onSubmit={handleSubmit} />;
       default:
-        return <ContactForm />;
+        return <ContactForm onSubmit={handleSubmit} />;
     }
   };
 
@@ -93,6 +103,17 @@ export default function Forms() {
         </main>
       </div>
       <Footer />
+
+      {showPopup && (
+        <div className={styles.popup}>
+          <div className={styles.popupContent}>
+            <span className={styles.close} onClick={closePopup}>&times;</span>
+            <h2>Thank You!</h2>
+            <p>We appreciate your submission. Our team will review it and get back to you soon!</p>
+            <button className={styles.closeButton} onClick={closePopup}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }export async function getStaticProps() {
