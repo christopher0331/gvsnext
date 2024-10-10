@@ -6,8 +6,8 @@ export default function CTASection({ title, description, buttonText, buttonLink 
     <section className={styles.ctaSection}>
       <h2>{title}</h2>
       <p>{description}</p>
-      <Link href={buttonLink} className={styles.ctaButton}>
-        {buttonText}
+      <Link href={buttonLink} className={styles.ctaButton} passHref legacyBehavior>
+        <a>{buttonText}</a>
       </Link>
     </section>
   )
