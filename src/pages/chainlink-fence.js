@@ -1,87 +1,173 @@
+import { useState } from 'react'
+import Head from 'next/head'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import FencingTypeCards from '@/components/FencingTypeCards';
-import ChainLinkFenceTypes from '../components/ChainLinkFenceTypes.js';
-import styles from '../components/FencingTypeCards.module.scss';
-import stylesWood from '../components/WoodFencesStyles.module.scss';
-import Image from 'next/image';
-import ServicesSidebar from '@/components/ServicesSideBar';
-import CallToActionSection from '@/components/CallToActionSection';
-import SvgComponent from '@/components/SvgComponent';
-import Head from 'next/head';
+import FencingTypeCards from '../components/FencingTypeCards'
+import CTASection from '../components/CTASection'
+import TestimonialsSection from '../components/TestimonialsSection'
+import ChainLinkFenceFAQ from '../components/ChainLinkFenceFAQ'
+import { motion, AnimatePresence } from 'framer-motion'
+import styles from '../components/WoodFencesStyles.module.scss';
+import LocationsMap from '../components/LocationsMap'
+import BenefitsSection from '../components/BenefitsSection'
 
-export default function ChainLinkFence() {
+const chainLinkFenceTypes = [
+    {
+        title: 'Galvanized',
+        description: 'Our galvanized chain-link fencing offers durability and corrosion resistance, perfect for long-lasting boundary solutions.',
+        image: '/chain-link-fence-galvinized.jpeg',
+        benefits: ['Corrosion-resistant', 'Cost-effective', 'Low maintenance'],
+    },
+    {
+        title: 'PVC Coated',
+        description: 'Enhance your property with our vinyl-coated chain-link fencing, combining durability with improved aesthetics.',
+        image: '/chain-link-fence-pvc-coated.jpeg',
+        benefits: ['Attractive finish', 'Additional protection', 'Various color options'],
+    },
+    {
+        title: 'Slatted',
+        description: 'Enhance your property with our slatted chain-link fencing, combining durability with improved aesthetics.',
+        image: '/chain-link-fence-slatted.jpeg',
+        benefits: ['Increased privacy', 'Wind reduction', 'Customizable appearance'],
+    },
+]
+
+const fadeInUp = {
+    initial: { opacity: 0, y: 60 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+}
+
+export default function ChainLinkFencing() {
+    const [selectedFence, setSelectedFence] = useState(null)
+
+    const chainLinkBenefits = [
+        {
+            title: "Affordability",
+            description: "Chain-link fencing is one of the most cost-effective fencing solutions available.",
+            icon: "💰"
+        },
+        {
+            title: "Durability",
+            description: "Resistant to weather damage and requires minimal maintenance for long-lasting performance.",
+            icon: "💪"
+        },
+        {
+            title: "Versatility",
+            description: "Suitable for various applications, from residential to commercial and industrial use.",
+            icon: "🔧"
+        },
+        {
+            title: "Security",
+            description: "Provides effective boundary marking and security without obstructing visibility.",
+            icon: "🔒"
+        }
+    ]
 
     return (
-        <div>
+        <>
             <Head>
-                <title>GreenView Solutions Chainlink Fences</title>
-                <meta name="description" content="This page is the chainlink fences page and contains information about our chainlink fences" />
+                <title>Professional Chain-Link Fencing Solutions | GreenView Solutions</title>
+                <meta name="description" content="Discover our high-quality chain-link fencing options. From galvanized to vinyl-coated designs, we offer durable and cost-effective solutions to enhance your property's security and boundary definition." />
                 <link rel="canonical" href="https://greenviewsolutions.net/chainlink-fence" />
             </Head>
+
             <Header />
-            <div className={stylesWood.woodFenceContainer}>
-                <div>
-                    <ServicesSidebar />
-                </div>
 
-                <div className={stylesWood.woodFenceInnerContainer}>
-                    <h1>GreenView Solutions Chain-Link Fence Excellence</h1>
-                    <p className={stylesWood.woodFenceContent}>
-                        GreenView Solutions is renowned for offering top-tier chain-link fencing, combining durability with practicality. Our chain-link fences are ideal for both residential and commercial properties, providing a balance of security, visibility, and affordability. Backed by a solid warranty, our chain-link fences are a reliable and cost-effective choice for property delineation and security.
-                    </p>
-
-                    <h2 className={stylesWood.woodFenceContent}>Durable and Versatile Chain-Link Fencing</h2>
-                    <p className={stylesWood.woodFenceInfo}>
-                        Crafted with high-quality materials, our chain-link fences at GreenView Solutions stand up to various environmental conditions without succumbing to rust or deterioration. The versatility of chain-link fencing makes it a suitable option for everything from playgrounds to industrial sites, offering effective boundary demarcation while maintaining an open feel.
-                    </p>
-
-                    <h2 className={stylesWood.woodFenceContent}>Customizable and Easy-to-Maintain Chain-Link Options</h2>
-                    <p className={stylesWood.woodFenceInfo}>
-                        Understanding the diverse needs of our clients, GreenView Solutions offers customizable chain-link fencing solutions. Available in various heights, gauges, and coating options like vinyl or zinc, our fences can be tailored to match specific security requirements and aesthetic preferences. Moreover, the low maintenance nature of chain-link fencing ensures a hassle-free solution for years to come, making it an excellent investment for both residential and commercial properties.
-                    </p>
+            <div className={styles.seoTextContainer}>
+                <div className={styles.seoText}>
+                    <h1>Professional Chain-Link Fencing Solutions</h1>
+                    <p>Explore our exceptional range of chain-link fencing options, designed to provide effective boundary definition and security for your property. From classic galvanized styles to modern vinyl-coated designs, our expert team delivers top-quality chain-link fencing solutions tailored to your needs. Discover the benefits of low-maintenance, long-lasting chain-link fences and secure your outdoor space today!</p>
                 </div>
             </div>
 
-            <CallToActionSection />
-
-            <section className={styles.fenceInfoSectionContainer}>
-
-                <div className={styles.fenceInfoSectionTitleAndP} >
-                    <h2 className={styles.fenceInfoSectionTitleAndP} >Chain Link Fencing</h2>
-                    <p className={styles.fenceInfoSectionTitleAndP}>Your paragraph about GreenView Solutions and chain link fence goes here.</p>
+            <section className={styles.fenceTypesSection}>
+                <div className={`${styles.container} ${styles.centeredContainer}`}>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className={styles.sectionTitle}
+                    >
+                        Our Premium Chain-Link Fence Collection
+                    </motion.h2>
+                    <p className={styles.sectionSubtitle}>Discover the perfect blend of durability and functionality</p>
+                    <div
+                        className={`${styles.fenceTypeGrid} ${styles.centeredGrid}`}
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            gap: '2rem',
+                            flexWrap: 'nowrap',
+                            maxWidth: '1200px',
+                            margin: '0 auto'
+                        }}
+                    >
+                        {chainLinkFenceTypes.map((fenceType, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.1 * index }}
+                                className={styles.fenceTypeWrapper}
+                                onClick={() => setSelectedFence(fenceType)}
+                            >
+                                <FencingTypeCards {...fenceType} />
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
+            <BenefitsSection
+                title="Why Choose Chain-Link Fencing?"
+                benefits={chainLinkBenefits}
+                titleClassName={styles.benefitsSectionTitle}
+            />
 
-            <section className={styles.fenceTypeCardsContainer}>
-                {ChainLinkFenceTypes.map(fenceType => (
-                    <FencingTypeCards
-                        key={fenceType.name}
-                        name={fenceType.name}
-                        image={fenceType.image}
-                        description={fenceType.description}
-                    />
-                ))}
-            </section>
+            <AnimatePresence>
+                {selectedFence && (
+                    <motion.div
+                        className={styles.modalOverlay}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedFence(null)}
+                    >
+                        <motion.div
+                            className={styles.modalContent}
+                            initial={{ y: 50, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: 50, opacity: 0 }}
+                            onClick={e => e.stopPropagation()}
+                        >
+                            <h3>{selectedFence.title}</h3>
+                            <p>{selectedFence.description}</p>
+                            <ul>
+                                {selectedFence.benefits.map((benefit, index) => (
+                                    <li key={index}>{benefit}</li>
+                                ))}
+                            </ul>
+                            <button onClick={() => setSelectedFence(null)}>Close</button>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
-            {/* <div className={styles.picketInfoSectionTitleAndP}>
-                <h2 className={styles.picketInfoSectionTitleAndP}>Chain Link Fence Benefits</h2>
-                <Image
-                    src="/wood-top-finishes.png"
-                    alt="GreenView Solutions"
-                    className={styles.fenceInfoSectionImage}
-                    layout="responsive"
-                    width={150}
-                    height={150}
-                />
-            </div> */}
-            {/* Text - call to action with button to get free estimate */}
-            <CallToActionSection />
+            <CTASection
+                title="Ready to Secure Your Property with Chain-Link Fencing?"
+                description="Schedule a consultation with our expert team to explore the perfect chain-link fencing solution for your property."
+                buttonText="Request a Free Consultation"
+                buttonLink="/contact"
+            />
 
-            <SvgComponent />
+            <ChainLinkFenceFAQ />
+
+            <TestimonialsSection />
+
+            <LocationsMap />
 
             <Footer />
-        </div>
+        </>
     )
 }

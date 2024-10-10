@@ -334,7 +334,7 @@ export default function WoodFenceFAQ() {
                 />
             </Head>
             <section className={styles.faqSection}>
-                <h2 className={styles.faqTitle}>Frequently Asked Questions About Wood Fencing in {activeRegion}</h2>
+                <h2 className={styles.faqTitle}>Frequently Asked Questions About Wood Fencing</h2>
                 <div className={styles.regionTabs}>
                     {Object.keys(faqData).map(region => (
                         <button
