@@ -1,143 +1,150 @@
-import React, { useState } from 'react';
+import { useState } from 'react'
+import Head from 'next/head'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import FencingTypeCards from '@/components/FencingTypeCards';
-import PicketTypeCard from '@/components/PicketTypeCard';
-import FenceTypes from '../components/FenceTypes.js';
-import PicketStyles from '../components/PicketStyles.js';
-import styles from '../components/FencingTypeCards.module.scss';
-import stylesWood from '../components/WoodFencesStyles.module.scss';
-import ServiceSidebar from '../components/ServicesSideBar.js';
-import Image from 'next/image';
-import CallToActionSection from '@/components/CallToActionSection';
-import Head from 'next/head';
+import FencingTypeCards from '../components/FencingTypeCards'
+import CTASection from '../components/CTASection'
+import FenceShapeShowcase from '../components/FenceShapeShowcase'
+import TestimonialsSection from '../components/TestimonialsSection'
+import WoodFenceFAQ from '../components/WoodFenceFAQ'
+import { motion, useAnimation, AnimatePresence } from 'framer-motion'
+import styles from '../components/WoodFencesStyles.module.scss';
+import LocationsMap from '../components/LocationsMap'
 
-export default function Fencing() {
-    const [isReadMore, setIsReadMore] = useState(true);
+const woodFenceTypes = [
+    {
+        title: 'Privacy Fence',
+        description: 'Create a secluded sanctuary with our sturdy privacy fences, perfect for homeowners seeking maximum seclusion and security.',
+        image: 'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/1fe8c671-e3fa-4e89-24a9-89160e026d00/public',
+        benefits: ['Complete privacy', 'Enhanced security', 'Windbreak protection'],
+    },
+    {
+        title: 'Picket Fence',
+        description: 'Add a touch of classic Americana to your property with our charming picket fences, ideal for defining boundaries with style.',
+        image: 'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/edde074c-3da2-408a-5a45-b8322ea01100/public',
+        benefits: ['Decorative appeal', 'Child and pet-friendly', 'Enhances curb appeal'],
+    },
+    {
+        title: 'Split Rail Fence',
+        description: 'Embrace rustic charm with our split rail fences, perfect for large properties and creating a natural, open feel.',
+        image: 'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/4599da39-ce05-42c2-e75a-6f4f9b857900/public',
+        benefits: ['Rustic aesthetic', 'Ideal for large areas', 'Wildlife-friendly'],
+    },
+    {
+        title: 'Standard Horizontal',
+        description: 'Achieve a modern look with our standard horizontal fences, offering clean lines and contemporary style for any property.',
+        image: 'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/221e35da-2eeb-4934-7c23-1843bb63df00/public',
+        benefits: ['Modern appearance', 'Sturdy construction', 'Versatile design'],
+    },
+    {
+        title: 'Board on Board',
+        description: 'Enhance privacy and aesthetics with our board on board fences, featuring overlapping boards for a seamless, gap-free appearance.',
+        image: 'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/9fc67e7f-e84f-4edc-d9cf-698bec2e0200/public',
+        benefits: ['Maximum privacy', 'Attractive from both sides', 'Increased durability'],
+    },
+]
 
-    const toggleReadMore = () => {
-        setIsReadMore(!isReadMore);
-    };
+const fadeInUp = {
+    initial: { opacity: 0, y: 60 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+}
 
-    const constructionText = `We build your wood fence from scratch on site. We set every post in concrete so your posts won’t shift or lean. We nail up every board one by one using hot-dipped galvanized ring shank nails that won’t rust or pull apart. This allows for a custom construction that is stronger than pre-built panels. Your wood fence is built to last.
 
-    Board on board style wood fencing offers complete privacy with overlapping boards while stockade wood fencing offers privacy with boards that abut one another but do not overlap. Shadowbox style wood fencing offers some privacy but is not completely opaque when viewed from an angle and therefore offers less wind resistance. It is for this reason that many communities in Broward County require their residents to install shadowbox wood fencing instead of complete privacy styles.
-
-    Although wood fencing is not as durable or long-lasting as vinyl or aluminum fencing, with some preventative maintenance, your wood fence can still look good for years. Staining and sealing offers surface protection against weathering, fading and changes in climate.
-
-    We make all the standard styles of wood fence and also customize wood fencing for customers who have specific ideas about what type of wood fencing will accentuate their home. Please call one of our salespeople today to get an estimate for your new wood fence.`;
-
-    // Truncate the text if it is longer than 350 characters and `isReadMore` is `true`
-    const truncatedText = isReadMore ? constructionText.slice(0, 350) + "..." : constructionText;
+export default function Fencing({ heroImage, showHero }) {
+    const [selectedFence, setSelectedFence] = useState(null)
 
     return (
-        <div>
+        <>
             <Head>
-                <title>GreenView Solutions Wood Fences</title>
-                <meta name="description" content="This page is the Wood Fences page and contains information about our Wood Fences!" />
-                <link rel="canonical" href="https://greenviewsolutions.net/wood-fences" />
-
+                <title>Premium Wood Fencing Solutions in Seattle | Seattle Outdoor Living</title>
+                <meta name="description" content="Discover our exceptional range of wood fencing options in Seattle. From privacy fences to picket designs, we offer top-quality solutions to enhance your property's beauty and security." />
+                <link rel="canonical" href="https://www.seattleoutdoorliving.com/fencing/wood" />
             </Head>
 
-            <div>
-                {/* Header */}
-                <Header />
-                <div className={stylesWood.woodFenceContainer}>
-                    <div>
-                        <ServiceSidebar />
-                    </div>
+            <Header />
 
-                    <div className={stylesWood.woodFenceInnerContainer}>
-                        <h1 >Wood Fence Lumber</h1>
-
-                        <p className={stylesWood.woodFenceContent}>We use Superior pressure treated pine lumber to build your wood fence. We choose Superior lumber because it has an excellent warranty. Superior lumber fence pickets come standard with a minimum fifteen year warranty against termite damage and rot. Our posts and horizontal rails come with a lifetime warranty against termite damage and rot. Your wood fence is guaranteed to last.</p>
-
-                        <h2 className={stylesWood.woodFenceContent}> Wood Fence Specification</h2>
-
-                        <p className={stylesWood.woodFenceInfo}>We use heavy duty lumber to build your wood fence. The specification we use is derived from the Miami-Dade wind code. In other words, we build your wood fence to the highest possible building standard. The only difference is we install most of our wood fences with posts every eight feet instead of every four feet, unless otherwise specified. Our specification includes:</p>
-                        <ul className={stylesWood.specificationList}>
-                            <li>1×6 pickets</li>
-                            <li>2×4 rails</li>
-                            <li>4×6 gate hinge posts</li>
-                            <li>4×4 posts</li>
-                        </ul>
-                        <p className={stylesWood.woodFenceInfo}> You get a heavy duty fence that will withstand the toughest conditions.</p>
-
-                        <h2 className={stylesWood.woodFenceContent}>Construction</h2>
-                        <p className={stylesWood.constructionDetails}>
-                            {truncatedText}
-                        </p>
-                        <button onClick={toggleReadMore} className={stylesWood.readMoreButton}>
-                            {isReadMore ? "Read More" : "Read Less"}
-                        </button>
-                    </div>
-
-
+            <div className={styles.seoTextContainer}>
+                <div className={styles.seoText}>
+                    <h1>Premium Wood Fencing Solutions in Seattle</h1>
+                    <p>Discover our exceptional range of wood fencing options, perfect for enhancing your property&apos;s beauty, privacy, and security. From classic picket fences to modern horizontal designs, our expert team delivers top-quality wood fencing solutions tailored to your needs. Explore our collection and transform your outdoor space today!</p>
                 </div>
-                <CallToActionSection />
-                {/* Opening Paragraph */}
-                {/* Pic */} {/* Paragraph about GrrerenView Solutions and wood fence*/}
-                <section className={styles.fenceInfoSectionContainer}>
-                    <div className={styles.fenceInfoSectionTitleAndP} >
-                        <h2 className={styles.fenceInfoSectionTitleAndP} >Wood Fencing Styles</h2>
-                    </div>
-                </section>
-
-                {/* Wood Fence Types  - Make 9 fence types all equal size, need pic on tope and text below about that style*/}
-                <section className={styles.fenceTypeCardsContainer}>
-                    {FenceTypes.map(fenceType => (
-                        <FencingTypeCards
-                            key={fenceType.name}
-                            name={fenceType.name}
-                            image={fenceType.image}
-                            description={fenceType.description}
-                        />
-                    ))}
-                </section>
-                {/*             
-
-            <div className={styles.picketInfoSectionTitleAndP}>
-                <h2 className={styles.picketInfoSectionTitleAndP}>W</h2>
-                <h3 className={styles.picketInfoSectionTitleAndP}>Customer Top Finishes</h3>
-                <Image
-                    src="/wood-top-finishes.png"
-                    alt="GreenView Solutions"
-                    className={styles.fenceInfoSectionImage}
-                    layout="responsive"
-                    width={250} // Set a base width
-                    height={250} // Set
-                />
-            </div>
-            
-
-            
-            <section className={styles.picketTypeCardsContainer}>
-                {PicketStyles.map(picketStyle => (
-                    <PicketTypeCard
-                        key={picketStyle.name}
-                        name={picketStyle.name}
-                        image={picketStyle.image}
-                        description={picketStyle.description}
-                    />
-                ))}
-            </section> */}
-
-
-                {/* Picket Types and Design Types  -  3 card with three pickets type - and then below that 3 top types (Concave, convex, lattice tops)*/}
-                <section className={styles.fenceInfoSectionContainer}>
-                    <div className={styles.fenceInfoSectionTitleAndP} >
-                        <h2 className={styles.fenceInfoSectionTitleAndP} >Custom Top Finishes</h2>
-                    </div>
-                </section>
-                <section className={styles.fenceTypeCardsContainer}>
-                    {PicketStyles.map(picket => (
-                        <PicketTypeCard key={picket.name} name={picket.name} image={picket.image} description={picket.description} />
-                    ))}
-                </section>
-
-                <Footer />
             </div>
 
-        </div>
+            <section className={styles.fenceTypesSection}>
+                <div className={styles.container}>
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className={styles.sectionTitle}
+                    >
+                        Our Premium Wood Fence Collection
+                    </motion.h2>
+                    <p className={styles.sectionSubtitle}>Discover the perfect blend of aesthetics and functionality</p>
+                    <div className={styles.fenceTypeGrid}>
+                        {woodFenceTypes.map((fenceType, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.1 * index }}
+                                className={styles.fenceTypeWrapper}
+                                onClick={() => setSelectedFence(fenceType)}
+                            >
+                                <FencingTypeCards {...fenceType} />
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <AnimatePresence>
+                {selectedFence && (
+                    <motion.div 
+                        className={styles.modalOverlay}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedFence(null)}
+                    >
+                        <motion.div 
+                            className={styles.modalContent}
+                            initial={{ y: 50, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: 50, opacity: 0 }}
+                            onClick={e => e.stopPropagation()}
+                        >
+                            <h3>{selectedFence.title}</h3>
+                            <p>{selectedFence.description}</p>
+                            <ul>
+                                {selectedFence.benefits.map((benefit, index) => (
+                                    <li key={index}>{benefit}</li>
+                                ))}
+                            </ul>
+                            <button onClick={() => setSelectedFence(null)}>Close</button>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            <FenceShapeShowcase />
+
+            <CTASection
+                title="Ready to Transform Your Outdoor Space?"
+                description="Schedule a consultation with our expert team to explore the perfect wood fencing solution for your property."
+                buttonText="Request a Free Consultation"
+                buttonLink="/contact"
+            />
+            <WoodFenceFAQ />
+
+
+            <TestimonialsSection />
+
+            <LocationsMap />      
+
+            <Footer />
+        </>
+
     )
 }
