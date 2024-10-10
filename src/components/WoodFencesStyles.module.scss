@@ -246,3 +246,22 @@
         font-size: 1rem;
     }
 }
+
+.centeredContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.centeredGrid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.fenceTypeWrapper {
+    @media (max-width: 768px) {
+        flex-basis: 100% !important;
+        margin: 0 auto 2rem !important;
+    }
+}
