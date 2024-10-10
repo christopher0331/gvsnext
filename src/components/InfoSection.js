@@ -25,7 +25,7 @@ export default function InfoSection() {
           <p>
             If our workmanship causes a defect, we will fix it at no cost. For Acts of God, we offer discounted repairs.
             <Link href="/warranty" legacyBehavior>
-              <a>Learn more</a>
+              <a>Warranty Info</a>
             </Link>
             .
           </p>
