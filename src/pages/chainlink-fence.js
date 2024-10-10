@@ -98,7 +98,7 @@ export default function ChainLinkFencing() {
                             display: 'flex',
                             justifyContent: 'center',
                             gap: '2rem',
-                            flexWrap: 'wrap', // Changed from 'nowrap' to 'wrap'
+                            flexWrap: 'wrap',
                             maxWidth: '1200px',
                             margin: '0 auto'
                         }}
@@ -112,9 +112,9 @@ export default function ChainLinkFencing() {
                                 className={styles.fenceTypeWrapper}
                                 onClick={() => setSelectedFence(fenceType)}
                                 style={{
-                                    flexBasis: '100%', // Full width on mobile
-                                    maxWidth: '400px', // Max width for larger screens
-                                    margin: '0 auto 2rem', // Center and add bottom margin
+                                    flexBasis: 'calc(33.333% - 2rem)', // Approximately one-third width minus gap
+                                    maxWidth: '400px',
+                                    margin: '0 0 2rem', // Remove left and right auto margin
                                 }}
                             >
                                 <FencingTypeCards {...fenceType} />
