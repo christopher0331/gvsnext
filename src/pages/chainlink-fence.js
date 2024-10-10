@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import FencingTypeCards from '../components/FencingTypeCards'
 import CTASection from '../components/CTASection'
 import TestimonialsSection from '../components/TestimonialsSection'
-import ChainLinkFenceFAQ from '../components/ChainLinkFenceFAQ'
+import ChainLinkFenceFAQ from '../components/ChainlinkFenceFAQ'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from '../components/WoodFencesStyles.module.scss';
 import LocationsMap from '../components/LocationsMap'
