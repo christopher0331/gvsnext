@@ -1,85 +1,169 @@
+import { useState } from 'react'
+import Head from 'next/head'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import FencingTypeCards from '@/components/FencingTypeCards';
-import PicketTypeCard from '@/components/PicketTypeCard';
-import FenceTypesVinyl from '../components/FenceTypesVinyl.js';
-import PicketStyles from '../components/PicketStyles.js';
-import styles from '../components/FencingTypeCards.module.scss';
-import stylesWood from '../components/WoodFencesStyles.module.scss';
-import Image from 'next/image';
-import ServicesSidebar from '@/components/ServicesSideBar';
-import CallToActionSection from '@/components/CallToActionSection.js';
-import SvgComponent from '@/components/SvgComponent';
-import Head from 'next/head';
+import FencingTypeCards from '../components/FencingTypeCards'
+import CTASection from '../components/CTASection'
+import TestimonialsSection from '../components/TestimonialsSection'
+import VinylFenceFAQ from '../components/VinylFenceFAQ'
+import { motion, AnimatePresence } from 'framer-motion'
+import styles from '../components/WoodFencesStyles.module.scss';
+import LocationsMap from '../components/LocationsMap'
+import BenefitsSection from '../components/BenefitsSection'
+
+const vinylFenceTypes = [
+    {
+        title: '3 Rail',
+        description: 'Enhance your property with our classic 3 rail vinyl fencing, offering a perfect balance of openness and boundary definition.',
+        image: 'https://greenviewsolutions.net/_next/image?url=https%3A%2F%2Fgreenviewsolutionsimages.s3.us-west-1.amazonaws.com%2Fgvsnextimages%2Fglobalimages%2FfencingRenders%2Fv3PostandDowell.png&w=2048&q=75',
+        benefits: ['Open, airy design', 'Ideal for large properties', 'Low maintenance'],
+    },
+    {
+        title: 'Hamilton',
+        description: 'Elevate your property&apos;s charm with our Hamilton vinyl fencing, blending classic elegance with modern durability for a timeless look.',
+        image: 'https://greenviewsolutions.net/_next/image?url=https%3A%2F%2Fgreenviewsolutionsimages.s3.us-west-1.amazonaws.com%2Fgvsnextimages%2Fglobalimages%2FfencingRenders%2FvStandardPartial.png&w=2048&q=75',
+        benefits: ['Elegant picket design', 'Low maintenance', 'Weather-resistant', 'Customizable height and spacing'],
+    },
+]
+
+const fadeInUp = {
+    initial: { opacity: 0, y: 60 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+}
 
 export default function VinylFencing() {
+    const [selectedFence, setSelectedFence] = useState(null)
 
-    // Array of fence types, images and descriptions can be added here
-
-    // Array of picket types
+    const vinylBenefits = [
+        {
+            title: "Low Maintenance",
+            description: "Vinyl fencing requires minimal upkeep, saving you time and money on repairs and painting.",
+            icon: "🔧"
+        },
+        {
+            title: "Durability",
+            description: "Resistant to rot, pests, and weather damage, vinyl fences can last for decades with proper care.",
+            icon: "💪"
+        },
+        {
+            title: "Versatility",
+            description: "Available in various styles and colors to match any property aesthetic.",
+            icon: "🎨"
+        },
+        {
+            title: "Cost-Effective",
+            description: "While initial costs may be higher, the longevity and low maintenance of vinyl fencing offer long-term savings.",
+            icon: "💰"
+        }
+    ]
 
     return (
         <>
             <Head>
-                <title>GreenView Solutions Vinyl Fences</title>
-                <meta name="description" content="This page is the vinyl fences page and contains information about our vinyl fences" />
-                <link rel="canonical" href="https://greenviewsolutions.net/vinyl-fences" />
-
+                <title>Premium Vinyl Fencing Solutions in Seattle | Seattle Outdoor Living</title>
+                <meta name="description" content="Discover our high-quality vinyl fencing options in Seattle. From privacy fences to decorative designs, we offer durable and low-maintenance solutions to enhance your property's beauty and security." />
+                <link rel="canonical" href="https://www.seattleoutdoorliving.com/fencing/vinyl" />
             </Head>
 
-            <div>
-                {/* Header */}
-                <Header />
+            <Header />
 
-                {/* Opening Paragraph */}
-                <div className={stylesWood.woodFenceContainer}>
-                    <div>
-                        <ServicesSidebar />
-                    </div>
+            <div className={styles.seoTextContainer}>
+                <div className={styles.seoText}>
+                    <h1>Premium Vinyl Fencing Solutions in Seattle</h1>
+                    <p>Explore our exceptional range of vinyl fencing options, designed to enhance your property&apos;s aesthetics, privacy, and security. From classic styles to modern designs, our expert team delivers top-quality vinyl fencing solutions tailored to your needs. Discover the benefits of low-maintenance, long-lasting vinyl fences and transform your outdoor space today!</p>
+                </div>
+            </div>
 
-                    <div className={stylesWood.woodFenceInnerContainer}>
-                        <h1>GreenView Solutions Vinyl Fence Assurance</h1>
-                        <p className={stylesWood.woodFenceContent}>
-                            GreenView Solutions provides a robust guarantee for its vinyl fencing, ensuring each customer receives the highest quality of service and support. Our vinyl fences are not only aesthetically pleasing but also come with the assurance of longevity and durability, backed by a comprehensive warranty that secures your investment for years to come.
-                        </p>
-
-                        <h2 className={stylesWood.woodFenceContent}>Innovative Vinyl Fencing by GreenView Solutions</h2>
-                        <p className={stylesWood.woodFenceInfo}>
-                            At GreenView Solutions, innovation meets quality with our vinyl fencing line. Engineered for strength and designed for beauty, our fences resist common issues such as weathering, warping, and fading. The non-toxic materials used in our vinyl fences ensure a safe environment for families and pets, offering a maintenance-free solution that keeps your boundaries pristine without the need for constant upkeep.
-                        </p>
-
-                        <h2 className={stylesWood.woodFenceContent}>Customizable Vinyl Fence Options</h2>
-                        <p className={stylesWood.woodFenceInfo}>
-                            Tailoring to the varied tastes and needs of our clients, GreenView Solutions presents an extensive selection of vinyl fencing styles. Whether you are looking for privacy, picket, or ranch-style fences, our options are customizable to harmonize with your homes architecture and landscape. Our vinyl fences are not just barriers but an enhancement to your propertys curb appeal, promising functionality coupled with elegance.
-                        </p>
+            <section className={styles.fenceTypesSection}>
+                <div className={`${styles.container} ${styles.centeredContainer}`}>
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className={styles.sectionTitle}
+                    >
+                        Our Premium Vinyl Fence Collection
+                    </motion.h2>
+                    <p className={styles.sectionSubtitle}>Discover the perfect blend of durability and style</p>
+                    <div 
+                        className={`${styles.fenceTypeGrid} ${styles.centeredGrid}`}
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            gap: '2rem',
+                            flexWrap: 'nowrap',
+                            maxWidth: '1200px',
+                            margin: '0 auto'
+                        }}
+                    >
+                        {vinylFenceTypes.map((fenceType, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.1 * index }}
+                                className={styles.fenceTypeWrapper}
+                                onClick={() => setSelectedFence(fenceType)}
+                            >
+                                <FencingTypeCards {...fenceType} />
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
+            </section>
 
-                {/* Pic */} {/* Paragraph about GrrerenView Solutions and wood fence*/}
-                <section className={styles.fenceInfoSectionContainer}>
-                    <div className={styles.fenceInfoSectionTitleAndP} >
-                        <h2 className={styles.fenceInfoSectionTitleAndP} >Vinyl Fencing Styles</h2>
-                        <p className={styles.fenceInfoSectionTitleAndP}>Your paragraph about GreenView Solutions and wood fence goes here.</p>
-                    </div>
-                </section>
+            <BenefitsSection 
+                title="Why Choose Vinyl Fencing?"
+                benefits={vinylBenefits}
+                titleClassName={styles.benefitsSectionTitle}
+            />
 
-                {/* Wood Fence Types  - Make 9 fence types all equal size, need pic on tope and text below about that style*/}
-                <section className={styles.fenceTypeCardsContainer}>
-                    {FenceTypesVinyl.map(fenceType => (
-                        <FencingTypeCards
-                            key={fenceType.name}
-                            name={fenceType.name}
-                            image={fenceType.image}
-                            description={fenceType.description}
-                        />
-                    ))}
-                </section>
-                <CallToActionSection />
+            <AnimatePresence>
+                {selectedFence && (
+                    <motion.div 
+                        className={styles.modalOverlay}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedFence(null)}
+                    >
+                        <motion.div 
+                            className={styles.modalContent}
+                            initial={{ y: 50, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: 50, opacity: 0 }}
+                            onClick={e => e.stopPropagation()}
+                        >
+                            <h3>{selectedFence.title}</h3>
+                            <p>{selectedFence.description}</p>
+                            <ul>
+                                {selectedFence.benefits.map((benefit, index) => (
+                                    <li key={index}>{benefit}</li>
+                                ))}
+                            </ul>
+                            <button onClick={() => setSelectedFence(null)}>Close</button>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
-                <SvgComponent />
+            
 
-                <Footer />
-            </div>
+            <CTASection
+                title="Ready to Upgrade Your Property with Vinyl Fencing?"
+                description="Schedule a consultation with our expert team to explore the perfect vinyl fencing solution for your property."
+                buttonText="Request a Free Consultation"
+                buttonLink="/contact"
+            />
+
+            <VinylFenceFAQ />
+
+            <TestimonialsSection />
+
+            <LocationsMap />      
+
+            <Footer />
         </>
     )
 }
