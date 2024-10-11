@@ -3,7 +3,7 @@ import { ImageIndexProvider } from '../contexts/ImageIndexContext.js'; // Import
 import { useEffect } from 'react'
 import Script from 'next/script'
 import { useRouter } from 'next/router'
-import * as gtag from '../lib/gtag'
+import * as gtag from '../../lib/gtag'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -39,7 +39,11 @@ function MyApp({ Component, pageProps }) {
           `,
         }}
       />
-      <Component {...pageProps} />
+      <BlogProvider>
+        <ImageIndexProvider>
+          <Component {...pageProps} />
+        </ImageIndexProvider>
+      </BlogProvider>
     </>
   )
 }
