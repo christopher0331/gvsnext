@@ -33,10 +33,6 @@ const faqData = {
       answer: "To protect your fence from snow, ensure it's properly sealed, clear snow from the base of the fence promptly, and avoid piling snow against it when shoveling. Consider installing a snow fence to redirect drifting snow."
     },
     {
-      question: "What's the average cost of installing a wood fence in Denver?",
-      answer: "The cost can vary widely depending on the type of wood and the size of your property. On average, you can expect to pay between $15 to $30 per linear foot for a wood fence installation in Denver."
-    },
-    {
       question: "Can I install a wood fence myself in Denver?",
       answer: "While it's possible to install a wood fence yourself, it's often recommended to hire professionals, especially considering Denver's specific climate challenges and local regulations. Professional installation ensures proper techniques are used for longevity."
     },
@@ -65,10 +61,6 @@ const faqData = {
     {
       question: "How do I protect my wood fence from Boulder's winter conditions?",
       answer: "To protect your fence from Boulder's winter, ensure it's properly sealed, clear snow from the base promptly, and avoid piling snow against it. Consider using a water-repellent sealant to prevent moisture damage from snow melt."
-    },
-    {
-      question: "What's the average cost of installing a wood fence in Boulder?",
-      answer: "The cost can vary depending on wood type and property size. On average, you can expect to pay between $20 to $35 per linear foot for wood fence installation in Boulder, considering local material and labor costs."
     },
     {
       question: "How do Boulder's soil conditions affect wood fence installation?",
@@ -103,10 +95,6 @@ const faqData = {
     {
       question: "How often should I maintain my wood fence in Arvada?",
       answer: "In Arvada's climate, it's recommended to clean and inspect your fence annually, and apply a new coat of sealant or stain every 2-3 years to protect against weather damage and UV radiation."
-    },
-    {
-      question: "What's the average cost of installing a wood fence in Arvada?",
-      answer: "The cost can vary depending on wood type and property size. On average, you can expect to pay between $18 to $32 per linear foot for wood fence installation in Arvada, considering local material and labor costs."
     },
     {
       question: "How do I protect my wood fence from Arvada's winter conditions?",
@@ -145,10 +133,6 @@ const faqData = {
     {
       question: "How does Louisville's climate affect wood fencing?",
       answer: "Louisville experiences hot summers and cold winters with occasional heavy snowfall. This can cause wood to expand and contract, potentially leading to warping or cracking. Proper sealing and regular maintenance are crucial to combat these effects."
-    },
-    {
-      question: "What's the average cost of installing a wood fence in Louisville?",
-      answer: "The cost can vary depending on wood type and property size. On average, you can expect to pay between $20 to $35 per linear foot for wood fence installation in Louisville, considering local material and labor costs."
     },
     {
       question: "How long does a wood fence typically last in Louisville?",
@@ -193,10 +177,6 @@ const faqData = {
       answer: "In Westminster's climate, it's recommended to clean and inspect your fence annually, and apply a new coat of sealant or stain every 2-3 years to protect it from sun damage and moisture."
     },
     {
-      question: "What's the average cost of installing a wood fence in Westminster?",
-      answer: "The cost can vary depending on wood type and property size. On average, you can expect to pay between $18 to $30 per linear foot for wood fence installation in Westminster, considering local material and labor costs."
-    },
-    {
       question: "How long does a wood fence typically last in Westminster?",
       answer: "With proper maintenance, a wood fence in Westminster can last 15-25 years or more. Regular sealing, staining, and prompt repairs can help extend its lifespan in the local climate."
     },
@@ -229,10 +209,6 @@ const faqData = {
     {
       question: "How often should I maintain my wood fence in Fort Collins?",
       answer: "In Fort Collins' climate, it's recommended to clean and inspect your fence annually, and apply a new coat of sealant or stain every 2-3 years to protect against weather damage and UV radiation."
-    },
-    {
-      question: "What's the average cost of installing a wood fence in Fort Collins?",
-      answer: "The cost can vary depending on wood type and property size. On average, you can expect to pay between $20 to $35 per linear foot for wood fence installation in Fort Collins, considering local material and labor costs."
     },
     {
       question: "How do I protect my wood fence from Fort Collins' winter conditions?",
@@ -275,10 +251,6 @@ const faqData = {
     {
       question: "How does Wheat Ridge's climate affect wood fencing?",
       answer: "Wheat Ridge experiences hot summers and cold winters with occasional heavy snowfall. This can cause wood to expand and contract, potentially leading to warping or cracking. Proper sealing and regular maintenance are crucial to combat these effects."
-    },
-    {
-      question: "What's the average cost of installing a wood fence in Wheat Ridge?",
-      answer: "The cost can vary depending on wood type and property size. On average, you can expect to pay between $18 to $30 per linear foot for wood fence installation in Wheat Ridge, considering local material and labor costs."
     },
     {
       question: "How long does a wood fence typically last in Wheat Ridge?",

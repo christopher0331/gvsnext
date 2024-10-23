@@ -76,7 +76,7 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
 
 
                     {/* Outdoor Living Dropdown */}
-                    <li><Link href="/outdoor-living" className="block px-4 py-2 hover:bg-green-800">Outdoor Living</Link></li>
+                    <li><Link href="/outdoor-living-new" className="block px-4 py-2 hover:bg-green-800">Outdoor Living</Link></li>
                     <li><Link href="/forms" className="block px-4 py-2 hover:bg-green-800">Forms</Link></li>
 
                     <li><Link href="/about" className="block px-4 py-2 hover:bg-green-800">Meet The Team</Link></li>

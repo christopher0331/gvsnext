@@ -170,7 +170,7 @@ export default function DesktopMenu() {
                     </div>
 
                     {/* GVS Outdoor Living */}
-                    <Link href="/outdoor-living" className="menu-link-upper" style={menuItemStyle}>Outdoor Living</Link>
+                    <Link href="/outdoor-living-new" className="menu-link-upper" style={menuItemStyle}>Outdoor Living</Link>
 
                     {/* GVS RollOff Dumpsters */}
                     {/* <Link href="/rolloff-dumpsters" className="menu-link-upper" style={menuItemStyle}>RollOff Dumpsters</Link> */}

@@ -109,9 +109,6 @@ export default function Navbar({ data }) {
                   width={250}
                   quality={100}
                   priority
-                  sizes="(max-width: 768px) 20vw, 
-                         (max-width: 1200px) 10vw, 
-                         5vw"
                 />
               </div>
               <div>
