@@ -33,10 +33,6 @@ const faqData = {
       answer: "Vinyl fences are naturally resistant to snow damage. However, avoid piling snow against the fence when shoveling, as the weight of the snow could potentially cause damage over time."
     },
     {
-      question: "What's the average cost of installing a vinyl fence in Denver?",
-      answer: "The cost can vary depending on the style and size of your property. On average, you can expect to pay between $25 to $40 per linear foot for vinyl fence installation in Denver."
-    },
-    {
       question: "Can I install a vinyl fence myself in Denver?",
       answer: "While DIY installation is possible, professional installation is recommended to ensure proper setting and alignment, especially considering Denver's specific climate challenges and local regulations."
     },
@@ -113,10 +109,6 @@ const faqData = {
       answer: "Yes, when properly installed, vinyl fencing can withstand Arvada's severe weather, including high winds and hailstorms. The flexibility of vinyl allows it to bend without breaking, and reinforced posts provide additional stability."
     },
     {
-      question: "What's the average cost of installing a vinyl fence in Arvada?",
-      answer: "The cost can vary depending on the style and size of your property. On average, you can expect to pay between $28 to $42 per linear foot for vinyl fence installation in Arvada."
-    },
-    {
       question: "Are there environmental considerations for vinyl fencing in Arvada?",
       answer: "While vinyl is not biodegradable, it's recyclable and has a long lifespan, reducing the need for replacement. Many manufacturers use recycled materials in production, aligning with environmental consciousness."
     },
@@ -153,10 +145,6 @@ const faqData = {
     {
       question: "Can vinyl fencing withstand Louisville's occasional severe weather?",
       answer: "Yes, when properly installed, vinyl fencing can withstand Louisville's severe weather, including high winds and heavy rain. The flexibility of vinyl allows it to bend without breaking, and reinforced posts provide additional stability."
-    },
-    {
-      question: "What's the average cost of installing a vinyl fence in Louisville?",
-      answer: "The cost can vary depending on the style and size of your property. On average, you can expect to pay between $27 to $40 per linear foot for vinyl fence installation in Louisville."
     },
     {
       question: "Are there environmental considerations for vinyl fencing in Louisville?",
@@ -197,10 +185,6 @@ const faqData = {
       answer: "Yes, when properly installed, vinyl fencing can withstand Westminster's severe weather, including high winds and hailstorms. The flexibility of vinyl allows it to bend without breaking, and reinforced posts provide additional stability."
     },
     {
-      question: "What's the average cost of installing a vinyl fence in Westminster?",
-      answer: "The cost can vary depending on the style and size of your property. On average, you can expect to pay between $28 to $42 per linear foot for vinyl fence installation in Westminster."
-    },
-    {
       question: "Are there environmental considerations for vinyl fencing in Westminster?",
       answer: "While vinyl is not biodegradable, it's recyclable and has a long lifespan, reducing the need for replacement. Many manufacturers use recycled materials in production, aligning with environmental consciousness."
     },
@@ -239,10 +223,6 @@ const faqData = {
       answer: "Yes, when properly installed, vinyl fencing can withstand Fort Collins' severe weather, including high winds and hailstorms. The flexibility of vinyl allows it to bend without breaking, and reinforced posts provide additional stability."
     },
     {
-      question: "What's the average cost of installing a vinyl fence in Fort Collins?",
-      answer: "The cost can vary depending on the style and size of your property. On average, you can expect to pay between $30 to $45 per linear foot for vinyl fence installation in Fort Collins."
-    },
-    {
       question: "How does vinyl fencing compare to wood fencing in Fort Collins?",
       answer: "Vinyl fencing in Fort Collins offers several advantages over wood: it's more durable, requires less maintenance, doesn't rot or attract pests, and maintains its appearance longer. However, wood may be less expensive initially and offers a more natural look."
     },
@@ -279,10 +259,6 @@ const faqData = {
     {
       question: "Can vinyl fencing withstand Wheat Ridge's occasional severe weather?",
       answer: "Yes, when properly installed, vinyl fencing can withstand Wheat Ridge's severe weather, including high winds and hailstorms. The flexibility of vinyl allows it to bend without breaking, and reinforced posts provide additional stability."
-    },
-    {
-      question: "What's the average cost of installing a vinyl fence in Wheat Ridge?",
-      answer: "The cost can vary depending on the style and size of your property. On average, you can expect to pay between $28 to $42 per linear foot for vinyl fence installation in Wheat Ridge."
     },
     {
       question: "How does vinyl fencing compare to wood fencing in Wheat Ridge?",
