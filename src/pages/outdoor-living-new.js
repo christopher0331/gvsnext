@@ -19,7 +19,6 @@ export default function OutdoorLivingNew() {
             </Head>
             <Header />
             <main>
-                <HeroSection />
                 <ServicesOverview />
                 <ImageGallery />
                 <CallToActionSection
