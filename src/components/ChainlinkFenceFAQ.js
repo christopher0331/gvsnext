@@ -33,10 +33,6 @@ const faqData = {
       answer: "While chainlink fences are naturally open, privacy can be increased by adding slats or mesh fabric. These additions can also provide wind protection in Denver's sometimes blustery conditions."
     },
     {
-      question: "What's the average cost of installing a chainlink fence in Denver?",
-      answer: "The cost can vary depending on the height and length of the fence. On average, you can expect to pay between $10 to $20 per linear foot for chainlink fence installation in Denver."
-    },
-    {
       question: "Can I install a chainlink fence myself in Denver?",
       answer: "While DIY installation is possible, professional installation is recommended to ensure proper tension and alignment, especially considering Denver's soil conditions and local regulations."
     },
@@ -57,10 +53,6 @@ const faqData = {
     {
       question: "Are there environmental considerations for chainlink fencing in Boulder?",
       answer: "Chainlink fencing is recyclable and has a long lifespan, aligning with Boulder's eco-friendly values. It also allows for natural wildlife movement, which can be important in Boulder's semi-rural areas."
-    },
-    {
-      question: "How does the cost of chainlink fencing compare to other materials in Boulder?",
-      answer: "In Boulder, chainlink fencing is typically one of the most affordable options. Expect to pay between $12 to $22 per linear foot for installation, which is generally less than wood or vinyl alternatives."
     },
     {
       question: "Can chainlink fencing withstand Boulder's occasional high winds?",
@@ -113,10 +105,6 @@ const faqData = {
       answer: "Yes, when properly installed, chainlink fencing can withstand Arvada's severe weather, including high winds and hailstorms. The open design allows wind to pass through, reducing strain on the fence."
     },
     {
-      question: "What's the average cost of installing a chainlink fence in Arvada?",
-      answer: "The cost can vary depending on the height and length of the fence. On average, you can expect to pay between $11 to $20 per linear foot for chainlink fence installation in Arvada."
-    },
-    {
       question: "Are there privacy options for chainlink fencing in Arvada?",
       answer: "Yes, privacy can be enhanced by adding slats or mesh to chainlink fences in Arvada. These additions can also provide some wind protection and aesthetic customization."
     },
@@ -153,10 +141,6 @@ const faqData = {
     {
       question: "Can chainlink fencing withstand Louisville's occasional severe weather?",
       answer: "Yes, when properly installed, chainlink fencing can withstand Louisville's severe weather, including high winds and heavy snow. The open design allows wind and snow to pass through, reducing strain on the fence structure."
-    },
-    {
-      question: "What's the average cost of installing a chainlink fence in Louisville?",
-      answer: "The cost can vary depending on the height and length of the fence. On average, you can expect to pay between $12 to $22 per linear foot for chainlink fence installation in Louisville."
     },
     {
       question: "How does chainlink fencing compare to wood fencing in Louisville?",
@@ -197,10 +181,6 @@ const faqData = {
       answer: "Yes, when properly installed, chainlink fencing can withstand Westminster's severe weather, including high winds and hailstorms. The open design allows wind to pass through, reducing strain on the fence."
     },
     {
-      question: "What's the average cost of installing a chainlink fence in Westminster?",
-      answer: "The cost can vary depending on the height and length of the fence. On average, you can expect to pay between $11 to $20 per linear foot for chainlink fence installation in Westminster."
-    },
-    {
       question: "How does chainlink fencing compare to other materials in terms of security in Westminster?",
       answer: "Chainlink fencing provides good security in Westminster, especially when using higher gauges of wire and smaller mesh sizes. While not as visually deterring as solid fences, it allows for clear sightlines, which can be beneficial for security monitoring."
     },
@@ -239,10 +219,6 @@ const faqData = {
       answer: "Yes, when properly installed, chainlink fencing can withstand Fort Collins' severe weather, including high winds and heavy snow. The open design allows wind and snow to pass through, reducing strain on the fence structure."
     },
     {
-      question: "What's the average cost of installing a chainlink fence in Fort Collins?",
-      answer: "The cost can vary depending on the height and length of the fence. On average, you can expect to pay between $12 to $22 per linear foot for chainlink fence installation in Fort Collins."
-    },
-    {
       question: "How does chainlink fencing compare to wood fencing in Fort Collins?",
       answer: "Chainlink fencing in Fort Collins offers several advantages over wood: it's more durable against rot and pests, requires less maintenance, and is typically less expensive. However, wood offers more privacy and a more traditional aesthetic."
     },
@@ -279,10 +255,6 @@ const faqData = {
     {
       question: "Can chainlink fencing withstand Wheat Ridge's occasional severe weather?",
       answer: "Yes, when properly installed, chainlink fencing can withstand Wheat Ridge's severe weather, including high winds and hailstorms. The open design allows wind to pass through, reducing strain on the fence."
-    },
-    {
-      question: "What's the average cost of installing a chainlink fence in Wheat Ridge?",
-      answer: "The cost can vary depending on the height and length of the fence. On average, you can expect to pay between $11 to $20 per linear foot for chainlink fence installation in Wheat Ridge."
     },
     {
       question: "How does chainlink fencing compare to wood fencing in Wheat Ridge?",
