@@ -62,14 +62,6 @@ const faqData = {
       question: "How do I protect my wood fence from Boulder's winter conditions?",
       answer: "To protect your fence from Boulder's winter, ensure it's properly sealed, clear snow from the base promptly, and avoid piling snow against it. Consider using a water-repellent sealant to prevent moisture damage from snow melt."
     },
-<<<<<<< HEAD
-    {
-=======
-    {  
->>>>>>> 07cd882f2a2d68ce314eb40e875da34d74f8700f
-      question: "How do Boulder's soil conditions affect wood fence installation?",
-      answer: "Boulder's soil can be rocky and clay-heavy in some areas. This may require special techniques for post installation, such as using concrete footings or deeper post holes to ensure stability and longevity of the fence."
-    },
     {
       question: "Can I stain my wood fence to match Boulder's natural aesthetic?",
       answer: "Absolutely! Many Boulder homeowners choose natural wood stains that complement the area's scenic beauty. Earth tones and transparent stains that showcase the wood grain are popular choices that align with Boulder's aesthetic."
