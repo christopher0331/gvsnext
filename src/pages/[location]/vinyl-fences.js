@@ -123,10 +123,11 @@ export default function Fencing({ locationData, capitalizedLocation, locationFaq
 }
 
 export async function getStaticPaths() {
-    const locations = ['boulder', 'arvada', 'denver']; 
-    const paths = locations.map(location => ({
+    const locations = ['boulder', 'arvada', 'denver', 'littleton', 'lakewood', 'golden', 'thornton', 'broomfield', 'centennial', 'englewood', 'glenwood springs', 'gunbarrel', 'highlands ranch', 'jefferson county', 'louisville', 'northglenn', 'parker', 'superior', 'westminster', 'eastlake', 'belmar', 'castle rock', 'columbine valley', 'fountain', 'greenwood village', 'lone tree', 'fort collins', 'meridian', 'milliken', 'parker', 'sedalia', 'superior', 'estes park', 'westminster hills']; 
+
+    const paths = locations.length > 0 ? locations.map(location => ({
         params: { location }
-    }));
+    })) : [];
 
     return { paths, fallback: false };
 }
