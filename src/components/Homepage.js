@@ -10,7 +10,7 @@ import Head from 'next/head';
 import CallToActionSection from './CallToActionSection.js';
 import LocationsMap from './LocationsMap.js';
 import FeaturedProjects from './FeaturedProjects';
-
+import AreasServed from './AreasServed';
 const Homepage = () => {
     
 
@@ -42,6 +42,9 @@ const Homepage = () => {
                 </div>
 
                 <LocationsMap />
+
+                <AreasServed />
+
 
             </div>
         </>

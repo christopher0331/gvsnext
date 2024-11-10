@@ -1,0 +1,32 @@
+.areasServedContainer {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+}
+.areasServedContainer h2 {
+  color: #8B0000;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.areasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.areasGrid a {
+  text-decoration: none;
+  color: #8B0000;
+  font-weight: bold;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #5A0000;
+  }
+} 
