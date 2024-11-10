@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useImageIndex } from '../contexts/ImageIndexContext';
 
-export default function Header({ postTitle }) {
+export default function Header({ postTitle, location }) {
     const [isScrolled, setIsScrolled] = useState(false);
     const { imageIndex, images } = useImageIndex();
     const router = useRouter();
@@ -61,7 +61,7 @@ export default function Header({ postTitle }) {
                 textShadow: '1px 1px 2px rgba(0, 0, 0, 0.4)'  // Simplified shadow
             }}>
                 <p style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-                    {postTitle ? postTitle : (pageName ? pageName.replace(/-/g, ' ').toUpperCase() : 'BRING YOUR VISION TO LIFE')}
+                    {location ? `Welcome to GreenView Solutions in ${location}` : 'BRING YOUR VISION TO LIFE'}
                 </p>
                 <p style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>Expert Craftsmanship, Durable Materials, and Unmatched Service</p>
                 <Link href="/contact" passHref>
