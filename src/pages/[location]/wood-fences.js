@@ -85,7 +85,7 @@ export default function Fencing({ locationData, capitalizedLocation, locationFaq
                     </motion.h2>
                     <p className={styles.sectionSubtitle}>Discover the perfect blend of aesthetics and functionality</p>
                     <div className={styles.fenceTypeGrid}>
-                        {/* {woodFenceTypes.map((fenceType, index) => (
+                        {woodFenceTypes.map((fenceType, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 50 }}
@@ -96,7 +96,7 @@ export default function Fencing({ locationData, capitalizedLocation, locationFaq
                             >
                                 <FencingTypeCards {...fenceType} />
                             </motion.div>
-                        ))} */}
+                        ))}
                     </div>
                 </div>
             </section>
@@ -120,9 +120,9 @@ export default function Fencing({ locationData, capitalizedLocation, locationFaq
                             <h3>{selectedFence.title}</h3>
                             <p>{selectedFence.description}</p>
                             <ul>
-                                {/* {selectedFence.benefits.map((benefit, index) => (
+                                {selectedFence.benefits.map((benefit, index) => (
                                     <li key={index}>{benefit}</li>
-                                ))} */}
+                                ))}
                             </ul>
                             <button onClick={() => setSelectedFence(null)}>Close</button>
                         </motion.div>
@@ -138,7 +138,7 @@ export default function Fencing({ locationData, capitalizedLocation, locationFaq
                 buttonText="Request a Free Consultation"
                 buttonLink="/contact"
             />
-            {/* <WoodFenceFAQ /> */}
+            <WoodFenceFAQ />
 
             <TestimonialsSection />
 
