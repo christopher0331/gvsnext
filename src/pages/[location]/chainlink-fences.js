@@ -11,15 +11,28 @@ import styles from '../../components/WoodFencesStyles.module.scss';
 import LocationsMap from '../../components/LocationsMap';
 import { useRouter } from 'next/router';
 
+
 const chainLinkFenceTypes = [
     {
-        title: 'Standard Chain Link',
-        description: 'Durable and cost-effective fencing solution for security and boundary definition.',
-        image: 'https://example.com/chainlink1.jpg',
-        benefits: ['Affordable', 'Low maintenance', 'Versatile'],
+        title: 'Galvanized',
+        description: 'Our galvanized chain-link fencing offers durability and corrosion resistance, perfect for long-lasting boundary solutions.',
+        image: '/chain-link-fence-galvinized.jpeg',
+        benefits: ['Corrosion-resistant', 'Cost-effective', 'Low maintenance'],
     },
-    // Add more fence types as needed
-];
+    {
+        title: 'PVC Coated',
+        description: 'Enhance your property with our vinyl-coated chain-link fencing, combining durability with improved aesthetics.',
+        image: '/chain-link-fence-pvc-coated.jpeg',
+        benefits: ['Attractive finish', 'Additional protection', 'Various color options'],
+    },
+    {
+        title: 'Slatted',
+        description: 'Enhance your property with our slatted chain-link fencing, combining durability with improved aesthetics.',
+        image: '/chain-link-fence-slatted.jpeg',
+        benefits: ['Increased privacy', 'Wind reduction', 'Customizable appearance'],
+    },
+]
+
 
 const fadeInUp = {
     initial: { opacity: 0, y: 60 },

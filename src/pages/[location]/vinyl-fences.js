@@ -11,15 +11,21 @@ import styles from '../../components/WoodFencesStyles.module.scss';
 import LocationsMap from '../../components/LocationsMap';
 import { useRouter } from 'next/router';
 
+
 const vinylFenceTypes = [
     {
-        title: 'Privacy Vinyl Fence',
-        description: 'Elegant and durable vinyl fencing for privacy and style.',
-        image: 'https://example.com/vinyl1.jpg',
-        benefits: ['Low maintenance', 'Weather resistant', 'Stylish'],
+        title: '3 Rail',
+        description: 'Enhance your property with our classic 3 rail vinyl fencing, offering a perfect balance of openness and boundary definition.',
+        image: 'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/56fbbe69-a163-40b4-ed24-163f6714c300/public',
+        benefits: ['Open, airy design', 'Ideal for large properties', 'Low maintenance'],
     },
-    // Add more fence types as needed
-];
+    {
+        title: 'Hamilton',
+        description: 'Elevate your property&apos;s charm with our Hamilton vinyl fencing, blending classic elegance with modern durability for a timeless look.',
+        image: 'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/64bdfb33-549d-4c4e-e22f-79b920b4fc00/public',
+        benefits: ['Elegant picket design', 'Low maintenance', 'Weather-resistant', 'Customizable height and spacing'],
+    },
+]
 
 const fadeInUp = {
     initial: { opacity: 0, y: 60 },
