@@ -4,12 +4,13 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import FencingTypeCards from '../../components/FencingTypeCards';
 import CTASection from '../../components/CTASection';
-import FenceShapeShowcase from '../../components/FenceShapeShowcase';
 import TestimonialsSection from '../../components/TestimonialsSection';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import styles from '../../components/WoodFencesStyles.module.scss';
 import LocationsMap from '../../components/LocationsMap';
 import { useRouter } from 'next/router';
+import BenefitsSection from '../../components/BenefitsSection';
+import VinylFenceFAQ from '../../components/VinylFenceFAQ';
 
 
 const vinylFenceTypes = [
@@ -38,6 +39,28 @@ export default function Fencing({ locationData, capitalizedLocation, locationFaq
     const router = useRouter();
     const { location } = router.query;
 
+    const vinylBenefits = [
+        {
+            title: "Low Maintenance",
+            description: "Vinyl fencing requires minimal upkeep, saving you time and money on repairs and painting.",
+            icon: "🔧"
+        },
+        {
+            title: "Durability",
+            description: "Resistant to rot, pests, and weather damage, vinyl fences can last for decades with proper care.",
+            icon: "💪"
+        },
+        {
+            title: "Versatility",
+            description: "Available in various styles and colors to match any property aesthetic.",
+            icon: "🎨"
+        },
+        {
+            title: "Cost-Effective",
+            description: "While initial costs may be higher, the longevity and low maintenance of vinyl fencing offer long-term savings.",
+            icon: "💰"
+        }
+    ]
     return (
         <>
             <Head>
@@ -57,15 +80,26 @@ export default function Fencing({ locationData, capitalizedLocation, locationFaq
 
             <section className={styles.fenceTypesSection}>
                 <div className={styles.container}>
-                    <motion.h2 
+                <motion.h2 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
                         className={styles.sectionTitle}
                     >
-                        Our Vinyl Fence Collection
+                        Our Premium Vinyl Fence Collection
                     </motion.h2>
-                    <div className={styles.fenceTypeGrid}>
+                    <p className={styles.sectionSubtitle}>Discover the perfect blend of durability and style</p>
+                    <div 
+                        className={`${styles.fenceTypeGrid} ${styles.centeredGrid}`}
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            gap: '2rem',
+                            flexWrap: 'wrap', // Changed from 'nowrap' to 'wrap'
+                            maxWidth: '1200px',
+                            margin: '0 auto'
+                        }}
+                    >
                         {vinylFenceTypes.map((fenceType, index) => (
                             <motion.div
                                 key={index}
@@ -74,6 +108,11 @@ export default function Fencing({ locationData, capitalizedLocation, locationFaq
                                 transition={{ delay: 0.1 * index }}
                                 className={styles.fenceTypeWrapper}
                                 onClick={() => setSelectedFence(fenceType)}
+                                style={{
+                                    flexBasis: '100%', // Full width on mobile
+                                    maxWidth: '400px', // Max width for larger screens
+                                    margin: '0 auto 2rem', // Center and add bottom margin
+                                }}
                             >
                                 <FencingTypeCards {...fenceType} />
                             </motion.div>
@@ -82,16 +121,31 @@ export default function Fencing({ locationData, capitalizedLocation, locationFaq
                 </div>
             </section>
 
+            <BenefitsSection
+                title="Why Choose Vinyl Fencing?"
+                benefits={vinylBenefits}
+                titleClassName={styles.benefitsSectionTitle}
+            />
+
+            <CTASection
+                title={`Ready to Enhance Your Property in ${capitalizedLocation}?`}
+                description={`Schedule a consultation with our expert team to explore the perfect vinyl fencing solution for your property in ${capitalizedLocation}.`}
+                buttonText="Request a Free Consultation"
+                buttonLink="/contact"
+            />
+
+            <VinylFenceFAQ />
+
             <AnimatePresence>
                 {selectedFence && (
-                    <motion.div 
+                    <motion.div
                         className={styles.modalOverlay}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={() => setSelectedFence(null)}
                     >
-                        <motion.div 
+                        <motion.div
                             className={styles.modalContent}
                             initial={{ y: 50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
@@ -111,17 +165,10 @@ export default function Fencing({ locationData, capitalizedLocation, locationFaq
                 )}
             </AnimatePresence>
 
-            <FenceShapeShowcase />
 
-            <CTASection
-                title={`Ready to Enhance Your Property in ${capitalizedLocation}?`}
-                description={`Schedule a consultation with our expert team to explore the perfect vinyl fencing solution for your property in ${capitalizedLocation}.`}
-                buttonText="Request a Free Consultation"
-                buttonLink="/contact"
-            />
             <TestimonialsSection />
 
-            <LocationsMap />      
+            <LocationsMap />
 
             <Footer />
         </>
@@ -129,7 +176,7 @@ export default function Fencing({ locationData, capitalizedLocation, locationFaq
 }
 
 export async function getStaticPaths() {
-    const locations = ['boulder', 'arvada', 'denver', 'littleton', 'lakewood', 'golden', 'thornton', 'broomfield', 'centennial', 'englewood', 'glenwood springs', 'gunbarrel', 'highlands ranch', 'jefferson county', 'louisville', 'northglenn', 'parker', 'superior', 'westminster', 'eastlake', 'belmar', 'castle rock', 'columbine valley', 'fountain', 'greenwood village', 'lone tree', 'fort collins', 'meridian', 'milliken', 'parker', 'sedalia', 'superior', 'estes park', 'westminster hills']; 
+    const locations = ['boulder', 'arvada', 'denver', 'littleton', 'lakewood', 'golden', 'thornton', 'broomfield', 'centennial', 'englewood', 'glenwood springs', 'gunbarrel', 'highlands ranch', 'jefferson county', 'louisville', 'northglenn', 'parker', 'superior', 'westminster', 'eastlake', 'belmar', 'castle rock', 'columbine valley', 'fountain', 'greenwood village', 'lone tree', 'fort collins', 'meridian', 'milliken', 'parker', 'sedalia', 'superior', 'estes park', 'westminster hills'];
 
     const paths = locations.length > 0 ? locations.map(location => ({
         params: { location }
