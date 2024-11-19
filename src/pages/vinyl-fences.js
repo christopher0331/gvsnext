@@ -33,7 +33,7 @@ const fadeInUp = {
 }
 
 export default function VinylFencing() {
-    const [selectedFence, setSelectedFence] = useState(null)
+   const [selectedFence, setSelectedFence] = useState(null)
 
     const vinylBenefits = [
         {
@@ -49,7 +49,7 @@ export default function VinylFencing() {
         {
             title: "Versatility",
             description: "Available in various styles and colors to match any property aesthetic.",
-            icon: "🎨"
+            icon: "🎨" 
         },
         {
             title: "Cost-Effective",
