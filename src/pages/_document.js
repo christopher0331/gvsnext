@@ -2,9 +2,22 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import Script from 'next/script';
 import { getTestimonials } from '../components/TestimonialsData.js';
 
+function GoogleTagManagerNoScript() {
+  return (
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-59K2K2F"
+        height="0"
+        width="0"
+        style={{ display: 'none', visibility: 'hidden' }}
+      ></iframe>
+    </noscript>
+  );
+}
+
 class MyDocument extends Document {
   render() {
-  const testimonials = getTestimonials();
+    const testimonials = getTestimonials();
     return (
       <Html lang="en">
         <Head>
@@ -369,6 +382,7 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
+          <GoogleTagManagerNoScript />
           <Main />
           <NextScript />
         </body>
