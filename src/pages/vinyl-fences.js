@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -26,6 +26,7 @@ const vinylFenceTypes = [
     },
 ]
 
+
 const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -33,7 +34,25 @@ const fadeInUp = {
 }
 
 export default function VinylFencing() {
-   const [selectedFence, setSelectedFence] = useState(null)
+
+
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.innerHTML = `
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-59K2K2F');
+    `;
+        document.head.appendChild(script);
+
+        return () => {
+            document.head.removeChild(script);
+        };
+    }, []);
+
+    const [selectedFence, setSelectedFence] = useState(null)
 
     const vinylBenefits = [
         {
@@ -49,7 +68,7 @@ export default function VinylFencing() {
         {
             title: "Versatility",
             description: "Available in various styles and colors to match any property aesthetic.",
-            icon: "🎨" 
+            icon: "🎨"
         },
         {
             title: "Cost-Effective",
@@ -77,7 +96,7 @@ export default function VinylFencing() {
 
             <section className={styles.fenceTypesSection}>
                 <div className={`${styles.container} ${styles.centeredContainer}`}>
-                    <motion.h2 
+                    <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
@@ -86,7 +105,7 @@ export default function VinylFencing() {
                         Our Premium Vinyl Fence Collection
                     </motion.h2>
                     <p className={styles.sectionSubtitle}>Discover the perfect blend of durability and style</p>
-                    <div 
+                    <div
                         className={`${styles.fenceTypeGrid} ${styles.centeredGrid}`}
                         style={{
                             display: 'flex',
@@ -118,7 +137,7 @@ export default function VinylFencing() {
                 </div>
             </section>
 
-            <BenefitsSection 
+            <BenefitsSection
                 title="Why Choose Vinyl Fencing?"
                 benefits={vinylBenefits}
                 titleClassName={styles.benefitsSectionTitle}
@@ -126,14 +145,14 @@ export default function VinylFencing() {
 
             <AnimatePresence>
                 {selectedFence && (
-                    <motion.div 
+                    <motion.div
                         className={styles.modalOverlay}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={() => setSelectedFence(null)}
                     >
-                        <motion.div 
+                        <motion.div
                             className={styles.modalContent}
                             initial={{ y: 50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
@@ -153,7 +172,7 @@ export default function VinylFencing() {
                 )}
             </AnimatePresence>
 
-            
+
 
             <CTASection
                 title="Ready to Upgrade Your Property with Vinyl Fencing?"
@@ -166,7 +185,7 @@ export default function VinylFencing() {
 
             <TestimonialsSection />
 
-            <LocationsMap />      
+            <LocationsMap />
 
             <Footer />
         </>
