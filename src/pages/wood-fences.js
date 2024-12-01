@@ -58,8 +58,8 @@ export default function Fencing({ heroImage, showHero }) {
         <>
             <Head>
                 <title>Premium Wood Fencing Solutions in Seattle | Seattle Outdoor Living</title>
-                <meta name="description" content="Discover our exceptional range of wood fencing options in Seattle. From privacy fences to picket designs, we offer top-quality solutions to enhance your property's beauty and security." />
-                <link rel="canonical" href="https://www.seattleoutdoorliving.com/fencing/wood" />
+                <meta name="description" content="Discover our exceptional range of wood fencing options in Denver and Boulder. From privacy fences to picket designs, we offer top-quality solutions to enhance your property's beauty and security." />
+                <link rel="canonical" href="https://greenviewsolutions.net/wood-fences" />
             </Head>
 
             <Header />

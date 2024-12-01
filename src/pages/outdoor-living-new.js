@@ -14,7 +14,7 @@ export default function OutdoorLivingNew() {
     return (
         <div>
             <Head>
-                <title>Outdoor Living - Transform Your Backyard | Your Company Name</title>
+                <title>Outdoor Living - Transform Your Backyard | Greenview Solutions</title>
                 <meta name="description" content="Create your dream outdoor living space with our expert pergola and concrete services. Transform your backyard into a beautiful oasis." />
             </Head>
             <Header />

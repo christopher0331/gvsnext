@@ -61,16 +61,16 @@ export default function VinylFencing() {
     return (
         <>
             <Head>
-                <title>Premium Vinyl Fencing Solutions in Seattle | Seattle Outdoor Living</title>
-                <meta name="description" content="Discover our high-quality vinyl fencing options in Seattle. From privacy fences to decorative designs, we offer durable and low-maintenance solutions to enhance your property's beauty and security." />
-                <link rel="canonical" href="https://www.seattleoutdoorliving.com/fencing/vinyl" />
+                <title>Premium Vinyl Fencing Solutions in Boulder and Denver | Denver and Boulder Outdoor Living</title>
+                <meta name="description" content="Discover our high-quality vinyl fencing options in Denver and Boulder. From privacy fences to decorative designs, we offer durable and low-maintenance solutions to enhance your property's beauty and security." />
+                <link rel="canonical" href="https://greenviewsolutions.net/vinyl-fences" />
             </Head>
 
             <Header />
 
             <div className={styles.seoTextContainer}>
                 <div className={styles.seoText}>
-                    <h1>Premium Vinyl Fencing Solutions in Seattle</h1>
+                    <h1>Premium Vinyl Fencing Solutions in Denver and Boulder</h1>
                     <p>Explore our exceptional range of vinyl fencing options, designed to enhance your property&apos;s aesthetics, privacy, and security. From classic styles to modern designs, our expert team delivers top-quality vinyl fencing solutions tailored to your needs. Discover the benefits of low-maintenance, long-lasting vinyl fences and transform your outdoor space today!</p>
                 </div>
             </div>
