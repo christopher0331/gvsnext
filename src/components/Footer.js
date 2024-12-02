@@ -31,7 +31,10 @@ export default function Footer() {
 
                 <div className={styles.contact}>
                     <h3>Contact Us</h3>
-                    <p>Phone: (303)358-8168</p>
+                    <span>
+                        <strong>Phone:</strong>
+                        <a href="tel:+13033588168">(303) 358-8168</a>
+                    </span>
                     <p>Address: 12650 W 64th Ave Unit E-149, Arvada, CO 80004</p>
                     <p>Address: 6525 Gunpark Dr Ste 370-110, Boulder, CO 80301</p>
                 </div>
