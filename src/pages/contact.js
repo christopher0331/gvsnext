@@ -17,11 +17,11 @@ const ContactUs = () => {
           })(window,document,'script','dataLayer','GTM-59K2K2F');
         `;
         document.head.appendChild(script);
-    
+
         return () => {
-          document.head.removeChild(script);
+            document.head.removeChild(script);
         };
-      }, []);
+    }, []);
 
     return (
         <div className={styles.pageWrapper}>
@@ -52,12 +52,11 @@ const ContactUs = () => {
                                 Let us add you to our growing list of success stories.
                             </p>
                             <ul className={styles.contactList}>
+                                <span>
+                                    <strong>Phone:</strong>
+                                    <a style={{ textDecoration: 'none', color: 'black' }} href="tel:+13033588168">(303) 358-8168</a>
+                                </span>
                                 <li>
-                                    <FaPhone className={styles.icon} />
-                                    <span><strong>Phone:</strong> (303) 358-8168</span>
-                                </li>
-                                <li>
-                                    <FaMapMarkerAlt className={styles.icon} />
                                     <span><strong>Address:</strong>6525 Gunpark Dr Ste 370-110, Boulder, CO 80301</span>
                                     <br />
                                     <span><strong>Address:</strong>12650 W 64th Ave Unit E-149, Arvada, CO 80004</span>
