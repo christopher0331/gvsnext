@@ -119,10 +119,6 @@ export default function DesktopMenu() {
                 <div className="contact-social-container">
                     {/* Email and Phone */}
                     <div className="contact-info">
-                        <a href="mailto:admin@gvsco.net" className="email-phone-hover">
-                            <IoIosMail className="icon-hover" />
-                            <span className="contactInfoNavbar">admin@gvsco.net</span>
-                        </a>
                         <a href="tel:3033588168" className="email-phone-hover">
                             <MdPhoneForwarded className="icon-hover"  />
                             <span className="contactInfoNavbar">(303)358-8168</span>
