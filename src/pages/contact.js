@@ -57,12 +57,9 @@ const ContactUs = () => {
                                     <span><strong>Phone:</strong> (303) 358-8168</span>
                                 </li>
                                 <li>
-                                    <FaEnvelope className={styles.icon} />
-                                    <span><strong>Email:</strong> admin@gvsco.net</span>
-                                </li>
-                                <li>
                                     <FaMapMarkerAlt className={styles.icon} />
                                     <span><strong>Address:</strong>6525 Gunpark Dr Ste 370-110, Boulder, CO 80301</span>
+                                    <br />
                                     <span><strong>Address:</strong>12650 W 64th Ave Unit E-149, Arvada, CO 80004</span>
 
                                 </li>

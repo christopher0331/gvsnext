@@ -80,10 +80,6 @@ export default function Navbar({ data }) {
     <ErrorBoundary>
       <header className="navbar">
         <div className={styles.contactInfo}>
-          <a href="mailto:admin@gvsco.net" className={styles.emailPhoneHover}>
-            <IoIosMail className="icon-hover" />
-            <span>admin@gvsco.net</span>
-          </a>
           <a href="tel:3033588168" className={styles.emailPhoneHover}>
             <MdPhoneForwarded className="icon-hover" />
             <span>(303)358-8168</span>
