@@ -383,6 +383,10 @@ class MyDocument extends Document {
         </Head>
         <body>
           <GoogleTagManagerNoScript />
+          <Script
+            src="//cdn.callrail.com/companies/689421431/406910851e030c0b1a25/12/swap.js"
+            strategy="afterInteractive"
+          />
           <Main />
           <NextScript />
         </body>
