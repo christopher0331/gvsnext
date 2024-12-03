@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Hero from '../components/Hero';
 import FencingTypeCards from '../components/FencingTypeCards'
 import CTASection from '../components/CTASection'
 import TestimonialsSection from '../components/TestimonialsSection'
@@ -38,7 +39,7 @@ const fadeInUp = {
     transition: { duration: 0.6 }
 }
 
-export default function ChainLinkFencing() {
+export default function ChainLinkFencing({ heroContent }) {
     const [selectedFence, setSelectedFence] = useState(null)
 
     useEffect(() => {
@@ -88,14 +89,7 @@ export default function ChainLinkFencing() {
                 <link rel="canonical" href="https://greenviewsolutions.net/chainlink-fence" />
             </Head>
 
-            <Header />
-
-            <div className={styles.seoTextContainer}>
-                <div className={styles.seoText}>
-                    <h1>Professional Chain-Link Fencing Solutions</h1>
-                    <p>Explore our exceptional range of chain-link fencing options, designed to provide effective boundary definition and security for your property. From classic galvanized styles to modern vinyl-coated designs, our expert team delivers top-quality chain-link fencing solutions tailored to your needs. Discover the benefits of low-maintenance, long-lasting chain-link fences and secure your outdoor space today!</p>
-                </div>
-            </div>
+            <Header heroContent={heroContent} />
 
             <section className={styles.fenceTypesSection}>
                 <div className={`${styles.container} ${styles.centeredContainer}`}>
@@ -191,4 +185,16 @@ export default function ChainLinkFencing() {
             <Footer />
         </>
     )
+}
+
+export async function getStaticProps() {
+    return {
+        props: {
+            heroContent: {
+                title: 'Professional Chain-Link Fencing Solutions',
+                description: 'Discover our high-quality chain-link fencing options. From galvanized to vinyl-coated designs, we offer durable and cost-effective solutions to enhance your property\'s security and boundary definition.',
+                features: ['Corrosion-resistant', 'Cost-effective', 'Low maintenance'],
+            },
+        },
+    };
 }

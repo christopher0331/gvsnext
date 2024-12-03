@@ -1,14 +1,20 @@
+.navbar {
+    z-index: 500;
+}   
+
 .contactInfo {
     display: flex;
-    z-index: 100;
+    z-index: 500;
+    height: 100px;
     color: white;
     font-style: 3.4vw;
     position: relative;
     justify-content: space-around;
     flex-direction: row;
+    display: none;
 }
 
-@media (min-width: 868px) {
+@media (max-width: 868px) {
     .contactInfo {
         display: none;
     }

@@ -68,3 +68,15 @@ const Homepage = () => {
 };
 
 export default Homepage;
+
+export async function getStaticProps() {
+    return {
+        props: {
+            heroContent: {
+                title: 'Premium Vinyl Fencing Solutions in Boulder and Denver',
+                description: 'Explore our exceptional range of vinyl fencing options, designed to enhance your property\'s aesthetics, privacy, and security.',
+                features: ['Low maintenance', 'Weather-resistant', 'Customizable'],
+            },
+        },
+    };
+}

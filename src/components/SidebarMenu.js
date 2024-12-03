@@ -29,7 +29,7 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
 
         <div>
             {/* Mobile Sidebar */}
-            <div className={`fixed top-0 right-0 h-full bg-white text-black p-4 transform ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-500 ease-in-out z-[60] w-3/5 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl`}>
+            <div className={`fixed top-0 right-0 h-full bg-white text-black p-4 transform ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-500 ease-in-out z-[500] w-3/5 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl`}>
 
                 {/* Close Button */}
                 {/* <div style={{ zIndex: '155' }}>

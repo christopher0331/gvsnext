@@ -78,7 +78,7 @@ export default function Navbar({ data }) {
 
   return (
     <ErrorBoundary>
-      <header className="navbar">
+      <header className="navbar" style={{ zIndex: '500' }}>
         <div className={styles.contactInfo}>
           <a href="tel:3033588168" className={styles.emailPhoneHover}>
             <MdPhoneForwarded className="icon-hover" />
@@ -93,16 +93,17 @@ export default function Navbar({ data }) {
             display: 'flex',
             alignItems: 'flex-end',
             justifyContent: 'space-between',
-            width: '100%'
+            width: '100%',
+            zIndex: '654'
           }}>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
 
-              <div className="logo-container" style={{ flexShrink: 0, zIndex: '154', zIndex: "50" }}>
+              <div className="logo-container" style={{ flexShrink: 0, zIndex: '254', width: '200px', marginLeft: '10%', marginBottom: '0%' }}>
                 <Image
                   src= 'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/e17c9569-a336-4893-bf7b-260b2789d400/gvsLogoClear'
                   alt="GVS Logo"
-                  height={250}
-                  width={250}
+                  height={200}
+                  width={200}
                   quality={100}
                   priority
                 />

@@ -8,7 +8,7 @@ import styles from '../components/Forms.module.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-export default function Forms() {
+export default function Forms({heroContent}) {
   const [activeForm, setActiveForm] = useState('general');
   const [showPopup, setShowPopup] = useState(false);
 
@@ -56,9 +56,11 @@ export default function Forms() {
     <div>
       <Head>
         <title>Contact Us - GreenView Solutions</title>
-        <meta name="description" content="Get in touch with GreenView Solutions for your fencing and outdoor living needs." />
+        <meta name="description" content="Explore our comprehensive range of outdoor living products designed to enhance your lifestyle. From custom designs to durable materials and expert installation, we offer solutions that transform your outdoor spaces into beautiful, functional areas for year-round enjoyment." />
       </Head>
-      <Header />
+
+      <Header heroContent={heroContent} />
+
       <div className={styles.pageContainer}>
         <aside className={styles.sidebar}>
           <div className={styles.sidebarSection}>
@@ -132,12 +134,21 @@ export default function Forms() {
       )}
     </div>
   );
-}export async function getStaticProps() {
+}
+
+
+export async function getStaticProps() {
   return {
     props: {
       heroImage: "https://imagedelivery.net/OHVtjf602XdHccCnziCADA/564989bf-964c-45c3-2ec6-deeeb9dd2800/public",
       showHero: true,
     },
+    props: {
+      heroContent: {
+        title: 'Get in Touch with Us',
+        description: 'Whether you have questions, need support, or want to provide feedback, our team is here to help. Fill out the appropriate form and we will get back to you as soon as possible. Our dedicated team is committed to providing you with the best service and support, ensuring your needs are met promptly and efficiently. We value your input and look forward to assisting you.',
+        features: ['Contact us', 'Request information', 'Provide feedback'],
+      },
+    },
   };
 }
-

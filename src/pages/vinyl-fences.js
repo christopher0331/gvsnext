@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Hero from '../components/Hero';
 import FencingTypeCards from '../components/FencingTypeCards'
 import CTASection from '../components/CTASection'
 import TestimonialsSection from '../components/TestimonialsSection'
@@ -33,7 +34,7 @@ const fadeInUp = {
     transition: { duration: 0.6 }
 }
 
-export default function VinylFencing() {
+export default function VinylFencing({ heroContent, postTitle, location }) {
 
 
     useEffect(() => {
@@ -85,15 +86,8 @@ export default function VinylFencing() {
                 <link rel="canonical" href="https://greenviewsolutions.net/vinyl-fences" />
             </Head>
 
-            <Header />
-
-            <div className={styles.seoTextContainer}>
-                <div className={styles.seoText}>
-                    <h1>Premium Vinyl Fencing Solutions in Denver and Boulder</h1>
-                    <p>Explore our exceptional range of vinyl fencing options, designed to enhance your property&apos;s aesthetics, privacy, and security. From classic styles to modern designs, our expert team delivers top-quality vinyl fencing solutions tailored to your needs. Discover the benefits of low-maintenance, long-lasting vinyl fences and transform your outdoor space today!</p>
-                </div>
-            </div>
-
+            <Header heroContent={heroContent} />
+        
             <section className={styles.fenceTypesSection}>
                 <div className={`${styles.container} ${styles.centeredContainer}`}>
                     <motion.h2
@@ -190,4 +184,16 @@ export default function VinylFencing() {
             <Footer />
         </>
     )
+}
+
+export async function getStaticProps() {
+    return {
+        props: {
+            heroContent: {
+                title: 'Premium Vinyl Fencing Solutions in Boulder and Denver',
+                description: 'Explore our exceptional range of vinyl fencing options, designed to enhance your property\'s aesthetics, privacy, and security. Our fences are crafted with precision, offering a variety of styles and colors to suit any landscape. Enjoy durability, low maintenance, and long-lasting beauty.',
+                features: ['Low maintenance', 'Weather-resistant', 'Customizable'],
+            },
+        },
+    };
 }

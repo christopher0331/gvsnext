@@ -8,15 +8,24 @@ import { getSortedPostsData } from 'utils/markdownParser';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
-  return { props: { allPostsData } };
+  return {
+    props: {
+      allPostsData,
+      heroContent: {
+        title: 'Welcome to Our Blog',
+        description: 'Welcome to our blog, where you can explore a wide range of articles, insights, and stories. Stay informed with the latest trends, tips, and in-depth analysis from our team of experts. Discover new perspectives and enhance your knowledge with our curated content.',
+        features: ['Latest articles', 'Expert insights', 'In-depth analysis'],
+      },
+    },
+  };
 }
 
-const BlogIndex = ({ allPostsData }) => {
+const BlogIndex = ({ allPostsData, heroContent }) => {
   const router = useRouter();
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Header />
+      <Header heroContent={heroContent} />
       <main className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center mb-8 text-black">Blog Posts</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -1,33 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
+import Hero from '../components/Hero.js';
 import CallToActionSection from '@/components/CallToActionSection';
 import SvgComponent from '@/components/SvgComponent';
 import styles from '../components/OutdoorLiving.module.scss';
 import Head from 'next/head';
 
-export default function OutdoorLiving() {
+export default function OutdoorLiving({ heroContent }) {
   // State to manage the expansion of text sections
   const [isExpanded, setIsExpanded] = useState({
     retreat: false,
     design: false,
   });
 
-useEffect(() => {
-  const script = document.createElement('script');
-  script.innerHTML = `
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.innerHTML = `
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-59K2K2F');
   `;
-  document.head.appendChild(script);
+    document.head.appendChild(script);
 
-  return () => {
-    document.head.removeChild(script);
-  };
-}, []);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   // Function to toggle expansion state
   const toggleExpansion = section => {
@@ -44,8 +45,8 @@ useEffect(() => {
       </Head>
 
       <div className={styles.outdoorLivingContainer}>
-        <Header />
-        <h1 className={styles.title}>Outdoor Living Year Round</h1>
+        <Header heroContent={heroContent} />
+
         <div className={styles.content}>
 
           <div className={styles.imageContainer}>
@@ -90,3 +91,15 @@ useEffect(() => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  return {
+    props: {
+      heroContent: {
+        title: 'Outdoor Living Year Round',
+        description: 'This page is the outdoor living page and contains information on all our outdoor living products.',
+        features: ['Custom designs', 'Durable materials', 'Expert installation'],
+      },
+    },
+  };
+}

@@ -5,7 +5,9 @@ import ContactForm from '../components/ContactForm'
 import styles from '../components/ContactUs.module.scss'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 import { useEffect } from 'react';
-const ContactUs = () => {
+
+
+const ContactUs = ({heroContent}) => {
 
     useEffect(() => {
         const script = document.createElement('script');
@@ -27,9 +29,11 @@ const ContactUs = () => {
         <div className={styles.pageWrapper}>
             <Head>
                 <title>Contact Us - GreenView Solutions</title>
-                <meta name="description" content="Get in touch with GreenView Solutions for all your fencing needs in Denver, CO." />
+                <meta name="description" content="Explore our comprehensive range of outdoor living products designed to enhance your lifestyle. From custom designs to durable materials and expert installation, we offer solutions that transform your outdoor spaces into beautiful, functional areas for year-round enjoyment." />
             </Head>
-            <Header />
+
+            <Header heroContent={heroContent} />
+
             <main className={styles.contactUsPage}>
                 <section className={styles.heroSection}>
                     <div className={styles.heroContent}>
@@ -73,3 +77,18 @@ const ContactUs = () => {
 }
 
 export default ContactUs
+
+
+
+export async function getStaticProps() {
+    return {
+      props: {
+        heroContent: {
+          title: 'Get in Touch with Us',
+          description: 'We are here to assist you with any inquiries or support you need. Reach out to us for more information about our services or to discuss your project requirements. Our team is ready to help you with expert advice, friendly support, and quick responses. Whether you have questions about our products, need assistance with a project, or want to learn more about our company, we are here to provide the information and support you need. Contact us today to start your journey with us.',
+          features: ['Friendly support', 'Quick response', 'Expert advice'],
+        },
+      },
+    };
+  }
+  

@@ -10,7 +10,9 @@ import Footer from '../components/Footer';
 import SvgComponent from '../components/SvgComponent';
 import TestimonialsSection from '../components/TestimonialsSection';
 import { useEffect } from 'react';
-export default function OutdoorLivingNew() {
+
+
+export default function OutdoorLivingNew({heroContent}) {
 
 useEffect(() => {
     const script = document.createElement('script');
@@ -32,9 +34,11 @@ useEffect(() => {
         <div>
             <Head>
                 <title>Outdoor Living - Transform Your Backyard | Greenview Solutions</title>
-                <meta name="description" content="Create your dream outdoor living space with our expert pergola and concrete services. Transform your backyard into a beautiful oasis." />
+                <meta name="description" content="Explore our comprehensive outdoor living solutions, featuring custom designs, durable materials, and expert installation. Transform your backyard into a stunning oasis with our pergola and concrete services, tailored to meet your unique needs and preferences." />
             </Head>
-            <Header />
+
+            <Header heroContent={heroContent} />
+
             <main>
                 <ServicesOverview />
                 <ImageGallery />
@@ -59,3 +63,16 @@ useEffect(() => {
         </div>
     )
 }
+
+export async function getStaticProps() {
+    return {
+      props: {
+        heroContent: {
+          title: 'Outdoor Living Year Round',
+          description: 'Explore our comprehensive outdoor living solutions, featuring custom designs, durable materials, and expert installation. Transform your backyard into a stunning oasis with our pergola and concrete services, tailored to meet your unique needs and preferences.',
+          features: ['Custom designs', 'Durable materials', 'Expert installation'],
+        },
+      },
+    };
+  }
+  

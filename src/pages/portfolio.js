@@ -11,7 +11,7 @@ import { motion } from 'framer-motion';
 
 AWS.config.credentials = new AWS.Credentials();
 
-const S3Bucket = () => {
+const S3Bucket = ({heroContent}) => {
   const [projectImages, setProjectImages] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [currentProjectImages, setCurrentProjectImages] = useState([]);
@@ -151,7 +151,7 @@ const S3Bucket = () => {
         )}
       </Head>
       <div>
-        <Header />
+        <Header heroContent={heroContent} />  
         {loading ? (
           <CoolLoader />
         ) : (
@@ -193,3 +193,16 @@ const S3Bucket = () => {
 }
 
 export default S3Bucket;
+
+
+export async function getStaticProps() {
+  return {
+    props: {
+      heroContent: {
+        title: 'Showcasing Our Finest Work',
+        description: 'Explore our exceptional projects, showcasing our commitment to quality and craftsmanship. From innovative designs to meticulous execution, see how we bring visions to life.',
+        features: ['Innovative designs', 'Quality craftsmanship', 'Meticulous execution'],
+      },
+    },
+  };
+}

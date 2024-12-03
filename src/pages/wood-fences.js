@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Hero from '../components/Hero';
 import FencingTypeCards from '../components/FencingTypeCards'
 import CTASection from '../components/CTASection'
 import FenceShapeShowcase from '../components/FenceShapeShowcase'
@@ -51,7 +52,7 @@ const fadeInUp = {
 }
 
 
-export default function Fencing({ heroImage, showHero }) {
+export default function Fencing({ heroContent }) {
     const [selectedFence, setSelectedFence] = useState(null)
     useEffect(() => {
         const script = document.createElement('script');
@@ -77,12 +78,13 @@ export default function Fencing({ heroImage, showHero }) {
                 <link rel="canonical" href="https://greenviewsolutions.net/wood-fences" />
             </Head>
 
-            <Header />
+            <Header heroContent={heroContent} />
+
 
             <div className={styles.seoTextContainer}>
                 <div className={styles.seoText}>
-                    <h1>Premium Wood Fencing Solutions in Seattle</h1>
-                    <p>Discover our exceptional range of wood fencing options, perfect for enhancing your property&apos;s beauty, privacy, and security. From classic picket fences to modern horizontal designs, our expert team delivers top-quality wood fencing solutions tailored to your needs. Explore our collection and transform your outdoor space today!</p>
+                    <h1>Premium Wood Fencing Solutions</h1>
+                    <p>Explore our wide range of premium wood fencing options designed to enhance the beauty, privacy, and security of your property. From classic picket fences to modern horizontal designs, our expert team provides top-quality solutions tailored to your needs. Discover our collection and transform your outdoor space today!</p>
                 </div>
             </div>
 
@@ -162,4 +164,16 @@ export default function Fencing({ heroImage, showHero }) {
         </>
 
     )
+}
+
+export async function getStaticProps() {
+    return {
+        props: {
+            heroContent: {
+                title: 'Premium Wood Fencing Solutions in Denver and Boulder',
+                description: 'Explore our wide range of premium wood fencing options designed to enhance the beauty, privacy, and security of your property. From classic picket fences to modern horizontal designs, our expert team provides top-quality solutions tailored to your needs.',
+                features: ['Complete privacy', 'Enhanced security', 'Windbreak protection'],
+            },
+        },
+    };
 }
