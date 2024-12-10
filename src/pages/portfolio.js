@@ -11,7 +11,7 @@ import { motion } from 'framer-motion';
 
 AWS.config.credentials = new AWS.Credentials();
 
-const S3Bucket = ({heroContent}) => {
+const S3Bucket = ({ heroContent }) => {
   const [projectImages, setProjectImages] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [currentProjectImages, setCurrentProjectImages] = useState([]);
@@ -151,7 +151,7 @@ const S3Bucket = ({heroContent}) => {
         )}
       </Head>
       <div>
-        <Header heroContent={heroContent} />  
+        <Header heroContent={heroContent} />
         {loading ? (
           <CoolLoader />
         ) : (
@@ -168,6 +168,7 @@ const S3Bucket = ({heroContent}) => {
                 <motion.div key={project[0].id} variants={itemVariants}>
                   <div className="portfolioProjects">
                     <img src={project[0].url} className="portfolioImage" alt={`Project ${project[0].id}`} />
+                    <div className="portfolioLabel">Hover for more</div>
                     <div className="portfolioBody">
                       <button className="btn2" onClick={() => handleShowModal(project[0].id)}>
                         View Project

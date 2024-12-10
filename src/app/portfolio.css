@@ -26,13 +26,24 @@ body {
   margin: 0 auto;
 }
 
+
 .portfolioProjects {
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
 }
+
+.portfolioLabel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  opacity: 1;
+}
+
 
 .portfolioProjects:hover {
   transform: translateY(-5px);
@@ -181,5 +192,8 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 0.8rem;
+  }
+  .portfolioLabel {
+    display: none;
   }
 }
