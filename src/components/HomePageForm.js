@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import styles from './HomePageForm.module.scss';
+import './HomePageForm.module.css';
 
 const HomePageForm = () => {
     const [firstName, setFirstName] = useState('');
@@ -23,13 +23,13 @@ const HomePageForm = () => {
     };
 
     return (
-        <form onSubmit={sendEmail} className={styles.contactForm}>
+        <form onSubmit={sendEmail} className="contactForm">
             <h3>Contact Form</h3>
             <input
                 type="text"
                 name="first_name"
                 placeholder="First Name"
-                className={styles.input}
+                className="input customInput"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
             />
@@ -37,7 +37,7 @@ const HomePageForm = () => {
                 type="text"
                 name="last_name"
                 placeholder="Last Name"
-                className={styles.input}
+                className="input customInput"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
             />
@@ -45,7 +45,7 @@ const HomePageForm = () => {
                 type="text"
                 name="company_name"
                 placeholder="Company Name (if applicable)"
-                className={styles.input}
+                className="input customInput"
                 value={companyName}
                 onChange={(e) => setCompanyName(e.target.value)}
             />
@@ -53,7 +53,7 @@ const HomePageForm = () => {
                 type="email"
                 name="email"
                 placeholder="Email"
-                className={styles.input}
+                className="input customInput"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
             />
@@ -61,11 +61,11 @@ const HomePageForm = () => {
                 type="tel"
                 name="phone_number"
                 placeholder="Phone Number"
-                className={styles.input}
+                className="input customInput"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
             />
-            <button type="submit" className={styles.button}>Submit</button>
+            <button type="submit" className="button">Submit</button>
         </form>
     );
 };

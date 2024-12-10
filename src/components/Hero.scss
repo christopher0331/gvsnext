@@ -58,9 +58,9 @@ $font-weight: 300;
     background-size: cover;
     background-position: center;
     padding: 50px;
-    color: white;
     height: 80vh;
     position: relative;
+    color: white;
 
     @media (max-width: 768px) {
         height: 60vh;
@@ -85,6 +85,7 @@ $font-weight: 300;
         position: relative;
         z-index: 100;
         font-weight: $font-weight;
+        color: white;
 
         h1 {
             font-size: 3em;
