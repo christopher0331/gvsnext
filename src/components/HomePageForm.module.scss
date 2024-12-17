@@ -1,0 +1,52 @@
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: auto;
+    padding: 1rem;
+    color: black;
+ 
+
+    h3 {
+        color: white;
+    }
+    
+    input {
+        margin-bottom: 0.5rem;
+        color: black !important;
+        padding: 0.5rem;
+        border: 1px solid black;
+        border-radius: 4px;
+    }
+
+    textarea {
+        color: black !important;
+    }
+
+    button {
+        margin-bottom: 0.5rem;
+        color: black;
+        padding: 0.5rem;
+        border: 1px solid #000000;
+        border-radius: 4px;
+        background-color: #007bff;
+        border-color: #007bff;
+
+        &:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+    }
+}
+
+.customInput {
+    color: black !important;
+}
+
+.input {
+    color: black !important;
+
+    textarea {
+        color: black !important;
+    }
+}

@@ -110,7 +110,10 @@ $font-weight: 300;
             }
 
             p {
-                font-size: 1em;
+                font-size: .9em;
+            }
+            ul {
+                display: none;
             }
         }
     }
@@ -204,4 +207,10 @@ $font-weight: 300;
     height: 60px; // Adjust height as needed
     background-color: #8B4513; // Brown color for wood
     margin-right: 10px; // Space between pickets
+}
+
+.hero-description {
+    @media (max-width: 768px) { // Adjust the max-width as needed for your mobile breakpoint
+        display: none;
+    }
 }

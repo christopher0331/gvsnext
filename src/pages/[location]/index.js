@@ -14,7 +14,9 @@ import FeaturedProjects from '../../components/FeaturedProjects';
 import AreasServed from '../../components/AreasServed';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-export default function HomePage({ capitalizedLocation, locationContent }) {
+
+
+export default function HomePage({ capitalizedLocation, locationContent, headerData, heroContent  }) {
   const router = useRouter();
   const { location } = router.query;
   useEffect(() => {
@@ -40,11 +42,9 @@ export default function HomePage({ capitalizedLocation, locationContent }) {
         <link rel="canonical" href={`https://greenviewsolutions.net/${location}`} />
       </Head>
 
-      <Header location={capitalizedLocation} />
+      <Header location={capitalizedLocation} data={headerData} heroContent={heroContent} locatio={capitalizedLocation}/>
 
       <div style={{ backgroundColor: 'white' }}>
-        <h1>Welcome to GreenView Solutions in {capitalizedLocation}</h1>
-        <p>{locationContent.description}</p>
         <InfoSection />
 
         <Testimonials testimonials={testimonialsData} />
@@ -90,5 +90,11 @@ export async function getStaticProps({ params }) {
     description: `Discover our exceptional services and offerings in ${capitalizedLocation}.`
   };
 
-  return { props: { capitalizedLocation, locationContent } };
-} 
+  const heroContent = {
+    title: `Premium Fencing Solutions in ${capitalizedLocation}`,
+    description: `Explore our exceptional range of vinyl fencing options in ${capitalizedLocation}, designed to enhance your property's aesthetics, privacy, and security.`,
+    features: ['Low maintenance', 'Weather-resistant', 'Customizable'],
+  };
+
+  return { props: { capitalizedLocation, locationContent, heroContent } };
+}

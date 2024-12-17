@@ -36,7 +36,7 @@ const fadeInUp = {
 
 
 
-export default function Fencing({ locationData, capitalizedLocation, locationFaqs }) {
+export default function Fencing({ capitalizedLocation, locationContent, headerData, heroContent  }) {
     const [selectedFence, setSelectedFence] = useState(null);
     const router = useRouter();
     const { location } = router.query;
@@ -87,7 +87,7 @@ export default function Fencing({ locationData, capitalizedLocation, locationFaq
                 <link rel="canonical" href={`https://greenviewsolutions.net/${location}/vinyl-fences`} />
             </Head>
 
-            <Header location={capitalizedLocation} />
+            <Header location={capitalizedLocation} data={headerData} heroContent={heroContent} locatio={capitalizedLocation} />
 
             <div className={styles.seoTextContainer}>
                 <div className={styles.seoText}>
@@ -210,6 +210,12 @@ export async function getStaticProps({ params }) {
     const locationData = {
         description: `Discover our vinyl fencing options in ${capitalizedLocation}.`
     };
+    const heroContent = {
+        title: `Premium Fencing Solutions in ${capitalizedLocation}`,
+        description: `Explore our exceptional range of vinyl fencing options in ${capitalizedLocation}, designed to enhance your property's aesthetics, privacy, and security.`,
+        features: ['Low maintenance', 'Weather-resistant', 'Customizable'],
+      };
+    
 
-    return { props: { locationData, capitalizedLocation } };
+    return { props: { locationData, capitalizedLocation, heroContent } };
 } 
