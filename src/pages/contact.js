@@ -85,8 +85,8 @@ export async function getStaticProps() {
       props: {
         heroContent: {
           title: 'Get in Touch with Us',
-          description: 'We are here to assist you with any inquiries or support you need. Reach out to us for more information about our services or to discuss your project requirements. Our team is ready to help you with expert advice, friendly support, and quick responses. Whether you have questions about our products, need assistance with a project, or want to learn more about our company, we are here to provide the information and support you need. Contact us today to start your journey with us.',
-          features: ['Friendly support', 'Quick response', 'Expert advice'],
+          description: 'We are here to assist with inquiries or support. Contact us for service information or project discussions. Our team offers expert advice, friendly support, and quick responses.',
+          features: ['Expert advice', 'Friendly support'],
         },
       },
     };
