@@ -1,0 +1,181 @@
+.fenceCalculator {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #1e1e1e;
+  
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+  
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+  
+      p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+      }
+  
+      .learnMore {
+        background-color: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+    .activeTab {
+        border: 2px solid #00a86b;
+        border-radius: 4px;
+        color: #00a86b;
+        background-color: transparent;
+        font-weight: bold;
+        transition: border-color 0.3s, color 0.3s;
+      }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+  
+      button {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1.1em;
+        padding: 10px;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  
+    form {
+      section {
+        margin-bottom: 20px;
+  
+        h2 {
+          font-size: 1.3em;
+          margin-bottom: 10px;
+        }
+  
+        .inputGroup {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 10px;
+  
+          input, select {
+            flex: 1;
+            padding: 10px;
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            color: #fff;
+            font-size: 1em;
+  
+            &::placeholder {
+              color: #888;
+            }
+          }
+          select.heightOption {
+            flex: 1;
+            padding: 10px;
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            color: #fff;
+            font-size: 1em;
+            margin-bottom: 10px;
+  
+            &::placeholder {
+              color: #888;
+            }
+          }
+        }
+  
+        .result {
+          font-size: 1.1em;
+          margin-top: 10px;
+        }
+      }
+    }
+  
+    .buttonGroup {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+  
+      button {
+        flex: 1;
+        padding: 10px;
+        font-size: 1.1em;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s;
+  
+        &.calculate {
+          background-color: #00a86b;
+          color: #fff;
+  
+          &:hover {
+            background-color: #008c5a;
+          }
+        }
+  
+        &.reset {
+          background-color: #333;
+          color: #fff;
+  
+          &:hover {
+            background-color: #444;
+          }
+        }
+      }
+    }
+  
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9em;
+  
+      a {
+        color: #888;
+        text-decoration: none;
+        margin: 0 10px;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+  
+      .socialIcons {
+        margin: 20px 0;
+  
+        a {
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          margin: 0 5px;
+          background-color: #333;
+          border-radius: 50%;
+          text-indent: -9999px;
+          transition: background-color 0.3s;
+  
+          &:hover {
+            background-color: #444;
+          }
+        }
+      }
+    }
+  }
+  
+  /* src/components/Calculator.module.scss */

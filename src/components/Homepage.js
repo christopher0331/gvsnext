@@ -11,7 +11,7 @@ import CallToActionSection from './CallToActionSection.js';
 import LocationsMap from './LocationsMap.js';
 import FeaturedProjects from './FeaturedProjects';
 import AreasServed from './AreasServed';
-
+import QuickEstimate from './QuickEstimateProcess.jsx';
 
 const Homepage = () => {
     useEffect(() => {
@@ -40,7 +40,10 @@ const Homepage = () => {
             </Head>
 
             <div style={{ backgroundColor: 'white' }}>
+
                 <InfoSection />
+                
+                <QuickEstimate />
 
                 <Testimonials testimonials={testimonialsData} />
                 

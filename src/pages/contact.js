@@ -86,7 +86,7 @@ export async function getStaticProps() {
         heroContent: {
           title: 'Get in Touch with Us',
           description: 'We are here to assist with inquiries or support. Contact us for service information or project discussions. Our team offers expert advice, friendly support, and quick responses.',
-          features: ['Expert advice', 'Friendly support'],
+          features: ['Expert advice', 'Friendly support', 'Quick response'],
         },
       },
     };
