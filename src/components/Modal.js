@@ -26,21 +26,14 @@ const Modal = ({ show, onClose, projectImages }) => {
 				<button className={styles.closeButton} onClick={onClose}>
 					&times;
 				</button>
-				<div className={styles.imageContainer}>
-					<img
-						src={projectImages[currentImageIndex].url}
-						alt={`Project image ${currentImageIndex + 1}`}
-						className={styles.modalImage}
-					/>
-				</div>
-				<div className={styles.navigationButtons}>
-					<button onClick={handlePrev}>Previous</button>
-					<button onClick={handleNext}>Next</button>
-				</div>
-				<div className={styles.imageCounter}>
-					{currentImageIndex + 1} / {projectImages.length}
-				</div>
-				<div className={styles.thumbnailWrapper}>
+				<div className={styles.modalBody}>
+					<div className={styles.imageContainer}>
+						<img
+							src={projectImages[currentImageIndex].url}
+							alt={`Project image ${currentImageIndex + 1}`}
+							className={styles.modalImage}
+						/>
+					</div>
 					<div className={styles.thumbnailContainer}>
 						{projectImages.map((image, index) => (
 							<img
@@ -51,7 +44,16 @@ const Modal = ({ show, onClose, projectImages }) => {
 								onClick={() => handleThumbnailClick(index)}
 							/>
 						))}
+						<div className={styles.scrollIndicator}>&#x2192;</div>
+					<div className={styles.scrollText}>Scroll</div>
 					</div>
+				</div>
+				<div className={styles.navigationButtons}>
+					<button onClick={handlePrev}>Previous</button>
+					<button onClick={handleNext}>Next</button>
+				</div>
+				<div className={styles.imageCounter}>
+					{currentImageIndex + 1} / {projectImages.length}
 				</div>
 			</div>
 		</div>
