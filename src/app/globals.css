@@ -110,7 +110,7 @@ body {
 .hamburger.open {
   right: 3%;
   transition: .25s ease-in-out;
-  z-index: 00;
+  z-index: 1100;
 
 }
 
