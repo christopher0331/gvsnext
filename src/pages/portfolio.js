@@ -13,9 +13,11 @@ AWS.config.credentials = new AWS.Credentials();
 
 const S3Bucket = ({ heroContent }) => {
   const [projectImages, setProjectImages] = useState([]);
+  const [initialProjects, setInitialProjects] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [currentProjectImages, setCurrentProjectImages] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
 
   const handleShowModal = (projectId) => {
     const selectedProject = projectImages.find(project => project[0].id === projectId);
@@ -60,13 +62,21 @@ const S3Bucket = ({ heroContent }) => {
             console.log(err);
           }
         }
+        setInitialProjects(projects.slice(0, 4)); // Load first 4 projects
         setProjectImages(projects);
       } catch (err) {
         console.log('error', err);
       }
     }
 
-    fetchData().then(() => setLoading(false));
+    fetchData().then(() => {
+      setLoading(false);
+      setLoadingMore(true);
+      // Simulate loading more projects
+      setTimeout(() => {
+        setLoadingMore(false);
+      }, 2000); // Adjust time as needed
+    });
   }, []);
 
   useEffect(() => {
@@ -164,7 +174,25 @@ const S3Bucket = ({ heroContent }) => {
               <h1>Our Portfolio</h1>
             </div>
             <motion.div className="portfolioBlock" variants={containerVariants}>
-              {projectImages.map((project) => (
+              {initialProjects.map((project) => (
+                <motion.div key={project[0].id} variants={itemVariants}>
+                  <div className="portfolioProjects">
+                    <img src={project[0].url} className="portfolioImage" alt={`Project ${project[0].id}`} />
+                    <div className="portfolioLabel">Hover for more</div>
+                    <div className="portfolioBody">
+                      <button className="btn2" onClick={() => handleShowModal(project[0].id)}>
+                        View Project
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+              {loadingMore && (
+                <div className="loadingContainer">
+                  <CoolLoader />
+                </div>
+              )} {/* Centered loader */}
+              {!loadingMore && projectImages.slice(4).map((project) => ( // Render remaining projects
                 <motion.div key={project[0].id} variants={itemVariants}>
                   <div className="portfolioProjects">
                     <img src={project[0].url} className="portfolioImage" alt={`Project ${project[0].id}`} />
