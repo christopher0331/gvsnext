@@ -7,11 +7,17 @@ import { useImageIndex } from '../contexts/ImageIndexContext';
 import Hero from './Hero';
 import styles from './Hero.scss';
 
-export default function Header({ heroContent, postTitle, location }) {
-    {console.log('heroContent', heroContent)}
+export default function Header({ heroContent = {}, postTitle, location }) {
     const [isScrolled, setIsScrolled] = useState(false);
     const { imageIndex, images } = useImageIndex();
     const router = useRouter();
+
+    // Ensure heroContent has all required properties
+    const safeHeroContent = {
+        title: heroContent?.title || '',
+        description: heroContent?.description || '',
+        features: Array.isArray(heroContent?.features) ? heroContent.features : []
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -33,7 +39,7 @@ export default function Header({ heroContent, postTitle, location }) {
                 src={heroImage}
                 alt="Hero Image"
                 fill
-                style={{ objectFit: 'cover', zIndex: 10 }}
+                className="hero-image"
                 quality={100}
                 priority
                 unoptimized
@@ -46,7 +52,11 @@ export default function Header({ heroContent, postTitle, location }) {
 
             <div className="header-content"></div>
 
-            <Hero {...heroContent} />
+            <Hero 
+                title={safeHeroContent.title}
+                description={safeHeroContent.description}
+                features={safeHeroContent.features}
+            />
         </div>
     );
 }

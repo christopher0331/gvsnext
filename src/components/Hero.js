@@ -2,7 +2,7 @@ import React from 'react';
 import './Hero.scss';
 import emailjs from 'emailjs-com';
 
-function Hero({ title, description, features = [] }) {
+function Hero({ title = '', description = '', features = [] }) {
     const sendEmail = (e) => {
         e.preventDefault();
 
@@ -21,13 +21,15 @@ function Hero({ title, description, features = [] }) {
             <div className="hero-overlay"></div>
 
             <div className="hero-content">
-                <h1>{title}</h1>
-                <p>{description}</p>
-                <ul className="features">
-                    {features.map((feature, index) => (
-                        <li key={index}>{feature}</li>
-                    ))}
-                </ul>
+                {title && <h1>{title}</h1>}
+                {description && <p>{description}</p>}
+                {features.length > 0 && (
+                    <ul className="features">
+                        {features.map((feature, index) => (
+                            <li key={index}>{feature}</li>
+                        ))}
+                    </ul>
+                )}
             </div>
             <div className="contact-form">
                 <h2>GET IN TOUCH WITH US</h2>

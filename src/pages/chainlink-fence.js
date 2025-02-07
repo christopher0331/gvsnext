@@ -5,7 +5,8 @@ import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import FencingTypeCards from '../components/FencingTypeCards'
 import CTASection from '../components/CTASection'
-import TestimonialsSection from '../components/TestimonialsSection'
+import Reviews from '../components/Reviews'
+import { testimonialsData } from '../components/TestimonialsData'
 import ChainLinkFenceFAQ from '../components/ChainlinkFenceFAQ'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from '../components/WoodFencesStyles.module.scss';
@@ -178,7 +179,7 @@ export default function ChainLinkFencing({ heroContent }) {
 
             <ChainLinkFenceFAQ />
 
-            <TestimonialsSection />
+            <Reviews testimonials={testimonialsData} />
 
             <LocationsMap />
 

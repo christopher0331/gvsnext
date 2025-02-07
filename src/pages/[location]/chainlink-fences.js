@@ -5,7 +5,8 @@ import Footer from '../../components/Footer';
 import FencingTypeCards from '../../components/FencingTypeCards';
 import CTASection from '../../components/CTASection';
 import FenceShapeShowcase from '../../components/FenceShapeShowcase';
-import TestimonialsSection from '../../components/TestimonialsSection';
+import Reviews from '../../components/Reviews';
+import { testimonialsData } from '../../components/TestimonialsData';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import styles from '../../components/WoodFencesStyles.module.scss';
 import LocationsMap from '../../components/LocationsMap';
@@ -144,7 +145,7 @@ export default function Fencing({ capitalizedLocation, locationContent, headerDa
                 buttonText="Request a Free Consultation"
                 buttonLink="/contact"
             />
-            <TestimonialsSection />
+            <Reviews testimonials={testimonialsData} />
 
             <LocationsMap />      
 

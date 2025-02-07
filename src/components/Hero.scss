@@ -1,5 +1,10 @@
 /* Hero.scss */
 $hero-bg-color: rgba(0, 0, 0, 0.5);
+
+.hero-image {
+    object-fit: cover;
+    z-index: 10;
+}
 $contact-form-bg-color: rgba(255, 255, 255, 0.9);
 $primary-color: #1c7f2a;
 $hover-color: #008833;
@@ -7,10 +12,25 @@ $font-weight: 300;
 
 
 .header-container {
-    height: 125vh;
+    height: auto;
+    min-height: 100vh;
+    position: relative;
+    background-color: transparent;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 200px; // Increased height
+        background: linear-gradient(to bottom, rgba(0,0,0,0), #ffffff);
+        pointer-events: none;
+        z-index: 2;
+    }
 
     @media (max-width: 768px) {
-        height: 80vh;
+        min-height: 80vh;
     }
 }
 
@@ -58,12 +78,14 @@ $font-weight: 300;
     background-size: cover;
     background-position: center;
     padding: 50px;
-    height: 80vh;
+    min-height: 100vh;
+    height: auto;
     position: relative;
     color: white;
+    margin-bottom: -150px; // Increased overlap with the gradient
 
     @media (max-width: 768px) {
-        height: 60vh;
+        min-height: 80vh;
     }
 
     &-overlay {

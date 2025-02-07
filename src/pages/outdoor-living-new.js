@@ -8,7 +8,8 @@ import CallToActionSection from '../components/CallToActionSection'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SvgComponent from '../components/SvgComponent';
-import TestimonialsSection from '../components/TestimonialsSection';
+import Reviews from '../components/Reviews';
+import { testimonialsData } from '../components/TestimonialsData';
 import { useEffect } from 'react';
 
 
@@ -50,7 +51,7 @@ useEffect(() => {
                 />
                 <CredibilitySection />
                 <FeaturedProjects />
-                <TestimonialsSection />
+                <Reviews testimonials={testimonialsData} />
                 <div style={{ marginTop: '4rem', textAlign: 'center' }}>
                     <h2 style={{ fontSize: '2.5rem', color: '#333' }}>Our Simple Process</h2>
                     <p  style={{ fontSize: '1.5rem', color: '#333'}}>Transforming your outdoor space is easy with our straightforward approach</p>

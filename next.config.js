@@ -1,8 +1,33 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['greenviewsolutionsimages.s3.us-west-1.amazonaws.com', 'unsplash.com', 'ik.imagekit.io', 'api.cloudflare.com', 'imagedelivery.net', 'greenviewsolutions.net'],
-      },
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'greenviewsolutionsimages.s3.us-west-1.amazonaws.com'
+            },
+            {
+                protocol: 'https',
+                hostname: 'unsplash.com'
+            },
+            {
+                protocol: 'https',
+                hostname: 'ik.imagekit.io'
+            },
+            {
+                protocol: 'https',
+                hostname: 'api.cloudflare.com'
+            },
+            {
+                protocol: 'https',
+                hostname: 'imagedelivery.net'
+            },
+            {
+                protocol: 'https',
+                hostname: 'greenviewsolutions.net'
+            }
+        ]
+    },
 }
 
 module.exports = nextConfig

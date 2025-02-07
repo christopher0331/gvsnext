@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import InfoSection from './InfoSection.js';
 import FenceCards from './FenceCard.js';
 import { testimonialsData } from './TestimonialsData.js';
-import Testimonials from './ReviewsSections.js';
+import Reviews from './Reviews.js';
 import FinancingSection from './FinancingSection.js';
 import Accordion from './AccordionDropDown.js';
 import styles from './AccordionDropDown.module.scss';
@@ -45,7 +45,7 @@ const Homepage = () => {
                 
                 <QuickEstimate />
 
-                <Testimonials testimonials={testimonialsData} />
+                <Reviews testimonials={testimonialsData} />
                 
                 <FeaturedProjects />
 

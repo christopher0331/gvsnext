@@ -4,7 +4,8 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import FencingTypeCards from '../../components/FencingTypeCards';
 import CTASection from '../../components/CTASection';
-import TestimonialsSection from '../../components/TestimonialsSection';
+import Reviews from '../../components/Reviews';
+import { testimonialsData } from '../../components/TestimonialsData';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import styles from '../../components/WoodFencesStyles.module.scss';
 import LocationsMap from '../../components/LocationsMap';
@@ -184,7 +185,7 @@ export default function Fencing({ capitalizedLocation, locationContent, headerDa
             </AnimatePresence>
 
 
-            <TestimonialsSection />
+            <Reviews testimonials={testimonialsData} />
 
             <LocationsMap />
 
