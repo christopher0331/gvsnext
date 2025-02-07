@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { FaStar, FaQuoteLeft, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
-import styles from './ReviewsSections.module.css';
 import { getTestimonials } from './TestimonialsData';
 
 export default function TestimonialsSection() {

@@ -4,7 +4,7 @@ import Footer from '../../components/Footer';
 import InfoSection from '../../components/InfoSection';
 import FenceCards from '../../components/FenceCard';
 import { testimonialsData } from '../../components/TestimonialsData';
-import Testimonials from '../../components/ReviewsSections';
+import Reviews from '../../components/Reviews';
 import FinancingSection from '../../components/FinancingSection';
 import Accordion from '../../components/AccordionDropDown';
 import styles from '../../components/AccordionDropDown.module.scss';
@@ -47,7 +47,7 @@ export default function HomePage({ capitalizedLocation, locationContent, headerD
       <div style={{ backgroundColor: 'white' }}>
         <InfoSection />
 
-        <Testimonials testimonials={testimonialsData} />
+        <Reviews testimonials={testimonialsData} />
 
         <FeaturedProjects />
 

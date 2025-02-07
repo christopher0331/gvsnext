@@ -5,7 +5,8 @@ import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import FencingTypeCards from '../components/FencingTypeCards'
 import CTASection from '../components/CTASection'
-import TestimonialsSection from '../components/TestimonialsSection'
+import Reviews from '../components/Reviews'
+import { testimonialsData } from '../components/TestimonialsData'
 import VinylFenceFAQ from '../components/VinylFenceFAQ'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from '../components/WoodFencesStyles.module.scss';
@@ -177,7 +178,7 @@ export default function VinylFencing({ heroContent, postTitle, location }) {
 
             <VinylFenceFAQ />
 
-            <TestimonialsSection />
+            <Reviews testimonials={testimonialsData} />
 
             <LocationsMap />
 

@@ -6,7 +6,8 @@ import Hero from '../components/Hero';
 import FencingTypeCards from '../components/FencingTypeCards'
 import CTASection from '../components/CTASection'
 import FenceShapeShowcase from '../components/FenceShapeShowcase'
-import TestimonialsSection from '../components/TestimonialsSection'
+import Reviews from '../components/Reviews'
+import { testimonialsData } from '../components/TestimonialsData'
 import WoodFenceFAQ from '../components/WoodFenceFAQ'
 import { motion, useAnimation, AnimatePresence } from 'framer-motion'
 import styles from '../components/WoodFencesStyles.module.scss';
@@ -156,7 +157,7 @@ export default function Fencing({ heroContent }) {
             <WoodFenceFAQ />
 
 
-            <TestimonialsSection />
+            <Reviews testimonials={testimonialsData} />
 
             <LocationsMap />      
 

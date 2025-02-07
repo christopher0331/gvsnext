@@ -1,0 +1,279 @@
+.reviewsSection {
+  padding: 4rem 2rem;
+  background: #fafafa;
+  
+  .title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    font-weight: 600;
+  }
+}
+
+.reviewsStats {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.averageRating {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.ratingNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.ratingStars {
+  margin-bottom: 0.5rem;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.reviewCount {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+.reviewCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.reviewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.author {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.rating {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  color: #ffd700;
+  font-size: 0.9rem;
+}
+
+.reviewText {
+  color: #555;
+  line-height: 1.6;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.readMore {
+  background: none;
+  border: none;
+  color: #007AFF;
+  padding: 0;
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.date {
+  display: block;
+  color: #888;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #666;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  
+  &:hover {
+    color: #333;
+  }
+}
+
+.modalHeader {
+  margin-bottom: 1.5rem;
+}
+
+.modalAuthor {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.modalRating {
+  display: flex;
+  gap: 4px;
+}
+
+.modalReviewText {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.modalDate {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 0 2rem;
+}
+
+.pageNumbers {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pageButton {
+  background: none;
+  border: 1px solid #e0e0e0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: #333;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover:not(.disabled) {
+    background: #f5f5f5;
+    border-color: #d0d0d0;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.pageNumber {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  min-width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: #333;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover:not(.activePage) {
+    background: #f5f5f5;
+  }
+
+  &.activePage {
+    background: #007AFF;
+    color: white;
+  }
+}
+
+.ellipsis {
+  color: #666;
+  padding: 0 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .reviewsSection {
+    padding: 3rem 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .reviewsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modalContent {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .pagination {
+    padding: 0 1rem;
+  }
+}
