@@ -1,0 +1,150 @@
+.reviewCard {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.reviewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+
+.authorInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.locationTag {
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 8px;
+  background: #EBF8FF;
+  color: #2B6CB0;
+  font-weight: 500;
+}
+
+.author {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.rating {
+  display: flex;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.star {
+  font-size: 16px;
+  &.starFilled {
+    color: #F6AD55;
+  }
+  &.starEmpty {
+    color: #E2E8F0;
+  }
+}
+
+.reviewText {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #4A5568;
+  margin: 8px 0 4px 0;
+  white-space: pre-line;
+  transition: all 0.3s;
+}
+
+.reviewFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+
+  .readMore {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    border: none;
+    background: none;
+    color: #2B6CB0;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 14px;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #2C5282;
+    }
+
+    .chevron {
+      font-size: 12px;
+      transition: transform 0.2s;
+    }
+
+    .chevronUp {
+      transform: rotate(90deg);
+    }
+  }
+
+  .reviewDate {
+    color: #718096;
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
+.reviewText {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4A5568;
+  margin: 0 0 20px 0;
+  white-space: pre-wrap;
+}
+
+.reviewFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #edf2f7;
+  padding-top: 16px;
+  margin-top: 16px;
+}
+
+.readMore {
+  background: none;
+  border: none;
+  color: #4299E1;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 0;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  &:hover {
+    color: #2B6CB0;
+  }
+}
+
+.reviewDate {
+  font-size: 14px;
+  color: #718096;
+  margin: 0;
+  font-weight: 500;
+}

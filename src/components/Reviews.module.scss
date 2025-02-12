@@ -1,14 +1,371 @@
+.loading,
+.error {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.1rem;
+  color: #666;
+  background: white;
+  border-radius: 12px;
+  margin: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.error {
+  color: #dc3545;
+  border: 1px solid rgba(220, 53, 69, 0.1);
+  background: rgba(220, 53, 69, 0.02);
+}
+
 .reviewsSection {
-  padding: 4rem 2rem;
+  padding: 4rem 1.5rem;
   background: #fafafa;
+  overflow: hidden;
+
+  // Location summaries at the top
+  .locationSummaries {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    padding: 0 1rem;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: 1fr;
+      max-width: 800px;
+    }
+  }
+
+  // Reviews section below
+  .allReviewsSection {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 3rem;
+    border-top: 1px solid #eee;
+
+    .title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      color: #2D3748;
+      font-weight: 600;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: #4299E1;
+        margin: 1rem auto 0;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  .locationTabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .locationTab {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background: white;
+    border-radius: 30px;
+    font-size: 1rem;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      background: #f5f5f5;
+    }
+
+    &.active {
+      background: #007AFF;
+      color: white;
+    }
+  }
   
+  .reviewsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (max-width: 1200px) {
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      padding: 1rem;
+    }
+  }
+
+  .reviewItem {
+    height: 100%;
+  }
+
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+  }
+
+  .modalContent {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+                0 8px 10px -5px rgba(0, 0, 0, 0.04);
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #F7FAFC;
+      border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #CBD5E0;
+      border-radius: 8px;
+
+      &:hover {
+        background: #A0AEC0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      padding: 24px;
+      margin: 16px;
+      border-radius: 12px;
+    }
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: white;
+    border: 1px solid #E2E8F0;
+    color: #4A5568;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background: #EDF2F7;
+      color: #2D3748;
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+
+  .modalAuthorInfo {
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #2D3748;
+      margin: 0 0 8px 0;
+    }
+  }
+
+  .modalLocation {
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    background: #EBF8FF;
+    color: #2B6CB0;
+    font-weight: 500;
+  }
+
+  .modalRating {
+    display: flex;
+    gap: 4px;
+    font-size: 20px;
+
+    .starFilled {
+      color: #F6AD55;
+    }
+
+    .starEmpty {
+      color: #E2E8F0;
+    }
+  }
+
+  .modalReviewText {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4A5568;
+    margin: 0 0 24px 0;
+    white-space: pre-line;
+  }
+
+  .modalDate {
+    color: #718096;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+
+    .pageButton {
+      padding: 8px 16px;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      background: white;
+      color: #4a5568;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover:not(:disabled) {
+        background: #f7fafc;
+        border-color: #cbd5e0;
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+
+    .pageInfo {
+      color: #4a5568;
+      font-weight: 500;
+    }
+  }
+  
+  .locationColumn {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .title {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+    
+    &:after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #0066cc;
+      margin: 15px auto 0;
+    }
+  }
+  
+  .locationInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+  }
+  
+  .businessInfo {
+    flex: 1;
+    padding-left: 2rem;
+    
+    .infoItem {
+      display: flex;
+      align-items: center;
+      margin: 0.75rem 0;
+      color: #666;
+      font-size: 0.95rem;
+
+      .infoIcon {
+        margin-right: 0.75rem;
+        color: #007AFF;
+        font-size: 1.1rem;
+      }
+    }
+    
+    .googleLink {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #4285f4;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
   .title {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 2rem;
     color: #333;
     font-weight: 600;
-  }
+}
 }
 
 .reviewsStats {
@@ -46,26 +403,42 @@
   font-size: 0.9rem;
 }
 
+.reviewsContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
 .reviewsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
 }
 
 .reviewCard {
   background: white;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
   cursor: pointer;
-  
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .reviewContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
   }
 }
 
@@ -74,6 +447,17 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+
+  .authorInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    .profilePhoto {
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
 }
 
 .author {
@@ -93,12 +477,62 @@
   font-size: 0.9rem;
 }
 
+.reviewDate {
+  color: #888;
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+
 .reviewText {
   color: #555;
   line-height: 1.6;
   margin: 0.5rem 0;
   font-size: 0.9rem;
   position: relative;
+  flex-grow: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem 0;
+
+  .pageButton {
+    background: white;
+    border: 1px solid #e0e0e0;
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #666;
+
+    &:hover:not(.disabled) {
+      background: #f5f5f5;
+      border-color: #d0d0d0;
+    }
+
+    &.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  .pageInfo {
+    color: #666;
+    font-size: 0.9rem;
+  }
 }
 
 .readMore {
@@ -122,49 +556,75 @@
   margin-top: 0.5rem;
 }
 
-.modal {
+.modalOverlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem;
   z-index: 1000;
+  backdrop-filter: blur(4px);
 }
 
 .modalContent {
   background: white;
-  padding: 2rem;
-  border-radius: 12px;
+  padding: 2.5rem;
+  border-radius: 16px;
   position: relative;
   width: 100%;
   max-width: 600px;
   max-height: 90vh;
   overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .closeButton {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(0, 0, 0, 0.05);
   border: none;
   color: #666;
   padding: 0.5rem;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
   &:hover {
+    background: rgba(0, 0, 0, 0.1);
     color: #333;
   }
 }
 
 .modalHeader {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  
+  .modalAuthorInfo {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+
+    .modalProfilePhoto {
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
 }
 
 .modalAuthor {
@@ -193,60 +653,76 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-  padding: 0 2rem;
-}
-
-.pageNumbers {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.pageButton {
-  background: none;
-  border: 1px solid #e0e0e0;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  color: #333;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-
-  &:hover:not(.disabled) {
-    background: #f5f5f5;
-    border-color: #d0d0d0;
-  }
-
-  &.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-}
-
-.pageNumber {
-  background: none;
-  border: none;
-  padding: 0.5rem;
-  min-width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
-  color: #333;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-
-  &:hover:not(.activePage) {
-    background: #f5f5f5;
-  }
-
-  &.activePage {
-    background: #007AFF;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  
+  .pageButton {
+    min-width: 120px;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: #2C5282;
     color: white;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    
+    &:disabled {
+      background: #CBD5E0;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    
+    &:not(:disabled):hover {
+      background: #2B6CB0;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    &:not(:disabled):active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .pageInfo {
+    color: #4A5568;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    
+    &:hover:not(.activePage) {
+      background: #EDF2F7;
+    }
+    
+    &.activePage {
+      background: #4299E1;
+      color: white;
+    }
+  }
+
+  @media (max-width: 600px) {
+    gap: 1rem;
+    
+    .pageButton {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+    }
+    
+    .pageInfo {
+      font-size: 0.9rem;
+      padding: 0.6rem 0.8rem;
+    }
   }
 }
 

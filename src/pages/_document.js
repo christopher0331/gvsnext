@@ -142,82 +142,6 @@ class MyDocument extends Document {
                     ]
                   },
                   {
-                    "@type": "BreadcrumbList",
-                    "@id": "https://greenviewsolutions.net/#breadcrumb",
-                    "itemListElement": [
-                      {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "item": {
-                          "@id": "https://greenviewsolutions.net/",
-                          "name": "Home"
-                        }
-                      },
-                      {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "item": {
-                          "@id": "https://greenviewsolutions.net/areas-served/",
-                          "name": "Areas Served"
-                        }
-                      },
-                      {
-                        "@type": "ListItem",
-                        "position": 3,
-                        "item": [
-                          {
-                            "@id": "https://greenviewsolutions.net/erie/",
-                            "name": "Erie"
-                          },
-                          {
-                            "@id": "https://greenviewsolutions.net/arvada/",
-                            "name": "Arvada"
-                          },
-                          {
-                            "@id": "https://greenviewsolutions.net/aurora/",
-                            "name": "Aurora"
-                          },
-                          {
-                            "@id": "https://greenviewsolutions.net/denver/",
-                            "name": "Denver"
-                          },
-                          {
-                            "@id": "https://greenviewsolutions.net/golden/",
-                            "name": "Golden"
-                          },
-                          {
-                            "@id": "https://greenviewsolutions.net/boulder/",
-                            "name": "Boulder"
-                          },
-                          {
-                            "@id": "https://greenviewsolutions.net/longmont/",
-                            "name": "Longmont"
-                          },
-                          {
-                            "@id": "https://greenviewsolutions.net/frederick/",
-                            "name": "Frederick"
-                          },
-                          {
-                            "@id": "https://greenviewsolutions.net/broomfield/",
-                            "name": "Broomfield"
-                          },
-                          {
-                            "@id": "https://greenviewsolutions.net/westminster/",
-                            "name": "Westminster"
-                          },
-                          {
-                            "@id": "https://greenviewsolutions.net/fort-collins/",
-                            "name": "Fort Collins"
-                          },
-                          {
-                            "@id": "https://greenviewsolutions.net/eastlake/",
-                            "name": "Eastlake"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
                     "@type": "Service",
                     "serviceType": "Fencing Installation",
                     "provider": {
@@ -317,6 +241,7 @@ class MyDocument extends Document {
               })
             }}
           />
+          
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
