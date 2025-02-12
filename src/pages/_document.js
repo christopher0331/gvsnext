@@ -74,6 +74,15 @@ class MyDocument extends Document {
                       "latitude": 40.125623,
                       "longitude": -104.9541494
                     },
+                    "serviceArea": {
+                      "@type": "GeoCircle",
+                      "geoMidpoint": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 40.125623,
+                        "longitude": -104.9541494
+                      },
+                      "geoRadius": "50000"
+                    },
                     "openingHoursSpecification": [
                       {
                         "@type": "OpeningHoursSpecification",
@@ -109,6 +118,15 @@ class MyDocument extends Document {
                       "latitude": 39.8139,
                       "longitude": -105.1399
                     },
+                    "serviceArea": {
+                      "@type": "GeoCircle",
+                      "geoMidpoint": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 39.8139,
+                        "longitude": -105.1399
+                      },
+                      "geoRadius": "50000"
+                    },
                     "openingHoursSpecification": [
                       {
                         "@type": "OpeningHoursSpecification",
@@ -130,16 +148,66 @@ class MyDocument extends Document {
                       "@id": "https://greenviewsolutions.net/#localbusiness1"
                     },
                     "areaServed": [
-                      "Boulder, CO",
-                      "Niwot, CO",
-                      "Louisville, CO",
-                      "Longmont, CO",
-                      "Frederick, CO",
-                      "Erie, CO",
-                      "Superior, CO",
-                      "Denver, CO",
-                      "Westminster, CO",
-                      "Fort Collins, CO"
+                      {
+                        "@type": "City",
+                        "name": "Erie",
+                        "addressRegion": "CO",
+                        "addressCountry": "US"
+                      },
+                      {
+                        "@type": "City",
+                        "name": "Arvada",
+                        "addressRegion": "CO",
+                        "addressCountry": "US"
+                      },
+                      {
+                        "@type": "City",
+                        "name": "Aurora",
+                        "addressRegion": "CO",
+                        "addressCountry": "US"
+                      },
+                      {
+                        "@type": "City",
+                        "name": "Denver",
+                        "addressRegion": "CO",
+                        "addressCountry": "US"
+                      },
+                      {
+                        "@type": "City",
+                        "name": "Golden",
+                        "addressRegion": "CO",
+                        "addressCountry": "US"
+                      },
+                      {
+                        "@type": "City",
+                        "name": "Boulder",
+                        "addressRegion": "CO",
+                        "addressCountry": "US"
+                      },
+                      {
+                        "@type": "City",
+                        "name": "Longmont",
+                        "addressRegion": "CO",
+                        "addressCountry": "US"
+                      },
+                      {
+                        "@type": "City",
+                        "name": "Broomfield",
+                        "addressRegion": "CO",
+                        "addressCountry": "US"
+                      },
+                      {
+                        "@type": "City",
+                        "name": "Westminster",
+                        "addressRegion": "CO",
+                        "addressCountry": "US"
+                      },
+                      {
+                        "@type": "City",
+                        "name": "Fort Collins",
+                        "addressRegion": "CO",
+                        "addressCountry": "US"
+                      }
                     ],
                     "hasOfferCatalog": {
                       "@type": "OfferCatalog",

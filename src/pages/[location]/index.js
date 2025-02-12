@@ -14,6 +14,8 @@ import FeaturedProjects from '../../components/FeaturedProjects';
 import AreasServed from '../../components/AreasServed';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import LocationContent from '../../components/LocationContent';
+import { CORE_LOCATIONS, isValidLocation, getLocationData } from '../../utils/locations';
 
 
 export default function HomePage({ capitalizedLocation, locationContent, headerData, heroContent  }) {
@@ -37,16 +39,22 @@ export default function HomePage({ capitalizedLocation, locationContent, headerD
   return (
     <>
       <Head>
-        <title>Welcome to GreenView Solutions in {capitalizedLocation}</title>
-        <meta name="description" content={`Explore our services and offerings in ${capitalizedLocation}.`} />
+        <title>Professional Fencing Services in {capitalizedLocation}, CO | GreenView Solutions</title>
+        <meta name="description" content={`Expert fence installation and repair services in ${capitalizedLocation}, Colorado. Local expertise, custom designs, and professional installation for residential and commercial properties.`} />
         <link rel="canonical" href={`https://greenviewsolutions.net/${location}`} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content={`Professional Fencing Services in ${capitalizedLocation}, CO | GreenView Solutions`} />
+        <meta property="og:description" content={`Expert fence installation and repair services in ${capitalizedLocation}, Colorado. Local expertise, custom designs, and professional installation.`} />
+        <meta property="og:url" content={`https://greenviewsolutions.net/${location}`} />
+        <meta property="og:type" content="website" />
+        <meta name="geo.region" content="US-CO" />
+        <meta name="geo.placename" content={`${capitalizedLocation}, Colorado`} />
       </Head>
 
       <Header location={capitalizedLocation} data={headerData} heroContent={heroContent} locatio={capitalizedLocation}/>
 
       <div style={{ backgroundColor: 'white' }}>
         <InfoSection />
-
         <Reviews testimonials={testimonialsData} />
 
         <FeaturedProjects />
@@ -64,7 +72,7 @@ export default function HomePage({ capitalizedLocation, locationContent, headerD
         <LocationsMap />
 
         <AreasServed />
-
+        <LocationContent location={location} />
       </div>
 
       <Footer />
@@ -73,21 +81,38 @@ export default function HomePage({ capitalizedLocation, locationContent, headerD
 }
 
 export async function getStaticPaths() {
-  const locations = ['boulder', 'arvada', 'denver', 'littleton', 'lakewood', 'golden', 'thornton', 'broomfield', 'centennial', 'englewood', 'glenwood springs', 'gunbarrel', 'highlands ranch', 'jefferson county', 'louisville', 'northglenn', 'parker', 'superior', 'westminster', 'eastlake', 'belmar', 'castle rock', 'columbine valley', 'fountain', 'greenwood village', 'lone tree', 'fort collins', 'meridian', 'milliken', 'parker', 'sedalia', 'superior', 'estes park', 'westminster hills']; 
-  const paths = locations.map(location => ({
+  const paths = CORE_LOCATIONS.map(location => ({
     params: { location }
   }));
 
-  return { paths, fallback: false };
+  return { 
+    paths,
+    fallback: 'blocking' // This allows us to handle invalid locations
+  };
 }
 
 export async function getStaticProps({ params }) {
   const { location } = params;
-  const capitalizedLocation = location.charAt(0).toUpperCase() + location.slice(1);
+  
+  // Check if this is a valid location
+  if (!isValidLocation(location)) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
 
-  // Example location-specific content
+  const locationData = getLocationData(location);
+  const capitalizedLocation = locationData.name;
+
   const locationContent = {
-    description: `Discover our exceptional services and offerings in ${capitalizedLocation}.`
+    title: `Professional Fencing Services in ${capitalizedLocation}, Colorado`,
+    description: `Expert fence installation and repair services in ${capitalizedLocation}. We provide custom designs, professional installation, and dedicated support for both residential and commercial properties.`,
+    metaDescription: `Expert fence installation and repair services in ${capitalizedLocation}, Colorado. Local expertise, custom designs, and professional installation for residential and commercial properties.`,
+    nearestOffice: locationData.nearestOffice,
+    distanceFromOffice: locationData.distanceFromOffice
   };
 
   const heroContent = {

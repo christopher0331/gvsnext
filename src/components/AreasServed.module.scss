@@ -1,32 +1,141 @@
 .areasServedContainer {
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  margin: 20px 0;
-  text-align: center;
-}
-.areasServedContainer h2 {
-  color: #8B0000;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    text-align: center;
+
+    h2 {
+        text-align: center;
+        color: #2F7A3D;
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: #2F7A3D;
+            margin: 0.5rem auto;
+        }
+    }
 }
 
 .areasGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
-  justify-items: center;
-  margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+    margin: 0 auto;
+
+    a {
+        display: block;
+        padding: 1.25rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        border: 1px solid #e2e8f0;
+        transition: all 0.2s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 6px rgba(47, 122, 61, 0.2);
+            border-color: #2F7A3D;
+
+            .icon {
+                color: #2F7A3D;
+            }
+        }
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(47, 122, 61, 0.2);
+            border-color: #2F7A3D;
+
+            .icon {
+                color: #2F7A3D;
+            }
+        }
+
+        &:active {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(47, 122, 61, 0.1);
+        }
+    }
+
+    .officeGroup {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e2e8f0;
+        overflow: hidden;
+    }
+
+    .officeTitle {
+        background: #2F7A3D;
+        color: white;
+        padding: 1rem 1.5rem;
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+
+    .locationsList {
+        padding: 1.5rem;
+
+        a {
+            text-decoration: none;
+            display: block;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+
+            &:hover {
+                background: #f7fafc;
+                border-color: #2F7A3D;
+                transform: translateX(4px);
+
+                .icon {
+                    color: #2F7A3D;
+                }
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+
+    .locationInfo {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            color: #4a5568;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        div {
+            flex-grow: 1;
+
+            div:first-child {
+                color: #1a365d;
+                font-size: 1.125rem;
+                font-weight: 600;
+                margin-bottom: 0.25rem;
+            }
+
+            .distance {
+                color: #4a5568;
+                font-size: 0.875rem;
+            }
+        }
+    }
 }
-
-.areasGrid a {
-  text-decoration: none;
-  color: #8B0000;
-  font-weight: bold;
-  transition: color 0.3s;
-
-  &:hover {
-    color: #5A0000;
-  }
-} 
