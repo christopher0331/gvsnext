@@ -1,0 +1,64 @@
+.widgetContainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.reviewsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.totalReviews {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.review {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.authorImage {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.authorInfo {
+  flex: 1;
+}
+
+.authorName {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.rating {
+  color: #ffc107;
+  margin-bottom: 4px;
+}
+
+.time {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.reviewText {
+  line-height: 1.5;
+  color: #333;
+}

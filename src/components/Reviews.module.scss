@@ -34,6 +34,106 @@
       grid-template-columns: 1fr;
       max-width: 800px;
     }
+
+    .locationSummary {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      height: 100%;
+
+      .locationTitle {
+        margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+
+        .companyName {
+          font-size: 2rem;
+          font-weight: 700;
+          color: #2B7A0B;
+          line-height: 1.2;
+        }
+
+        .locationName {
+          font-size: 1.25rem;
+          color: #4A5568;
+          font-weight: 500;
+        }
+      }
+
+      .locationInfo {
+        .averageRating {
+          text-align: center;
+          background: #F7FAFC;
+          padding: 1.5rem;
+          border-radius: 8px;
+
+          .ratingNumber {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #2D3748;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+          }
+
+          .ratingStars {
+            color: #F6AD55;
+            display: flex;
+            justify-content: center;
+            gap: 0.25rem;
+            margin: 0.5rem 0;
+            font-size: 1.5rem;
+          }
+
+          .reviewCount {
+            color: #4A5568;
+            font-size: 1rem;
+            font-weight: 500;
+          }
+        }
+
+        .locationDetails {
+          margin-top: 1.5rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+
+          .addressLink, .phoneLink, .googleMapsLink {
+            color: #4A5568;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            line-height: 1.5;
+            transition: all 0.2s ease;
+
+            &:hover {
+              color: #2B7A0B;
+            }
+          }
+
+          .phoneLink {
+            color: #2B7A0B;
+            font-weight: 500;
+
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+
+          .googleMapsLink {
+            color: #2B7A0B;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            
+            &:hover {
+              transform: translateX(4px);
+            }
+          }
+        }
+      }
+    }
   }
 
   // Reviews section below
@@ -42,6 +142,23 @@
     margin: 0 auto;
     padding-top: 3rem;
     border-top: 1px solid #eee;
+
+    .reviewsGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 2rem auto;
+
+      @media (max-width: 1200px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
 
     .title {
       text-align: center;
@@ -93,7 +210,7 @@
   .reviewsGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+
     gap: 1.5rem;
     padding: 2rem;
     max-width: 1200px;
@@ -256,6 +373,11 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    margin-top: 3rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     margin-top: 2rem;
     padding-top: 2rem;
     border-top: 1px solid #eee;

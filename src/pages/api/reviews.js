@@ -3,31 +3,34 @@ const BOULDER_PLACE_ID = process.env.BOULDER_PLACE_ID;
 const ARVADA_PLACE_ID = process.env.ARVADA_PLACE_ID;
 
 async function fetchLocationReviews(placeId) {
+  // First get the basic place details
   const fields = [
-    'reviews',
     'rating',
     'user_ratings_total',
     'name',
     'formatted_address',
     'formatted_phone_number',
-    'opening_hours',
     'website',
-    'url',      // Google Maps URL
-    'photos',
-    'business_status',
-    'price_level',
-    'types'
+    'url'
   ].join(',');
 
-  const placeDetailsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=${fields}&reviews_sort=newest&reviews_no_translations=true&key=${GOOGLE_PLACES_API_KEY}`;
-  const response = await fetch(placeDetailsUrl);
-  const data = await response.json();
+  const placeDetailsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=${fields}&key=${GOOGLE_PLACES_API_KEY}`;
+  const detailsResponse = await fetch(placeDetailsUrl);
+  const detailsData = await detailsResponse.json();
 
-  if (!data.result) {
-    throw new Error(`Failed to fetch reviews for place_id: ${placeId}`);
+  if (!detailsData.result) {
+    throw new Error(`Failed to fetch details for place_id: ${placeId}`);
   }
 
-  return data.result;
+  // Then get reviews using the Place Details API with a different session token
+  const reviewsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&reviews_sort=highest_rating&key=${GOOGLE_PLACES_API_KEY}`;
+  const reviewsResponse = await fetch(reviewsUrl);
+  const reviewsData = await reviewsResponse.json();
+
+  return {
+    ...detailsData.result,
+    reviews: reviewsData.result?.reviews || []
+  };
 }
 
 export default async function handler(req, res) {

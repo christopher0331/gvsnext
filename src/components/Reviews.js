@@ -4,11 +4,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaTimes, FaStar } from 'react-icons/fa';
 import Head from 'next/head';
 import ReviewCard from './ReviewCard';
+import GoogleReviewsWidget from './GoogleReviewsWidget';
 import LocationReviewSummary from './LocationReviewSummary';
 
 const Reviews = () => {
   const [selectedReview, setSelectedReview] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedLocation, setSelectedLocation] = useState('boulder');
   const [locations, setLocations] = useState({
     boulder: {
       reviews: [],
@@ -38,7 +40,7 @@ const Reviews = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const reviewsPerPage = 6;
+  const reviewsPerPage = 3;
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -175,6 +177,8 @@ const Reviews = () => {
               );
             })}
           </div>
+         
+          {/* Google Reviews Widget */}
           {loading ? (
             <div className={styles.loading}>Loading reviews...</div>
           ) : error ? (
@@ -202,7 +206,6 @@ const Reviews = () => {
                     </motion.div>
                   ))}
                 </div>
-
                 {/* Review Modal */}
                 <AnimatePresence>
                   {isModalOpen && selectedReview && (

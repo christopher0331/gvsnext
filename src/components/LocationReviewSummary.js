@@ -11,7 +11,10 @@ const LocationReviewSummary = ({ locationData }) => {
 
   return (
     <div className={styles.locationSummary}>
-      <h3 className={styles.locationTitle}>{locationData.name}</h3>
+      <h3 className={styles.locationTitle}>
+        <span className={styles.companyName}>GreenView Solutions</span>
+        <span className={styles.locationName}>{locationData.location}</span>
+      </h3>
       <div className={styles.locationInfo}>
         <div className={styles.averageRating}>
           <div className={styles.ratingNumber}>
@@ -25,9 +28,21 @@ const LocationReviewSummary = ({ locationData }) => {
           </div>
         </div>
         <div className={styles.locationDetails}>
-          <p>{locationData.formatted_address}</p>
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationData.formatted_address)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.addressLink}
+          >
+            {locationData.formatted_address}
+          </a>
           {locationData.formatted_phone_number && (
-            <p>{locationData.formatted_phone_number}</p>
+            <a
+              href={`tel:${locationData.formatted_phone_number.replace(/[^0-9]/g, '')}`}
+              className={styles.phoneLink}
+            >
+              {locationData.formatted_phone_number}
+            </a>
           )}
           <a
             href={locationData.url}
@@ -35,7 +50,7 @@ const LocationReviewSummary = ({ locationData }) => {
             rel="noopener noreferrer"
             className={styles.googleMapsLink}
           >
-            View on Google Maps
+            View on Google Maps →
           </a>
         </div>
       </div>
