@@ -8,12 +8,12 @@ const Financing = () => {
         <div style={{display: 'flex', justifyContent: 'center'}}>
             <div className={styles.financingContainer}>
                 <div className={styles.content}>
-                    <h2>Flexible Financing for Your Fencing Needs</h2>
-                    <p>Make your dream fence a reality with our tailored financing options. We understand that a quality fence is an investment in your property. Thats why we offer flexible, budget-friendly financing solutions.</p>
+                    <h2>6 Months Interest-Free Financing Available</h2>
+                    <p>Make your dream fence a reality with our flexible financing options. Get your fence now and spread the cost with 6 months interest-free financing. We understand that a quality fence is an investment in your property.</p>
                     <ul>
-                        <li>Competitive interest rates</li>
-                        <li>Simple application process</li>
-                        <li>Customizable payment plans</li>
+                        <li>0% interest for 6 months</li>
+                        <li>Quick, simple application</li>
+                        <li>Flexible payment plans</li>
                         <li>No hidden fees</li>
                     </ul>
                     <a href="https://www.ffcapplication.com/?i=XY5sWUYH644gfJ4gujgeBam42nEvNGIYEC5wDNmMe9o=" target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>Apply for Financing</a>
