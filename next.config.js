@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
+const removedCities = [
+    'littleton', 'lakewood', 'thornton', 'centennial', 'englewood',
+    'glenwood-springs', 'gunbarrel', 'highlands-ranch', 'jefferson-county',
+    'louisville', 'northglenn', 'parker', 'superior', 'belmar',
+    'castle-rock', 'columbine-valley', 'fountain', 'greenwood-village',
+    'lone-tree', 'meridian', 'milliken', 'sedalia', 'estes-park',
+    'westminster-hills'
+];
+
 const nextConfig = {
     images: {
         remotePatterns: [
@@ -28,6 +37,30 @@ const nextConfig = {
             }
         ]
     },
-}
+    async redirects() {
+        return [
+            ...removedCities.map(city => ({
+                source: `/${city}`,
+                destination: '/',
+                permanent: true
+            })),
+            ...removedCities.map(city => ({
+                source: `/${city}/vinyl-fences`,
+                destination: '/vinyl-fences',
+                permanent: true
+            })),
+            ...removedCities.map(city => ({
+                source: `/${city}/wood-fences`,
+                destination: '/wood-fences',
+                permanent: true
+            })),
+            ...removedCities.map(city => ({
+                source: `/${city}/chainlink-fences`,
+                destination: '/chainlink-fences',
+                permanent: true
+            }))
+        ];
+    }
+};
 
 module.exports = nextConfig
