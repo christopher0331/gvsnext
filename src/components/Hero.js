@@ -51,6 +51,12 @@ function Hero({ title = '', description = '', features = [] }) {
                         <option value="the-home-mag">The Home Mag</option>
                         <option value="quality-connections">Quality Connections</option>
                     </select>
+                    <textarea
+                        name="description"
+                        placeholder="Description (optional)"
+                        rows="2"
+                        style={{ resize: 'vertical', maxHeight: '100px' }}
+                    />
                     <button type="submit">Get a Fence Quote</button>
                 </form>
             </div>
