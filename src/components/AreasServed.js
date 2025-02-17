@@ -40,25 +40,24 @@ const AreasServed = () => {
     acc[office].push({ location, ...data });
     return acc;
   }, {});
+
   return (
     <div className={styles.areasServedContainer}>
       <h2>Our Service Areas</h2>
       <div className={styles.areasGrid}>
         {Object.entries(groupedLocations).map(([office, locations]) => (
-          <div key={office} className={styles.officeGroup}>
+          <div key={office} className={styles.officeSection}>
             <h3 className={styles.officeTitle}>{office} Area</h3>
-            <div className={styles.locationsList}>
+            <div className={styles.locationsGrid}>
               {locations.map(({ location, name, distanceFromOffice }) => (
                 <Link key={location} href={`/${location}`}>
-                  <div className={styles.locationInfo}>
-                    <MapPinIcon className={styles.icon} />
-                    <div>
-                      <div>{name}, CO</div>
-                      {distanceFromOffice === 0 ? (
-                        <div className={styles.distance}>Main Office Location</div>
-                      ) : (
-                        <div className={styles.distance}>{distanceFromOffice} miles away</div>
-                      )}
+                  <div className={styles.locationCard}>
+                    <div className={styles.locationHeader}>
+                      <MapPinIcon className={styles.icon} />
+                      <span>{name}, CO</span>
+                    </div>
+                    <div className={styles.distance}>
+                      {distanceFromOffice === 0 ? 'Main Office' : `${distanceFromOffice} mi`}
                     </div>
                   </div>
                 </Link>

@@ -60,10 +60,10 @@ const Homepage = () => {
                     <Accordion />
                 </div>
 
-                <LocationsMap />
 
                 <AreasServed />
 
+                <LocationsMap />
 
             </div>
         </>
