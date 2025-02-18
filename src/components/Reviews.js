@@ -52,6 +52,12 @@ const Reviews = () => {
 
         const data = await response.json();
         console.log('Raw API response:', data);
+        console.log('Boulder reviews count:', data.boulder?.reviews?.length || 0);
+        console.log('Arvada reviews count:', data.arvada?.reviews?.length || 0);
+        
+        // Log the actual reviews content
+        console.log('Boulder reviews:', data.boulder?.reviews);
+        console.log('Arvada reviews:', data.arvada?.reviews);
 
         if (data.error) {
           throw new Error(data.error);

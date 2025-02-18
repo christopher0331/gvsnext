@@ -23,7 +23,7 @@ async function fetchLocationReviews(placeId) {
   }
 
   // Then get reviews using the Place Details API with a different session token
-  const reviewsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&reviews_sort=highest_rating&key=${GOOGLE_PLACES_API_KEY}`;
+  const reviewsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&reviews_sort=highest_rating&reviews_no_translations=true&key=${GOOGLE_PLACES_API_KEY}`;
   const reviewsResponse = await fetch(reviewsUrl);
   const reviewsData = await reviewsResponse.json();
 
@@ -40,9 +40,20 @@ export default async function handler(req, res) {
       fetchLocationReviews(ARVADA_PLACE_ID)
     ]);
 
+    // Log the raw reviews data
+    console.log('Boulder raw reviews:', boulderData.reviews?.length || 0, 'reviews');
+    console.log('Arvada raw reviews:', arvadaData.reviews?.length || 0, 'reviews');
+
+    const boulderReviews = (boulderData.reviews || []).slice(0, 5);
+    const arvadaReviews = (arvadaData.reviews || []).slice(0, 5);
+
+    // Log the filtered reviews
+    console.log('Boulder filtered reviews:', boulderReviews.length, 'reviews');
+    console.log('Arvada filtered reviews:', arvadaReviews.length, 'reviews');
+
     const response = {
       boulder: {
-        reviews: boulderData.reviews || [],
+        reviews: boulderReviews,
         rating: boulderData.rating || 0,
         user_ratings_total: boulderData.user_ratings_total || 0,
         name: boulderData.name || '',
@@ -54,7 +65,7 @@ export default async function handler(req, res) {
         location: 'Boulder'
       },
       arvada: {
-        reviews: arvadaData.reviews || [],
+        reviews: arvadaReviews,
         rating: arvadaData.rating || 0,
         user_ratings_total: arvadaData.user_ratings_total || 0,
         name: arvadaData.name || '',
