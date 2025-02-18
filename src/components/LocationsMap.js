@@ -35,7 +35,16 @@ const townLocations = {
     broomfield: { lat: 39.9205, lng: -105.0867 },
     westminster: { lat: 39.8367, lng: -105.0372 },
     'fort-collins': { lat: 40.5853, lng: -105.0844 },
-    eastlake: { lat: 39.9172, lng: -104.9719 }
+    eastlake: { lat: 39.9172, lng: -104.9719 },
+    superior: { lat: 39.9528, lng: -105.1686 },
+    thornton: { lat: 39.8680, lng: -104.9719 },
+    greeley: { lat: 40.4233, lng: -104.7091 },
+    loveland: { lat: 40.3977, lng: -105.0744 },
+    'estes-park': { lat: 40.3772, lng: -105.5217 },
+    'wheat-ridge': { lat: 39.7661, lng: -105.0772 },
+    'commerce-city': { lat: 39.8083, lng: -104.9339 },
+    louisville: { lat: 39.9778, lng: -105.1319 },
+    niwot: { lat: 40.1002, lng: -105.1767 }
 };
 
 // Circle options for coverage area
