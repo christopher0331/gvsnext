@@ -9,8 +9,17 @@ export const CORE_LOCATIONS = [
   'frederick',
   'broomfield',
   'westminster',
-  'fort-collins', 
-  'eastlake'
+  'fort-collins',
+  'eastlake',
+  'superior',
+  'thornton',
+  'greeley',
+  'loveland',
+  'estes-park',
+  'wheat-ridge',
+  'commerce-city',
+  'louisville',
+  'niwot'
 ];
 
 export const isValidLocation = (location) => {
@@ -18,6 +27,69 @@ export const isValidLocation = (location) => {
 };
 
 export const locationData = {
+  'superior': {
+    name: 'Superior',
+    nearestOffice: 'Boulder',
+    distanceFromOffice: 6,
+    landmarks: ['Superior Marketplace', 'Coal Creek Trail', 'Davidson Mesa Open Space'],
+    neighborhoods: ['Rock Creek', 'Sagamore', 'Original Superior']
+  },
+  'thornton': {
+    name: 'Thornton',
+    nearestOffice: 'Arvada',
+    distanceFromOffice: 12,
+    landmarks: ['Carpenter Recreation Center', 'Margaret W. Carpenter Park', 'Trail Winds Recreation Center'],
+    neighborhoods: ['Original Thornton', 'Hunters Glen', 'Thornton Valley']
+  },
+  'greeley': {
+    name: 'Greeley',
+    nearestOffice: 'Boulder',
+    distanceFromOffice: 43,
+    landmarks: ['University of Northern Colorado', 'Island Grove Regional Park', 'Poudre River Trail'],
+    neighborhoods: ['Downtown Greeley', 'University District', 'West Greeley']
+  },
+  'loveland': {
+    name: 'Loveland',
+    nearestOffice: 'Boulder',
+    distanceFromOffice: 35,
+    landmarks: ['Benson Sculpture Garden', 'Devil\'s Backbone Open Space', 'Lake Loveland'],
+    neighborhoods: ['Downtown Loveland', 'North Lake', 'West Loveland']
+  },
+  'estes-park': {
+    name: 'Estes Park',
+    nearestOffice: 'Boulder',
+    distanceFromOffice: 40,
+    landmarks: ['Rocky Mountain National Park', 'Lake Estes', 'Estes Park Aerial Tramway'],
+    neighborhoods: ['Downtown Estes', 'Fall River', 'Mary\'s Lake']
+  },
+  'wheat-ridge': {
+    name: 'Wheat Ridge',
+    nearestOffice: 'Arvada',
+    distanceFromOffice: 5,
+    landmarks: ['Crown Hill Park', 'Anderson Park', 'Wheat Ridge Greenbelt'],
+    neighborhoods: ['The Ridge', 'Applewood', 'Paramount Heights']
+  },
+  'commerce-city': {
+    name: 'Commerce City',
+    nearestOffice: 'Arvada',
+    distanceFromOffice: 15,
+    landmarks: ['Rocky Mountain Arsenal National Wildlife Refuge', 'Dick\'s Sporting Goods Park', 'Pioneer Park'],
+    neighborhoods: ['Historic Commerce City', 'Reunion', 'Buffalo Run']
+  },
+  'louisville': {
+    name: 'Louisville',
+    nearestOffice: 'Boulder',
+    distanceFromOffice: 8,
+    landmarks: ['Downtown Louisville', 'Coal Creek Golf Course', 'Memory Square Park'],
+    neighborhoods: ['Old Town', 'Steel Ranch', 'North End']
+  },
+  'niwot': {
+    name: 'Niwot',
+    nearestOffice: 'Boulder',
+    distanceFromOffice: 10,
+    landmarks: ['Niwot Historic District', 'Left Hand Valley Grange Park', 'Cottonwood Trail'],
+    neighborhoods: ['Old Town Niwot', 'Somerset', 'Countryside']
+  },
   'erie': {
     name: 'Erie',
     nearestOffice: 'Boulder',
@@ -34,7 +106,7 @@ export const locationData = {
   },
   'aurora': {
     name: 'Aurora',
-    nearestOffice: 'Boulder',
+    nearestOffice: 'Arvada',
     distanceFromOffice: 28,
     landmarks: ['Cherry Creek State Park', 'Aurora Reservoir', 'Plains Conservation Center'],
     neighborhoods: ['Southlands', 'Aurora Highlands', 'Murphy Creek']
@@ -69,7 +141,7 @@ export const locationData = {
   },
   'broomfield': {
     name: 'Broomfield',
-    nearestOffice: 'Boulder',
+    nearestOffice: 'Arvada',
     distanceFromOffice: 10,
     landmarks: ['Flatiron Crossing', '1st Bank Center', 'Broomfield Commons'],
     neighborhoods: ['Interlocken', 'Anthem', 'McKay Landing']

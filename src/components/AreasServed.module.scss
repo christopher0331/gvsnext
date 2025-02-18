@@ -1,5 +1,5 @@
 .areasServedContainer {
-    max-width: 800px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 1.5rem;
     background-color: #ffffff;
@@ -25,9 +25,13 @@
 
 .areasGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin: 0 auto;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
 
     .officeSection {
         background: white;
@@ -48,9 +52,38 @@
 
         .locationsGrid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 0.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
             padding: 1rem;
+
+            @media (max-width: 1200px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @media (max-width: 992px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media (max-width: 480px) {
+                grid-template-columns: 1fr;
+            }
+            max-height: 400px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #2F7A3D #f8fafc;
+
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: #f8fafc;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #2F7A3D;
+                border-radius: 3px;
+            }
 
             a {
                 text-decoration: none;
@@ -61,7 +94,7 @@
                 background: #f8fafc;
                 border: 1px solid #e2e8f0;
                 border-radius: 6px;
-                padding: 0.75rem;
+                padding: 0.625rem;
                 transition: all 0.2s ease;
                 height: 100%;
                 display: flex;
