@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './LocationContent.module.scss';
 import { getLocationData } from '../utils/locations';
+import ArticleLocationSpecific from './ArticleLocationSpecific';
 
 const LocationContent = ({ location }) => {
   const locationData = getLocationData(location);
@@ -80,6 +81,7 @@ const LocationContent = ({ location }) => {
           </div>
         </div>
       </section>
+      <ArticleLocationSpecific location={location} />
     </div>
   );
 };
