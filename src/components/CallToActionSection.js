@@ -4,7 +4,6 @@ import dynamic from 'next/dynamic';
 import styles from './CallToActionSection.module.scss';
 
 const MotionDiv = dynamic(() => import('framer-motion').then((mod) => mod.motion.div), { ssr: false });
-const MotionA = dynamic(() => import('framer-motion').then((mod) => mod.motion.a), { ssr: false });
 
 export default function CallToActionSection() {
   const [isClient, setIsClient] = useState(false);
@@ -27,14 +26,14 @@ export default function CallToActionSection() {
       >
         <h2>Elevate Your Property with Premium Fencing</h2>
         <p>Get a free quote for your fencing project today!</p>
-        <Link href="/contact" passHref>
-          <MotionA
-            className={styles.ctaButton}
+        <Link href="/contact" className={styles.ctaButton}>
+          <MotionDiv
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            style={{ width: '100%', height: '100%' }}
           >
             Contact Us Now
-          </MotionA>
+          </MotionDiv>
         </Link>
       </MotionDiv>
     </section>
