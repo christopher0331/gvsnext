@@ -1,26 +1,35 @@
-export const CORE_LOCATIONS = [
-  'erie',
-  'arvada',
-  'aurora',
+export const MAIN_LOCATIONS = [
   'denver',
-  'golden',
   'boulder',
-  'longmont',
-  'frederick',
-  'broomfield',
-  'westminster',
-  'fort-collins',
-  'eastlake',
-  'superior',
-  'thornton',
-  'greeley',
-  'loveland',
-  'estes-park',
-  'wheat-ridge',
-  'commerce-city',
-  'louisville',
-  'niwot'
+  'arvada',
+  'fort-collins'
 ];
+
+export const LOCATION_MAPPING = {
+  'erie': 'boulder',
+  'arvada': 'arvada',
+  'aurora': 'denver',
+  'denver': 'denver',
+  'golden': 'denver',
+  'boulder': 'boulder',
+  'longmont': 'boulder',
+  'frederick': 'denver',
+  'broomfield': 'arvada',
+  'westminster': 'arvada',
+  'fort-collins': 'fort-collins',
+  'eastlake': 'denver',
+  'superior': 'boulder',
+  'thornton': 'denver',
+  'greeley': 'fort-collins',
+  'loveland': 'fort-collins',
+  'estes-park': 'fort-collins',
+  'wheat-ridge': 'denver',
+  'commerce-city': 'denver',
+  'louisville': 'boulder',
+  'niwot': 'boulder'
+};
+
+export const CORE_LOCATIONS = Object.keys(LOCATION_MAPPING);
 
 export const isValidLocation = (location) => {
   return CORE_LOCATIONS.includes(location?.toLowerCase());
