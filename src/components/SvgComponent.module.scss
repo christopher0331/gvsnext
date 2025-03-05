@@ -1,9 +1,9 @@
 .process-mod-svg {
-    width: 45rem;
-    height: 45rem;
+    width: 35rem; /* Reduced from 45rem */
+    height: 35rem; /* Reduced from 45rem */
     display: block;
     margin: auto;
-    margin-bottom:5 rem; 
+    margin-bottom: 3rem; /* Reduced from 5rem */
     .process-mod-svg-section {
         cursor: pointer;
 
@@ -79,7 +79,7 @@
 .innerProcessSection {
     margin: auto;
     width: 100%; // Full width on mobile devices
-    max-width: 35rem; // Max out at the specified width on larger screens
+    max-width: 30rem; /* Reduced from 35rem */
     height: auto; // Adjust height automatically based on content
 }
 
@@ -89,7 +89,7 @@
     justify-content: center;
     align-items: center; // Center-align items for a better mobile view
     width: 90%; // Take up most of the screen width
-    max-width: 35rem; // Max out at the specified width on larger screens
+    max-width: 30rem; /* Reduced from 35rem */
     height: auto; // Let the height grow with content
     margin: 1rem auto;
     color: black;
@@ -109,13 +109,13 @@
 }
 
 .contentSection h3 {
-    font-size: 1.6rem; // Slightly smaller font size for mobile
+    font-size: 1.4rem; /* Reduced from 1.6rem */
     font-weight: 800;
     margin-bottom: 0.5rem; // Add some spacing below the header
 }
 
 .contentSection p {
-    font-size: 1rem; // Smaller font size for mobile
+    font-size: 0.9rem; /* Reduced from 1rem */
     font-weight: 500;
     line-height: 1.4; // Increase line-height for readability
 }
@@ -123,20 +123,20 @@
 // Media queries for larger screens
 @media (min-width: 768px) {
     .innerProcessSection {
-        height: 35rem; // Fixed height on larger screens
+        height: 30rem; /* Reduced from 35rem */
     }
 
     .clickedSection {
         flex-direction: row; // Horizontal layout on larger screens
-        width: 35rem; // Fixed width on larger screens
-        height: 15rem; // Fixed height on larger screens
+        width: 30rem; /* Reduced from 35rem */
+        height: 12rem; /* Reduced from 15rem */
     }
 
     .contentSection h3 {
-        font-size: 1.8rem; // Larger font size for larger screens
+        font-size: 1.6rem; /* Reduced from 1.8rem */
     }
 
     .contentSection p {
-        font-size: 1.2rem; // Larger font size for larger screens
+        font-size: 1.1rem; /* Reduced from 1.2rem */
     }
 }

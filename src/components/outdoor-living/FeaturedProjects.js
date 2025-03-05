@@ -4,13 +4,13 @@ import styles from './FeaturedProjects.module.scss'
 export default function FeaturedProjects() {
   const projects = [
     {
-      title: 'Luxury Backyard Retreat',
-      description: 'A complete backyard transformation featuring a custom pergola, stamped concrete patio, and outdoor kitchen.',
+      title: 'Custom Pergola Installation',
+      description: 'A beautiful custom pergola installation that provides shade and enhances outdoor living space.',
       image: 'https://greenviewsolutions.net/_next/image?url=https%3A%2F%2Fimagedelivery.net%2FOHVtjf602XdHccCnziCADA%2F74505337-9ac6-4a35-5cdd-536aed33f000%2Fpublic&w=3840&q=80',
     },
     {
-      title: 'Modern Pergola & Fire Pit',
-      description: 'A sleek, modern pergola design paired with a cozy fire pit area and ambient lighting.',
+      title: 'Custom Decorative Metal Gates',
+      description: 'Beautifully crafted custom double door metal gates with intricate designs that enhance property security and curb appeal.',
       image: 'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/e03d5e94-a080-4fc6-c798-c1c81c1b0c00/public',
     },
   ]

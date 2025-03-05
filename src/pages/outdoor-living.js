@@ -6,6 +6,7 @@ import CallToActionSection from '@/components/CallToActionSection';
 import SvgComponent from '@/components/SvgComponent';
 import styles from '../components/OutdoorLiving.module.scss';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function OutdoorLiving({ heroContent }) {
   // State to manage the expansion of text sections
@@ -13,6 +14,30 @@ export default function OutdoorLiving({ heroContent }) {
     retreat: false,
     design: false,
   });
+  
+  // FAQ data for the FAQ section and schema markup
+  const faqData = [
+    {
+      question: "What outdoor living structures are best for Colorado's climate?",
+      answer: "For Colorado's varied climate, we recommend mineral-based composite decking, pergolas with adjustable louvers for sun control, and covered structures that can withstand snow loads while providing year-round enjoyment."
+    },
+    {
+      question: "How long does it take to build a custom outdoor living space?",
+      answer: "The timeline varies based on the project scope, but most custom outdoor living spaces take between 2-6 weeks from start to finish, including design, permitting, and construction phases."
+    },
+    {
+      question: "Do I need a permit for building a deck or pergola in Denver?",
+      answer: "Yes, most outdoor structures require permits in Denver and surrounding areas. Our team handles the entire permitting process for you, ensuring all structures meet local building codes and regulations."
+    },
+    {
+      question: "What materials do you recommend for long-lasting outdoor structures in Colorado?",
+      answer: "We recommend composite decking, cedar or redwood for pergolas, and powder-coated aluminum for structural components. These materials withstand Colorado's intense sun, seasonal temperature changes, and precipitation."
+    },
+    {
+      question: "Can outdoor living spaces be used year-round in Colorado?",
+      answer: "Absolutely! We design outdoor living spaces specifically for year-round use in Colorado. Features like overhead heaters, fire features, wind barriers, and adjustable shade systems make your outdoor space comfortable in all seasons."
+    }
+  ];
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -38,14 +63,72 @@ export default function OutdoorLiving({ heroContent }) {
   return (
     <>
       <Head>
-        <title>GreenView Solutions Outdoor Living Page</title>
-        <meta name="description" content="This page is the outdoor living page and contains information on all our outdoor living products" />
+        <title>Custom Outdoor Living Spaces & Pergolas | GreenView Solutions Denver</title>
+        <meta name="description" content="Transform your backyard into a year-round retreat with GreenView Solutions' custom outdoor living spaces. Expert design and installation of decks, pergolas, and outdoor structures in Denver, CO." />
         <link rel="canonical" href="https://greenviewsolutions.net/outdoor-living" />
-
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Custom Outdoor Living Spaces & Pergolas | GreenView Solutions Denver" />
+        <meta property="og:description" content="Transform your backyard into a year-round retreat with GreenView Solutions' custom outdoor living spaces. Expert design and installation of decks, pergolas, and outdoor structures in Denver, CO." />
+        <meta property="og:image" content="https://greenviewsolutionsimages.s3.us-west-1.amazonaws.com/gvsnextimages/globalimages/outdoorLivingPergolaStucture.JPG" />
+        <meta property="og:url" content="https://greenviewsolutions.net/outdoor-living" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Custom Outdoor Living Spaces & Pergolas | GreenView Solutions Denver" />
+        <meta name="twitter:description" content="Transform your backyard into a year-round retreat with GreenView Solutions' custom outdoor living spaces. Expert design and installation in Denver, CO." />
+        <meta name="twitter:image" content="https://greenviewsolutionsimages.s3.us-west-1.amazonaws.com/gvsnextimages/globalimages/outdoorLivingPergolaStucture.JPG" />
+        <meta name="keywords" content="outdoor living spaces, custom decks, pergolas, Denver outdoor structures, backyard retreats, outdoor living Colorado" />
+        
+        {/* Schema.org structured data for outdoor living services */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "serviceType": "Outdoor Living Space Construction",
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "GreenView Solutions",
+                "image": "https://greenviewsolutions.net/gvsLogoGreen.png",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "6525 Gunpark Dr Ste 370-110",
+                  "addressLocality": "Boulder",
+                  "addressRegion": "CO",
+                  "postalCode": "80301",
+                  "addressCountry": "US"
+                },
+                "telephone": "+303-358-8168",
+                "priceRange": "$$"
+              },
+              "areaServed": [
+                "Denver", "Boulder", "Arvada", "Westminster", "Longmont", "Erie", "Broomfield", "Golden", "Aurora"
+              ],
+              "description": "Custom outdoor living spaces including decks, pergolas, and outdoor structures designed for year-round enjoyment in Colorado.",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "USD"
+              }
+            })
+          }}
+        />
       </Head>
 
       <div className={styles.outdoorLivingContainer}>
         <Header heroContent={heroContent} />
+        
+        {/* Breadcrumb Navigation */}
+        <div className={styles.breadcrumb}>
+          <nav aria-label="breadcrumb">
+            <ol>
+              <li>
+                <Link href="/">Home</Link>
+                <span> / </span>
+              </li>
+              <li aria-current="page">Outdoor Living</li>
+            </ol>
+          </nav>
+        </div>
 
         <div className={styles.content}>
 
@@ -84,6 +167,38 @@ export default function OutdoorLiving({ heroContent }) {
           </div>
         </div>
 
+        {/* FAQ Section with Schema.org markup */}
+        <div className={styles.faqSection}>
+          <h2>Frequently Asked Questions About Outdoor Living Spaces</h2>
+          <div className={styles.faqContainer}>
+            {faqData.map((faq, index) => (
+              <div key={index} className={styles.faqItem}>
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+          
+          {/* Hidden FAQ Schema for SEO */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": faqData.map(faq => ({
+                  "@type": "Question",
+                  "name": faq.question,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer
+                  }
+                }))
+              })
+            }}
+          />
+        </div>
+        
         <CallToActionSection />
         <SvgComponent />
         <Footer />

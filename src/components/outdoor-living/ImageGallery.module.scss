@@ -1,23 +1,136 @@
 .gallery {
-  margin-bottom: 4rem;
-  padding: 0 1rem;
+  margin: 5rem 0;
+  background-color: #f8f9fa;
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://greenviewsolutionsimages.s3.us-west-1.amazonaws.com/gvsnextimages/globalimages/pattern-bg.png');
+    background-size: 200px;
+    opacity: 0.04;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
 
   .sectionTitle {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     text-align: center;
-    margin-bottom: 2rem;
-    color: #333;
+    margin-bottom: 1rem;
+    color: #2F7A3D;
+    font-weight: 700;
+  }
+
+  .sectionSubtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
-   
+    padding-bottom: 1.5rem;
+
     &::after {
       content: '';
       position: absolute;
-      bottom: -10px;
+      bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: 50px;
+      width: 60px;
       height: 3px;
       background-color: #4CAF50;
+    }
+  }
+
+  .categoriesWrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+
+  .categories {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0.5rem 0;
+    flex: 1;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .categoryButton {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 30px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #4a5568;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    
+    &:hover {
+      background-color: #f0f9f1;
+      border-color: #4CAF50;
+      color: #2F7A3D;
+    }
+    
+    &.active {
+      background-color: #2F7A3D;
+      color: white;
+      border-color: #2F7A3D;
+    }
+  }
+
+  .scrollButton {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #4a5568;
+    transition: all 0.3s ease;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    &:hover {
+      background-color: #2F7A3D;
+      color: white;
+      border-color: #2F7A3D;
+    }
+    
+    &:first-child {
+      margin-right: 1rem;
+    }
+    
+    &:last-child {
+      margin-left: 1rem;
     }
   }
 
@@ -25,6 +138,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    margin-bottom: 2rem;
 
     @media (max-width: 1024px) {
       grid-template-columns: repeat(2, 1fr);
@@ -36,45 +150,29 @@
   }
 
   .imageWrapper {
-    position: relative;
-    height: 250px;
-    overflow: hidden;
-    border-radius: 10px;
     cursor: pointer;
-    transition: transform 0.3s ease;
-    padding: 0.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
     background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
+    height: 100%;
+    
     &:hover {
-      transform: scale(1.05);
-
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      
       .imageOverlay {
         opacity: 1;
       }
     }
+  }
 
-    @media (max-width: 768px) {
-      &:active .imageOverlay {
-        opacity: 1;
-      }
-    }
-
-    .infoIcon {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 50%;
-      padding: 5px;
-      z-index: 2;
-      
-      svg {
-        width: 20px;
-        height: 20px;
-        color: #4CAF50;
-      }
-    }
+  .imageContainer {
+    position: relative;
+    height: 280px;
+    width: 100%;
+    overflow: hidden;
   }
 
   .imageOverlay {
@@ -83,27 +181,51 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0) 60%);
     display: flex;
-    align-items: flex-end;
-    padding: 1rem;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1.5rem;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
+
+    .zoomIcon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #2F7A3D;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
 
     p {
       color: white;
       font-size: 1rem;
       margin: 0;
+      text-align: center;
+      font-weight: 500;
     }
+  }
 
-    @media (max-width: 768px) {
-      background: rgba(0, 0, 0, 0.7);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-
-      &.active {
-        opacity: 1;
-      }
+  .noResults {
+    text-align: center;
+    padding: 3rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    
+    p {
+      color: #666;
+      font-size: 1.1rem;
+      margin: 0;
     }
   }
 
@@ -113,28 +235,78 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    padding: 2rem;
   }
 
   .lightboxContent {
     position: relative;
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .closeButton {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  .lightboxImageWrapper {
+    flex: 1;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  .lightboxControls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .navButton {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
   }
 
   .lightboxCaption {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    text-align: center;
     color: white;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px;
+    font-size: 1.1rem;
     margin: 0;
+    text-align: center;
+    flex: 1;
+    padding: 0 1rem;
   }
 }
