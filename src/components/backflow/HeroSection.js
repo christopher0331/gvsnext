@@ -25,7 +25,7 @@ export default function HeroSection() {
     <section className={styles.hero}>
       <div className={styles.content}>
         <h1>Professional Backflow Testing & Certification Services</h1>
-        <p>Protect your water supply with certified backflow testing, repair, and installation from Denver&apos;s trusted experts</p>
+        <p>Protect your water supply with certified backflow testing, repair, and installation from Denver Metro&apos;s trusted experts</p>
         <div className={styles.features}>
           <div className={styles.feature}>
             <span className={styles.icon}>✓</span>

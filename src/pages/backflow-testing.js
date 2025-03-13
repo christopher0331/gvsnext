@@ -51,7 +51,7 @@ export default function BackflowTesting({heroContent}) {
         },
         {
           question: "Are your technicians certified for backflow testing?",
-          answer: "Yes, all our backflow testing technicians are certified by the American Society of Sanitary Engineering (ASSE) and hold valid backflow tester certifications recognized by Colorado authorities. They undergo regular training to stay current with the latest regulations, testing procedures, and industry best practices. We're fully licensed, insured, and authorized to perform testing and submit official documentation to water authorities throughout the Denver metro area."
+          answer: "Yes, all our backflow testing technicians are certified by the American Society of Sanitary Engineering (ASSE) and hold valid backflow tester certifications recognized by Colorado authorities. They undergo regular training to stay current with the latest regulations, testing procedures, and industry best practices. We're fully licensed, insured, and authorized to perform testing and submit official documentation to water authorities throughout the Denver Metro area."
         }
       ]
     },
@@ -150,7 +150,7 @@ export default function BackflowTesting({heroContent}) {
       },
       "geoRadius": "50 miles"
     },
-    "description": "Professional backflow testing, certification, and installation services for residential and commercial properties in Denver and surrounding areas. Our certified technicians ensure your water systems remain safe and compliant with local regulations.",
+    "description": "Professional backflow testing, certification, and installation services for residential and commercial properties in the Denver Metro area. Our certified technicians ensure your water systems remain safe and compliant with local regulations.",
     "offers": {
       "@type": "Offer",
       "price": "75.00",
@@ -163,17 +163,17 @@ export default function BackflowTesting({heroContent}) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Backflow Testing & Certification Services Denver | GreenView Solutions</title>
-        <meta name="description" content="Professional backflow testing & certification in Denver. Licensed technicians, timely service & competitive rates. Protect your water supply today!" />
-        <meta name="keywords" content="backflow testing, backflow certification, backflow prevention, Denver backflow testing, commercial backflow testing, residential backflow testing, certified backflow tester, backflow inspection, backflow installation" />
-        <meta property="og:title" content="Backflow Testing & Certification Services Denver | GreenView Solutions" />
-        <meta property="og:description" content="Professional backflow testing & certification in Denver. Licensed technicians, timely service & competitive rates. Protect your water supply today!" />
+        <title>Backflow Testing & Certification Services Denver Metro | GreenView Solutions</title>
+        <meta name="description" content="Professional backflow testing & certification in the Denver Metro area. Licensed technicians, timely service & competitive rates. Protect your water supply today!" />
+        <meta name="keywords" content="backflow testing, backflow certification, backflow prevention, Denver Metro backflow testing, commercial backflow testing, residential backflow testing, certified backflow tester, backflow inspection, backflow installation" />
+        <meta property="og:title" content="Backflow Testing & Certification Services Denver Metro | GreenView Solutions" />
+        <meta property="og:description" content="Professional backflow testing & certification in the Denver Metro area. Licensed technicians, timely service & competitive rates. Protect your water supply today!" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.greenviewsolutions.net/backflow-testing" />
         <meta property="og:image" content="https://greenviewsolutionsimages.s3.us-west-1.amazonaws.com/gvsnextimages/backflow/backflow-testing-hero.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Backflow Testing & Certification Services Denver" />
-        <meta name="twitter:description" content="Professional backflow testing & certification in Denver. Licensed technicians, timely service & competitive rates." />
+        <meta name="twitter:title" content="Backflow Testing & Certification Services Denver Metro" />
+        <meta name="twitter:description" content="Professional backflow testing & certification in the Denver Metro area. Licensed technicians, timely service & competitive rates." />
         <meta name="twitter:image" content="https://greenviewsolutionsimages.s3.us-west-1.amazonaws.com/gvsnextimages/backflow/backflow-testing-hero.jpg" />
         <link rel="canonical" href="https://www.greenviewsolutions.net/backflow-testing" />
         <script
