@@ -199,9 +199,9 @@ export default function BackflowTesting({heroContent}) {
         
         <section className={styles.infoSection}>
           <div className={styles.infoContainer}>
-            <h2>Denver&apos;s Trusted Backflow Testing Experts</h2>
+            <h2>Denver Metro&apos;s Trusted Backflow Testing Experts</h2>
             <p>
-              At GreenView Solutions, we provide comprehensive backflow testing and certification services to ensure your water systems remain safe and compliant with local regulations. Our certified technicians have extensive experience working with all types of backflow prevention devices across residential, commercial, and municipal properties throughout Denver and the surrounding areas.
+              At GreenView Solutions, we provide comprehensive backflow testing and certification services to ensure your water systems remain safe and compliant with local regulations. Our certified technicians have extensive experience working with all types of backflow prevention devices across residential, commercial, and municipal properties throughout the Denver Metro area.
             </p>
             <p>
               Backflow prevention is a critical component of water safety, protecting your drinking water from contamination. Whether you need annual certification for your business, testing for your irrigation system, or installation of new backflow preventers, our team delivers reliable, professional service with clear documentation and competitive pricing.
@@ -248,9 +248,9 @@ export async function getStaticProps() {
   return {
     props: {
       heroContent: {
-        title: 'Backflow Testing & Certification',
-        description: 'Professional backflow testing, certification, and repair services for residential and commercial properties in Denver and surrounding areas. Our certified technicians ensure your water systems remain safe and compliant with local regulations.',
-        features: ['Certified Technicians', 'Same-Day Service Available', 'Competitive Rates'],
+        title: 'Denver Metro Backflow Testing & Certification',
+        description: 'Professional backflow testing, certification, and repair services for residential and commercial properties in the Denver Metro area. Our certified technicians ensure your water systems remain safe and compliant with local regulations.',
+        features: ['Denver Metro Certified Technicians', 'Same-Day Service Available', 'Competitive Rates'],
       },
     },
   };
