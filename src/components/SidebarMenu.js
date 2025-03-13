@@ -6,6 +6,7 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
     const [isFencingDropdownOpen, setIsFencingDropdownOpen] = useState(false)
     const [isOutdoorLivingDropdownOpen, setIsOutdoorLivingDropdownOpen] = useState(false)
     const [isRollOffDumpstersDropdownOpen, setIsRollOffDumpstersDropdownOpen] = useState(false)
+    const [isResourcesDropdownOpen, setIsResourcesDropdownOpen] = useState(false)
 
 
     // Dropdown initial state (hidden)
@@ -72,14 +73,25 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
 
                     </li>
 
-                    <li><Link href="/portfolio" className="block px-4 py-2 hover:bg-green-800">Portfolio</Link></li>
-
-
-                    {/* Outdoor Living Dropdown */}
+                    {/* Outdoor Living */}
                     <li><Link href="/outdoor-living-new" className="block px-4 py-2 hover:bg-green-800">Outdoor Living</Link></li>
-                    <li><Link href="/forms" className="block px-4 py-2 hover:bg-green-800">Forms</Link></li>
+                    
+                    {/* Backflow Testing */}
+                    <li><Link href="/backflow-testing" className="block px-4 py-2 hover:bg-green-800">Backflow Testing</Link></li>
+                    
+                    {/* Resources Dropdown */}
+                    <li className="relative">
+                        <button onClick={() => setIsResourcesDropdownOpen(!isResourcesDropdownOpen)} className="hover:bg-green-700 p-2 rounded w-full text-left text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+                            Resources <span className="caret">&#9660;</span>
+                        </button>
+                        <ul style={isResourcesDropdownOpen ? dropdownVisibleStyle : dropdownHiddenStyle}>
+                            <li><Link href="/portfolio" className="block px-4 py-2 hover:bg-green-800">Portfolio</Link></li>
+                            <li><Link href="/forms" className="block px-4 py-2 hover:bg-green-800">Forms</Link></li>
+                            <li><Link href="/blog" className="block px-4 py-2 hover:bg-green-800">News</Link></li>
+                        </ul>
+                    </li>
+                    
                     <li><Link href="/contact" className="block px-4 py-2 hover:bg-green-800">Contact Us</Link></li>
-                    <li><Link href="/blog" className="block px-4 py-2 hover:bg-green-800">News</Link></li>
 
                     {/* RollOff Dumpster Living Dropdown */}
                     {/* <li><Link href="/roll-off-bins" className="block px-4 py-2 hover:bg-green-800">RollOff Dumpsters</Link></li> */}

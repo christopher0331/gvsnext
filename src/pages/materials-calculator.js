@@ -35,7 +35,7 @@ export default function MaterialCostCalculator() {
             };
         });
         setItemList(updatedItemList);
-    }, []);
+    }, [itemList]);
 
     const handleChange = (index, field, value) => {
         const newItemList = [...itemList];
