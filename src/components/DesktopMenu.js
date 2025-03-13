@@ -41,30 +41,30 @@ export default function DesktopMenu() {
     const [isFencingDropdownOpen, setIsFencingDropdownOpen] = useState(false); // State for Fencing dropdown
     const [isOutdoorLivingDropdownOpen, setIsOutdoorLivingDropdownOpen] = useState(false); // State for Outdoor Living dropdown
     const [isRollOffDumpstersDropdownOpen, setIsRollOffDumpstersDropdownOpen] = useState(false);
-    const [isFormsDropdownOpen, setIsFormsDropdownOpen] = useState(false);
+    const [isResourcesDropdownOpen, setIsResourcesDropdownOpen] = useState(false);
 
     const handleDropdownToggle = (dropdownType) => {
         if (dropdownType === 'fencing') {
             setIsFencingDropdownOpen(!isFencingDropdownOpen);
             setIsOutdoorLivingDropdownOpen(false);
             setIsRollOffDumpstersDropdownOpen(false);
-            setIsFormsDropdownOpen(false);
+            setIsResourcesDropdownOpen(false);
         } else if (dropdownType === 'outdoorLiving') {
             setIsFencingDropdownOpen(false);
             setIsOutdoorLivingDropdownOpen(!isOutdoorLivingDropdownOpen);
             setIsRollOffDumpstersDropdownOpen(false);
-            setIsFormsDropdownOpen(false);
+            setIsResourcesDropdownOpen(false);
         } else if (dropdownType === 'rollOffDumpsters') {
             setIsFencingDropdownOpen(false);
             setIsOutdoorLivingDropdownOpen(false);
             setIsRollOffDumpstersDropdownOpen(!isRollOffDumpstersDropdownOpen);
-            setIsFormsDropdownOpen(false);
+            setIsResourcesDropdownOpen(false);
         }
-        else if (dropdownType === 'forms') {
+        else if (dropdownType === 'resources') {
             setIsFencingDropdownOpen(false);
             setIsOutdoorLivingDropdownOpen(false);
-            setIsRollOffDumpstersDropdownOpen(!false);
-            setIsFormsDropdownOpen(!isFormsDropdownOpen);
+            setIsRollOffDumpstersDropdownOpen(false);
+            setIsResourcesDropdownOpen(!isResourcesDropdownOpen);
         }
     };
 
@@ -167,16 +167,27 @@ export default function DesktopMenu() {
 
                     {/* GVS Outdoor Living */}
                     <Link href="/outdoor-living-new" className="menu-link-upper" style={menuItemStyle}>Outdoor Living</Link>
+                    
+                    {/* Backflow Testing */}
+                    <Link href="/backflow-testing" className="menu-link-upper" style={menuItemStyle}>Backflow Testing</Link>
 
-                    {/* GVS RollOff Dumpsters */}
-                    {/* <Link href="/rolloff-dumpsters" className="menu-link-upper" style={menuItemStyle}>RollOff Dumpsters</Link> */}
-
-                    <Link href="/portfolio" className="menu-link-upper" style={menuItemStyle}>Portfolio</Link>
-
-                    <Link href="/forms" className="menu-link-upper" style={menuItemStyle}>Forms</Link>
+                    {/* Resources Dropdown */}
+                    <div className="relative inline-flex items-center" style={menuItemStyle}>
+                        <button onClick={() => handleDropdownToggle('resources')} className="menu-link-upper" style={dropdownMenuItemStyle}>
+                            Resources <span className="caret">&#9660;</span>
+                        </button>
+                        {isResourcesDropdownOpen && (
+                            <ul className="absolute left-0 top-full mt-1 border shadow-md bg-white" style={{ width: '120%' }}>
+                                <li><Link href="/portfolio" className="menu-link">Portfolio</Link></li>
+                                <div className="menu-divider"></div>
+                                <li><Link href="/forms" className="menu-link">Forms</Link></li>
+                                <div className="menu-divider"></div>
+                                <li><Link href="/blog" className="menu-link">News</Link></li>
+                            </ul>
+                        )}
+                    </div>
 
                     <Link href="/contact" className="menu-link-upper" style={menuItemStyle}>Contact Us</Link>
-                    <Link href="/blog" className="menu-link-upper" style={menuItemStyle}>News</Link>
 
                 </div>
             </div>

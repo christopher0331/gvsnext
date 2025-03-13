@@ -1,0 +1,123 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding-top: 80px;
+}
+
+.infoSection {
+  background-color: #f8f9fa;
+  padding: 4rem 0;
+}
+
+.infoContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  
+  h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.calloutBox {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 2rem 0;
+  border-left: 5px solid #4CAF50;
+  
+  h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    
+    li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+      position: relative;
+      
+      &:before {
+        content: "✓";
+        color: #4CAF50;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.processOverview {
+  text-align: center;
+  margin: 4rem 0;
+  padding: 0 1.5rem;
+  
+  h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .processSubtitle {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .processNote {
+    font-size: 1.1rem;
+    color: gray;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .infoContainer {
+    h2 {
+      font-size: 2rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  .calloutBox {
+    padding: 1.5rem;
+    
+    h3 {
+      font-size: 1.3rem;
+    }
+  }
+  
+  .processOverview {
+    h2 {
+      font-size: 2rem;
+    }
+    
+    .processSubtitle {
+      font-size: 1.3rem;
+    }
+  }
+}
