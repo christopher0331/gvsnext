@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './FAQSection.module.scss';
 
-export default function FAQSection({ faqCategories }) {
+export default function FAQSection({ faqCategories, location = 'Denver Metro' }) {
   const [activeCategory, setActiveCategory] = useState(0);
   const [activeQuestions, setActiveQuestions] = useState({});
 
@@ -18,8 +18,8 @@ export default function FAQSection({ faqCategories }) {
   return (
     <section className={styles.faqSection}>
       <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
-        <p className={styles.sectionSubtitle}>Find answers to common questions about backflow testing and our services</p>
+        <h2 className={styles.sectionTitle}>Frequently Asked Questions About Backflow Testing in {location}</h2>
+        <p className={styles.sectionSubtitle}>Find answers to common questions about backflow testing and our services in {location}</p>
         
         <div className={styles.faqContainer}>
           <div className={styles.categoryTabs}>

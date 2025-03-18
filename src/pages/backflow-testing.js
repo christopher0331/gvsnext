@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { CORE_LOCATIONS } from '../utils/locations';
 import HeroSection from '../components/backflow/HeroSection';
 import ServicesOverview from '../components/backflow/ServicesOverview';
 import BenefitsSection from '../components/backflow/BenefitsSection';
@@ -17,6 +19,34 @@ import { testimonialsData } from '../components/TestimonialsData';
 import styles from '../components/backflow/BackflowTesting.module.scss';
 
 export default function BackflowTesting({heroContent}) {
+  const router = useRouter();
+  const [userLocation, setUserLocation] = useState(null);
+  
+  // Geo-detection for location-specific redirect
+  useEffect(() => {
+    // Check if we have a stored location preference
+    const storedLocation = localStorage.getItem('preferredLocation');
+    if (storedLocation && CORE_LOCATIONS.includes(storedLocation)) {
+      setUserLocation(storedLocation);
+    } else {
+      // Could implement actual geo-detection here in the future
+      // For now, we'll default to 'denver' as a fallback
+      setUserLocation('denver');
+    }
+  }, []);
+
+  // Redirect to location-specific page if we have a location
+  useEffect(() => {
+    if (userLocation) {
+      const locationPath = `/${userLocation}/backflow-testing`;
+      // Optional: add a delay before redirect to allow the page to render first
+      const redirectTimer = setTimeout(() => {
+        router.push(locationPath);
+      }, 1500);
+      
+      return () => clearTimeout(redirectTimer);
+    }
+  }, [userLocation, router]);
   // FAQ data for the FAQ section and schema markup
   const faqCategories = [
     {

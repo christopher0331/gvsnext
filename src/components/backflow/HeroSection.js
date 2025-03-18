@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styles from './HeroSection.module.scss';
 import HomePageForm from '../HomePageForm';
 
-export default function HeroSection() {
+export default function HeroSection({ title, subtitle, location = 'Denver Metro' }) {
   const [isDoorOpen, setIsDoorOpen] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
 
@@ -24,12 +24,12 @@ export default function HeroSection() {
   return (
     <section className={styles.hero}>
       <div className={styles.content}>
-        <h1>Denver Metro&apos;s Professional Backflow Testing & Certification Services</h1>
-        <p>Protect your water supply with certified backflow testing, repair, and installation from Denver Metro&apos;s trusted experts</p>
+        <h1>{title || `${location}'s Professional Backflow Testing & Certification Services`}</h1>
+        <p>{subtitle || `Protect your water supply with certified backflow testing, repair, and installation from ${location}'s trusted experts`}</p>
         <div className={styles.features}>
           <div className={styles.feature}>
             <span className={styles.icon}>✓</span>
-            <span>Denver Metro Certified Technicians</span>
+            <span>Certified Technicians</span>
           </div>
           <div className={styles.feature}>
             <span className={styles.icon}>✓</span>
@@ -40,7 +40,7 @@ export default function HeroSection() {
             <span>Competitive Rates</span>
           </div>
         </div>
-        <button className={styles.ctaButton} onClick={handleDoorOpen}>Schedule Denver Metro Testing</button>
+        <button className={styles.ctaButton} onClick={handleDoorOpen}>Schedule {location} Testing</button>
       </div>
       <div className={`${styles.door} ${isDoorOpen ? styles.open : ''}`}></div>
       {isFormVisible && (

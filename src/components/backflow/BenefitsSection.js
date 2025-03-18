@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './BenefitsSection.module.scss';
 
-export default function BenefitsSection() {
+export default function BenefitsSection({ location = 'Denver Metro' }) {
   const benefits = [
     {
       title: "Protect Public Health",
@@ -39,8 +39,8 @@ export default function BenefitsSection() {
   return (
     <section className={styles.benefits}>
       <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>Benefits of Professional Backflow Testing</h2>
-        <p className={styles.sectionSubtitle}>Why regular backflow testing is essential for your property</p>
+        <h2 className={styles.sectionTitle}>Benefits of Professional Backflow Testing in {location}</h2>
+        <p className={styles.sectionSubtitle}>Why regular backflow testing is essential for your {location} property</p>
         
         <div className={styles.benefitsGrid}>
           {benefits.map((benefit, index) => (
@@ -56,8 +56,8 @@ export default function BenefitsSection() {
         
         <div className={styles.callToAction}>
           <div className={styles.ctaContent}>
-            <h3>Don&apos;t Risk Your Water Safety</h3>
-            <p>Schedule your backflow testing today with our certified technicians</p>
+            <h3>Don&apos;t Risk Your {location} Water Safety</h3>
+            <p>Schedule your backflow testing in {location} today with our certified technicians</p>
           </div>
           <Link href="/contact" className={styles.ctaButton}>Get a Free Quote</Link>
         </div>
