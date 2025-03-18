@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './ProcessSection.module.scss';
 
-export default function ProcessSection() {
+export default function ProcessSection({ location = 'Denver Metro' }) {
   const steps = [
     {
       number: "01",
@@ -32,8 +32,8 @@ export default function ProcessSection() {
   return (
     <section className={styles.process}>
       <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>Our Backflow Testing Process</h2>
-        <p className={styles.sectionSubtitle}>Simple, efficient, and thorough testing to ensure your water system&apos;s safety</p>
+        <h2 className={styles.sectionTitle}>Our Backflow Testing Process in {location}</h2>
+        <p className={styles.sectionSubtitle}>Simple, efficient, and thorough testing to ensure your {location} water system&apos;s safety</p>
         
         <div className={styles.stepsContainer}>
           {steps.map((step, index) => (

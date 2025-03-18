@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './ServicesOverview.module.scss';
 
-export default function ServicesOverview() {
+export default function ServicesOverview({ location = 'Denver Metro' }) {
   const services = [
     { 
       title: 'Backflow Testing & Certification', 
@@ -20,8 +20,8 @@ export default function ServicesOverview() {
   return (
     <section className={styles.services}>
       <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>Our Backflow Testing Services</h2>
-        <p className={styles.sectionSubtitle}>Comprehensive backflow prevention solutions for residential and commercial properties</p>
+        <h2 className={styles.sectionTitle}>Our Backflow Testing Services in {location}</h2>
+        <p className={styles.sectionSubtitle}>Comprehensive backflow prevention solutions for residential and commercial properties in {location}</p>
         
         <div className={styles.serviceGrid}>
           {services.map((service, index) => (
