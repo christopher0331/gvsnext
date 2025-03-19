@@ -1,0 +1,20 @@
+/* CustomHero.scss - Override Hero component styles */
+
+/* Add some text shadow to improve readability without overlay */
+.hero-content {
+  h1, p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+}
+
+.feature-highlight {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Add a semi-transparent background to the hero content for readability */
+.hero-content {
+  // background-color: rgba(0, 0, 0, 0.4);
+  padding: 25px;
+  border-radius: 8px;
+  max-width: 600px;
+}

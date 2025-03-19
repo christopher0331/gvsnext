@@ -215,11 +215,6 @@ export default function BackflowTesting({ capitalizedLocation, locationContent, 
       <Header location={capitalizedLocation} heroContent={heroContent} />
 
       <main>
-        <HeroSection 
-          title={`Backflow Testing & Certification in ${capitalizedLocation}`}
-          subtitle={`Professional Backflow Prevention Services in ${capitalizedLocation}, Colorado`}
-          location={capitalizedLocation}
-        />
         
         <ServicesOverview location={capitalizedLocation} />
         
