@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FaPhone, FaEnvelope, FaBars, FaTimes, FaFacebookSquare, FaGoogle, FaChevronDown } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaBars, FaTimes, FaFacebookSquare, FaGoogle, FaChevronDown, FaWpforms } from 'react-icons/fa';
 import { FiInstagram } from 'react-icons/fi';
 import { useImageIndex } from '../contexts/ImageIndexContext';
 import styles from './HeaderNew.module.scss';
@@ -14,6 +14,7 @@ export default function HeaderNew({ heroContent = {}, postTitle, location }) {
   const [showSticky, setShowSticky] = useState(false); // Whether to show the sticky version
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showFloatingCta, setShowFloatingCta] = useState(false); // For floating mobile CTA buttons
+  const [isMobile, setIsMobile] = useState(false); // Track if we're on mobile
   const [placeholderHeight, setPlaceholderHeight] = useState(0);
   const lastScrollYRef = useRef(0);
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -83,14 +84,42 @@ export default function HeaderNew({ heroContent = {}, postTitle, location }) {
   }, [showSticky]);
 
   useEffect(() => {
-    // Removed dynamic scroll behavior to keep navbar static
-    const staticNavbarHeight = 130; // fixed navbar height
+    // Check if we're on mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Handle scroll for showing/hiding CTA
+    const handleScroll = () => {
+      if (isMobile) {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const scrollThreshold = windowHeight * 0.2; // Show after 20% of viewport height
+        setShowFloatingCta(scrollPosition > scrollThreshold);
+      } else {
+        setShowFloatingCta(false);
+      }
+    };
+
+    // Set static navbar height
+    const staticNavbarHeight = 130;
     setPlaceholderHeight(staticNavbarHeight);
     setIsScrolled(false);
-    setShowFloatingCta(false);
-    // No scroll event listener attached
-    return () => {};
-  }, []);
+
+    // Initial checks
+    checkMobile();
+    handleScroll();
+
+    // Add event listeners
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', checkMobile);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, [isMobile]); // Re-run effect when isMobile changes
 
   // Toggle mobile menu
   const toggleMobileMenu = (e) => {
@@ -152,27 +181,22 @@ export default function HeaderNew({ heroContent = {}, postTitle, location }) {
       <div className={styles.topBar}>
         <div className={styles.container}>
           <div className={styles.contactInfo}>
-            <div className={styles.statusBadge}>
-              Veteran Owned
-            </div>
-          </div>
-          <div className={styles.socialIcons}>
-            <a href="https://www.facebook.com/greenviewsolutions" target="_blank" rel="noopener noreferrer">
-              <FaFacebookSquare />
+            <a href="mailto:admin@gvsco.net" className={styles.contactLink}>
+              <FaEnvelope /> admin@gvsco.net
             </a>
-            <a href="https://www.instagram.com/greenview_solutions_llc" target="_blank" rel="noopener noreferrer">
-              <FiInstagram />
-            </a>
-            <a href="https://www.google.com/maps/place/Greenview+Solutions/@39.9890046,-105.1713587,11z/data=!4m6!3m5!1s0x876bf5d9d671bf3f:0xe263da5d1b64b4a4!8m2!3d40.125623!4d-104.9541494!16s%2Fg%2F11j76mvz9t?coh=164777&entry=tt&shorturl=1" target="_blank" rel="noopener noreferrer">
-              <FaGoogle />
-            </a>
-          </div>
-          <div className={styles.phoneInfo}>
             <a href="tel:3033588168" className={styles.contactLink}>
               <FaPhone /> (303) 358-8168
             </a>
-            <a href="tel:3033588168" className={styles.callNowLink}>
-              CALL NOW!
+          </div>
+          <div className={styles.socialIcons}>
+            <a href="https://www.facebook.com/greenviewsolutions" target="_blank" rel="noopener noreferrer" className={styles.iconHover}>
+              <FaFacebookSquare />
+            </a>
+            <a href="https://www.instagram.com/greenview_solutions_llc" target="_blank" rel="noopener noreferrer" className={styles.iconHover}>
+              <FiInstagram />
+            </a>
+            <a href="https://g.co/kgs/WWVNXfV" target="_blank" rel="noopener noreferrer" className={styles.iconHover}>
+              <FaGoogle />
             </a>
           </div>
         </div>
@@ -222,7 +246,7 @@ export default function HeaderNew({ heroContent = {}, postTitle, location }) {
                 <a href="https://www.youtube.com/channel/UCFEQWcVVKX0VXbRqS3x1_Sw" target="_blank" rel="noopener noreferrer">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="22" height="22" fill="currentColor"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
                 </a>
-                <a href="mailto:chris@greenviewsolutions.net" target="_blank" rel="noopener noreferrer">
+                <a href="mailto:admin@gvsco.net" target="_blank" rel="noopener noreferrer">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="currentColor"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
                 </a>
               </div>
@@ -286,9 +310,6 @@ export default function HeaderNew({ heroContent = {}, postTitle, location }) {
             <Link href="/contact" className={styles.bookNowButton}>
               Book Now
             </Link>
-            <Link href="/contact" className={styles.getQuoteButton}>
-              Get a Quote
-            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -342,9 +363,6 @@ export default function HeaderNew({ heroContent = {}, postTitle, location }) {
           <div className={styles.mobileCtaButtons}>
             <Link href="/contact" className={styles.mobileBookNow} onClick={toggleMobileMenu}>
               Book Now
-            </Link>
-            <Link href="/contact" className={styles.mobileGetQuote} onClick={toggleMobileMenu}>
-              Get a Quote
             </Link>
           </div>
         </div>
@@ -402,11 +420,11 @@ export default function HeaderNew({ heroContent = {}, postTitle, location }) {
       
       {/* Floating CTA buttons for mobile */}
       <div className={`${styles.floatingCtaBar} ${showFloatingCta ? styles.visible : ''}`}>
-        <Link href="/contact" className={styles.mobileBookNow}>
-          Book Now
-        </Link>
-        <Link href="/contact" className={styles.mobileGetQuote}>
-          Get a Quote
+        <a href="tel:3033588168" className={`${styles.ctaButton} ${styles.callButton}`}>
+          <FaPhone /> Call Now
+        </a>
+        <Link href="/contact" className={`${styles.ctaButton} ${styles.contactButton}`}>
+          <FaWpforms /> Contact
         </Link>
       </div>
     </header>
