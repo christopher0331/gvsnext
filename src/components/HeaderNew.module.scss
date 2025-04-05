@@ -1,0 +1,1066 @@
+// All variables and mixins have been replaced with direct values
+
+
+// Header Container
+.headerContainer {
+  position: relative;
+  width: 100%;
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+// Navbar placeholder to prevent content jumping
+.navbarPlaceholder {
+  transition: height 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+  width: 100%;
+  will-change: height;
+}
+
+// Top Bar
+.topBar {
+  background-color: #166522;
+  padding: 8px 0;
+  color: #fff;
+  font-size: 14px;
+  margin: 0;
+  position: relative;
+  z-index: 110; // Higher than navbar to ensure proper stacking
+  border-bottom: 3px solid #f0dd3e; // Yellow accent border like Cool Cat
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  .contactInfo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .contactLink {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    
+    svg {
+      margin-right: 5px;
+      font-size: 20px;
+    }
+    
+    &:hover {
+      color: #e7eff6;
+    }
+  }
+  
+  .callNowLink {
+    color: #f0dd3e; /* Yellow accent color */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    letter-spacing: 0.5px;
+    
+    &:hover {
+      color: #fff;
+      transform: scale(1.05);
+    }
+  }
+  
+  .statusBadge {
+    display: inline-block;
+    background-color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: #166522;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: 1px solid #166522;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    }
+  }
+  
+  .phoneInfo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .socialIcons {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 16px;
+    
+    a {
+      color: #fff;
+      font-size: 34px;
+      transition: transform 0.3s ease, color 0.3s ease;
+      display: flex;
+      align-items: center;
+      margin: 0 8px;
+      
+      &:hover {
+        color: #f0dd3e; /* Yellow accent color on hover */
+        transform: scale(1.15);
+      }
+    }
+  }
+}
+
+// Navbar
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  margin: 0;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  height: 130px; /* Increased navbar height */
+  width: 100%;
+  padding: 0;
+  transform: translateY(0);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  .navbarInner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &.scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Sticky navbar height */
+    z-index: 999; /* Ensure it's above other content */
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
+    transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1), opacity 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+  }
+  
+  /* Smooth transform based on scroll progress */
+  &.scrollProgress {
+    transform: translateY(var(--scroll-progress));
+    opacity: var(--opacity-progress);
+    will-change: transform, opacity;
+    
+    /* Ensure child elements remain clickable */
+    & > * {
+      pointer-events: auto;
+    }
+  }
+}
+
+// Logo container holds both logo and sticky contact
+.logoContainer {
+  position: relative;
+  flex: 0 0 160px;
+  margin: 0;
+  padding: 0 0 0 20px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 140px;
+}
+
+// Logo
+.logo {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 140px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  
+  img {
+    transition: transform 0.3s;
+    height: 180px !important;
+    width: auto !important;
+    max-width: 180px !important;
+    margin: 0;
+    padding: 0;
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+}
+
+// Desktop Navigation
+.desktopNav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 15px; // Reduced space between items
+}
+
+// Dropdown styles
+.hasDropdown {
+  position: relative;
+}
+
+.dropdownButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-weight: inherit;
+  font-size: 20px;
+  padding: 6px 10px;
+  margin: 0;
+  transition: color 0.3s;
+  color: #333;
+  text-decoration: none;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    background-color: #008833;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+  }
+  
+  &:hover, &.active {
+    color: #008833;
+    
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
+.dropdownIcon {
+  margin-left: 8px;
+  font-size: 14px;
+  color: #1c7f2a;
+  transition: transform 0.3s ease;
+  
+  &.active {
+    transform: rotate(180deg);
+    color: #008833;
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 220px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  margin-top: 0; /* Remove gap between navbar item and dropdown */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+  z-index: 1000;
+  
+  li {
+    list-style: none;
+    
+    a {
+      display: block;
+      padding: 8px 15px;
+      color: #333;
+      text-decoration: none !important;
+      font-size: 17px;
+      transition: background-color 0.3s, color 0.3s;
+      
+      &:hover {
+        background-color: rgba(28, 127, 42, 0.1);
+        color: #1c7f2a;
+      }
+      
+      &:after {
+        display: none !important;
+      }
+    }
+  }
+  
+  /* When dropdown is hovered, keep it visible */
+  &:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+.navItem {
+  margin: 0 5px;
+  position: relative;
+  height: 100%;
+  
+  a, .dropdownButton {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    transition: color 0.3s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: -6px; /* Moved down to create space between menu item and underline */
+      left: 50%;
+      background-color: #008833;
+      transition: all 0.3s ease-in-out;
+      transform: translateX(-50%);
+    }
+    
+    &:hover, &.active {
+      color: #008833;
+      
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+  
+  &.hasDropdown {
+    /* Create an invisible padding area to prevent hover loss */
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 20px; /* Buffer area between menu item and dropdown */
+      bottom: -20px;
+      left: 0;
+    }
+    
+    &:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  min-width: 200px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  z-index: 101;
+  
+  a {
+    padding: 8px 20px;
+    display: block;
+    color: #333;
+    font-weight: 500;
+    font-size: 17px;
+    text-decoration: none !important; /* Ensure no underline */
+    
+    &:hover, &.active {
+      background-color: rgba(0, 136, 51, 0.1);
+    }
+    
+    &:after {
+      display: none !important; /* Force no underline effect */
+    }
+  }
+}
+
+// CTA Section
+.ctaSection {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 20px 0 0;
+}
+
+// Book Now Button
+.bookNowButton {
+  background-color: #fff;
+  color: #1c7f2a;
+  padding: 10px 20px;
+  border-radius: 30px; // More rounded like Cool Cat
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  border: 2px solid #1c7f2a;
+  transition: all 0.3s;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  
+  &:hover {
+    background-color: #f5f5f5;
+    color: #008833;
+    border-color: #008833;
+    transform: translateY(-2px);
+  }
+  
+  &:after {
+    content: '→';
+    margin-left: 5px;
+  }
+}
+
+// Get Quote Button
+.getQuoteButton {
+  background-color: #1c7f2a;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px; // More rounded like Cool Cat
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.3s;
+  white-space: nowrap;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  
+  &:hover {
+    background-color: #008833;
+    transform: translateY(-2px);
+  }
+}
+
+// Mobile Menu Toggle
+.mobileMenuToggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #1c7f2a;
+  position: relative;
+  z-index: 1001; /* Ensure it's above other elements */
+  padding: 10px;
+  pointer-events: auto; /* Ensure clicks are registered */
+}
+
+// Mobile Navigation
+.mobileNav {
+  display: none;
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 99;
+  
+  &.open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.mobileNavLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobileNavItem {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+  
+  .mobileDropdownHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+    font-weight: 600; /* Same as other mobile menu items */
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    
+    &:hover, &.active {
+      color: #008833;
+    }
+  }
+  
+  .mobileDropdownIcon {
+    font-size: 16px;
+    color: #1c7f2a;
+    transition: transform 0.3s ease;
+    margin-right: 5px;
+    
+    &.open {
+      transform: rotate(180deg);
+    }
+  }
+  
+  .mobileDropdown {
+    margin: 8px 0 0 15px;
+    padding: 0;
+    
+    li {
+      padding: 8px 0;
+      list-style: none;
+      border-bottom: 1px solid rgba(51, 51, 51, 0.05);
+      
+      &:last-child {
+        border-bottom: none;
+      }
+      
+      a {
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+  }
+  
+  a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: block;
+    position: relative;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: -5px;
+      left: 50%;
+      background-color: #008833;
+      transition: all 0.3s ease-in-out;
+      transform: translateX(-50%);
+    }
+    
+    &:hover, &.active {
+      color: #008833;
+      
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.mobileNavSubItem {
+  padding: 12px 0 12px 20px;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+  
+  a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    position: relative;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 50%;
+      background-color: #008833;
+      transition: all 0.3s ease-in-out;
+      transform: translateX(-50%);
+    }
+    
+    &:hover, &.active {
+      color: #008833;
+      
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.mobileCta {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #fff;
+  color: #1c7f2a;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: center;
+  border: 2px solid #1c7f2a;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  
+  &:hover {
+    background-color: #f5f5f5;
+    color: #008833;
+    border-color: #008833;
+  }
+}
+
+// Mobile CTA buttons
+.mobileCtaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px auto;
+  max-width: 90%;
+}
+
+// Floating CTA Bar for mobile
+.floatingCtaBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  
+  &.visible {
+    transform: translateY(0);
+  }
+  
+  @media (min-width: 768px) {
+    display: none; /* Hide on desktop */
+  }
+}
+
+.mobileBookNow {
+  flex: 1;
+  padding: 12px 15px;
+  background-color: #fff;
+  color: #1c7f2a;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 30px; // More rounded like Cool Cat
+  font-weight: 600;
+  border: 2px solid #1c7f2a;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: #f5f5f5;
+    color: #008833;
+    border-color: #008833;
+  }
+  
+  &:after {
+    content: '\2192'; /* Right arrow */
+    margin-left: 5px;
+  }
+}
+
+.mobileGetQuote {
+  flex: 1;
+  padding: 12px 15px;
+  background-color: #1c7f2a;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 30px; // More rounded like Cool Cat
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: #008833;
+  }
+}
+
+// Hero Section
+.heroSection {
+  position: relative;
+  height: 90vh;
+  min-height: 680px;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+.heroImageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  transform-style: preserve-3d;
+  max-width: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(51, 51, 51, 0.7) 0%,
+    rgba(51, 51, 51, 0.5) 50%,
+    rgba(51, 51, 51, 0.3) 100%
+  );
+  z-index: 2;
+}
+
+.heroContent {
+  position: relative;
+  height: 100%;
+  z-index: 3;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin: 0;
+  }
+  
+  .contentWrapper {
+    max-width: 650px;
+    padding: 30px;
+    background-color: rgba(51, 51, 51, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    animation: fadeIn 1s ease-in-out;
+    margin: 0;
+    
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    
+    p {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+  }
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  
+  li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 16px;
+    font-size: 1.25rem;
+    
+    &:before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #008833;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.heroCta {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.primaryButton {
+  background-color: #008833;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+  transition: all 0.3s;
+  
+  &:hover {
+    background-color: #00aa3f;
+    transform: translateY(-2px);
+  }
+}
+
+.secondaryButton {
+  background-color: transparent;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+  border: 2px solid #fff;
+  transition: all 0.3s;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+}
+
+// Animations
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+// Logo when scrolled
+.logoScrolled {
+  transform: translateY(-33px);
+  opacity: 0;
+}
+
+// Styles for the sticky contact area (replacing logo position)
+.stickyContact {
+  position: absolute;
+  top: 55px; /* Further moved down for better vertical centering */
+  left: 40px; /* Increased left position to move section further right */
+  display: none; /* Hidden by default */
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+  flex-direction: column;
+  gap: 10px; /* Increased gap between the rows */
+  
+  // Top row with phone number
+  .phoneNumber {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+    
+    a {
+      display: flex;
+      align-items: center;
+      font-size: 16px; /* Increased font size to match larger icons */
+      color: #1c7f2a;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      
+      svg {
+        margin-right: 6px;
+        font-size: 16px;
+      }
+      
+      &:hover {
+        color: #008833;
+        transform: translateY(-2px);
+      }
+    }
+  }
+  
+  // Bottom row with all icons (social + email)
+  .allIcons {
+    display: flex;
+    gap: 18px; /* Increased gap for better spacing between icons */
+    
+    a {
+      color: #1c7f2a;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        color: #008833;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+// Show sticky contact when scrolled
+.showStickyContact {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Media Queries
+@media (max-width: 991px) {
+  .desktopNav {
+    display: none;
+  }
+  
+  .mobileMenuToggle {
+    display: block;
+  }
+  
+  .mobileNav {
+    display: block;
+  }
+  
+  .heroContent {
+    .contentWrapper {
+      max-width: 100%;
+      
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .topBar {
+    .contactInfo {
+      display: none;
+    }
+    
+    .container {
+      justify-content: center;
+    }
+  }
+  
+  .heroSection {
+    height: 90vh;
+  }
+  
+  .heroContent {
+    .contentWrapper {
+      padding: 20px;
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  .heroCta {
+    flex-direction: column;
+    
+    a {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

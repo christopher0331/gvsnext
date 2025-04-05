@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import InfoSection from '../../components/InfoSection';
 import FenceCards from '../../components/FenceCard';
@@ -16,7 +15,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import LocationContent from '../../components/LocationContent';
 import { CORE_LOCATIONS, isValidLocation, getLocationData } from '../../utils/locations';
-
+import HeaderNew from '../../components/HeaderNew';
 
 export default function HomePage({ capitalizedLocation, locationContent, headerData, heroContent  }) {
   const router = useRouter();
@@ -49,9 +48,9 @@ export default function HomePage({ capitalizedLocation, locationContent, headerD
         <meta property="og:type" content="website" />
         <meta name="geo.region" content="US-CO" />
         <meta name="geo.placename" content={`${capitalizedLocation}, Colorado`} />
-      </Head>
+      </Head>     
 
-      <Header location={capitalizedLocation} data={headerData} heroContent={heroContent} locatio={capitalizedLocation}/>
+      <HeaderNew location={capitalizedLocation} data={headerData} heroContent={heroContent} locatio={capitalizedLocation}/>
 
       <div style={{ backgroundColor: 'white' }}>
         <InfoSection />

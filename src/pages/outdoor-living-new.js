@@ -15,7 +15,7 @@ import { testimonialsData } from '../components/TestimonialsData';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from '../components/OutdoorLiving.module.scss';
-
+import HeaderNew from '../components/HeaderNew';
 
 export default function OutdoorLivingNew({heroContent}) {
   // FAQ data for the FAQ section and schema markup
@@ -223,7 +223,7 @@ useEffect(() => {
                 />
             </Head>
 
-            <Header heroContent={heroContent} />
+            <HeaderNew  heroContent={heroContent} />
             
             {/* Breadcrumb Navigation */}
             <div className={styles.breadcrumb}>

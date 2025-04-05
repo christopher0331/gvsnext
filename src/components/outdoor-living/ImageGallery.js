@@ -139,7 +139,7 @@ export default function ImageGallery() {
           {filteredImages.map((image, index) => (
             <div key={index} className={styles.imageWrapper} onClick={() => handleImageClick(image)}>
               <div className={styles.imageContainer}>
-                <Image src={image.src} alt={image.alt} layout="fill" objectFit="cover" />
+                <Image src={image.src} alt={image.alt} fill style={{ objectFit: "cover" }} />
                 <div className={styles.imageOverlay}>
                   <div className={styles.zoomIcon}>
                     <FaSearch />
@@ -166,7 +166,7 @@ export default function ImageGallery() {
             </button>
             
             <div className={styles.lightboxImageWrapper}>
-              <Image src={selectedImage.src} alt={selectedImage.alt} layout="fill" objectFit="contain" />
+              <Image src={selectedImage.src} alt={selectedImage.alt} fill style={{ objectFit: "contain" }} />
             </div>
             
             <div className={styles.lightboxControls}>

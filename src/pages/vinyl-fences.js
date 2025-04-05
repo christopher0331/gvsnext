@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
-import Header from '../components/Header';
+import HeaderNew from '../components/HeaderNew';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import FencingTypeCards from '../components/FencingTypeCards'
@@ -13,7 +13,7 @@ import styles from '../components/WoodFencesStyles.module.scss';
 import LocationsMap from '../components/LocationsMap'
 import BenefitsSection from '../components/BenefitsSection'
 
-const vinylFenceTypes = [
+const vinylFenceTypes = [   
     {
         title: '3 Rail',
         description: 'Enhance your property with our classic 3 rail vinyl fencing, offering a perfect balance of openness and boundary definition.',
@@ -87,7 +87,7 @@ export default function VinylFencing({ heroContent, postTitle, location }) {
                 <link rel="canonical" href="https://greenviewsolutions.net/vinyl-fences" />
             </Head>
 
-            <Header heroContent={heroContent} />
+            <HeaderNew heroContent={heroContent} />         
         
             <section className={styles.fenceTypesSection}>
                 <div className={`${styles.container} ${styles.centeredContainer}`}>

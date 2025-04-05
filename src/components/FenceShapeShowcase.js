@@ -55,8 +55,8 @@ export default function FenceShapeShowcase() {
                                 <Image
                                     src={shape.image}
                                     alt={shape.name}
-                                    layout="fill"
-                                    objectFit="contain"
+                                    fill
+                                    style={{ objectFit: "contain" }}
                                     sizes="(max-width: 1024px) 100vw, 50vw"
                                 />
                             </motion.div>

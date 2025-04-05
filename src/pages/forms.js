@@ -5,12 +5,13 @@ import WarrantyForm from '../components/WarrantyForm';
 import FeedbackForm from '../components/FeedbackForm';
 import ContactForm from '../components/ContactForm'; // Import the new ContactForm
 import styles from '../components/Forms.module.css';
-import Header from '../components/Header';
+import HeaderNew from '../components/HeaderNew';
 import Footer from '../components/Footer';
 
 export default function Forms({heroContent}) {
   const [activeForm, setActiveForm] = useState('general');
   const [showPopup, setShowPopup] = useState(false);
+  const [showTabsIntro, setShowTabsIntro] = useState(true);
 
   const handleSubmit = () => {
     setShowPopup(true);
@@ -59,7 +60,7 @@ export default function Forms({heroContent}) {
         <meta name="description" content="Explore our comprehensive range of outdoor living products designed to enhance your lifestyle. From custom designs to durable materials and expert installation, we offer solutions that transform your outdoor spaces into beautiful, functional areas for year-round enjoyment." />
       </Head>
 
-      <Header heroContent={heroContent} />
+      <HeaderNew heroContent={heroContent} />  
 
       <div className={styles.pageContainer}>
         <aside className={styles.sidebar}>
@@ -87,6 +88,16 @@ export default function Forms({heroContent}) {
 
         <main className={styles.mainContent}>
           <h1 className={styles.title}>Contact Us</h1>
+          
+          {showTabsIntro && (
+            <div className={styles.tabsIntroContainer}>
+              <div className={styles.tabsIntro}>
+                <h3>❗ Choose the Right Form for Your Needs ❗</h3>
+                <p>We have <strong>4 different forms</strong> available to better serve you! Click on any tab below to switch between forms.</p>
+                <button onClick={() => setShowTabsIntro(false)} className={styles.dismissButton}>Got it!</button>
+              </div>
+            </div>
+          )}
 
           <div className={styles.tabContainer}>
             <button 
@@ -94,24 +105,28 @@ export default function Forms({heroContent}) {
               onClick={() => setActiveForm('contact')}
             >
               Contact Form
+              {activeForm !== 'contact' && <span className={styles.tabBadge}>Try Me!</span>}
             </button>
             <button 
               className={`${styles.tab} ${activeForm === 'projectOverview' ? styles.activeTab : ''}`}
               onClick={() => setActiveForm('projectOverview')}
             >
               Project Overview Form
+              {activeForm !== 'projectOverview' && <span className={styles.tabBadge}>Try Me!</span>}
             </button>
             <button 
               className={`${styles.tab} ${activeForm === 'warranty' ? styles.activeTab : ''}`}
               onClick={() => setActiveForm('warranty')}
             >
               Warranty Form
+              {activeForm !== 'warranty' && <span className={styles.tabBadge}>Try Me!</span>}
             </button>
             <button 
               className={`${styles.tab} ${activeForm === 'feedback' ? styles.activeTab : ''}`}
               onClick={() => setActiveForm('feedback')}
             >
               Feedback
+              {activeForm !== 'feedback' && <span className={styles.tabBadge}>Try Me!</span>}
             </button>
           </div>
 

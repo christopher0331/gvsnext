@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import HeroSection from '../../components/backflow/HeroSection';
 import ServicesOverview from '../../components/backflow/ServicesOverview';
@@ -17,6 +16,7 @@ import { testimonialsData } from '../../components/TestimonialsData';
 import styles from '../../components/backflow/BackflowTesting.module.scss';
 import { useRouter } from 'next/router';
 import { isValidLocation, getLocationData, CORE_LOCATIONS } from '../../utils/locations';
+import HeaderNew from '../../components/HeaderNew';
 
 export default function BackflowTesting({ capitalizedLocation, locationContent, heroContent }) {
   const router = useRouter();
@@ -212,7 +212,7 @@ export default function BackflowTesting({ capitalizedLocation, locationContent, 
         </script>
       </Head>
 
-      <Header location={capitalizedLocation} heroContent={heroContent} />
+      <HeaderNew location={capitalizedLocation} heroContent={heroContent} />
 
       <main>
         

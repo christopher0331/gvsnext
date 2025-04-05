@@ -1,7 +1,7 @@
 import { useState, useEffect, React } from 'react';
 import styles from '../components/AboutUs.module.scss';
-import Header from '../components/Header.js';
-import Footer from '../components/Footer.js';
+import HeaderNew from '../components/HeaderNew';
+import Footer from '../components/Footer.js';   
 import SvgComponent from '@/components/SvgComponent';
 import Image from 'next/image';
 import Head from 'next/head';
@@ -79,8 +79,8 @@ const AboutUs = (props) => {
         <meta name="description" content="This page is the about us page that contains information about greenview solutions"/>
         <link rel="canonical" href="https://greenviewsolutions.net/about" />
 
-      </Head>
-      <Header />
+      </Head> 
+      <HeaderNew />
       <div className={styles.aboutUsContainer}>
 
         <h1 className={styles.title}>

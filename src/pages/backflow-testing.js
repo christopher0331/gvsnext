@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import Header from '../components/Header';
+import HeaderNew from '../components/HeaderNew';
 import Footer from '../components/Footer';
 import { CORE_LOCATIONS } from '../utils/locations';
 import HeroSection from '../components/backflow/HeroSection';
@@ -220,7 +220,7 @@ export default function BackflowTesting({heroContent}) {
         />
       </Head>
 
-      <Header heroContent={heroContent} />
+      <HeaderNew heroContent={heroContent} />
       
       <main className={styles.main}>
         

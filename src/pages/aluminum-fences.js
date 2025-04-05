@@ -1,4 +1,4 @@
-import Header from '../components/Header';
+import HeaderNew from '../components/HeaderNew';
 import Footer from '../components/Footer';
 import FencingTypeCards from '@/components/FencingTypeCards';
 import PicketTypeCard from '@/components/PicketTypeCard';
@@ -14,7 +14,7 @@ export default function AluminumFences() {
     return (
         <div>
             {/* Header */}
-            <Header />
+            <HeaderNew />
 
             <div className={stylesWood.woodFenceContainer}>
                 <div>

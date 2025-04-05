@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
-import Header from '../components/Header';
+import HeaderNew from '../components/HeaderNew';        
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import FencingTypeCards from '../components/FencingTypeCards'
@@ -90,7 +90,7 @@ export default function ChainLinkFencing({ heroContent }) {
                 <link rel="canonical" href="https://greenviewsolutions.net/chainlink-fence" />
             </Head>
 
-            <Header heroContent={heroContent} />
+            <HeaderNew heroContent={heroContent} />    
 
             <section className={styles.fenceTypesSection}>
                 <div className={`${styles.container} ${styles.centeredContainer}`}>

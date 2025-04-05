@@ -7,10 +7,12 @@ export function ImageIndexProvider({ children }) {
     const [imageIndex, setImageIndex] = useState(0);
     const router = useRouter();
 
+    // Using custom variant instead of 'public' to get higher quality images
+    // Format: https://imagedelivery.net/{account_hash}/{image_id}/{variant}
     const images = [
-        'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/564989bf-964c-45c3-2ec6-deeeb9dd2800/public',
-        'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/33fea834-d24d-44f3-72d3-1c46598ed600/public',
-        'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/208d8f03-ee93-4377-7600-08b1183c3d00/public'
+        'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/ce4466b3-8197-4d3c-e954-ed7640bdaf00/hero',
+        'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/89a55ba0-12e9-4225-301e-de520afd1000/hero',
+        'https://imagedelivery.net/OHVtjf602XdHccCnziCADA/e33e7492-b082-48b5-548e-38728e33b200/hero'
     ];
 
 

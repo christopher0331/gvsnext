@@ -169,7 +169,7 @@ export default function DesktopMenu() {
                     <Link href="/outdoor-living-new" className="menu-link-upper" style={menuItemStyle}>Outdoor Living</Link>
                     
                     {/* Backflow Testing */}
-                    <Link href="/backflow-testing" className="menu-link-upper" style={menuItemStyle}>Backflow Testing</Link>
+                    <Link href="/denver/backflow-testing" className="menu-link-upper" style={menuItemStyle}>Backflow Testing</Link>
 
                     {/* Resources Dropdown */}
                     <div className="relative inline-flex items-center" style={menuItemStyle}>

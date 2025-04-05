@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import FencingTypeCards from '../../components/FencingTypeCards';
 import CTASection from '../../components/CTASection';
@@ -12,7 +11,7 @@ import LocationsMap from '../../components/LocationsMap';
 import { useRouter } from 'next/router';
 import BenefitsSection from '../../components/BenefitsSection';
 import VinylFenceFAQ from '../../components/VinylFenceFAQ';
-
+import HeaderNew from '../../components/HeaderNew'; 
 
 const vinylFenceTypes = [
     {
@@ -80,7 +79,7 @@ export default function Fencing({ capitalizedLocation, locationContent, headerDa
             icon: "💰"
         }
     ]
-    return (
+    return (        
         <>
             <Head>
                 <title>Vinyl Fencing Solutions in {capitalizedLocation} | GreenView Solutions</title>
@@ -88,7 +87,7 @@ export default function Fencing({ capitalizedLocation, locationContent, headerDa
                 <link rel="canonical" href={`https://greenviewsolutions.net/${location}/vinyl-fences`} />
             </Head>
 
-            <Header location={capitalizedLocation} data={headerData} heroContent={heroContent} locatio={capitalizedLocation} />
+            <HeaderNew location={capitalizedLocation} data={headerData} heroContent={heroContent} locatio={capitalizedLocation} />
 
             <div className={styles.seoTextContainer}>
                 <div className={styles.seoText}>

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Header from '../components/Header';
+import HeaderNew from '../components/HeaderNew';
 import Footer from '../components/Footer';
 import styles from '../components/Warranty.module.scss';
 import { useEffect } from 'react';
@@ -34,7 +34,7 @@ export default function Warranty() {
         <link rel="canonical" href="https://greenviewsolutions.net/warranty" />
       </Head>
 
-      <Header />
+      <HeaderNew />
 
       <div className={styles.warrantyContainer}>
         <h1>Our Fence Warranty</h1>

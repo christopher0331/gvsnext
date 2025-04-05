@@ -1,4 +1,4 @@
-import Header from '../components/Header';
+import HeaderNew from '../components/HeaderNew';
 import Homepage from '../components/Homepage';
 import Footer from '../components/Footer.js';
 import { ErrorBoundary } from 'react-error-boundary';
@@ -21,7 +21,7 @@ export default function Home({ headerData, heroContent }) {
         // reset the state of your app so the error doesn't happen again
       }}
     >
-      <Header data={headerData} heroContent={heroContent} />
+      <HeaderNew data={headerData} heroContent={heroContent} />
       <Homepage />
       <Footer />
     </ErrorBoundary>
@@ -29,7 +29,7 @@ export default function Home({ headerData, heroContent }) {
 }
 
 export async function getStaticProps() {
-  return {
+  return {    
       props: {
           heroContent: {
               title: 'Welcome to Our Home of Quality Fencing',

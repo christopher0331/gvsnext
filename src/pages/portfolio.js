@@ -3,8 +3,8 @@ import AWS from 'aws-sdk';
 import Modal from '../components/Modal.js';
 import '../app/portfolio.css'
 import axios from 'axios';
-import Header from '../components/Header.js';
-import Footer from '../components/Footer.js';
+import HeaderNew from '../components/HeaderNew';     
+import Footer from '../components/Footer.js';   
 import CoolLoader from '../components/CoolLoader.js';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
@@ -161,7 +161,7 @@ const S3Bucket = ({ heroContent }) => {
         )}
       </Head>
       <div>
-        <Header heroContent={heroContent} />
+        <HeaderNew heroContent={heroContent} />  
         {loading ? (
           <CoolLoader />
         ) : (

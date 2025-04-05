@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
-import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import FencingTypeCards from '../components/FencingTypeCards'
@@ -12,6 +11,7 @@ import WoodFenceFAQ from '../components/WoodFenceFAQ'
 import { motion, useAnimation, AnimatePresence } from 'framer-motion'
 import styles from '../components/WoodFencesStyles.module.scss';
 import LocationsMap from '../components/LocationsMap'
+import HeaderNew from '../components/HeaderNew';
 
 const woodFenceTypes = [
     {
@@ -79,7 +79,7 @@ export default function Fencing({ heroContent }) {
                 <link rel="canonical" href="https://greenviewsolutions.net/wood-fences" />
             </Head>
 
-            <Header heroContent={heroContent} />
+            <HeaderNew  heroContent={heroContent} />
 
 
             <div className={styles.seoTextContainer}>
