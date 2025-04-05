@@ -7,7 +7,7 @@ const FenceCard = ({ title, imageSrc, description, link }) => {
         < a href={link} className={styles.card} >
             <h3>{title}</h3>
             <div className={styles.imageContainer}> {/* Ensure this div has a defined height and width */}
-                <Image src={imageSrc} alt={title} layout="fill" objectFit='cover' />
+                <Image src={imageSrc} alt={title} fill style={{ objectFit: 'cover' }} />
             </div>
             <p>{description}</p>
         </a >

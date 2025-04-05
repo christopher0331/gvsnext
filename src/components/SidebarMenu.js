@@ -77,7 +77,7 @@ export default function SidebarMenu({ isSidebarOpen, setIsSidebarOpen }) {
                     <li><Link href="/outdoor-living-new" className="block px-4 py-2 hover:bg-green-800">Outdoor Living</Link></li>
                     
                     {/* Backflow Testing */}
-                    <li><Link href="/backflow-testing" className="block px-4 py-2 hover:bg-green-800">Backflow Testing</Link></li>
+                    <li><Link href="/denver/backflow-testing" className="block px-4 py-2 hover:bg-green-800">Backflow Testing</Link></li>
                     
                     {/* Resources Dropdown */}
                     <li className="relative">

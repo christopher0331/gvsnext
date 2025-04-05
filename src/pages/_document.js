@@ -21,10 +21,30 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          {/* CSS Reset */}
+          <style>
+            {`
+              *, *::before, *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+              }
+              html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+                min-height: 100%;
+                width: 100%;
+                overflow-x: hidden;
+              }
+            `}
+          </style>
           {/* Preconnect to Google domains for performance */}
           <link rel="preconnect" href="https://googleads.g.doubleclick.net" />
           <link rel="preconnect" href="https://www.google-analytics.com" />
           <link rel="preconnect" href="https://www.gstatic.com" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
           <link
             rel="preload"
             href="https://imagedelivery.net/OHVtjf602XdHccCnziCADA/e17c9569-a336-4893-bf7b-260b2789d400/public"

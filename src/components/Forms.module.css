@@ -1,4 +1,4 @@
-/* Add this at the beginning of your CSS file */
+
 .form, .form * {
   color: black !important;
 }
@@ -26,27 +26,188 @@
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
+    position: relative;
+    overflow: visible;
+    padding: 1rem 0;
+    background: linear-gradient(to right, rgba(255,255,255,0), rgba(69, 177, 103, 0.1), rgba(255,255,255,0));
+    border-radius: 15px;
   }
   
   .tab {
     background-color: #f0f0f0;
     color: black;
-    border: none;
+    border: 3px solid transparent;
     padding: 0.75rem 1.5rem;
     margin: 0 0.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 30px;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform-origin: center;
+    animation: pulse 2s infinite;
+  }
+  
+  .tab:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-color: #45b167;
+    animation: none;
+  }
+  
+  .tab::before {
+    content: '!';
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff5722;
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+    animation: bounce 1s infinite alternate;
+  }
+  
+  .tab::after {
+    content: 'Click!';
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: #45b167;
+    opacity: 0.9;
+    animation: fadeInOut 2s infinite;
   }
   
   .tab.activeTab {
     background-color: #45b167;
     color: white;
-    box-shadow: 0 4px 6px rgba(69, 177, 103, 0.2);
+    box-shadow: 0 4px 12px rgba(69, 177, 103, 0.4);
+    border: 3px solid #2d8f4e;
+    animation: none;
+    transform: scale(1.05);
   }
   
+  .tab.activeTab::before,
+  .tab.activeTab::after {
+    display: none;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(69, 177, 103, 0.3);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  @keyframes bounce {
+    from {
+      transform: translateX(-50%) translateY(0);
+    }
+    to {
+      transform: translateX(-50%) translateY(-10px);
+    }
+  }
+  
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.3;
+    }
+  }
+  
+  .tabsIntroContainer {
+    margin-bottom: 2rem;
+    animation: slideDown 0.5s ease-out;
+  }
+
+  .tabsIntro {
+    background-color: #f8f9fa;
+    border: 2px dashed #45b167;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .tabsIntro h3 {
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .tabsIntro p {
+    color: #555;
+    margin-bottom: 1rem;
+  }
+
+  .dismissButton {
+    background-color: #45b167;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .dismissButton:hover {
+    background-color: #3a9456;
+    transform: scale(1.05);
+  }
+
+  .tabBadge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #ff5722;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .formContainer {
     background-color: #ffffff;
     padding: 2rem; /* Reduced padding */
@@ -128,10 +289,26 @@
   
     .tabContainer {
       flex-direction: column;
+      padding: 2rem 0;
     }
   
     .tab {
-      margin: 0.5rem 0;
+      margin: 0.75rem 0;
+      padding: 1rem 1.5rem;
+    }
+    
+    .tab::before {
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    .tab::after {
+      right: 15px;
+      left: auto;
+      bottom: auto;
+      top: 50%;
+      transform: translateY(-50%);
     }
   
     .formContainer {

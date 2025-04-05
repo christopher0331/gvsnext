@@ -87,8 +87,8 @@ const FeaturedProjectCard = ({ title, imageSrc, description, link }) => {
                     <Image
                         src={imageSrc}
                         alt={title}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        style={{ objectFit: "cover" }}
                         quality={80}
                     />
                 </div>

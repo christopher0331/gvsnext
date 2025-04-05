@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import FencingTypeCards from '../../components/FencingTypeCards';
 import CTASection from '../../components/CTASection';
@@ -12,6 +11,7 @@ import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import styles from '../../components/WoodFencesStyles.module.scss';
 import LocationsMap from '../../components/LocationsMap';
 import { useRouter } from 'next/router';
+import HeaderNew from '../../components/HeaderNew';
 
 const woodFenceTypes = [
     {
@@ -80,9 +80,9 @@ export default function Fencing({ capitalizedLocation, locationContent, headerDa
                 <title>Premium Wood Fencing Solutions in {capitalizedLocation} | GreenView Solutions</title>
                 <meta name="description" content={`Discover our exceptional range of wood fencing options in ${capitalizedLocation}. From privacy fences to picket designs, we offer top-quality solutions to enhance your property's beauty and security.`} />
                 <link rel="canonical" href={`https://greenviewsolutions.net/${location}/wood-fences`} />
-            </Head>
+            </Head>             
 
-            <Header location={capitalizedLocation} data={headerData} heroContent={heroContent} locatio={capitalizedLocation}/>
+            <HeaderNew location={capitalizedLocation} data={headerData} heroContent={heroContent} locatio={capitalizedLocation}/>
 
             <div className={styles.seoTextContainer}>
                 <div className={styles.seoText}>

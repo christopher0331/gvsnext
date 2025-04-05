@@ -1,137 +1,124 @@
+// Featured Projects Section
 .featuredProjectsContainer {
-    padding: 4rem 2rem;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-.sectionTitle {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #333;
-}
-
-.projectsWrapper {
-    position: relative;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 60px; // Add padding to accommodate larger buttons
-}
-
-.projectsGrid {
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #1c7f2a;
+    font-weight: 600;
+    position: relative;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: #008833;
+    }
+  }
+  
+  .projectsWrapper {
+    position: relative;
+    padding: 0 40px;
+  }
+  
+  .projectsGrid {
     display: grid;
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-// 3x3 layout for large screens
-@media (min-width: 1200px) {
-    .projectsGrid {
-        grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
     }
-}
-
-// 2x3 layout for medium screens
-@media (min-width: 768px) and (max-width: 1199px) {
-    .projectsGrid {
-        grid-template-columns: repeat(2, 1fr);
+    
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
     }
-}
-
-// 1x6 layout for small screens
-@media (max-width: 767px) {
-    .projectsGrid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
+  }
+  
+  .card {
     background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    
     &:hover {
-        transform: translateY(-5px);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
-}
-
-.imageContainer {
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+  
+  .imageContainer {
     position: relative;
-    width: 100%;
-    padding-top: 66.66%; /* 3:2 Aspect Ratio */
-}
-
-.cardContent {
-    padding: 1rem;
+    height: 220px;
+    overflow: hidden;
+  }
+  
+  .cardContent {
+    padding: 20px;
     text-align: left;
-}
-
-.cardTitle {
-    font-size: 1.5rem;
-    margin: 0 0 0.5rem;
-    color: #222;
-}
-
-.cardDescription {
-    font-size: 1rem;
+  }
+  
+  .cardTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .cardDescription {
+    font-size: 0.9rem;
     color: #666;
-}
-
-.navButton {
+    line-height: 1.5;
+  }
+  
+  .navButton {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.6); // Darker, more visible background
-    border: none;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    width: 60px; // Increased size
-    height: 60px; // Increased size
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 10; // Ensure buttons are above cards
-
+    transition: all 0.2s ease;
+    z-index: 2;
+    
     &:hover {
-        background-color: rgba(0, 0, 0, 0.8); // Darker on hover
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); // Add shadow on hover
+      background-color: #1c7f2a;
+      color: white;
     }
-
+    
     svg {
-        width: 30px; // Larger icon
-        height: 30px; // Larger icon
-        fill: #fff; // White icon for contrast
+      width: 24px;
+      height: 24px;
     }
-}
-
-.prevButton {
+  }
+  
+  .prevButton {
     left: 0;
-}
-
-.nextButton {
+  }
+  
+  .nextButton {
     right: 0;
-}
-
-// Show buttons on hover for larger screens
-@media (min-width: 768px) {
-    .projectsWrapper:hover .navButton {
-        opacity: 1;
-    }
-
-    .navButton {
-        opacity: 0.7;
-    }
-}
-
-@media (max-width: 767px) {
-    .projectsWrapper {
-        padding: 0; // Remove padding on mobile
-    }
-
-    .navButton {
-        display: none; // Hide navigation buttons on mobile
-    }
-}
+  }

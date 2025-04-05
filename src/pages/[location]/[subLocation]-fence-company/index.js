@@ -4,11 +4,11 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { getLocationData, isValidLocation } from '../../../utils/locations';
 import styles from '../FenceCompany.module.scss';
-import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import CallToActionSection from '../../../components/CallToActionSection';
 import Reviews from '../../../components/Reviews';
-
+import HeaderNew from '../../../components/HeaderNew';
+    
 export default function LocationFenceCompany({ location, subLocation, capitalizedLocation, phoneNumber, headerData, heroContent }) {
   const router = useRouter();
 
@@ -25,8 +25,7 @@ export default function LocationFenceCompany({ location, subLocation, capitalize
         <link rel="canonical" href={`https://greenviewsolutions.net/${location}/${subLocation}-fence-company`} />
       </Head>
 
-      <Header location={capitalizedLocation} data={headerData} heroContent={heroContent} />
-
+      <HeaderNew location={capitalizedLocation} data={headerData} heroContent={heroContent} />
       <main className={styles.main}>
 
         <section className={styles.introduction}>

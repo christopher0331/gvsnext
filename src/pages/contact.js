@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Header from '../components/Header'
+import HeaderNew from '../components/HeaderNew';        
 import Footer from '../components/Footer'
 import ContactForm from '../components/ContactForm'
 import styles from '../components/ContactUs.module.scss'
@@ -32,7 +32,7 @@ const ContactUs = ({heroContent}) => {
                 <meta name="description" content="Explore our comprehensive range of outdoor living products designed to enhance your lifestyle. From custom designs to durable materials and expert installation, we offer solutions that transform your outdoor spaces into beautiful, functional areas for year-round enjoyment." />
             </Head>
 
-            <Header heroContent={heroContent} />
+            <HeaderNew heroContent={heroContent} /> 
 
             <main className={styles.contactUsPage}>
                 <section className={styles.heroSection}>
