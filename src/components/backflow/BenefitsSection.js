@@ -59,7 +59,7 @@ export default function BenefitsSection({ location = 'Denver Metro' }) {
             <h3>Don&apos;t Risk Your {location} Water Safety</h3>
             <p>Schedule your backflow testing in {location} today with our certified technicians</p>
           </div>
-          <Link href="/contact" className={styles.ctaButton}>Get a Free Quote</Link>
+          <Link href="/contact" className={styles.ctaButton}>Schedule Backflow Testing</Link>
         </div>
       </div>
     </section>

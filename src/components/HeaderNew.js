@@ -409,8 +409,8 @@ export default function HeaderNew({ heroContent = {}, postTitle, location }) {
                 <Link href="/contact" className={styles.primaryButton}>
                   Get a Free Quote
                 </Link>
-                <Link href="/fencing" className={styles.secondaryButton}>
-                  Explore Fencing Options
+                <Link href={router.pathname.includes('backflow-testing') ? '/backflow-testing' : '/fencing'} className={styles.secondaryButton}>
+                  {router.pathname.includes('backflow-testing') ? 'Explore Backflow Options' : 'Explore Fencing Options'}
                 </Link>
               </div>
             </div>
